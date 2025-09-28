@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% from 'macro.html' import para %}
+
 {% block title %}{{ _('广州东振机电设备有限公司') }}{% endblock %}
 
 {% block head %}
@@ -48,7 +50,7 @@
 				<div class="cblock-content">
 					<img src='/static/images/home-camel.jpg' id='home-camel'>
 
-					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ _('广州东振公司成立于2007年6月13号，建厂初期已拥有一个多年从事非标行业的技术团队。') }}</p>
+					{{ para(_('广州东振公司成立于2007年6月13号，建厂初期已拥有一个多年从事非标行业的技术团队。')) }}
 				</div>
 			</div>
 		</div>
@@ -63,7 +65,7 @@
 				<div class="cblock-content" id="home-about-us">
 					<img src='/static/images/home-building.jpg' class="normal-size-imag">
 
-					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ _('广州东振机电设备有限公司:是一家集设计、制造、销售为一体的企业，长期致力于现代化工厂自动化设备的研究与制造。主要产品为:铁屑压块机，工装夹具、非标设备及非 标配件。产品广泛应用于汽车、制冷、机械电子等行业，为众多企业高效的生产提供了技术支持！') }}</p>
+					{{ para(_('广州东振机电设备有限公司:是一家集设计、制造、销售为一体的企业，长期致力于现代化工厂自动化设备的研究与制造。主要产品为:铁屑压块机，工装夹具、非标设备及非 标配件。产品广泛应用于汽车、制冷、机械电子等行业，为众多企业高效的生产提供了技术支持！')) }}
 				</div>
 			</div>
 
