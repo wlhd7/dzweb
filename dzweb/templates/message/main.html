@@ -16,9 +16,13 @@
 				</div>
 
 				<div class="cblock-content">
-					<a href="{{ url_for('message.mailbox') }}">▶&nbsp; {{ _('信箱') }}</a>					
+					<a href="{{ url_for('message.mailbox') }}">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('信箱') }}</a>					
 					<hr>
-					<a href="{{ url_for('message.message_board') }}">▶&nbsp; {{ _('留言板') }}</a>
+					<a href="{{ url_for('message.message_board') }}">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('留言板') }}</a>
 				</div>
 
 			</div>
@@ -29,7 +33,8 @@
 		<div class="bblock" id="second-column">
 			<div class="dblock">
 				<div class="dblock-title">
-					<p>➡️&nbsp; {% block title %}{% endblock %}</p>
+					<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
+					<p>&nbsp; {% block title %}{% endblock %}</p>
 
 					{% block leave_message %}{% endblock %}
 				</div>

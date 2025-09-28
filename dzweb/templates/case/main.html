@@ -11,13 +11,21 @@
 				</div>
 
 				<div class="cblock-content">
-					<a href="{{ url_for('case.extruder') }}">▶&nbsp; {{ _('铁屑挤压机') }}</a>					
+					<a href="{{ url_for('case.extruder') }}">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('铁屑挤压机') }}</a>					
 					<hr>
-					<a href="{{ url_for('case.assembly_line') }}">▶&nbsp; {{ _('组装线') }}</a>
+					<a href="{{ url_for('case.assembly_line') }}">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('组装线') }}</a>
 					<hr>
-					<a href="{{ url_for('case.ass') }}">▶&nbsp; {{ _('汽车转向系统装配线') }}</a>
+					<a href="{{ url_for('case.ass') }}">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('汽车转向系统装配线') }}</a>
 					<hr>
-					<a href="{{ url_for('case.robot_welding') }}">▶&nbsp; {{ _('机器人焊接工作站') }}</a>
+					<a href="{{ url_for('case.robot_welding') }}">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('机器人焊接工作站') }}</a>
 				</div>
 
 			</div>
@@ -29,7 +37,9 @@
 		<div class="bblock" id="second-column">
 			<div class="dblock">
 				<div class="dblock-title">
-					<p>➡️&nbsp; {% block title %}{% endblock %}</p>
+					<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
+					<p>&nbsp; {% block title %}{% endblock %}</p>
+
 				</div>
 				
 				<div class="dblock-content">

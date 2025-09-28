@@ -23,12 +23,6 @@
 	cursor: pointer;
 }
 
-.dblock-title {
-	display: flex;
-	justify-content: space-between;
-	padding-right: 5px;
-}
-
 .personal-home-form {
 	display: flex;
 	flex-direction: column;

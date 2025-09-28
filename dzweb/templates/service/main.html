@@ -11,7 +11,9 @@
 				</div>
 
 				<div class="cblock-content">
-					<a href="{{ url_for('service.service') }}">▶&nbsp; {{ _('服务体系') }}</a>					
+					<a href="{{ url_for('service.service') }}">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('服务体系') }}</a>					
 				</div>
 
 			</div>
@@ -23,7 +25,8 @@
 		<div class="bblock" id="second-column">
 			<div class="dblock">
 				<div class="dblock-title">
-					<p>➡️&nbsp; {% block title %}{% endblock %}</p>
+					<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
+					<p>&nbsp; {% block title %}{% endblock %}</p>
 				</div>
 			
 				

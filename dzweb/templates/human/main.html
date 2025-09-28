@@ -24,9 +24,13 @@
 				</div>
 
 				<div class="cblock-content">
-					<a href="{{ url_for('human.hire') }}">▶&nbsp; {{ _('人才招聘') }}</a>					
+					<a href="{{ url_for('human.hire') }}">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('人才招聘') }}</a>					
 					<hr>
-					<a href="{{ url_for('human.idea') }}">▶&nbsp; {{ _('人才理念') }}</a>
+					<a href="{{ url_for('human.idea') }}">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('人才理念') }}</a>
 				</div>
 
 			</div>
@@ -38,7 +42,8 @@
 		<div class="bblock" id="second-column">
 			<div class="dblock">
 				<div class="dblock-title">
-					<p>➡️&nbsp; {% block title %}{% endblock %}</p>
+					<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
+					<p>&nbsp; {% block title %}{% endblock %}</p>
 				</div>
 			
 				

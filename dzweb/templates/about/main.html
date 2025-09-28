@@ -11,17 +11,29 @@
 				</div>
 
 				<div class="cblock-content">
-					<a href="{{ url_for('about.introduction') }}">▶&nbsp; {{ _('公司简介') }}</a>					
+					<a href="{{ url_for('about.introduction') }}">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('公司简介') }}</a>					
 					<hr>
-					<a href="{{ url_for('about.history') }}">▶&nbsp; {{ _('公司历程') }}</a>
+					<a href="{{ url_for('about.history') }}">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('公司历程') }}</a>
 					<hr>
-					<a href="{{ url_for('about.organization') }}">▶&nbsp; {{ _('机构组织') }}</a>
+					<a href="{{ url_for('about.organization') }}">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('机构组织') }}</a>
 					<hr>
-					<a href="{{ url_for('about.strategy') }}">▶&nbsp; {{ _('发展战略') }}</a>
+					<a href="{{ url_for('about.strategy') }}">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('发展战略') }}</a>
 					<hr>
-					<a href="{{ url_for('about.performance') }}">▶&nbsp; {{ _('公司业绩') }}</a>
+					<a href="{{ url_for('about.performance') }}">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('公司业绩') }}</a>
 					<hr>
-					<a href="{{ url_for('about.style') }}">▶&nbsp; {{ _('员工风采') }}</a>
+					<a href="{{ url_for('about.style') }}">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('员工风采') }}</a>
 				</div>
 
 			</div>
@@ -33,7 +45,8 @@
 		<div class="bblock" id="second-column">
 			<div class="dblock">
 				<div class="dblock-title">
-					<p>➡️&nbsp; {% block title %}{% endblock %}</p>
+					<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
+					<p>&nbsp; {% block title %}{% endblock %}</p>
 				</div>
 			
 				

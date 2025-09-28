@@ -3,7 +3,7 @@
 {% block title %}{{ _('留言板') }}{% endblock %}
 
 {% block leave_message %}
-	<a href="{{ url_for('message.create') }}">📜 {{ _('留言') }}</a>
+	<a class="leave-a-message" href="{{ url_for('message.create') }}">📜 {{ _('留言') }}</a>
 {% endblock %}
 
 {% block message %}

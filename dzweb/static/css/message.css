@@ -24,15 +24,13 @@ textarea {
 	height: 200px;
 }
 
-.dblock-title {
-	display: flex;
-	justify-content: space-between;
-	padding-right: 5px;
-}
-
 #message-board-block {
 	padding-bottom: 20px;
 }
 
 .message-board-block-name {
+}
+
+.leave-a-message {
+	margin-left: 650px;
 }

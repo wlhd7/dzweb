@@ -11,9 +11,13 @@
 				</div>
 
 				<div class="cblock-content">
-					<a href="{{ url_for('contact.contact_us') }}">▶&nbsp; {{ _('联系我们') }}</a>					
+					<a href="{{ url_for('contact.contact_us') }}">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('联系我们') }}</a>					
 					<hr>
-					<a href="{{ url_for('contact.location') }}">▶&nbsp; {{ _('地理位置') }}</a>
+					<a href="{{ url_for('contact.location') }}">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('地理位置') }}</a>
 				</div>
 
 			</div>
@@ -25,7 +29,8 @@
 		<div class="bblock" id="second-column">
 			<div class="dblock">
 				<div class="dblock-title">
-					<p>➡️&nbsp; {% block title %}{% endblock %}</p>
+					<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
+					<p>&nbsp; {% block title %}{% endblock %}</p>
 				</div>
 			
 				
