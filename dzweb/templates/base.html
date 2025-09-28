@@ -22,7 +22,7 @@
 				<form method="post" action="{{ url_for('set_lang', lang='en', next=request.path) }}">
 					<input type="submit" value="English">
 				</form>
-				<form method="post" action="{{ url_for('set_lang', lang='jp', next=request.path) }}">
+				<form method="post" action="{{ url_for('set_lang', lang='ja', next=request.path) }}">
 					<input type="submit" value="日本語(にほんご)">
 				</form>
 			</div>
@@ -45,7 +45,9 @@
 	</div>
 
 	<nav>
-		<a class="{% if 'home' in request.path %}active{% endif %}" href="{{ url_for('home.main') }}">⏺ {{ _('首页') }}</a>
+		<a class="{% if 'home' in request.path %}active{% endif %}" href="{{ url_for('home.main') }}">
+			<img src="{{ url_for('static', filename='images/point.svg') }}" width="10">
+			{{ _('首页') }}</a>
 		<a class="{% if 'about' in request.path %}active{% endif %}" href="{{ url_for('about.introduction') }}">⏺ {{ _('关于我们') }}</a>
 		<a class="{% if 'product' in request.path %}active{% endif %}" href="{{ url_for('product.equipment') }}">⏺ {{ _('产品展示') }}</a>
 		<a class="{% if 'case' in request.path %}active{% endif %}" href="{{ url_for('case.extruder') }}">⏺ {{ _('经典案例') }}</a>
