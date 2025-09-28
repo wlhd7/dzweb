@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div>
+       		<h1>404</h1>
+       		<h2>页面未找到</h2>
+       		<p>抱歉，您访问的页面不存在或已被移动。</p>
+       		<p>错误信息: {{ error_description if error_description else "页面不存在" }}</p>
+       		<a href="{{ url_for('home.main') }}" class="blue link">返回首页</a>
+       		<a href="javascript:history.back()" class="blue link">返回上一页</a>
+	</div>
+{% endblock %}
