@@ -1,0 +1,24 @@
+[project]
+name = "dzweb"
+version = "1.0.0"
+description = "The offical website of Guangzhou Dongzhen Company"
+readme = "README.rst"
+license = {file = "LICENSE.txt"}
+maintainers = [{name = "wlhd", email = "3509896163@qq.com"}]
+classifiers = ["Private :: Do Not Upload"]
+requires-python = ">=3.8"
+dependencies = [
+	"flask",
+	"bcrypt"
+]
+
+[build-system]
+requires = ["flit_core<4"]
+build-backend = "flit_core.buildapi"
+
+[project.urls]
+Homepage = "https://www.dongzhen.cn"
+Repository = "https://github.com/"
+Documentation = " "
+
+

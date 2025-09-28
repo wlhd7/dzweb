@@ -1,0 +1,87 @@
+header {
+	margin-bottom: 15px;
+	padding-top: 10px;
+	background: white;
+}
+
+header > div:first-child {
+	display: flex;
+	justify-content: space-between;
+	background: white;
+	font-size: 13px;
+}
+
+#logo {
+	width: 550px;
+	height: auto;
+}
+
+#lang, #user {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+	padding-right: 12px;
+	height: 15px;
+}
+
+#lang {
+	padding-top: 2px;
+	border: 0;
+}
+
+#lang input {
+	border: None;
+	background: none;
+	cursor: pointer;
+}
+
+#lang input:hover {
+	text-decoration: underline;
+}
+
+#user {
+	justify-content: flex-end;
+	padding-top: 10px;
+}
+
+nav {
+	display: flex;
+	justify-content: space-around;
+	font-size: 14px;
+	font-weight: bold;
+	padding-top: 10px;
+}
+
+nav a {
+	background: steelblue;
+	color: white;
+	flex-grow: 1;
+	text-align: center;
+	height: 28px;
+	padding-top: 5px;
+}
+
+nav a:hover {
+	background: aliceblue;
+	color: #292929;
+}
+
+.active {
+	background: #d6e1eb;
+	color: #292929; 
+}
+
+footer {
+	background: #EBEBEB;
+	font-size: 13.5px;
+	margin-top: 30px;
+	padding: 20px 0;
+}
+
+footer div {
+	text-align: center;
+}
+
+footer div:not(:last-child) {
+	padding-bottom: 6px;
+}

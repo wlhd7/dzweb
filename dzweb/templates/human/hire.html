@@ -1,0 +1,27 @@
+{% extends 'human/main.html' %}
+
+{% from 'macro.html' import para %}
+
+{% block title %}{{ _('人才招聘') }}{% endblock %}
+
+{% block human %}
+	<div class="dblock-content">
+		{% for position in positions %}
+			<div>
+				<h3>{{ position['position'] }}</h3>
+				<h3>{{ position['salary'] }}</h3>
+				<span>{{ _('职位要求') }}</span>
+				{{ para(position['requirement']) }}			
+				{% if g.user %}
+					{% if g.user['applist'] %}
+					{% if '2' in g.user['applist'] %}
+					<a href="{{ url_for('human.update_position', id=position['id']) }}" class="blue link">{{ _('编辑') }}</a>
+					<a href="{{ url_for('human.delete_position', id=position['id']) }}" class="blue link" onclick="return confirm('是否删除该条招聘信息')">{{ _('删除') }}</a>
+					{% endif %}
+					{% endif %}
+				{% endif %}
+				<hr>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

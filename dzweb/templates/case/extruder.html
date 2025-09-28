@@ -1,0 +1,16 @@
+{% extends 'case/main.html' %}
+
+{% from 'macro.html' import para %}
+
+{% block title %}{{ _('铁屑挤压机') }}{% endblock %}
+
+{% block case %}
+	<h2>{{ _('铁屑挤压机') }}</h2>
+	
+	{{ para(_('广州东振机电设备有限公司一直在致力于改善环境设备的研发，铁屑挤压机是一种将机床加工下来的铁屑、钢屑、、铜屑、铝屑等挤压成固定尺寸、便于运输和储存的圆柱体形状，且在挤压过程中分离出切削液，从而达到改善环境、节约成本、降低能耗的专用设备。该机器具有轻便、移动方便、挤压后的铁屑块便于堆放、节省空间等特点。')) }}
+
+	<img src="/static/images/case-extruder-1.jpg">
+	<img src="/static/images/case-extruder-2.jpg">
+	<img src="/static/images/case-extruder-3.jpg">
+	<img src="/static/images/case-extruder-4.jpg">
+{% endblock %}

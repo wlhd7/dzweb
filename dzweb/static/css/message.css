@@ -1,0 +1,38 @@
+form div:first-child {
+	display: grid;
+	grid-template-columns: 120px 200px;
+	gap: 20px;
+	padding-left: 80px;
+	padding-bottom: 25px;
+}
+
+label {
+	text-align: right;
+}
+
+#message-mailbox-hr {
+	width: 650px;
+	margin-bottom: 30px;
+}
+
+form div:last-child {
+	text-align: center;
+}
+
+textarea {
+	width: 300px;
+	height: 200px;
+}
+
+.dblock-title {
+	display: flex;
+	justify-content: space-between;
+	padding-right: 5px;
+}
+
+#message-board-block {
+	padding-bottom: 20px;
+}
+
+.message-board-block-name {
+}

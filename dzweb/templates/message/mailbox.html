@@ -1,0 +1,46 @@
+{% extends 'message/main.html' %}
+
+{% from 'macro.html' import para %}
+
+{% block title %}{{ _('信箱') }}{% endblock %}
+
+{% block message %}
+		<h3>{{ _('尊敬的客户：') }}</h3>
+
+		{{ para(_('如果您对我们的产品或服务有任何意见和建议请及时告诉我们，我们将尽快给您满意的答复。')) }}
+
+		<hr id="message-mailbox-hr">
+
+		<form method='POST'>
+			<div>
+				<label for="title">{{ _('主题') }}:</label>
+				<input name="title" required>
+
+				<label for="content">{{ _('内容') }}:</label>
+				<textarea name="content"></textarea>
+				
+				<label for="liaison">{{ _('联系人') }}:</label>
+				<input name="liaison" required>
+
+				<label for="unit">{{ _('单位') }}:</label>
+				<input name="unit" required>
+
+				<label for="address">{{ _('通信地址') }}:</label>
+				<input name="address" placeholder="{{ _('选填') }}">
+
+				<label for="telephone">{{ _('电话') }}:</label>
+				<input name="telephone" placeholder="{{ _('选填') }}">
+
+				<label for="mobilephone">{{ _('手机') }}:</label>
+				<input name="mobilephone" placeholder="{{ _('选填') }}">
+				
+				<label for="mail">{{ _('邮箱') }}:</label>
+				<input name="mail" required>
+			</div>
+
+			<div>
+				<input type="submit" value="{{ _('提交') }}" class="message-mailbox-operate">
+				<input type="reset" value="{{ _('重置') }}" class="message-mailbox-operate">
+			</div>
+		</form>
+{% endblock %}

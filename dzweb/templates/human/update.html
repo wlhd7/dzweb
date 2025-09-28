@@ -1,0 +1,28 @@
+{% extends 'human/main.html' %}
+
+{% block title %}{{ _('编辑职位') }}{% endblock %}
+
+{% from 'macro.html' import tips %}
+
+{% block human %}
+	<div class="dblock-content">
+		<form method="post" class="position-form">
+			<div>
+				<label for="position">{{ _('职位') }}</label>
+				<input name="position" value="{{ position['position'] }}"required>
+			</div>
+			<div>
+				<label for="salary">{{ _('待遇') }}</label>
+				<input name="salary" value="{{ position['salary'] }}" required>
+			</div>
+			<div>
+				<label for="requirement">{{ _('职位要求') }}</label>
+				<textarea name="requirement">{{ position['requirement'] }}</textarea>
+			</div>
+
+			<input type="submit" value="{{ _('保存') }}">
+		</form>
+
+		{{ tips() }}
+	</div>
+{% endblock %}

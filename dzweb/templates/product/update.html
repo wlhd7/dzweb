@@ -1,0 +1,55 @@
+{% extends 'product/main1.html' %}
+
+{% from 'macro.html' import tips %}
+
+{% block title %}{{ _('创建产品') }}{% endblock %}
+
+{% block product %}
+	<form method="post" action="{{ url_for('product.update', id=product['id'], next=request.args.get('next')) }}">
+		<div>
+		<label for="productname">{{ _('产品名称') }}</label>
+		<input name="productname" value="{{ product['productname'] }}" required>
+	</div>
+
+	<div>
+		<label for="brief">{{ _('产品描述') }}</label>
+		<textarea name="brief">{{ product['brief'] }}</textarea>
+	</div>
+
+	<div>
+		<label for="file">{{ _('上传图片') }}</label>
+		<input name="file" type="file" accept="image/png image/jpg">
+	</div>
+
+	<div>
+		<label for="category">{{ _('产品分类') }}</label>
+		<select name="category">
+			<option value='equipment'>{{ _('铁屑压块机') }}</option>
+			<option value='fixture'>{{ _('工装夹具') }}</option>
+			<option value='automation'>{{ _('自动化设备') }}</option>
+			<option value='non-standard'>{{ _('非标零件') }}</option>
+			<option value='robotics'>{{ _('机器人项目') }}</option>
+		</select>
+	</div>
+
+	<input type="submit" value="{{ _('保存') }}">
+</form>
+
+{{ tips() }}
+
+	<script>
+		function findElementsByText(text, tagName = 'a') {
+			const elements = document.querySelectorAll(tagName);
+   			return Array.from(elements).filter(element => 
+    			        element.textContent.includes(text)
+   		 	);
+		}
+
+		const elements = findElementsByText('新增');
+		elements.forEach(el => {
+		        el.style.color = 'blue'; // 高亮显示
+			el.style.textDecoration = 'underline'	
+		});
+	</script>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'message/main.html' %}
+
+{% block title %}{{ _('留言板') }}{% endblock %}
+
+{% block leave_message %}
+	<a href="{{ url_for('message.create') }}">📜 {{ _('留言') }}</a>
+{% endblock %}
+
+{% block message %}
+	{% for message in messages %}
+		<div id="message-board-block">
+			<p>No.{{ message['id'] }}&nbsp; -&nbsp; {{ message['created'] }}</p>
+
+			<p><span class="message-author">{{ message['username'] }}</span>:&nbsp; {{ message['message'] }}</p>
+
+			{% if g.user and g.user['username'] == message['username'] %}
+				<a href="{{ url_for('message.update', id=message['id']) }}" class="blue link">{{ _('编辑') }}</a>
+				<a href="{{ url_for('message.delete', id=message['id']) }}" class="blue link">{{ _('删除') }}</a>
+			{% endif %}
+		</div>
+	{% endfor %}
+
+	<script>
+		(function() {
+		const messageAuthors = document.getElementsByClassName('message-author')
+		let userColors = {}
+
+		{% for message in messages %}
+		userColors["{{ message['username'] }}"] = "{{ message['color'] }}"
+		{% endfor %}
+
+		for (let messageAuthor of messageAuthors) {
+			messageAuthor.style.color = userColors[messageAuthor.textContent]	
+		}
+		console.log('hello')
+		})()
+	</script>
+{% endblock %}
+

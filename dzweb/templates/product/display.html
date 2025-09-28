@@ -1,0 +1,63 @@
+{% extends 'product/main1.html' %}
+
+{% block title %}{{ _('产品展示') }}{% endblock %}
+
+{% block product %}
+	<h2>{{ _(product['productname']) }}</h2>
+
+	{% set category_map = {
+		'equipment': _('分类：铁屑压块机'),
+		'fixture': _('分类：工装夹具'),
+		'automation': _('分类：自动化设备'),
+		'non-standard': _('分类：非标零件'),
+		'robotics': _('分类：机器人项目')
+	} %}
+
+	<p>{{ category_map.get(product['category'], '') }}</p>
+
+	<p>{{ _('发布时间') }}: {{ _(product['created']) }}</p>
+
+	{% if product['brief'] %}
+		<p>{{ _('产品描述') }}: {{ _(product['brief']) }}</p>
+	{% else %}
+		<p>{{ _('产品说明待添加') }}</p>
+	{% endif %}
+
+
+	{% if g.user %}
+		{% if g.user['applist'] %}
+		{% if '1' in g.user['applist'] %}
+		<a href="{{ url_for('product.update', id=product['id'], next=request.path) }}" id="display_edit" class="blue link">{{ _('编辑') }}</a>
+		<a href="{{ url_for('product.delete', id=product['id'], next=request.path) }}" id="display_edit" onclick="return confirm({{ _('是否删除该产品') }})" class="blue link" >{{ _('删除') }}</a>
+		{% endif %}
+		{% endif %}
+	{% endif %}
+
+	<img src="{{ url_for('instance_files', filename=product['filename']) }}">
+
+	<script>
+		function findElementsByText(text, tagName = 'a') {
+			const elements = document.querySelectorAll(tagName);
+   			return Array.from(elements).filter(element => 
+    			        element.textContent.includes(text)
+   		 	);
+		}
+
+		const elements = findElementsByText('新增');
+		{% if g.user %}
+			{% if g.user['applist'] %}
+			{% if '1' in g.user['applist'] %}
+				elements.forEach(el => {
+						        el.style.color = 'blue'; // 高亮显示
+							el.style.textDecoration = 'underline'	
+				});
+			{% else %}
+			elements.forEach(el => {
+				el.style.display = 'none'
+			})
+			{% endif %}
+			{% endif %}
+		{% endif %}
+	</script>
+
+{% endblock %}

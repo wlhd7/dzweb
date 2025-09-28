@@ -1,0 +1,71 @@
+html {
+	background: linear-gradient(to bottom, #e0eaff, white 20%, white);
+	background-position: center 20%;
+	height: 2000px;
+}
+
+body {
+	width: 950px;
+	margin: 0 auto;
+	font-size: 12px;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+	color: black;
+}
+
+.link {
+	text-decoration: underline;
+}
+
+p {
+	margin: 0;
+	line-height: 21px;
+}
+
+span {
+	font-weight: bold;
+}
+
+form div {
+	display: block;
+	align-items: top;
+}
+
+.red {
+	color: red;
+}
+
+.blue {
+	color: blue;
+}
+
+.steelblue {
+	color: steelblue;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.bg-1 {
+	background: white
+}
+
+.bg-2 {
+	background: #F0E68C
+}
+
+.bg-3 {
+	background: #00BFFF
+}
+
+img {
+	width: 100%;
+}
+
+.normal-size-imag {
+	width: auto;
+}

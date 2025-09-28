@@ -1,0 +1,41 @@
+{% extends 'user/main.html' %}
+
+{% block title %}{{ _('主页') }}{% endblock %}
+
+{% block user %}
+<form method='post'>
+	<div class="app-number">
+		<label for="number">{{ _('应用编号') }}</label>
+		<input name="number" required>
+		<p class="red" id="app-number-tips">{{ _('提示') }}</p>
+	</div>
+	<div>
+		<label for="password">{{ _('口令') }}</label>
+		<input name="password" required>
+	</div>
+
+	<input type="submit" value="{{ _('确定') }}">
+
+	{% for message in get_flashed_messages() %}
+	<p>{{ message }}</p>
+	{% endfor %}
+</form>
+
+<div class="app-tips" id="app-tips">
+	{% for app in apps %}
+	<div>{{ app['appname'] }}</div>
+	<p>-</p>
+	<div>{{ app['id'] }}</div>
+	{% endfor %}
+</div>
+
+<script>
+	const appNumberTips = document.getElementById('app-number-tips')
+	const appTips = document.getElementById('app-tips')
+
+	appNumberTips.addEventListener('click', () => {
+		appTips.style.display = 'grid'
+		console.log('hello')
+	})
+</script>
+{% endblock %}

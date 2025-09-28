@@ -1,0 +1,40 @@
+.ablock {
+	display: grid;
+	grid-template-columns: 187px 1fr;
+}
+
+.app-number {
+	display: flex;
+	gap: 5px;
+}
+
+.app-number p:hover {
+	text-decoration: underline;
+}
+
+.app-tips {
+	display: none;
+	grid-template-columns: 100px 10px 60px;
+	grid-gap: 0 20px;
+	margin-top: 20px;
+}
+
+#app-number-tips {
+	cursor: pointer;
+}
+
+.dblock-title {
+	display: flex;
+	justify-content: space-between;
+	padding-right: 5px;
+}
+
+.personal-home-form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.personal-home-form button {
+	width: 40px;
+}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+{% endblock %}
+
+{% block content %}
+	<div class="ablock">
+			<div class="cblock" id="cblock-id">
+				<div class="cblock-title">
+					<p>应用列表</p>
+
+					<a class="blue link" href="{{ url_for('user.add_app') }}">新增</a>
+				</div>
+
+				<div class="cblock-content">
+					<a href="{{ url_for('user.set_color') }}">▶&nbsp; {{ _('设置用户名颜色') }}</a>
+					<hr>
+
+					{% if g.applist %}
+						{% for appname, appurl in g.appname_appurl_dict.items() %}
+							<a href="{{ url_for(appurl) }}">▶&nbsp; {{ _(appname) }}</a>
+
+							{% if not loop.last %}
+							<hr>
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+				</div>
+
+			</div>
+
+
+			<div class="dblock" id="content">
+				<div class="dblock-title">
+					<p>➡️&nbsp; {% block title %}{% endblock %}</p>
+
+					{% block user_title %}{% endblock %}
+				</div>
+
+				<div class="dblock-content">{% block user %}{% endblock %}</div>
+			</div>
+	</div>
+
+{% endblock %}
+

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% from 'macro.html' import side_bar_imag %}
+
+{% block head %}
+	{{ super() }}
+	<link rel="stylesheet" href="{{ url_for('static', filename="css/product.css") }}">
+{% endblock %}
+
+{% block content %}
+	<div class="ablock">
+		<div class="bblock" id="first-column">
+			<div class="cblock">
+				<div class="cblock-title">
+					<p>{{ _('产品类别') }}</p>
+
+					{% if g.user %}
+						<a href="{{ url_for('product.create') }}">新增</a>
+					{% endif %}
+				</div>
+
+				<div class="cblock-content">
+					<a href="{{ url_for('product.equipment') }}">▶&nbsp; {{ _('铁屑压块机') }}</a>
+					<hr>
+					<a href="{{ url_for('product.fixture') }}">▶&nbsp; {{ _('工装夹具') }}</a>
+					<hr>
+					<a href="{{ url_for('product.automation') }}">▶&nbsp; {{ _('自动化设备') }}</a>
+					<hr>
+					<a href="{{ url_for('product.non_standard') }}">▶&nbsp; {{ _('非标零件') }}</a>
+					<hr>
+					<a href="{{ url_for('product.robotics') }}">▶&nbsp; {{ _('机器人项目') }}</a>
+					<hr>
+				</div>
+			</div>
+
+			{{ side_bar_imag() }}
+		</div>
+
+		<div class="bblock" id="second-column">
+			<div class="dblock">
+				<div class="dblock-title">
+					<p>➡️&nbsp; {% block title %}{% endblock %}</p>
+				</div>	
+			
+				<div class="dblock-content">
+					{% block product %}{% endblock %}
+				</div>
+			</div>
+		</div>
+	</div>	
+{% endblock %}

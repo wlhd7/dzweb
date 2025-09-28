@@ -1,0 +1,63 @@
+{% macro para(content) %}
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ content | safe }}</p><br>
+{% endmacro %}
+
+
+{% macro side_bar_imag() %}
+	<a href="{{ url_for('service.service') }}">
+		<img src='/static/images/service-system1.jpg'>
+	</a>
+
+	<a href="{{ url_for('contact.contact_us') }}">
+		<img src='/static/images/contact-us.jpg'>
+	</a>
+
+	<div class="cblock">
+		<div class="cblock-title" id="cblock-contact-title">
+			<p>{{ _('联系方式') }}</p>
+		</div>
+
+		<div id="cblock-contact">
+			<div>
+				<img src="/static/images/phone.jpg">
+				<p>020-34586222</p>
+			</div>
+
+			<div>
+				<img src="/static/images/phone.jpg">
+				<p>020-34586228</p>
+			</div>
+
+			<div>
+				<img src="/static/images/mail.jpg">
+				<p>Dongzhen@vip.163.com</p>
+			</div>
+
+			<div>
+				<img src="/static/images/house.jpg">
+				<p>www.dongzhen.cn</p>
+			</div>
+
+		</div>
+	</div>
+
+	<img src='/static/images/world-map.jpg'>
+{% endmacro %}
+
+
+{% macro second_column() %}
+	<div class="bblock" id="second-column">
+		<div class="dblock">{% block dblock_second_column %}{% endblock %}</div>	
+	</div>
+{% endmacro %}
+
+
+{% macro tips() %}
+	<div id='tips'>
+		<span class='red'>{{ _('温馨提示') }}:</span>
+
+		{{ para(_('单独一行，请用&lt;p&gt;包裹。例：&lt;p&gt;这是一行&lt;/p&gt;')) }}
+
+		{{ para(_('字体加粗，请用&lt;span&gt;&lt;/span&gt;包裹。例：&lt;span&gt;加粗字&lt;/span&gt;')) }}
+	</div>
+{% endmacro %}

@@ -1,0 +1,25 @@
+{% extends 'case/main.html' %}
+
+{% from 'macro.html' import para %}
+
+{% block title %}{{ _('机器人焊接工作') }}{% endblock %}
+
+{% block case %}
+	<h2>{{ _('汽车转向系统装配线') }}</h2>
+
+	{{ para(_('多年来，广州东振公司为客户提供量身定制的解决方案，从布局到工艺都可根据客户需求和凭借行业经验提供出相应的设计。')) }}
+
+	{{ para(_('汽车转向系统装配线是用于实现转向器、转向轴的装配、性能测试等功能。该项目为昭和汽车公司的14FIT转向系统装配线，主要用于转向器的轴承压入和齿轮齿条的磨合、油封螺丝的拧紧和涂胶以及转向器外部零件的组装。')) }}
+
+	<img src="/static/images/case-robot-welding-1.jpg">
+
+	<img src="/static/images/case-robot-welding-2.png">
+
+	<img src="/static/images/case-robot-welding-3.jpg">
+
+	<img src="/static/images/case-robot-welding-4.png">
+
+	<img src="/static/images/case-robot-welding-5.png">
+
+	<img src="/static/images/case-robot-welding-6.jpg">
+{% endblock %}

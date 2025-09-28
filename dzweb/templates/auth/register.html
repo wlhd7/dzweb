@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ _('用户注册') }}{% endblock %}
+
+{% block content %}
+<div>
+	<h2>{{ _('用户注册') }}</h2>
+
+	<form method="post">
+		<label for="username">{{ _('用户名') }}</label>
+		<input name="username" required>
+
+		<label for="password">{{ _('密码') }}</label>
+		<input name="password" type="password" required>
+
+		<input type="submit" value="{{ _('注册') }}">
+	</form>
+
+	{% for message in get_flashed_messages() %}
+		<p>{{ message }}</p>
+	{% endfor %}
+</div>
+{% endblock %}
+

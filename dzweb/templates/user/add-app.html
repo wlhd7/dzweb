@@ -1,0 +1,44 @@
+{% extends 'user/main.html' %}
+
+{% block title %}个人主页{% endblock %}
+
+{% block user %}
+<div class="dblock-content">
+
+<form method='post' class="personal-home-form">
+	<span>添加应用:</span>
+	<div class="app-number">
+		<label for="number">{{ _('应用') }} ID</label>
+		<input name="number" required>
+		<p class="red" id="toggle-appid-tips">{{ _('提示') }}</p>
+	</div>
+	<div>
+		<label for="password">{{ _('口令') }}</label>
+		<input name="password" required>
+	</div>
+
+	<button type="submit" name="action">确定</button>
+
+	{% for message in get_flashed_messages() %}
+	<p>{{ message }}</p>
+	{% endfor %}
+</form>
+
+<div class="app-tips" id="app-tips">
+	{% for app in apps %}
+	<div>{{ app['appname'] }}</div>
+	<p>-</p>
+	<div>ID: {{ app['id'] }}</div>
+	{% endfor %}
+</div>
+</div>
+
+<script>
+	function toggleAppTips() {
+		appTips = document.getElementById('app-tips')
+		appTips.style.display = 'grid'
+	}
+
+	document.getElementById('toggle-appid-tips').addEventListener('click', toggleAppTips)
+</script>
+{% endblock %}

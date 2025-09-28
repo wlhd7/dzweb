@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% from 'macro.html' import side_bar_imag %}
+
+{% block content %}
+	<div class="ablock">
+		<div class="bblock" id="first-column">
+			<div class="cblock">
+				<div class="cblock-title">
+					<p>{{ _('关于我们') }}</p>
+				</div>
+
+				<div class="cblock-content">
+					<a href="{{ url_for('about.introduction') }}">▶&nbsp; {{ _('公司简介') }}</a>					
+					<hr>
+					<a href="{{ url_for('about.history') }}">▶&nbsp; {{ _('公司历程') }}</a>
+					<hr>
+					<a href="{{ url_for('about.organization') }}">▶&nbsp; {{ _('机构组织') }}</a>
+					<hr>
+					<a href="{{ url_for('about.strategy') }}">▶&nbsp; {{ _('发展战略') }}</a>
+					<hr>
+					<a href="{{ url_for('about.performance') }}">▶&nbsp; {{ _('公司业绩') }}</a>
+					<hr>
+					<a href="{{ url_for('about.style') }}">▶&nbsp; {{ _('员工风采') }}</a>
+				</div>
+
+			</div>
+
+
+			{{ side_bar_imag() }}
+		</div>
+
+		<div class="bblock" id="second-column">
+			<div class="dblock">
+				<div class="dblock-title">
+					<p>➡️&nbsp; {% block title %}{% endblock %}</p>
+				</div>
+			
+				
+				{% block about %}{% endblock %}
+			</div>	
+		</div>
+	</div>
+
+
+{% endblock %}
+

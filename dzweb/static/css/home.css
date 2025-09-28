@@ -1,0 +1,50 @@
+#home-first-column {
+	width: 185px;
+}
+
+#home-second-column {
+	width: 530px;
+}
+
+#home-third-column {
+	width: 195px;
+}
+
+#home-camel {
+	position: relative;
+	top: -26px;
+	left: -21px;
+	width: 185px;
+	height: auto;
+}
+
+#home-camel + p {
+	margin-top: -15px;
+}
+
+#home-about-us {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+#home-about-us > img {
+	height: 100px;
+}
+
+#home-about-us p {
+	width: 400px;
+}
+
+.cblock-content-product {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 0 15px;
+	text-align: center;
+}	
+
+.cblock-content-product img {
+	width: 100%;
+	height: 100px;
+}

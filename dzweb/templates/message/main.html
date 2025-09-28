@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% from 'macro.html' import side_bar_imag %}
+
+{% block head %}
+	{{ super() }}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/message.css') }}">
+{% endblock %}
+
+{% block content %}
+	<div class="ablock">
+		<div class="bblock" id="first-column">
+			<div class="cblock">
+				<div class="cblock-title">
+					<p>{{ _('在线留言') }}</p>
+				</div>
+
+				<div class="cblock-content">
+					<a href="{{ url_for('message.mailbox') }}">▶&nbsp; {{ _('信箱') }}</a>					
+					<hr>
+					<a href="{{ url_for('message.message_board') }}">▶&nbsp; {{ _('留言板') }}</a>
+				</div>
+
+			</div>
+
+			{{ side_bar_imag() }}
+		</div>
+
+		<div class="bblock" id="second-column">
+			<div class="dblock">
+				<div class="dblock-title">
+					<p>➡️&nbsp; {% block title %}{% endblock %}</p>
+
+					{% block leave_message %}{% endblock %}
+				</div>
+			
+				
+				<div class="dblock-content">
+					{% block message %}{% endblock %}
+				</div>
+			</div>	
+		</div>
+	</div>
+
+
+{% endblock %}
+

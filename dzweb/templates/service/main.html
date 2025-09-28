@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% from 'macro.html' import side_bar_imag %}
+
+{% block content %}
+	<div class="ablock">
+		<div class="bblock" id="first-column">
+			<div class="cblock">
+				<div class="cblock-title">
+					<p>{{ _('服务体系') }}</p>
+				</div>
+
+				<div class="cblock-content">
+					<a href="{{ url_for('service.service') }}">▶&nbsp; {{ _('服务体系') }}</a>					
+				</div>
+
+			</div>
+
+
+			{{ side_bar_imag() }}
+		</div>
+
+		<div class="bblock" id="second-column">
+			<div class="dblock">
+				<div class="dblock-title">
+					<p>➡️&nbsp; {% block title %}{% endblock %}</p>
+				</div>
+			
+				
+				{% block service %}{% endblock %}
+			</div>	
+		</div>
+	</div>
+{% endblock %}

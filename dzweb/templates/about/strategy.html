@@ -1,0 +1,37 @@
+{% extends 'about/main.html' %}
+
+{% from 'macro.html' import para %}
+
+{% block title %}{{ _('发展战略') }}{% endblock %}
+
+{% block about %}
+	<div class="dblock-content">
+		<h2>{{ _('QCD战略') }}</h2>	
+
+		<h3>{{ _('公司的核心战略——QCD改善') }}</h3>
+
+		{{ para(_('我们只有以优良的品质，严格成本控制，快速的交货期，以及对客户认真负责的服务理念，才能在竞争日益激烈的今天，保持持续稳定的成长。')) }}
+
+		<h3>{{ _('Q战略:品质━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━') }}</h3>
+
+		{{ para(_('🔼 以PDCA;SDCA为工作方式,制订严格科学的检测控制程序。')) }}
+
+		{{ para(_('🔼 采用精密的检测设备进行检测，确保每一件产品都满足图纸的各种技术要求。')) }}
+
+		<h3>{{ _('C战略:成本━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━') }}</h3>
+
+		{{ para(_('🔼 大力推广5S改善活动，精细化管理。')) }}
+
+		{{ para(_('🔼 全面使用3D设计软件进行设计，动态模拟验证，保证设计与实际的相吻合。')) }}
+
+		{{ para(_('🔼 科学的编制工艺，确保最合理简捷的加工手段。')) }}
+
+		<h3>{{ _('D战略:交货期━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━') }}</h3>
+
+		{{ para(_('🔼 按照系统化的生产管理流程，对整个生产环节进行日常的细致化管理，严格执行。')) }}
+
+		<img class="dblock-imag-small" src='/static/images/about-strategy-improve.jpg'>
+
+		<img class="dblock-imag-small"  src='/static/images/about-strategy-maintain.jpg'>
+	</div>
+{% endblock %}

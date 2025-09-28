@@ -1,0 +1,236 @@
+# English translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-09-16 15:56+0800\n"
+"PO-Revision-Date: 2025-09-14 10:07+0800\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: dzweb/routes/auth.py:15
+msgid "请先登陆用户"
+msgstr "Please login your user account."
+
+#: dzweb/routes/auth.py:77
+msgid "用户不存在."
+msgstr "User doesn't exist."
+
+#: dzweb/routes/auth.py:82
+msgid "密码错误."
+msgstr "Incorrect password."
+
+#: dzweb/templates/base.html:33
+msgid "注销"
+msgstr "Logout"
+
+#: dzweb/templates/auth/register.html:16 dzweb/templates/base.html:35
+msgid "注册"
+msgstr "Register"
+
+#: dzweb/templates/auth/login.html:16 dzweb/templates/base.html:36
+msgid "登陆"
+msgstr "Login"
+
+#: dzweb/templates/base.html:43
+msgid "首页"
+msgstr "Home"
+
+#: dzweb/templates/about/main.html:8 dzweb/templates/base.html:44
+msgid "关于我们"
+msgstr "About Us"
+
+#: dzweb/templates/base.html:45 dzweb/templates/home/main.html:61
+msgid "产品展示"
+msgstr "Produce"
+
+#: dzweb/templates/base.html:46
+msgid "经典案例"
+msgstr "Case"
+
+#: dzweb/templates/base.html:47
+msgid "服务体系"
+msgstr "Service System"
+
+#: dzweb/templates/base.html:48
+msgid "人力资源"
+msgstr "Human Resources"
+
+#: dzweb/templates/base.html:49
+msgid "联系我们"
+msgstr "Contact Us"
+
+#: dzweb/templates/base.html:50
+msgid "在线留言"
+msgstr "Message"
+
+#: dzweb/templates/base.html:57
+msgid "版权所有：广州东振机电设备有限公司"
+msgstr ""
+
+#: dzweb/templates/base.html:58
+msgid "电话：020-31135070 &nbsp;&nbsp;&nbsp;&nbsp;邮箱：Dongzhen@vip.163.com"
+msgstr ""
+
+#: dzweb/templates/base.html:59
+msgid "地址：广州市番禺区石基镇桥山村竹园岗一街2号"
+msgstr ""
+
+#: dzweb/templates/about/history.html:6
+msgid "公司历史"
+msgstr ""
+
+#: dzweb/templates/about/introduction.html:6
+#: dzweb/templates/about/introduction.html:10
+#: dzweb/templates/about/main.html:12 dzweb/templates/home/main.html:49
+msgid "公司简介"
+msgstr ""
+
+#: dzweb/templates/about/introduction.html:12
+msgid ""
+"广州东振机电设备有限公司:是一家集设计、制造、销售为一体的企业，长期致力于现代化工厂自动化设备的\n"
+"研究与制造。主要产品为:工装夹具、非标设备及非标配件。产品广泛应用于汽车、制冷、机械电子等行业，为众\n"
+"多企业高效的生产提供了技术支持！"
+msgstr ""
+
+#: dzweb/templates/about/introduction.html:15
+msgid ""
+"公司拥有一流的精密生产设备，采用先进的管理方式、严格的检验程序，保证每一个产品符合客户的要求。\n"
+"我们秉承“诚信经营质量为本”的经营理念，“追求卓越用心服务”的宗旨，为您追求高效益服务！在平稳、踏实中求\n"
+"发展。产品主要销于国内知名企业：如瑞智、美的、格力、三菱、日立、本田、丰田、日产及其配套厂家等。"
+msgstr ""
+
+#: dzweb/templates/about/introduction.html:18
+msgid ""
+"我们始终承诺把客户的满意度放在首位，交付满意的产品，提高高度整合的技术方案和优良品质的产品，使客\n"
+"\t\t\t户获得最佳的投资回报是我们永恒的追求。"
+msgstr ""
+
+#: dzweb/templates/about/introduction.html:21
+msgid "经营范围"
+msgstr ""
+
+#: dzweb/templates/about/introduction.html:23
+msgid "设计、制造、销售各种工装夹具、检具及非标零配件"
+msgstr ""
+
+#: dzweb/templates/about/introduction.html:24
+msgid "自动化装配设备、机加设备及各种辅助设备的设计与制造"
+msgstr ""
+
+#: dzweb/templates/about/introduction.html:25
+msgid "承接各种自动化生产线设计、安装、调试"
+msgstr ""
+
+#: dzweb/templates/about/introduction.html:26
+msgid "设计、制造搬运机器人系统、涂胶机器人系统"
+msgstr ""
+
+#: dzweb/templates/about/main.html:14 dzweb/templates/home/main.html:35
+msgid "公司历程"
+msgstr ""
+
+#: dzweb/templates/about/main.html:16
+msgid "机构组织"
+msgstr ""
+
+#: dzweb/templates/about/main.html:18
+msgid "发展战略"
+msgstr ""
+
+#: dzweb/templates/about/main.html:20
+msgid "公司业绩"
+msgstr ""
+
+#: dzweb/templates/about/main.html:22
+msgid "员工风采"
+msgstr ""
+
+#: dzweb/templates/auth/login.html:3
+msgid "用户登陆 - 东振"
+msgstr "User Login - Dongzhen"
+
+#: dzweb/templates/auth/login.html:7
+msgid "用户登陆"
+msgstr "User Login"
+
+#: dzweb/templates/auth/login.html:10 dzweb/templates/auth/register.html:10
+msgid "用户名"
+msgstr "Username"
+
+#: dzweb/templates/auth/login.html:13 dzweb/templates/auth/register.html:13
+msgid "密码"
+msgstr "Password"
+
+#: dzweb/templates/auth/register.html:3
+msgid "用户注册 - 东振"
+msgstr "Register - Dongzhen"
+
+#: dzweb/templates/auth/register.html:7
+msgid "用户注册"
+msgstr "Register"
+
+#: dzweb/templates/home/main.html:3
+msgid "广州东振机电设备有限公司"
+msgstr ""
+
+#: dzweb/templates/home/main.html:17
+msgid "产品类别"
+msgstr ""
+
+#: dzweb/templates/home/main.html:21
+msgid "铁屑压块机"
+msgstr ""
+
+#: dzweb/templates/home/main.html:23
+msgid "工装夹具"
+msgstr ""
+
+#: dzweb/templates/home/main.html:25
+msgid "自动化设备"
+msgstr ""
+
+#: dzweb/templates/home/main.html:27
+msgid "非标零件"
+msgstr ""
+
+#: dzweb/templates/home/main.html:29
+msgid "机器人项目"
+msgstr ""
+
+#: dzweb/templates/home/main.html:41
+msgid "广州东振公司成立于2007年6月13号，建厂初期已拥有一个多年从事非标行业的技术团队。"
+msgstr ""
+
+#: dzweb/templates/home/main.html:55
+msgid ""
+"广州东振机电设备有限公司:是一家集设计、制造、销售为一体的企业，长期致力于现代化工厂自动化设备的研究与制造。主要产品为:铁屑压块机，工装夹具、非标设备及非"
+" 标配件。产品广泛应用于汽车、制冷、机械电子等行业，为众多企业高效的生产提供了技术支持！"
+msgstr ""
+
+#: dzweb/templates/home/main.html:69
+msgid "人才招聘"
+msgstr ""
+
+#: dzweb/templates/home/main.html:73
+msgid "1.机械设计/主任工程师: 2名"
+msgstr ""
+
+#: dzweb/templates/home/main.html:74
+msgid "职位要求:"
+msgstr ""
+
+#: dzweb/templates/home/main.html:75
+msgid "大专以上学历,机电类专业,熟悉机械加工工艺；有丰富的工装夹模具等非标设计经验；从事设计工作三以上的经验,熟悉电动和气动控制；并能解决各类疑难问题、有良好的团队合作精神和沟通能力。"
+msgstr ""
+

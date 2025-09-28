@@ -1,0 +1,19 @@
+{% extends 'case/main.html' %}
+
+{% from 'macro.html' import para %}
+
+{% block title %}{{ _('组装线') }}{% endblock %}
+
+{% block case %}
+	<h2>{{ _('组装线') }}</h2>
+
+	{{ para(_('自广州东振公司成立以来先后为多个客户设计制造了包括转向器、传动轴、减震器、制动器、发动机等多种产品在内的装配、压装、拧紧、输送、清洗等设备。')) }}
+
+	{{ para(_('这些设备既有单个的专机设备，也有自动化连线设备；既有手工单元、半自动单元，也有自动单元；无论何种设备，都以满足客户需求为导向，根据使用情况和使用场地量身定制。在安全性、人机工程、智能防错、设备成本以及质量方面都有完善的设计考量。')) }}
+
+	<img src="/static/images/case-assembly-line-1.jpg">
+
+	<img src="/static/images/case-assembly-line-2.jpg">
+
+	<img src="/static/images/case-assembly-line-3.jpg">
+{% endblock %}
