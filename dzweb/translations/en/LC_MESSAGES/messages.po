@@ -102,34 +102,40 @@ msgstr ""
 
 #: dzweb/templates/base.html:68 dzweb/templates/contact/contact-us.html:11
 msgid "地址：广州市番禺区石基镇桥山村竹园岗一街2号"
-msgstr "Address: No. 2, Zhuyuangang 1st Street, Qiaoshan Village, Shiji Town, Panyu District, Guangzhou City"
+msgstr ""
+"Address: No. 2, Zhuyuangang 1st Street, Qiaoshan Village, Shiji Town, "
+"Panyu District, Guangzhou City"
 
 #: dzweb/templates/macro.html:17
 msgid "联系方式"
-msgstr ""
+msgstr "Contact Information"
 
 #: dzweb/templates/macro.html:57
 msgid "温馨提示"
-msgstr ""
+msgstr "Friendly Reminder"
 
 #: dzweb/templates/macro.html:59
 msgid "单独一行，请用&lt;p&gt;包裹。例：&lt;p&gt;这是一行&lt;/p&gt;"
 msgstr ""
+"For a separate line, wrap it with &lt;p&gt;. Example: &lt;p&gt;This is a "
+"line&lt;/p&gt;"
 
 #: dzweb/templates/macro.html:61
 msgid "字体加粗，请用&lt;span&gt;&lt;/span&gt;包裹。例：&lt;span&gt;加粗字&lt;/span&gt;"
 msgstr ""
+"To bold text, wrap it with &lt;span&gt;&lt;/span&gt;. Example: "
+"&lt;span&gt;Bold text&lt;/span&gt;"
 
 #: dzweb/templates/about/history.html:3 dzweb/templates/about/main.html:20
 #: dzweb/templates/home/main.html:47
 msgid "公司历程"
-msgstr ""
+msgstr "Company History"
 
 #: dzweb/templates/about/introduction.html:4
 #: dzweb/templates/about/introduction.html:8 dzweb/templates/about/main.html:16
 #: dzweb/templates/home/main.html:62
 msgid "公司简介"
-msgstr ""
+msgstr "Company Profile"
 
 #: dzweb/templates/about/introduction.html:10
 msgid ""
@@ -137,6 +143,13 @@ msgid ""
 "研究与制造。主要产品为:工装夹具、非标设备及非标配件。产品广泛应用于汽车、制冷、机械电子等行业，为众\n"
 "多企业高效的生产提供了技术支持！"
 msgstr ""
+"Guangzhou Dongzhen Electromechanical Equipment Co., Ltd. is an enterprise"
+" integrating design, manufacturing, and sales, long committed to the "
+"research and manufacturing of modern factory automation equipment.\n"
+"Our main products include: fixtures, non-standard equipment, and non-"
+"standard parts. The products are widely used in industries such as "
+"automotive, refrigeration, machinery, and electronics, providing "
+"technical support for efficient production in many enterprises!"
 
 #: dzweb/templates/about/introduction.html:13
 msgid ""
@@ -144,108 +157,146 @@ msgid ""
 "我们秉承“诚信经营质量为本”的经营理念，“追求卓越用心服务”的宗旨，为您追求高效益服务！在平稳、踏实中求\n"
 "发展。产品主要销于国内知名企业：如瑞智、美的、格力、三菱、日立、本田、丰田、日产及其配套厂家等。"
 msgstr ""
+"The company possesses first-class precision production equipment and "
+"adopts advanced management methods and strict inspection procedures to "
+"ensure every product meets customer requirements.\n"
+"We uphold the business philosophy of 'Integrity Management, Quality "
+"First' and the purpose of 'Pursuing Excellence, Serving Wholeheartedly' "
+"to serve your pursuit of high efficiency! We seek development steadily "
+"and reliably.\n"
+"Our products are mainly sold to well-known domestic enterprises such as "
+"Ruichi, Midea, Gree, Mitsubishi, Hitachi, Honda, Toyota, Nissan, and "
+"their supporting manufacturers."
 
 #: dzweb/templates/about/introduction.html:16
 msgid ""
 "我们始终承诺把客户的满意度放在首位，交付满意的产品，提高高度整合的技术方案和优良品质的产品，使客\n"
 "\t\t\t户获得最佳的投资回报是我们永恒的追求。"
 msgstr ""
+"We always promise to put customer satisfaction first, deliver "
+"satisfactory products, and provide highly integrated technical solutions "
+"and high-quality products.\n"
+"\t\t\tEnabling customers to achieve the best return on investment is our "
+"eternal pursuit."
 
 #: dzweb/templates/about/introduction.html:19
 msgid "经营范围"
-msgstr ""
+msgstr "Business Scope"
 
 #: dzweb/templates/about/introduction.html:21
 msgid "设计、制造、销售各种工装夹具、检具及非标零配件"
 msgstr ""
+"Design, manufacture, and sell various fixtures, inspection tools, and "
+"non-standard parts."
 
 #: dzweb/templates/about/introduction.html:22
 msgid "自动化装配设备、机加设备及各种辅助设备的设计与制造"
 msgstr ""
+"Design and manufacture of automated assembly equipment, machining "
+"equipment, and various auxiliary equipment."
 
 #: dzweb/templates/about/introduction.html:23
 msgid "承接各种自动化生产线设计、安装、调试"
 msgstr ""
+"Undertake the design, installation, and debugging of various automated "
+"production lines."
 
 #: dzweb/templates/about/introduction.html:24
 msgid "设计、制造搬运机器人系统、涂胶机器人系统"
-msgstr ""
+msgstr "Design and manufacture of handling robot systems and gluing robot systems."
 
 #: dzweb/templates/about/main.html:24 dzweb/templates/about/organization.html:3
 msgid "机构组织"
-msgstr ""
+msgstr "Organizational Structure"
 
 #: dzweb/templates/about/main.html:28 dzweb/templates/about/strategy.html:5
 msgid "发展战略"
-msgstr ""
+msgstr "Development Strategy"
 
 #: dzweb/templates/about/main.html:32 dzweb/templates/about/performance.html:3
 msgid "公司业绩"
-msgstr ""
+msgstr "Company Performance"
 
 #: dzweb/templates/about/main.html:36 dzweb/templates/about/style.html:3
 msgid "员工风采"
-msgstr ""
+msgstr "Employee Style"
 
 #: dzweb/templates/about/strategy.html:9
 msgid "QCD战略"
-msgstr ""
+msgstr "QCD Strategy"
 
 #: dzweb/templates/about/strategy.html:11
 msgid "公司的核心战略——QCD改善"
-msgstr ""
+msgstr "The Company's Core Strategy - QCD Improvement"
 
 #: dzweb/templates/about/strategy.html:13
 msgid "我们只有以优良的品质，严格成本控制，快速的交货期，以及对客户认真负责的服务理念，才能在竞争日益激烈的今天，保持持续稳定的成长。"
 msgstr ""
+"Only with excellent quality, strict cost control, fast delivery times, "
+"and a responsible service philosophy towards customers can we maintain "
+"sustained and stable growth in today's increasingly competitive "
+"environment."
 
 #: dzweb/templates/about/strategy.html:15
 msgid "Q战略:品质━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-msgstr ""
+msgstr "Q Strategy: Quality ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
 #: dzweb/templates/about/strategy.html:17
 msgid "🔼 以PDCA;SDCA为工作方式,制订严格科学的检测控制程序。"
 msgstr ""
+"🔼 Use PDCA and SDCA as working methods to establish strict and scientific"
+" inspection control procedures."
 
 #: dzweb/templates/about/strategy.html:19
 msgid "🔼 采用精密的检测设备进行检测，确保每一件产品都满足图纸的各种技术要求。"
 msgstr ""
+"🔼 Use precision inspection equipment for testing to ensure every product "
+"meets various technical requirements of the drawings."
 
 #: dzweb/templates/about/strategy.html:21
 msgid "C战略:成本━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-msgstr ""
+msgstr "C Strategy: Cost ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
 #: dzweb/templates/about/strategy.html:23
 msgid "🔼 大力推广5S改善活动，精细化管理。"
-msgstr ""
+msgstr "🔼 Vigorously promote 5S improvement activities and refined management."
 
 #: dzweb/templates/about/strategy.html:25
 msgid "🔼 全面使用3D设计软件进行设计，动态模拟验证，保证设计与实际的相吻合。"
 msgstr ""
+"🔼 Fully use 3D design software for design and dynamic simulation "
+"verification to ensure the design matches reality."
 
 #: dzweb/templates/about/strategy.html:27
 msgid "🔼 科学的编制工艺，确保最合理简捷的加工手段。"
 msgstr ""
+"🔼 Scientifically plan processes to ensure the most reasonable and "
+"efficient machining methods."
 
 #: dzweb/templates/about/strategy.html:29
 msgid "D战略:交货期━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-msgstr ""
+msgstr "D Strategy: Delivery Time ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
 #: dzweb/templates/about/strategy.html:31
 msgid "🔼 按照系统化的生产管理流程，对整个生产环节进行日常的细致化管理，严格执行。"
 msgstr ""
+"🔼 Follow systematic production management processes, conduct daily "
+"detailed management of the entire production process, and strictly "
+"implement them."
 
 #: dzweb/templates/about/style.html:6
 msgid "东振公司十周年庆旅游活动--海洋王国@台山川岛之旅"
 msgstr ""
+"Dongzhen Company 10th Anniversary Celebration Tour -- Ocean Kingdom @ "
+"Taishan Chuandao Trip"
 
 #: dzweb/templates/about/style.html:26 dzweb/templates/about/style.html:34
 msgid "2009年东振公司元旦游园活动"
-msgstr ""
+msgstr "2009 Dongzhen Company New Year Garden Party"
 
 #: dzweb/templates/about/style.html:30
 msgid "2009年东振公司安全演练"
-msgstr ""
+msgstr "2009 Dongzhen Company Safety Drill"
 
 #: dzweb/templates/auth/login.html:3 dzweb/templates/auth/login.html:7
 msgid "用户登陆"
@@ -261,298 +312,348 @@ msgstr "Password"
 
 #: dzweb/templates/auth/register.html:3 dzweb/templates/auth/register.html:7
 msgid "用户注册"
-msgstr "Register"
+msgstr "User Registration"
 
 #: dzweb/templates/case/ass.html:5 dzweb/templates/case/ass.html:8
 #: dzweb/templates/case/main.html:24 dzweb/templates/case/robot-welding.html:8
 msgid "汽车转向系统装配线"
-msgstr ""
+msgstr "Automotive Steering System Assembly Line"
 
 #: dzweb/templates/case/ass.html:10 dzweb/templates/case/robot-welding.html:10
 msgid "多年来，广州东振公司为客户提供量身定制的解决方案，从布局到工艺都可根据客户需求和凭借行业经验提供出相应的设计。"
 msgstr ""
+"For many years, Guangzhou Dongzhen Company has provided customized "
+"solutions for customers, offering corresponding designs from layout to "
+"process based on customer needs and industry experience."
 
 #: dzweb/templates/case/ass.html:12 dzweb/templates/case/robot-welding.html:12
 msgid "汽车转向系统装配线是用于实现转向器、转向轴的装配、性能测试等功能。该项目为昭和汽车公司的14FIT转向系统装配线，主要用于转向器的轴承压入和齿轮齿条的磨合、油封螺丝的拧紧和涂胶以及转向器外部零件的组装。"
 msgstr ""
+"The automotive steering system assembly line is used for functions such "
+"as the assembly and performance testing of steering gears and steering "
+"shafts. This project is the 14FIT steering system assembly line for Showa"
+" Automotive Company, mainly used for bearing pressing of the steering "
+"gear, running-in of the rack and pinion, tightening and sealing of oil "
+"seal screws, and assembly of external parts of the steering gear."
 
 #: dzweb/templates/case/assembly-line.html:5
 #: dzweb/templates/case/assembly-line.html:8 dzweb/templates/case/main.html:20
 msgid "组装线"
-msgstr ""
+msgstr "Assembly Line"
 
 #: dzweb/templates/case/assembly-line.html:10
 msgid "自广州东振公司成立以来先后为多个客户设计制造了包括转向器、传动轴、减震器、制动器、发动机等多种产品在内的装配、压装、拧紧、输送、清洗等设备。"
 msgstr ""
+"Since its establishment, Guangzhou Dongzhen Company has designed and "
+"manufactured equipment including assembly, pressing, tightening, "
+"conveying, and cleaning for various products such as steering gears, "
+"drive shafts, shock absorbers, brakes, and engines for multiple "
+"customers."
 
 #: dzweb/templates/case/assembly-line.html:12
 msgid "这些设备既有单个的专机设备，也有自动化连线设备；既有手工单元、半自动单元，也有自动单元；无论何种设备，都以满足客户需求为导向，根据使用情况和使用场地量身定制。在安全性、人机工程、智能防错、设备成本以及质量方面都有完善的设计考量。"
 msgstr ""
+"These equipment include both individual special machines and automated "
+"line equipment; there are manual units, semi-automatic units, and "
+"automatic units. Regardless of the type, all equipment is customer-"
+"demand-oriented and customized according to usage conditions and site. "
+"They have comprehensive design considerations in safety, ergonomics, "
+"intelligent error-proofing, equipment cost, and quality."
 
 #: dzweb/templates/case/extruder.html:5 dzweb/templates/case/extruder.html:8
 #: dzweb/templates/case/main.html:16
 msgid "铁屑挤压机"
-msgstr ""
+msgstr "Iron Scrap Briquetting Machine"
 
 #: dzweb/templates/case/extruder.html:10
 msgid "广州东振机电设备有限公司一直在致力于改善环境设备的研发，铁屑挤压机是一种将机床加工下来的铁屑、钢屑、、铜屑、铝屑等挤压成固定尺寸、便于运输和储存的圆柱体形状，且在挤压过程中分离出切削液，从而达到改善环境、节约成本、降低能耗的专用设备。该机器具有轻便、移动方便、挤压后的铁屑块便于堆放、节省空间等特点。"
 msgstr ""
+"Guangzhou Dongzhen Electromechanical Equipment Co., Ltd. has been "
+"committed to the research and development of environmental improvement "
+"equipment. The iron scrap briquetting machine is a specialized device "
+"that compresses iron scraps, steel scraps, copper scraps, aluminum "
+"scraps, etc., from machine tool processing into fixed-size cylindrical "
+"shapes for easy transportation and storage, and separates cutting fluid "
+"during the compression process, thereby achieving environmental "
+"improvement, cost savings, and reduced energy consumption. This machine "
+"is lightweight, easy to move, and the compressed scrap briquettes are "
+"easy to stack and save space."
 
 #: dzweb/templates/case/main.html:28
 msgid "机器人焊接工作站"
-msgstr ""
+msgstr "Robot Welding Workstation"
 
 #: dzweb/templates/case/robot-welding.html:5
 msgid "机器人焊接工作"
-msgstr ""
+msgstr "Robot Welding Work"
 
 #: dzweb/templates/contact/contact-us.html:7 dzweb/templates/home/main.html:5
 msgid "广州东振机电设备有限公司"
-msgstr ""
+msgstr "Guangzhou Dongzhen Electromechanical Equipment Co., Ltd."
 
 #: dzweb/templates/contact/contact-us.html:8
 msgid "联系人:侯先生"
-msgstr ""
+msgstr "Contact Person: Mr. Hou"
 
 #: dzweb/templates/contact/main.html:20
 msgid "地理位置"
-msgstr ""
+msgstr "Geographic Location"
 
 #: dzweb/templates/home/main.html:18 dzweb/templates/product/main.html:15
 #: dzweb/templates/product/main1.html:15
 msgid "产品类别"
-msgstr ""
+msgstr "Product Categories"
 
 #: dzweb/templates/home/main.html:24 dzweb/templates/product/main.html:29
 #: dzweb/templates/product/main1.html:25
 #: dzweb/templates/product/non_standard.html:3
 #: dzweb/templates/product/non_standard.html:5
 msgid "非标零件"
-msgstr ""
+msgstr "Non-Standard Parts"
 
 #: dzweb/templates/home/main.html:28 dzweb/templates/product/automation.html:3
 #: dzweb/templates/product/automation.html:5
 #: dzweb/templates/product/main.html:33 dzweb/templates/product/main1.html:29
 msgid "自动化设备"
-msgstr ""
+msgstr "Automation Equipment"
 
 #: dzweb/templates/home/main.html:32 dzweb/templates/product/fixture.html:3
 #: dzweb/templates/product/fixture.html:5 dzweb/templates/product/main.html:37
 #: dzweb/templates/product/main1.html:33
 msgid "工装夹具"
-msgstr ""
+msgstr "Fixtures"
 
 #: dzweb/templates/home/main.html:37 dzweb/templates/product/main.html:41
 #: dzweb/templates/product/main1.html:37
 #: dzweb/templates/product/robotics.html:3
 #: dzweb/templates/product/robotics.html:5
 msgid "机器人项目"
-msgstr ""
+msgstr "Robotics Projects"
 
 #: dzweb/templates/home/main.html:41 dzweb/templates/product/equipment.html:5
 #: dzweb/templates/product/equipment.html:7
 #: dzweb/templates/product/main.html:45 dzweb/templates/product/main1.html:41
 msgid "铁屑压块机"
-msgstr ""
+msgstr "Iron Scrap Briquetting Machine"
 
 #: dzweb/templates/home/main.html:48 dzweb/templates/home/main.html:63
 #: dzweb/templates/home/main.html:96
 msgid "详细介绍"
-msgstr ""
+msgstr "Details"
 
 #: dzweb/templates/home/main.html:54
 msgid "广州东振公司成立于2007年6月13号，建厂初期已拥有一个多年从事非标行业的技术团队。"
 msgstr ""
+"Guangzhou Dongzhen Company was established on June 13, 2007, and had a "
+"technical team with years of experience in the non-standard industry from"
+" the early days of the factory."
 
 #: dzweb/templates/home/main.html:69
 msgid ""
 "广州东振机电设备有限公司:是一家集设计、制造、销售为一体的企业，长期致力于现代化工厂自动化设备的研究与制造。主要产品为:铁屑压块机，工装夹具、非标设备及非"
 " 标配件。产品广泛应用于汽车、制冷、机械电子等行业，为众多企业高效的生产提供了技术支持！"
 msgstr ""
+"Guangzhou Dongzhen Electromechanical Equipment Co., Ltd. is an enterprise"
+" integrating design, manufacturing, and sales, long committed to the "
+"research and manufacturing of modern factory automation equipment. Main "
+"products include: iron scrap briquetting machines, fixtures, non-standard"
+" equipment, and non-standard parts. The products are widely used in "
+"industries such as automotive, refrigeration, machinery, and electronics,"
+" providing technical support for efficient production in many "
+"enterprises!"
 
 #: dzweb/templates/home/main.html:94 dzweb/templates/human/hire.html:5
 #: dzweb/templates/human/main.html:29
 msgid "人才招聘"
-msgstr ""
+msgstr "Recruitment"
 
 #: dzweb/templates/home/main.html:100
 msgid "1.机械设计/主任工程师: 2名"
-msgstr ""
+msgstr "1. Mechanical Design/Chief Engineer: 2 positions"
 
 #: dzweb/templates/home/main.html:101
 msgid "职位要求:"
-msgstr ""
+msgstr "Job Requirements:"
 
 #: dzweb/templates/home/main.html:102
 msgid "大专以上学历,机电类专业,熟悉机械加工工艺；有丰富的工装夹模具等非标设计经验；从事设计工作三以上的经验,熟悉电动和气动控制；并能解决各类疑难问题、有良好的团队合作精神和沟通能力。"
 msgstr ""
+"College degree or above in electromechanical major, familiar with "
+"machining processes; rich experience in non-standard design such as "
+"fixtures and molds; more than three years of design experience, familiar "
+"with electric and pneumatic control; able to solve various difficult "
+"problems, with good teamwork spirit and communication skills."
 
 #: dzweb/templates/human/create.html:7
 msgid "创建职位"
-msgstr ""
+msgstr "Create Position"
 
 #: dzweb/templates/human/create.html:13 dzweb/templates/human/update.html:11
 msgid "职位"
-msgstr ""
+msgstr "Position"
 
 #: dzweb/templates/human/create.html:18 dzweb/templates/human/update.html:15
 msgid "待遇"
-msgstr ""
+msgstr "Benefits"
 
 #: dzweb/templates/human/create.html:23 dzweb/templates/human/hire.html:13
 #: dzweb/templates/human/update.html:19
 msgid "职位要求"
-msgstr ""
+msgstr "Job Requirements"
 
 #: dzweb/templates/human/create.html:27 dzweb/templates/human/update.html:23
 #: dzweb/templates/message/create.html:12
 msgid "保存"
-msgstr ""
+msgstr "Save"
 
 #: dzweb/templates/human/hire.html:18
 #: dzweb/templates/message/message-board.html:17
 #: dzweb/templates/product/display.html:30
 msgid "编辑"
-msgstr ""
+msgstr "Edit"
 
 #: dzweb/templates/human/hire.html:19
 #: dzweb/templates/message/message-board.html:18
 #: dzweb/templates/product/display.html:31
 msgid "删除"
-msgstr ""
+msgstr "Delete"
 
 #: dzweb/templates/human/idea.html:3 dzweb/templates/human/main.html:33
 msgid "人才理念"
-msgstr ""
+msgstr "Talent Philosophy"
 
 #: dzweb/templates/human/idea.html:7
 msgid "勤者受薪，能者受权，功者受爵。"
 msgstr ""
+"The diligent receive salary, the capable receive authority, the "
+"meritorious receive rank."
 
 #: dzweb/templates/human/idea.html:9
 msgid "用人所长，去之所短。"
-msgstr ""
+msgstr "Utilize people's strengths, avoid their weaknesses."
 
 #: dzweb/templates/human/main.html:20
 msgid "新增"
-msgstr ""
+msgstr "Add New"
 
 #: dzweb/templates/human/update.html:3
 msgid "编辑职位"
-msgstr ""
+msgstr "Edit Position"
 
 #: dzweb/templates/message/create.html:5
 #: dzweb/templates/message/message-board.html:6
-#, fuzzy
 msgid "留言"
 msgstr "Message"
 
 #: dzweb/templates/message/mailbox.html:5 dzweb/templates/message/main.html:21
 msgid "信箱"
-msgstr ""
+msgstr "Mailbox"
 
 #: dzweb/templates/message/mailbox.html:8
 msgid "尊敬的客户："
-msgstr ""
+msgstr "Dear Customer:"
 
 #: dzweb/templates/message/mailbox.html:10
 msgid "如果您对我们的产品或服务有任何意见和建议请及时告诉我们，我们将尽快给您满意的答复。"
 msgstr ""
+"If you have any opinions or suggestions about our products or services, "
+"please let us know promptly, and we will provide you with a satisfactory "
+"reply as soon as possible."
 
 #: dzweb/templates/message/mailbox.html:16
 msgid "主题"
-msgstr ""
+msgstr "Subject"
 
 #: dzweb/templates/message/mailbox.html:19
 msgid "内容"
-msgstr ""
+msgstr "Content"
 
 #: dzweb/templates/message/mailbox.html:22
 msgid "联系人"
-msgstr ""
+msgstr "Contact Person"
 
 #: dzweb/templates/message/mailbox.html:25
 msgid "单位"
-msgstr ""
+msgstr "Company/Unit"
 
 #: dzweb/templates/message/mailbox.html:28
 msgid "通信地址"
-msgstr ""
+msgstr "Mailing Address"
 
 #: dzweb/templates/message/mailbox.html:29
 #: dzweb/templates/message/mailbox.html:32
 #: dzweb/templates/message/mailbox.html:35
 msgid "选填"
-msgstr ""
+msgstr "Optional"
 
 #: dzweb/templates/message/mailbox.html:31
 msgid "电话"
-msgstr ""
+msgstr "Telephone"
 
 #: dzweb/templates/message/mailbox.html:34
 msgid "手机"
-msgstr ""
+msgstr "Mobile Phone"
 
 #: dzweb/templates/message/mailbox.html:37
 msgid "邮箱"
-msgstr ""
+msgstr "Email"
 
 #: dzweb/templates/message/mailbox.html:42
 msgid "提交"
-msgstr ""
+msgstr "Submit"
 
 #: dzweb/templates/message/mailbox.html:43
 msgid "重置"
-msgstr ""
+msgstr "Reset"
 
 #: dzweb/templates/message/main.html:25
 #: dzweb/templates/message/message-board.html:3
 msgid "留言板"
-msgstr ""
+msgstr "Message Board"
 
 #: dzweb/templates/product/display.html:9
 msgid "分类：铁屑压块机"
-msgstr ""
+msgstr "Category: Iron Scrap Briquetting Machine"
 
 #: dzweb/templates/product/display.html:10
 msgid "分类：工装夹具"
-msgstr ""
+msgstr "Category: Fixtures"
 
 #: dzweb/templates/product/display.html:11
 msgid "分类：自动化设备"
-msgstr ""
+msgstr "Category: Automation Equipment"
 
 #: dzweb/templates/product/display.html:12
 msgid "分类：非标零件"
-msgstr ""
+msgstr "Category: Non-Standard Parts"
 
 #: dzweb/templates/product/display.html:13
 msgid "分类：机器人项目"
-msgstr ""
+msgstr "Category: Robotics Projects"
 
 #: dzweb/templates/product/display.html:18
 msgid "发布时间"
-msgstr ""
+msgstr "Release Time"
 
 #: dzweb/templates/product/display.html:21
 msgid "产品描述"
-msgstr ""
+msgstr "Product Description"
 
 #: dzweb/templates/product/display.html:23
 msgid "产品说明待添加"
-msgstr ""
+msgstr "Product description pending addition"
 
 #: dzweb/templates/product/display.html:31
 msgid "是否删除该产品"
-msgstr ""
+msgstr "Confirm deletion of this product"
 
 #: dzweb/templates/product/main.html:70
 msgid "上一页"
-msgstr ""
+msgstr "Previous Page"
 
 #: dzweb/templates/product/main.html:76
 msgid "下一页"
-msgstr ""
+msgstr "Next Page"
 
 #~ msgid "公司历史"
 #~ msgstr ""
