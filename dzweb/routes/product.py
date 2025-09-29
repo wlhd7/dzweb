@@ -51,7 +51,7 @@ def create():
                 )
             db.commit()
         else:
-            flash(_('抱歉，图片格式限制，请上传文件扩展名为 jpg 或 png 的图片'))
+            flash('抱歉，图片格式限制，请上传文件扩展名为 jpg 或 png 的图片')
 
         return redirect(url_for(f'product.{category}'))
 

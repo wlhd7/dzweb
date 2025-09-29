@@ -51,12 +51,12 @@ def add_app():
                     print(stored_password)
                     break
             except ValueError:
-                flash(_('请输入应用ID (点击‘提示’查看应用ID)'))
+                flash('请输入应用ID (点击‘提示’查看应用ID)')
 
                 return redirect(url_for('user.add_app'))
 
         if stored_password is None:
-            flash(_('应用不存在'))
+            flash('应用不存在')
 
             return render_template('user/add-app.html', apps=apps)
 
@@ -75,13 +75,13 @@ def add_app():
                     )
                 db.commit()
 
-                flash(_('应用添加成功'))
+                flash('应用添加成功')
 
                 return redirect(url_for('user.add_app'))
             else:
-                flash(_('该应用已经在应用列表中'))
+                flash('该应用已经在应用列表中')
         else:
-            flash(_('密码错误'))
+            flash('密码错误')
 
     return render_template('user/add-app.html', apps=apps)
 

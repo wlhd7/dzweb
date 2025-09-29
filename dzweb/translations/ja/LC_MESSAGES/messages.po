@@ -1,4 +1,4 @@
-# English translations for PROJECT.
+# Japanese translations for PROJECT.
 # Copyright (C) 2025 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
@@ -8,11 +8,11 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2025-09-29 15:01+0800\n"
-"PO-Revision-Date: 2025-09-14 10:07+0800\n"
+"PO-Revision-Date: 2025-09-29 14:49+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: en\n"
-"Language-Team: en <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,89 +20,87 @@ msgstr ""
 
 #: dzweb/routes/auth.py:15
 msgid "请先登陆用户"
-msgstr "Please login your user account."
+msgstr "まずはユーザーにログインしてください。"
 
 #: dzweb/routes/auth.py:77
 msgid "用户已登陆, 请查看右上角"
-msgstr "The user is already logged in. Please check the upper right corner."
+msgstr "ユーザーは既にログインしています。右上をご確認ください。"
 
 #: dzweb/routes/auth.py:82
 msgid "用户不存在."
-msgstr "The user doesn't exist."
+msgstr "ユーザーが存在しません。"
 
 #: dzweb/routes/auth.py:87
 msgid "密码错误."
-msgstr "Incorrect password."
+msgstr "パスワードが間違っています。"
 
 #: dzweb/routes/message.py:67
 msgid "匿名"
-msgstr "Anonymous"
+msgstr "匿名（とくめい）"
 
 #: dzweb/templates/base.html:37
 msgid "主页"
-msgstr "Homepage"
+msgstr "ホームページ"
 
 #: dzweb/templates/base.html:39 dzweb/templates/base.html:41
 msgid "注销"
-msgstr "Logout"
+msgstr "ログアウト"
 
 #: dzweb/templates/auth/register.html:16 dzweb/templates/base.html:44
 msgid "注册"
-msgstr "Register"
+msgstr "登録"
 
 #: dzweb/templates/auth/login.html:16 dzweb/templates/base.html:45
 msgid "登陆"
-msgstr "Login"
+msgstr "ログイン"
 
 #: dzweb/templates/base.html:52
 msgid "首页"
-msgstr "Home"
+msgstr "ホームページ"
 
 #: dzweb/templates/about/main.html:10 dzweb/templates/base.html:53
 msgid "关于我们"
-msgstr "About Us"
+msgstr "私たちについて"
 
 #: dzweb/templates/base.html:54 dzweb/templates/home/main.html:75
 #: dzweb/templates/product/display.html:3
 msgid "产品展示"
-msgstr "Product"
+msgstr "製品展示"
 
 #: dzweb/templates/base.html:55 dzweb/templates/case/main.html:10
 msgid "经典案例"
-msgstr "Case"
+msgstr "代表事例"
 
 #: dzweb/templates/base.html:56 dzweb/templates/service/main.html:10
 #: dzweb/templates/service/main.html:16 dzweb/templates/service/service.html:3
 msgid "服务体系"
-msgstr "Service System"
+msgstr "サービス体系"
 
 #: dzweb/templates/base.html:57 dzweb/templates/human/main.html:15
 msgid "人力资源"
-msgstr "Human Resources"
+msgstr "人事"
 
 #: dzweb/templates/base.html:58 dzweb/templates/contact/contact-us.html:3
 #: dzweb/templates/contact/location.html:3 dzweb/templates/contact/main.html:10
 #: dzweb/templates/contact/main.html:16
 msgid "联系我们"
-msgstr "Contact Us"
+msgstr "お問い合わせ"
 
 #: dzweb/templates/base.html:59 dzweb/templates/message/main.html:15
 msgid "在线留言"
-msgstr "Message"
+msgstr "オンラインメッセージ"
 
 #: dzweb/templates/base.html:66
 msgid "版权所有：广州东振机电设备有限公司"
-msgstr "Copyright: Guangzhou Dongzhen Electromechanical Equipment Co., Ltd."
+msgstr "著作権：広州東振機電設備有限公司"
 
 #: dzweb/templates/base.html:67
 msgid "电话：020-31135070 &nbsp;&nbsp;&nbsp;&nbsp;邮箱：Dongzhen@vip.163.com"
-msgstr ""
-"Telephone: 020-31135070 &nbsp;&nbsp;&nbsp;&nbsp;Email: "
-"Dongzhen@vip.163.com"
+msgstr "電話: 020-31135070 &nbsp;&nbsp;&nbsp;&nbsp;メールアドレス: Dongzhen@vip.163.com"
 
 #: dzweb/templates/base.html:68 dzweb/templates/contact/contact-us.html:11
 msgid "地址：广州市番禺区石基镇桥山村竹园岗一街2号"
-msgstr "Address: No. 2, Zhuyuangang 1st Street, Qiaoshan Village, Shiji Town, Panyu District, Guangzhou City"
+msgstr "住所：広州市番禺区石基鎮橋山村竹園崗一街2号"
 
 #: dzweb/templates/macro.html:17
 msgid "联系方式"
@@ -249,19 +247,19 @@ msgstr ""
 
 #: dzweb/templates/auth/login.html:3 dzweb/templates/auth/login.html:7
 msgid "用户登陆"
-msgstr "User Login"
+msgstr ""
 
 #: dzweb/templates/auth/login.html:10 dzweb/templates/auth/register.html:10
 msgid "用户名"
-msgstr "Username"
+msgstr ""
 
 #: dzweb/templates/auth/login.html:13 dzweb/templates/auth/register.html:13
 msgid "密码"
-msgstr "Password"
+msgstr ""
 
 #: dzweb/templates/auth/register.html:3 dzweb/templates/auth/register.html:7
 msgid "用户注册"
-msgstr "Register"
+msgstr ""
 
 #: dzweb/templates/case/ass.html:5 dzweb/templates/case/ass.html:8
 #: dzweb/templates/case/main.html:24 dzweb/templates/case/robot-welding.html:8
@@ -443,9 +441,8 @@ msgstr ""
 
 #: dzweb/templates/message/create.html:5
 #: dzweb/templates/message/message-board.html:6
-#, fuzzy
 msgid "留言"
-msgstr "Message"
+msgstr ""
 
 #: dzweb/templates/message/mailbox.html:5 dzweb/templates/message/main.html:21
 msgid "信箱"
@@ -554,15 +551,6 @@ msgstr ""
 msgid "下一页"
 msgstr ""
 
-#~ msgid "公司历史"
-#~ msgstr ""
-
-#~ msgid "用户登陆 - 东振"
-#~ msgstr "User Login - Dongzhen"
-
-#~ msgid "用户注册 - 东振"
-#~ msgstr "Register - Dongzhen"
-
 #~ msgid "抱歉，图片格式限制，请上传文件扩展名为 jpg 或 png 的图片"
 #~ msgstr ""
 
@@ -570,7 +558,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "应用不存在"
-#~ msgstr "User doesn't exist."
+#~ msgstr ""
 
 #~ msgid "应用添加成功"
 #~ msgstr ""
@@ -579,7 +567,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "密码错误"
-#~ msgstr "Incorrect password."
+#~ msgstr ""
 
 #~ msgid "应用编号"
 #~ msgstr ""

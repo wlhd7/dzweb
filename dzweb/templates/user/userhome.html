@@ -1,20 +1,20 @@
 {% extends 'user/main.html' %}
 
-{% block title %}{{ _('主页') }}{% endblock %}
+{% block title %}主页{% endblock %}
 
 {% block user %}
 <form method='post'>
 	<div class="app-number">
-		<label for="number">{{ _('应用编号') }}</label>
+		<label for="number">应用编号</label>
 		<input name="number" required>
-		<p class="red" id="app-number-tips">{{ _('提示') }}</p>
+		<p class="red" id="app-number-tips">提示</p>
 	</div>
 	<div>
-		<label for="password">{{ _('口令') }}</label>
+		<label for="password">口令</label>
 		<input name="password" required>
 	</div>
 
-	<input type="submit" value="{{ _('确定') }}">
+	<input type="submit" value="确定">
 
 	{% for message in get_flashed_messages() %}
 	<p>{{ message }}</p>
