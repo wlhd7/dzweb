@@ -1,3 +1,5 @@
+drop table if exists messages;
+
 create table if not exists users (
 	id integer primary key autoincrement,
 	username text unique not null,
