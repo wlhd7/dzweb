@@ -17,14 +17,14 @@
 				<div class="cblock-content">
 					<a href="{{ url_for('user.set_color') }}">
 						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
-						{{ _('设置用户名颜色') }}</a>
+						设置用户名颜色</a>
 					<hr>
 
 					{% if g.applist %}
 						{% for appname, appurl in g.appname_appurl_dict.items() %}
 							<a href="{{ url_for(appurl) }}">
 								<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
-								{{ _(appname) }}</a>
+								{{ appname }}</a>
 
 							{% if not loop.last %}
 							<hr>

@@ -12,7 +12,7 @@ create table if not exists products (
 	id integer primary key autoincrement,
 	productname text not null,
 	brief text,
-	created timestamp not null default (datetime('now', 'location')),
+	created timestamp not null default (datetime('now', 'localtime')),
 	category text not null,
 	filename text not null
 );

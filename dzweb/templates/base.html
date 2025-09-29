@@ -47,7 +47,7 @@
 	<nav>
 		<a class="{% if 'home' in request.path %}active{% endif %}" href="{{ url_for('home.main') }}">⏺ {{ _('首页') }}</a>
 		<a class="{% if 'about' in request.path %}active{% endif %}" href="{{ url_for('about.introduction') }}">⏺ {{ _('关于我们') }}</a>
-		<a class="{% if 'product' in request.path %}active{% endif %}" href="{{ url_for('product.equipment') }}">⏺ {{ _('产品展示') }}</a>
+		<a class="{% if 'product' in request.path %}active{% endif %}" href="{{ url_for('product.non_standard') }}">⏺ {{ _('产品展示') }}</a>
 		<a class="{% if 'case' in request.path %}active{% endif %}" href="{{ url_for('case.extruder') }}">⏺ {{ _('经典案例') }}</a>
 		<a class="{% if 'service' in request.path %}active{% endif %}" href="{{ url_for('service.service') }}">⏺ {{ _('服务体系') }}</a>
 		<a class="{% if 'human' in request.path %}active{% endif %}" href="{{ url_for('human.hire') }}">⏺ {{ _('人力资源') }}</a>

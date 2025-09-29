@@ -35,7 +35,7 @@ def edit_product_permission_required(view):
 @login_required
 def create():
     if request.method == "POST":
-        productname = request.form['productname']
+        productname = request.form['productname'].strip()
         brief = request.form['brief']
         category = request.form['category']
         file = request.files['file']
@@ -67,10 +67,13 @@ def update(id):
         productname = request.form['productname']
         brief = request.form['brief']
         category = request.form['category']
+        file = request.files['file']
+        random_filename = generate_random_filename(file.filename)
+        file.save(os.path.join(current_app.config['UPLOAD_FOLDER'], random_filename))
 
         db.execute(
-                'UPDATE products SET productname = ?, brief = ?, category = ? WHERE id = ?',
-                (productname, brief, category, id)
+                'UPDATE products SET productname = ?, brief = ?, category = ?, filename = ? WHERE id = ?',
+                (productname, brief, category, random_filename, id)
             )
         db.commit()
 
@@ -160,9 +163,9 @@ def automation():
     return get_page('automation')
 
 
-@bp.route('/non-standard')
+@bp.route('/non_standard')
 def non_standard():
-    return get_page('non-standard')
+    return get_page('non_standard')
 
 
 @bp.route('/robotics')

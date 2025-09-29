@@ -1,14 +1,14 @@
 {% extends 'user/main.html' %}
 
-{% block title %}{{ _('设置用户名颜色') }}{% endblock %}
+{% block title %}设置用户名颜色{% endblock %}
 
 {% block user %}
 <div class="dblock-content">
 <form method='post'>
-	<label for="color-picker">{{ _('请选择颜色') }}</label>
+	<label for="color-picker">请选择颜色</label>
 	<input type="color" name="color" value="#4682b4">
 
-	<input type="submit" value="{{ _('确定') }}">
+	<input type="submit" value="确定">
 </form>
 </div>
 {% endblock %}
