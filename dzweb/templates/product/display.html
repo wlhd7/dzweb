@@ -35,6 +35,8 @@
 
 	<img src="{{ url_for('instance_files', filename=product['filename']) }}">
 
+	<button onclick="history.back()">返回</button>
+
 	<script>
 		function findElementsByText(text, tagName = 'a') {
 			const elements = document.querySelectorAll(tagName);
