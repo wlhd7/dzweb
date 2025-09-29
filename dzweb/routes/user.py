@@ -31,6 +31,7 @@ def load_added_apps():
 
 
 @bp.route('/add-app', methods=['GET', 'POST'])
+@login_required
 def add_app():
     db = get_db()
 
@@ -86,6 +87,7 @@ def add_app():
 
 
 @bp.route('/set-color', methods=['GET', 'POST'])
+@login_required
 def set_color():
     if request.method == "POST":
         color = request.form['color']
@@ -103,6 +105,7 @@ def set_color():
 
 
 @bp.route('/weekend-overtime', methods=['GET', 'POST'])
+@login_required
 def weekend_overtime():
     cleanup_old_data()
 
@@ -314,10 +317,12 @@ def cleanup_old_data():
 
 
 @bp.route('/edit-produt-permisssion')
+@login_required
 def edit_product_permission():
     return render_template('user/edit-product-permission.html')
 
 
 @bp.route('/edit-hir-permission')
+@login_required
 def edit_hire_permission():
     return render_template('user/edit-hire-permission.html')
