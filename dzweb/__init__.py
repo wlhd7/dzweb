@@ -41,6 +41,6 @@ def create_app(test_config=None):
 
     init_app(app)
 
-    app.add_url_rule('/', endpoint='home.main')
+    app.add_url_rule('/', endpoint='index')
 
     return app

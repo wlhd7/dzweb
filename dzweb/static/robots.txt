@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.dongzhen.cn/static/sitemap.xml
+
+# Disallow all major crawlers
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /user/
+Disallow: /auth/
+
+# Allow all other pages
+Allow: /static/

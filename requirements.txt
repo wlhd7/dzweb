@@ -1,0 +1,16 @@
+babel==2.17.0
+bcrypt==5.0.0
+blinker==1.9.0
+click==8.3.0
+# Editable Git install with no remote (dzweb==1.0.0)
+-e /var/www/dzweb
+Flask==3.1.2
+flask-babel==4.0.0
+gunicorn==23.0.0
+itsdangerous==2.2.0
+Jinja2==3.1.6
+MarkupSafe==3.0.3
+packaging==25.0
+pytz==2025.2
+-e git+ssh://git@github.com/wlhd7/dz-weekend-overtime.git@b43af036804f1d901046700dae466798d8852d95#egg=weekend_overtime
+Werkzeug==3.1.3

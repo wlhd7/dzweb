@@ -1,17 +1,50 @@
 <!doctype html>
 
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="with=device-width, initial-scale=1.0">
+	<meta name="baidu-site-verification" content="codeva-itXnARhqFg" />
+
+	<meta name="description" content="广州东振机电设备有限公司 - 专业自动化设备、工装夹具、铁屑压块机制造商。提供非标设备设计、制造、销售一站式服务，应用于汽车、制冷、机械电子等行业。">
+	<meta name="keywords" content="自动化设备,工装夹具,非标设备,广州东振,机电设备,非标零件,机器人项目,铁屑压块机">
+	<meta name="author" content="广州东振机电设备有限公司">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="广州东振机电设备有限公司">
 	{% block head %}
-	<title>{% block title %}{% endblock %}</title>
+
+	<title>{% block title %}{% endblock %}_{{ _('广州东振机电设备有限公司') }}</title>
 
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/header_tailer.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/content.css') }}">
+	{% endblock %}
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
 	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
-	{% endblock %}
+
+	<link rel="canonical" href="{{ request.url }}">
+
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Organization",
+		"name": "广州东振机电设备有限公司",
+		"url": "{{ request.url_root }}",
+		"logo": "{{ request.url_root }}static/images/logo.jpg",
+		"description": "专业非标设备、自动化设备、工装夹具、机器人项目、铁屑压块机制造商",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "广州市番禺区石基镇桥山村竹园岗一街2号",
+			"addressLocality": "广州市",
+			"addressRegion": "广东省"
+		},
+		"telephone": "020-34586222",
+		"email": "Dongzhen@vip.163.com",
+		"foundingDate": "2007-06-13"
+	}
+	</script>
 </head>
 
 
@@ -50,8 +83,8 @@
 		</div>
 	</div>
 
-	<nav>
-		<a class="{% if 'home' in request.path %}active{% endif %}" href="{{ url_for('home.main') }}">⏺ {{ _('首页') }}</a>
+	<nav role="navigation">
+		<a class="{% if 'home' in request.path %}active{% endif %}" href="{{ url_for('index') }}">⏺ {{ _('首页') }}</a>
 		<a class="{% if 'about' in request.path %}active{% endif %}" href="{{ url_for('about.introduction') }}">⏺ {{ _('关于我们') }}</a>
 		<a class="{% if 'product' in request.path %}active{% endif %}" href="{{ url_for('product.non_standard') }}">⏺ {{ _('产品展示') }}</a>
 		<a class="{% if 'case' in request.path %}active{% endif %}" href="{{ url_for('case.extruder') }}">⏺ {{ _('经典案例') }}</a>
@@ -64,9 +97,9 @@
 
 {% block content %}{% endblock %}
 
-<footer>
+<footer role="contentinfo">
 	<div>{{ _('版权所有：广州东振机电设备有限公司') }}</div>
-	<div>{{ _('电话：020-31135070 &nbsp;&nbsp;&nbsp;&nbsp;邮箱：Dongzhen@vip.163.com') }}</div>
+	<div>{{ _('电话：020-34586222 &nbsp;&nbsp;&nbsp;&nbsp;邮箱：Dongzhen@vip.163.com') }}</div>
 	<div>{{ _('地址：广州市番禺区石基镇桥山村竹园岗一街2号') }}</div>
 </footer>
 
