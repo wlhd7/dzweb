@@ -43,4 +43,8 @@
 				<input type="reset" value="{{ _('重置') }}" class="message-mailbox-operate">
 			</div>
 		</form>
+
+		{% for message in get_flashed_messages() %}
+			<p>{{ message }}</p>
+		{% endfor %}
 {% endblock %}

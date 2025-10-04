@@ -18,6 +18,7 @@
 			<div class="cblock">
 				<div class="cblock-title">
 					<p>{{ _('产品类别') }}</p>
+					<a class="steelblue link" href="{{ url_for('product.non_standard') }}">{{ _('详细介绍') }}</a>
 				</div>
 
 				<div class="cblock-content">
@@ -75,7 +76,7 @@
 			<div class="cblock">
 				<div class="cblock-title">
 					<p>{{ _('产品展示') }}</p>
-
+					<a class="steelblue link" href="{{ url_for('product.non_standard') }}">{{ _('详细介绍') }}</a>
 				</div>
 				<div class="cblock-content cblock-content-product">
 					{% for product in products %}

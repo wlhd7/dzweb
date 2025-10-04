@@ -4,12 +4,12 @@ from .routes import bps, init_app
 from .lang import init_lang
 from .db import init_db
 from .logging import setup_logging
+from .mail import init_mail
 
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
-            SECRET_KEY='dev',
             DATABASE=os.path.join(app.instance_path, 'dzweb.sqlite'),
             BABEL_DEFAUTL_LOCALE='zh',
             UPLOAD_FOLDER=os.path.join(app.instance_path, 'uploads')
@@ -40,6 +40,8 @@ def create_app(test_config=None):
     init_db(app)
 
     init_app(app)
+
+    init_mail(app)
 
     app.add_url_rule('/', endpoint='index')
 

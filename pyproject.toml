@@ -9,7 +9,9 @@ classifiers = ["Private :: Do Not Upload"]
 requires-python = ">=3.8"
 dependencies = [
 	"flask",
-	"bcrypt"
+	"bcrypt",
+	"flask-mail",
+	"flask-babel"
 ]
 
 [build-system]

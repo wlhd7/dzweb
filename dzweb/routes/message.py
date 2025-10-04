@@ -1,6 +1,8 @@
-from flask import Blueprint, render_template, request, redirect, url_for, g
+from flask import Blueprint, render_template, request, redirect, url_for, g, current_app, flash
 from dzweb.db import get_db
 from flask_babel import _
+from dzweb.mail import send_feedback_email
+
 
 bp = Blueprint('message', __name__, url_prefix='/message')
 
@@ -73,15 +75,50 @@ def message_board():
 @bp.route('/', methods=['GET', 'POST'])
 def mailbox():
     if request.method == 'POST':
-        title = request.form['title']
-        content = request.form['content']
-        liaison = request.form['liaison']
-        unit = request.form['unit']
-        address = request.form['address']
-        telephone = request.form['telephone']
-        mobilephone = request.form['mobilephone']
-        mail = request.form['mail']
-
-        return redirect(url_for('message.mailbox'))
-
+        try:
+            # 获取表单数据
+            title = request.form.get('title', '').strip()
+            content = request.form.get('content', '').strip()
+            liaison = request.form.get('liaison', '').strip()
+            unit = request.form.get('unit', '').strip()
+            address = request.form.get('address', '').strip()
+            telephone = request.form.get('telephone', '').strip()
+            mobilephone = request.form.get('mobilephone', '').strip()
+            mail_address = request.form.get('mail', '').strip()
+            
+            current_app.logger.info(f"收到反馈表单: {title}, 联系人: {liaison}, 邮箱: {mail_address}")
+            
+            # 验证必填字段
+            if not all([title, content, liaison, unit, mail_address]):
+                flash('请填写所有必填字段', 'error')
+                return render_template('message/mailbox.html')
+            
+            # 验证邮箱格式
+            if '@' not in mail_address:
+                flash('请输入有效的邮箱地址', 'error')
+                return render_template('message/mailbox.html')
+            
+            # 发送邮件
+            success = send_feedback_email(
+                title=title,
+                content=content,
+                liaison=liaison,
+                unit=unit,
+                address=address,
+                telephone=telephone,
+                mobilephone=mobilephone,
+                mail_address=mail_address
+            )
+            
+            if success:
+                flash('感谢您的反馈，我们会尽快处理！', 'success')
+            else:
+                flash('邮件发送失败，请稍后重试或联系管理员', 'error')
+            
+        except Exception as e:
+            current_app.logger.error(f"处理反馈表单失败: {str(e)}", exc_info=True)
+            flash('系统错误，请稍后重试', 'error')
+        
+        return render_template('message/mailbox.html')
+    
     return render_template('message/mailbox.html')
