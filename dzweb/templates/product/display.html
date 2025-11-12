@@ -2,6 +2,22 @@
 
 {% block title %}{{ _('产品展示') }}{% endblock %}
 
+{% block head %}
+	{{ super() }}
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Product",
+		"name": {{ product['productname']|tojson }},
+		"image": ["{{ url_for('instance_files', filename=product['filename'], _external=True) }}"],
+		"description": {{ (product['brief'] or '产品展示')|tojson }},
+		"sku": "{{ product['id'] }}",
+		"category": {{ product['category']|tojson }},
+		"url": "{{ url_for('product.display', id=product['id'], _external=True) }}"
+	}
+	</script>
+{% endblock %}
+
 {% block product %}
 	<h2>{{ _(product['productname']) }}</h2>
 

@@ -10,10 +10,11 @@ from .mail import init_mail
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
-            DATABASE=os.path.join(app.instance_path, 'dzweb.sqlite'),
-            BABEL_DEFAUTL_LOCALE='zh',
-            UPLOAD_FOLDER=os.path.join(app.instance_path, 'uploads')
-        )
+        DATABASE=os.path.join(app.instance_path, 'dzweb.sqlite'),
+        # Corrected typo: BABEL_DEFAULT_LOCALE
+        BABEL_DEFAULT_LOCALE='zh',
+        UPLOAD_FOLDER=os.path.join(app.instance_path, 'uploads')
+    )
 
     if test_config is None:
         app.config.from_pyfile('config.py', silent=True)

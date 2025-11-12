@@ -18,6 +18,12 @@
 	<meta property="og:image" content="https://www.dongzhen.cn/static/preview.jpg">
 	<meta property="og:image:type" content="image/jpg">
 
+	<!-- Twitter cards for consistent previews -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="广州东振机电设备有限公司 - 专业非标设备、自动化设备、工装夹具、机器人项目、铁屑压块机制造商">
+	<meta name="twitter:description" content="广州东振机电设备有限公司 - 专业自动化设备、工装夹具、铁屑压块机制造商。提供非标设备设计、制造、销售一站式服务，应用于汽车、制冷、机械电子等行业。">
+	<meta name="twitter:image" content="https://www.dongzhen.cn/static/preview.jpg">
+
 	{% block head %}
 
 	<title>{% block title %}{% endblock %}_{{ _('广州东振机电设备有限公司') }}</title>
@@ -31,7 +37,11 @@
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
 	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
 
+	{%- if request.path == '/' -%}
+	<link rel="canonical" href="https://www.dongzhen.cn/">
+	{%- else -%}
 	<link rel="canonical" href="{{ request.url }}">
+	{%- endif -%}
 
 
 	<script type="application/ld+json">
@@ -55,37 +65,19 @@
 	}
 	</script>
 
-	{%- if request.path == '/' %}
+	<!-- WebSite schema with SearchAction for sitelink search box -->
 	<script type="application/ld+json">
 	{
-		"@context": "https://schema.org",
-		"@type": "ItemList",
-		"name": "Featured products",
-		"itemListElement": [
-			{
-				"@type": "ListItem",
-				"position": 1,
-				"url": "https://www.dongzhen.cn/product/62/display"
-			},
-			{
-				"@type": "ListItem",
-				"position": 2,
-				"url": "https://www.dongzhen.cn/product/61/display"
-			},
-			{
-				"@type": "ListItem",
-				"position": 3,
-				"url": "https://www.dongzhen.cn/product/60/display"
-			},
-			{
-				"@type": "ListItem",
-				"position": 4,
-				"url": "https://www.dongzhen.cn/product/59/display"
-			}
-		]
+	  "@context": "https://schema.org",
+	  "@type": "WebSite",
+	  "url": "https://www.dongzhen.cn/",
+	  "potentialAction": {
+	    "@type": "SearchAction",
+	    "target": "https://www.dongzhen.cn/product/search?q={search_term_string}",
+	    "query-input": "required name=search_term_string"
+	  }
 	}
 	</script>
-	{%- endif %}
 </head>
 
 

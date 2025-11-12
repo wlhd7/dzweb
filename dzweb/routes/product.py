@@ -6,6 +6,7 @@ from flask_babel import _
 from dzweb.routes.auth import login_required
 from werkzeug.exceptions import abort
 import math
+from functools import wraps
 
 
 bp = Blueprint('product', __name__, url_prefix='/product')
@@ -28,7 +29,8 @@ def generate_random_filename(original_filename) -> str:
 def edit_product_permission_required(view):
     @wraps(view)
     def wrapped_view(**kwargs):
-        pass
+        # Placeholder for future permission logic
+        return view(**kwargs)
 
 
 @bp.route('/create', methods=['GET', 'POST'])
@@ -171,3 +173,20 @@ def non_standard():
 @bp.route('/robotics')
 def robotics():
     return get_page('robotics')
+
+
+@bp.route('/search')
+def search():
+    """Simple product search by name or brief. Query with ?q=keyword."""
+    q = request.args.get('q', '').strip()
+    results = []
+    if q:
+        like = f"%{q}%"
+        results = get_db().execute(
+            'SELECT id, productname, filename, brief FROM products '
+            'WHERE productname LIKE ? OR brief LIKE ? '
+            'ORDER BY id DESC LIMIT 50',
+            (like, like)
+        ).fetchall()
+
+    return render_template('product/search.html', q=q, results=results)

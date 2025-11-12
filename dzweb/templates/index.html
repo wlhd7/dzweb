@@ -9,6 +9,24 @@
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 
 	<meta name="description" content="广州东振机电设备有限公司 - 专业生产自动化设备、工装夹具、非标零件、铁屑压块机。18年行业经验，服务汽车、制冷、机械电子等行业，提供完善的技术支持和服务体系。">
+
+	{# Dynamic ItemList for featured products (first 4) #}
+	<script type="application/ld+json">
+	{
+	  "@context": "https://schema.org",
+	  "@type": "ItemList",
+	  "name": "Featured products",
+	  "itemListElement": [
+	  {% for p in products[:4] %}
+	    {
+	      "@type": "ListItem",
+	      "position": {{ loop.index }},
+	      "url": "{{ url_for('product.display', id=p['id'], _external=True) }}"
+	    }{% if not loop.last %},{% endif %}
+	  {% endfor %}
+	  ]
+	}
+	</script>
 {% endblock %}
 
 

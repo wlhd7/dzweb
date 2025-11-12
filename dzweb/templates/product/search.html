@@ -1,0 +1,30 @@
+{% extends 'product/main1.html' %}
+
+{% block title %}{{ _('产品搜索') }}{% endblock %}
+
+{% block product %}
+  <form method="get" action="{{ url_for('product.search') }}" style="margin-bottom:1rem;">
+    <input type="text" name="q" value="{{ q }}" placeholder="{{ _('输入关键字') }}" style="width:60%;padding:.4rem;">
+    <button type="submit">{{ _('搜索') }}</button>
+  </form>
+
+  {% if q and not results %}
+    <p>{{ _('未找到相关产品') }}</p>
+  {% endif %}
+
+  {% if results %}
+    <ul style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;">
+      {% for p in results %}
+      <li style="border:1px solid #ddd;padding:.5rem;border-radius:4px;">
+        <a href="{{ url_for('product.display', id=p['id']) }}" class="steelblue link" style="text-decoration:none;">
+          <img src="{{ url_for('instance_files', filename=p['filename']) }}" style="max-width:100%;height:auto;display:block;margin-bottom:.5rem;">
+          <strong>{{ p['productname'] }}</strong>
+        </a>
+        {% if p['brief'] %}
+          <p style="font-size:.8rem;line-height:1.2;">{{ p['brief'][:60] }}{% if p['brief']|length > 60 %}...{% endif %}</p>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock %}
