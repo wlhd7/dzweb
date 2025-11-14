@@ -4,54 +4,50 @@
 
 {% block head %}
 	{{ super() }}
-	<link rel="stylesheet" href="{{ url_for('static', filename="css/human.css") }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/human.css') }}">
 {% endblock %}
 
 {% block content %}
-	<div class="ablock">
-		<div class="bblock" id="first-column">
-			<div class="cblock">
-				<div class="cblock-title">
-					<p>{{ _('人力资源') }}</p>
+	<div class="block" id="first-column">
+		<div class="sector">
+			<div class="sector-title">
+				<p>{{ _('招贤纳士') }}</p>
 
-					{% if g.user %}
-						{% if g.user['applist'] %}
-						{% if '2' in g.user['applist'] %}
-						<a class="blue link" href="{{ url_for('human.create_position') }}">{{ _('新增') }}</a>
-						{% endif %}
-						{% endif %}
+				{% if g.user %}
+					{% if g.user['applist'] %}
+					{% if '2' in g.user['applist'] %}
+					<a class="blue link" href="{{ url_for('human.create_position') }}">{{ _('新增') }}</a>
 					{% endif %}
-				</div>
-
-				<div class="cblock-content">
-					<a href="{{ url_for('human.hire') }}">
-						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
-						{{ _('人才招聘') }}</a>					
-					<hr>
-					<a href="{{ url_for('human.idea') }}">
-						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
-						{{ _('人才理念') }}</a>
-				</div>
-
+					{% endif %}
+				{% endif %}
 			</div>
 
+			<div class="sector-content">
+				<a href="{{ url_for('human.hire') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('招贤纳士') }}</a>					
+				<hr>
+				<a href="{{ url_for('human.idea') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('人才理念') }}</a>
+			</div>
 
-			{{ side_bar_imag() }}
 		</div>
 
-		<div class="bblock" id="second-column">
-			<div class="dblock">
-				<div class="dblock-title">
-					<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
-					<p>&nbsp; {% block title %}{% endblock %}</p>
-				</div>
-			
-				
-				{% block human %}{% endblock %}
-			</div>	
-		</div>
+
+		{{ side_bar_imag() }}
 	</div>
 
-
+	<div class="block" id="second-column">
+		<div class="dblock">
+			<div class="dblock-title">
+				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
+				<p>&nbsp; {% block title %}{% endblock %}</p>
+			</div>
+		
+			
+			{% block human %}{% endblock %}
+		</div>	
+	</div>
 {% endblock %}
 

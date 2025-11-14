@@ -4,60 +4,49 @@
 
 {% block head %}
 	{{ super() }}
-	<link rel="stylesheet" href="{{ url_for('static', filename="css/product.css") }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/product.css') }}">
 {% endblock %}
 
 {% block content %}
-	<div class="ablock">
-		<div class="bblock" id="first-column">
-			<div class="cblock">
-				<div class="cblock-title">
-					<p>{{ _('产品类别') }}</p>
+	<div class="block first-column">
+		<div class="sector">
+			<div class="sector-title">
+				<p>{{ _('产品类别') }}</p>
 
-					{% if g.user %}
-						<a href="{{ url_for('product.create') }}">新增</a>
-					{% endif %}
-				</div>
-
-				<div class="cblock-content">
-					<a href="{{ url_for('product.non_standard') }}">
-						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
-						{{ _('非标零件') }}</a>
-					<hr>
-					<a href="{{ url_for('product.automation') }}">
-						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
-						{{ _('自动化设备') }}</a>
-					<hr>
-					<a href="{{ url_for('product.fixture') }}">
-						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
-						{{ _('工装夹具') }}</a>
-					<hr>
-					<a href="{{ url_for('product.robotics') }}">
-						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
-						{{ _('机器人项目') }}</a>
-					<hr>
-					<a href="{{ url_for('product.equipment') }}">
-						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
-						{{ _('铁屑压块机') }}</a>
-					<hr>
-				</div>
+				{% if g.user %}
+					<a href="{{ url_for('product.create') }}">新增</a>
+				{% endif %}
 			</div>
 
-			{{ side_bar_imag() }}
-		</div>
-
-		<div class="bblock" id="second-column">
-			<div class="dblock">
-				<div class="dblock-title">
-					<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
-					<p>&nbsp; {% block title %}{% endblock %}</p>
-
-				</div>	
-			
-				<div class="dblock-content">
-					{% block product %}{% endblock %}
-				</div>
+			<div class="sector-content">
+				<a href="{{ url_for('product.non_standard') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('非标零件') }}</a>
+				<hr>
+				<a href="{{ url_for('product.automation') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('自动化设备') }}</a>
+				<hr>
+				<a href="{{ url_for('product.fixture') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('工装夹具') }}</a>
 			</div>
 		</div>
-	</div>	
+
+		{{ side_bar_imag() }}
+	</div>
+
+	<div class="block" id="second-column">
+		<div class="dblock">
+			<div class="dblock-title">
+				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
+				<p>&nbsp; {% block title %}{% endblock %}</p>
+
+			</div>	
+		
+			<div class="dblock-content">
+				{% block product %}{% endblock %}
+			</div>
+		</div>
+	</div>
 {% endblock %}

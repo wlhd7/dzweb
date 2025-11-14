@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+
+{% from 'macro.html' import para %}
+
+{% from 'macro.html' import side_bar_imag %}
+
+{% block title %}{{ _('专业非标零件，自动化设备制造商') }}{% endblock %}
+
+{% block head %}
+	{{ super() }}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+
+	<meta name="description" content="广州东振机电设备有限公司 - 专业生产自动化设备、工装夹具、非标零件、铁屑压块机。18年行业经验，服务汽车、制冷、机械电子等行业，提供完善的技术支持和服务体系。">
+
+	{# Dynamic ItemList for featured products (first 4) #}
+	<script type="application/ld+json">
+	{
+	  "@context": "https://schema.org",
+	  "@type": "ItemList",
+	  "name": "Featured products",
+	  "itemListElement": [
+	  {% for p in products[:4] %}
+	    {
+	      "@type": "ListItem",
+	      "position": {{ loop.index }},
+	      "url": "{{ url_for('product.display', id=p['id'], _external=True) }}"
+	    }{% if not loop.last %},{% endif %}
+	  {% endfor %}
+	  ]
+	}
+	</script>
+{% endblock %}
+
+
+{% block content%}
+	<div class="block first-column">
+		<div class="sector">
+			<div class="sector-title">
+				<p>{{ _('产品类别') }}</p>
+				<a class="steelblue link" href="{{ url_for('product.non_standard') }}">{{ _('详细介绍') }}</a>
+			</div>
+
+			<div class="sector-content">
+				<a href="{{ url_for('product.non_standard') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('非标零件') }}</a>
+				<hr>
+				<a href="{{ url_for('product.automation') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('自动化设备') }}</a>
+				<hr>
+				<a href="{{ url_for('product.fixture') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('工装夹具') }}</a>
+			</div>
+		</div>
+
+		<div class="sector">
+			<div class="sector-title">
+				<p>{{ _('关于我们') }}</p>
+			</div>
+
+			<div class="sector-content">
+				<a href="{{ url_for('home.introduction') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('公司简介') }}</a>					
+				<hr>
+				<a href="{{ url_for('home.history') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('公司历程') }}</a>
+				<hr>
+				<a href="{{ url_for('home.organization') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('机构组织') }}</a>
+				<hr>
+				<a href="{{ url_for('home.strategy') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('发展战略') }}</a>
+				<hr>
+				<a href="{{ url_for('home.performance') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('公司业绩') }}</a>
+				<hr>
+				<a href="{{ url_for('home.style') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('员工风采') }}</a>
+			</div>
+
+		</div>
+
+
+		{{ side_bar_imag() }}
+	</div>
+	
+	<div class="block second-column">
+		<div class="sector">
+			<div class="sector-title">
+				<p>{{ _('公司简介') }}</p>
+				<a class="steelblue link" href="{{ url_for('home.introduction') }}">{{ _('详细介绍') }}</a>
+			</div>
+
+			<div class="sector-content index-image-building-sector">
+				<img src='/static/images/home-building.jpg'>
+
+				{{ para(_('广州东振机电设备有限公司:是一家集设计、制造、销售为一体的企业，长期致力于现代化工厂自动化设备的研究与制造。主要产品为:铁屑压块机，工装夹具、非标设备及非 标配件。产品广泛应用于汽车、制冷、机械电子等行业，为众多企业高效的生产提供了技术支持！')) }}
+			</div>
+		</div>
+
+		<div class="sector">
+			<div class="sector-title">
+				<p>{{ _('产品展示') }}</p>
+				<a class="steelblue link" href="{{ url_for('product.non_standard') }}">{{ _('详细介绍') }}</a>
+			</div>
+			<div class="sector-content sector-content-product">
+				{% for product in products %}
+					<a href="{{ url_for('product.display', id=product['id']) }}">
+						<img src="{{ url_for('instance_files', filename=product['filename']) }}">
+				
+						<p>{{ product['id'] }} {{ product['productname'] }}</p>
+					</a>
+				{% endfor %}
+			</div>
+
+		</div>
+	</div>
+
+	<div class="block third-column">
+		<div class="sector">
+			<div class="sector-title">
+				<p>{{ _('人才招聘') }}</p>
+
+				<a class="steelblue link" href="{{ url_for('human.hire') }}">{{ _('详细介绍') }}</a>
+			</div>
+
+			<div class="sector-content" id="home">
+				<span>{{ _('1.机械设计/主任工程师: 2名') }}</span>
+				<span>{{ _('职位要求:') }}</span>
+				<p>{{ _('大专以上学历,机电类专业,熟悉机械加工工艺；有丰富的工装夹模具等非标设计经验；从事设计工作三以上的经验,熟悉电动和气动控制；并能解决各类疑难问题、有良好的团队合作精神和沟通能力。') }}
+				</p>
+			</div>
+
+
+		</div>
+
+		<a href="{{ url_for('human.hire') }}">
+			<img src='/static/images/human-resource.jpg'>
+		</a>
+
+		<a href="{{ url_for('service.service') }}">
+			<img src='/static/images/service-system.jpg'>
+		</a>
+
+		<a href="{{ url_for('service.service') }}">
+			<img src='/static/images/service-system1.jpg'>
+		</a>
+		
+		<a href="{{ url_for('contact.contact_us') }}">
+			<img src='/static/images/contact-us.jpg'>
+		</a>
+
+	</div>
+
+{% endblock %}

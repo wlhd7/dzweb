@@ -3,50 +3,48 @@
 {% from 'macro.html' import side_bar_imag %}
 
 {% block content %}
-	<div class="ablock">
-		<div class="bblock" id="first-column">
-			<div class="cblock">
-				<div class="cblock-title">
-					<p>{{ _('经典案例') }}</p>
-				</div>
-
-				<div class="cblock-content">
-					<a href="{{ url_for('case.extruder') }}">
-						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
-						{{ _('铁屑挤压机') }}</a>					
-					<hr>
-					<a href="{{ url_for('case.assembly_line') }}">
-						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
-						{{ _('组装线') }}</a>
-					<hr>
-					<a href="{{ url_for('case.ass') }}">
-						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
-						{{ _('汽车转向系统装配线') }}</a>
-					<hr>
-					<a href="{{ url_for('case.robot_welding') }}">
-						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
-						{{ _('机器人焊接工作站') }}</a>
-				</div>
-
+	<div class="block first-column">
+		<div class="sector">
+			<div class="sector-title">
+				<p>{{ _('经典案例') }}</p>
 			</div>
 
+			<div class="sector-content">
+				<a href="{{ url_for('case.extruder') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('铁屑挤压机') }}</a>					
+				<hr>
+				<a href="{{ url_for('case.assembly_line') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('组装线') }}</a>
+				<hr>
+				<a href="{{ url_for('case.ass') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('汽车转向系统装配线') }}</a>
+				<hr>
+				<a href="{{ url_for('case.robot_welding') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('机器人焊接工作站') }}</a>
+			</div>
 
-			{{ side_bar_imag() }}
 		</div>
 
-		<div class="bblock" id="second-column">
-			<div class="dblock">
-				<div class="dblock-title">
-					<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
-					<p>&nbsp; {% block title %}{% endblock %}</p>
 
-				</div>
-				
-				<div class="dblock-content">
-					{% block case %}{% endblock %}
-				</div>
-			</div>	
-		</div>
+		{{ side_bar_imag() }}
+	</div>
+
+	<div class="block" id="second-column">
+		<div class="dblock">
+			<div class="dblock-title">
+				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
+				<p>&nbsp; {% block title %}{% endblock %}</p>
+
+			</div>
+			
+			<div class="dblock-content">
+				{% block case %}{% endblock %}
+			</div>
+		</div>	
 	</div>
 
 

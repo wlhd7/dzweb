@@ -3,35 +3,33 @@
 {% from 'macro.html' import side_bar_imag %}
 
 {% block content %}
-	<div class="ablock">
-		<div class="bblock" id="first-column">
-			<div class="cblock">
-				<div class="cblock-title">
-					<p>{{ _('服务体系') }}</p>
-				</div>
-
-				<div class="cblock-content">
-					<a href="{{ url_for('service.service') }}">
-						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
-						{{ _('服务体系') }}</a>					
-				</div>
-
+	<div class="block first-column">
+		<div class="sector">
+			<div class="sector-title">
+				<p>{{ _('服务体系') }}</p>
 			</div>
 
+			<div class="sector-content">
+				<a href="{{ url_for('service.service') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('服务体系') }}</a>					
+			</div>
 
-			{{ side_bar_imag() }}
 		</div>
 
-		<div class="bblock" id="second-column">
-			<div class="dblock">
-				<div class="dblock-title">
-					<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
-					<p>&nbsp; {% block title %}{% endblock %}</p>
-				</div>
+
+		{{ side_bar_imag() }}
+	</div>
+
+	<div class="block">
+		<div class="dblock">
+			<div class="dblock-title">
+				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
+				<p>&nbsp; {% block title %}{% endblock %}</p>
+			</div>
+		
 			
-				
-				{% block service %}{% endblock %}
-			</div>	
-		</div>
+			{% block service %}{% endblock %}
+		</div>	
 	</div>
 {% endblock %}

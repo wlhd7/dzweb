@@ -8,41 +8,37 @@
 {% endblock %}
 
 {% block content %}
-	<div class="ablock">
-		<div class="bblock" id="first-column">
-			<div class="cblock">
-				<div class="cblock-title">
-					<p>{{ _('在线留言') }}</p>
-				</div>
-
-				<div class="cblock-content">
-					<a href="{{ url_for('message.mailbox') }}">
-						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
-						{{ _('信箱') }}</a>					
-				</div>
-
+	<div class="block" id="first-column">
+		<div class="sector">
+			<div class="sector-title">
+				<p>{{ _('在线留言') }}</p>
 			</div>
 
-			{{ side_bar_imag() }}
+			<div class="sector-content">
+				<a href="{{ url_for('message.mailbox') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('信箱') }}</a>					
+			</div>
+
 		</div>
 
-		<div class="bblock" id="second-column">
-			<div class="dblock">
-				<div class="dblock-title">
-					<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
-					<p>&nbsp; {% block title %}{% endblock %}</p>
-
-					{% block leave_message %}{% endblock %}
-				</div>
-			
-				
-				<div class="dblock-content">
-					{% block message %}{% endblock %}
-				</div>
-			</div>	
-		</div>
+		{{ side_bar_imag() }}
 	</div>
 
+	<div class="block" id="second-column">
+		<div class="dblock">
+			<div class="dblock-title">
+				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
+				<p>&nbsp; {% block title %}{% endblock %}</p>
 
+				{% block leave_message %}{% endblock %}
+			</div>
+		
+			
+			<div class="dblock-content">
+				{% block message %}{% endblock %}
+			</div>
+		</div>	
+	</div>
 {% endblock %}
 

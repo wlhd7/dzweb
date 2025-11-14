@@ -63,14 +63,15 @@ form div {
 	background: #00BFFF
 }
 
-img {
-	width: 100%;
-}
-
 .normal-size-imag {
 	width: auto;
 }
 
 .white {
 	color: white;
+}
+
+img {
+	width: 100%;
+	height: auto;
 }

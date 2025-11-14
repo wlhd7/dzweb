@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% from 'macro.html' import side_bar_imag %}
+
+{% block head %}
+	{{ super() }}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+	<div class="block first-column">
+		<div class="sector">
+			<div class="sector-title">
+				<p>{{ _('产品类别') }}</p>
+				<a class="steelblue link" href="{{ url_for('product.non_standard') }}">{{ _('详细介绍') }}</a>
+			</div>
+
+			<div class="sector-content">
+				<a href="{{ url_for('product.non_standard') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('非标零件') }}</a>
+				<hr>
+				<a href="{{ url_for('product.automation') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('自动化设备') }}</a>
+				<hr>
+				<a href="{{ url_for('product.fixture') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('工装夹具') }}</a>
+			</div>
+		</div>
+
+		<div class="sector">
+			<div class="sector-title">
+				<p>{{ _('关于我们') }}</p>
+			</div>
+
+			<div class="sector-content">
+				<a href="{{ url_for('home.introduction') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('公司简介') }}</a>					
+				<hr>
+				<a href="{{ url_for('home.history') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('公司历程') }}</a>
+				<hr>
+				<a href="{{ url_for('home.organization') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('机构组织') }}</a>
+				<hr>
+				<a href="{{ url_for('home.strategy') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('发展战略') }}</a>
+				<hr>
+				<a href="{{ url_for('home.performance') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('公司业绩') }}</a>
+				<hr>
+				<a href="{{ url_for('home.style') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('员工风采') }}</a>
+			</div>
+
+		</div>
+
+
+		{{ side_bar_imag() }}
+	</div>
+
+	<div class="block">
+		<div class="dblock">
+			<div class="dblock-title">
+				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
+				<p>&nbsp; {% block title %}{% endblock %}</p>
+			</div>
+		
+			<div class="dblock-content">
+				{% block home %}{% endblock %}
+			</div>
+		</div>	
+	</div>
+
+
+{% endblock %}
+

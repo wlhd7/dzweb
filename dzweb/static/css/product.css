@@ -29,3 +29,8 @@ textarea {
 #display_edit {
 	display: block;
 }
+
+.product-image {
+	width: auto;
+	max-width: 100%;
+}

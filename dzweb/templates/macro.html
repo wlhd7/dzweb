@@ -4,20 +4,12 @@
 
 
 {% macro side_bar_imag() %}
-	<a href="{{ url_for('service.service') }}">
-		<img src='/static/images/service-system1.jpg'>
-	</a>
-
-	<a href="{{ url_for('contact.contact_us') }}">
-		<img src='/static/images/contact-us.jpg'>
-	</a>
-
-	<div class="cblock">
-		<div class="cblock-title" id="cblock-contact-title">
+	<div class="sector">
+		<div class="sector-title" id="sector-contact-title">
 			<p>{{ _('联系方式') }}</p>
 		</div>
 
-		<div id="cblock-contact">
+		<div id="sector-contact">
 			<div>
 				<img src="/static/images/phone.jpg">
 				<p>020-34586222</p>

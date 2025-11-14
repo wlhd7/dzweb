@@ -2,10 +2,11 @@
 
 {% from 'macro.html' import para %}
 
-{% block title %}{{ _('人才招聘') }}{% endblock %}
+{% block title %}{{ _('招贤纳士') }}{% endblock %}
 
 {% block human %}
 	<div class="dblock-content">
+		<div>{{ _('联系方式') }}: 020-31135070</div>
 		{% for position in positions %}
 			<div>
 				<h3>{{ position['position'] }}</h3>
