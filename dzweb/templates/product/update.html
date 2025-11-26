@@ -32,6 +32,18 @@
 		</select>
 	</div>
 
+	<div>
+		<label for="class">工装夹具子类别</label>
+		<select name="class">
+			<option value="engine" {% if product['class']=='engine' %}selected{% endif %}>发动机</option>
+			<option value="transmission" {% if product['class']=='transmission' %}selected{% endif %}>变速箱</option>
+			<option value="steeringKnuckle" {% if product['class']=='steeringKnuckle' %}selected{% endif %}>转向节</option>
+			<option value="assemblyShop" {% if product['class']=='assemblyShop' %}selected{% endif %}>总装车间</option>
+			<option value="steeringGear" {% if product['class']=='steeringGear' %}selected{% endif %}>转向器</option>
+			<option value="automobileBearings" {% if product['class']=='automobileBearings' %}selected{% endif %}>汽车轴承</option>
+		</select>
+	</div>
+
 	<input type="submit" value="保存">
 </form>
 

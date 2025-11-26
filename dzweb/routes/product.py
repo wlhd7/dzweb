@@ -40,6 +40,7 @@ def create():
         productname = request.form['productname'].strip()
         brief = request.form['brief']
         category = request.form['category']
+        product_class = request.form.get('class', '')
         file = request.files['file']
 
         if allowed_file(file.filename):
@@ -48,8 +49,8 @@ def create():
             db = get_db()
 
             db.execute(
-                    'INSERT INTO products (productname, brief, category, filename) VALUES (?, ?, ?, ?)',
-                    (productname, brief, category, random_filename)
+                    'INSERT INTO products (productname, brief, category, filename, "class") VALUES (?, ?, ?, ?, ?)',
+                    (productname, brief, category, random_filename, product_class)
                 )
             db.commit()
         else:
@@ -69,20 +70,21 @@ def update(id):
         productname = request.form['productname']
         brief = request.form['brief']
         category = request.form['category']
+        product_class = request.form.get('class', '')
         file = request.files['file']
         random_filename = generate_random_filename(file.filename)
         file.save(os.path.join(current_app.config['UPLOAD_FOLDER'], random_filename))
 
         db.execute(
-                'UPDATE products SET productname = ?, brief = ?, category = ?, filename = ? WHERE id = ?',
-                (productname, brief, category, random_filename, id)
+                'UPDATE products SET productname = ?, brief = ?, category = ?, filename = ?, "class" = ? WHERE id = ?',
+                (productname, brief, category, random_filename, product_class, id)
             )
         db.commit()
 
         return redirect(request.args.get('next'))
 
     product = db.execute(
-            'SELECT id, productname, brief, created, category FROM products'
+            'SELECT id, productname, brief, created, category, "class" FROM products'
             ' WHERE id = ?',
             (id,)
         ).fetchone()
