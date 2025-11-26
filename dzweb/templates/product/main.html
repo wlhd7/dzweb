@@ -27,13 +27,13 @@
 					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
 					{{ _('非标零件') }}</a>
 				<hr>
-				<a href="{{ url_for('product.automation') }}">
-					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
-					{{ _('自动化设备') }}</a>
-				<hr>
 				<a href="{{ url_for('product.fixture') }}">
 					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
 					{{ _('工装夹具') }}</a>
+				<hr>
+				<a href="{{ url_for('product.automation') }}">
+					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					{{ _('自动化设备') }}</a>
 			</div>
 		</div>
 
@@ -45,11 +45,39 @@
 			<div class="dblock-title">
 				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
 				<p>&nbsp; {% block title %}{% endblock %}</p>
-			</div>	
+
+				{%- if request.endpoint == 'product.fixture' %}
+				<div class="fixture-filter-buttons" style="margin-top:.5rem;">
+					<button type="button" class="filter-btn" data-filter="engine">发动机</button>
+					<button type="button" class="filter-btn" data-filter="transmission">变速箱</button>
+					<button type="button" class="filter-btn" data-filter="steeringKnuckle">转向节</button>
+					<button type="button" class="filter-btn" data-filter="assemblyShop">总装车间</button>
+					<button type="button" class="filter-btn" data-filter="all">显示全部</button>
+				</div>
+
+				<script>
+				document.addEventListener('DOMContentLoaded', function(){
+					const buttons = document.querySelectorAll('.fixture-filter-buttons .filter-btn');
+					buttons.forEach(btn => btn.addEventListener('click', function(){
+						const filter = this.dataset.filter;
+						document.querySelectorAll('.product-page .product-item').forEach(item => {
+							if (filter === 'all' || (item.dataset.class && item.dataset.class === filter)) {
+								item.style.display = '';
+							} else {
+								item.style.display = 'none';
+							}
+						});
+					}));
+				});
+				</script>
+
+				{%- endif %}
+
+			</div>
 		
 			<div class="dblock-content product-page">
 				{% for product in products %}
-					<a href="{{ url_for('product.display', id=product['id']) }}">
+					<a href="{{ url_for('product.display', id=product['id']) }}" class="product-item" data-class="{{ product['class'] if product['class'] is defined else '' }}">
 						<img src="{{ url_for('instance_files', filename=product['filename']) }}">
 						<p>{{ product['id'] }} {{ product['productname'] }}</p>
 					</a>
