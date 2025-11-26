@@ -122,7 +122,7 @@ def display(id):
 
 def get_page(category):
     all_products = get_db().execute(
-            'SELECT id, productname, filename FROM products WHERE category = ?'
+            'SELECT id, productname, filename, "class" FROM products WHERE category = ?'
             ' ORDER BY created DESC',
             (category,)
         ).fetchall()
