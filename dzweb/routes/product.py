@@ -121,9 +121,18 @@ def display(id):
 
 
 def get_page(category):
-    all_products = get_db().execute(
-            'SELECT id, productname, filename, "class" FROM products WHERE category = ?'
-            ' ORDER BY created DESC',
+    current_class = request.args.get('class', None)
+
+    if current_class:
+        all_products = get_db().execute(
+            'SELECT id, productname, filename, "class" FROM products WHERE category = ? AND "class" = ? '
+            'ORDER BY created DESC',
+            (category, current_class)
+        ).fetchall()
+    else:
+        all_products = get_db().execute(
+            'SELECT id, productname, filename, "class" FROM products WHERE category = ? '
+            'ORDER BY created DESC',
             (category,)
         ).fetchall()
 
@@ -147,7 +156,8 @@ def get_page(category):
             products=products,
             path=current_app.config['UPLOAD_FOLDER'],
             page=page,
-            total_pages=total_pages
+            total_pages=total_pages,
+            current_class=current_class
         )
 
 
