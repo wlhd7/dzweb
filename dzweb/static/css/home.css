@@ -13,3 +13,20 @@
 .style-content img {
 	width: 100%;
 }
+
+.employee-entrance {
+	display: block;
+	margin-top: 5px;
+	text-align: right;
+}
+
+.automation-subclass {
+	margin-top: 10px;
+	margin-left: 20px;
+	width: fit-content;
+}
+
+.automation-subclass hr {
+	width: 120%;
+	margin-left: 10px;
+}

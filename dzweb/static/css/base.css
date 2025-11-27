@@ -75,3 +75,16 @@ img {
 	width: 100%;
 	height: auto;
 }
+
+.active2 {
+	border: black 1px solid;
+}
+
+.filter-btn {
+	padding: 0 4px;
+	margin: 0 3px;
+}
+
+.fixture-filter-buttons {
+	margin-left: 10px;
+}

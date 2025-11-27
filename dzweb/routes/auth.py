@@ -102,4 +102,4 @@ def logout():
     if request.args.get('next', None):
         return redirect(request.args.get('next'))
     else:
-        return redirect(url_for('home.main'))
+        return redirect(url_for('home.index'))

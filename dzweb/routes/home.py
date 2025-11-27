@@ -9,7 +9,7 @@ bp = Blueprint('home', __name__)
 def index():
     products = get_db().execute(
         'SELECT id, productname, filename FROM products'
-        ' ORDER BY id DESC LIMIT 12',
+        ' ORDER BY id DESC LIMIT 16',
     ).fetchall()
 
     return render_template('home/index.html', products=products)

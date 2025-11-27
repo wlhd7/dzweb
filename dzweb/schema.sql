@@ -12,6 +12,7 @@ create table if not exists products (
 	brief text,
 	created timestamp not null default (datetime('now', 'localtime')),
 	category text not null,
+	class text,
 	filename text not null
 );
 

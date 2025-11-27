@@ -2,6 +2,16 @@
 
 {% block title %}{{ _('用户登陆') }}{% endblock %}
 
+{% block head %}
+	{{ super() }}
+	<style>
+		.register {
+			display: inline-block;
+			margin-top: 1rem;
+		}
+	</style>
+{% endblock %}
+
 {% block content %}
 <div>
 	<h2>{{ _('用户登陆') }}</h2>
@@ -15,6 +25,8 @@
 
 		<input type="submit" value="{{ _('登陆') }}">
 	</form>
+
+	<a href="{{ url_for('auth.register') }}" class="bold steelblue register">{{ _('注册新用户') }}</a>
 
 	{% for message in get_flashed_messages() %}
 	<p>{{ message }}</p>

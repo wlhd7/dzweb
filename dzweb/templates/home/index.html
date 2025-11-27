@@ -42,16 +42,42 @@
 
 			<div class="sector-content">
 				<a href="{{ url_for('product.non_standard') }}">
-					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
 					{{ _('非标零件') }}</a>
 				<hr>
-				<a href="{{ url_for('product.automation') }}">
-					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
-					{{ _('自动化设备') }}</a>
-				<hr>
 				<a href="{{ url_for('product.fixture') }}">
-					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
 					{{ _('工装夹具') }}</a>
+				<hr>
+				<a href="{{ url_for('product.automation') }}">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
+					{{ _('自动化设备') }}</a>
+				<div class="automation-subclass">
+					<a>
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('发动机') }}
+					</a>
+					<hr>
+					<a>
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('变速箱') }}
+					</a>
+					<hr>
+					<a>
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('转向器') }}
+					</a>
+					<hr>
+					<a>
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('总装车间') }}
+					</a>
+					<hr>
+					<a>
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('汽车轴承') }}
+					</a>
+				</div>
 			</div>
 		</div>
 
@@ -62,27 +88,27 @@
 
 			<div class="sector-content">
 				<a href="{{ url_for('home.introduction') }}">
-					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
 					{{ _('公司简介') }}</a>					
 				<hr>
 				<a href="{{ url_for('home.history') }}">
-					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
 					{{ _('公司历程') }}</a>
 				<hr>
 				<a href="{{ url_for('home.organization') }}">
-					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
 					{{ _('机构组织') }}</a>
 				<hr>
 				<a href="{{ url_for('home.strategy') }}">
-					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
 					{{ _('发展战略') }}</a>
 				<hr>
 				<a href="{{ url_for('home.performance') }}">
-					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
 					{{ _('公司业绩') }}</a>
 				<hr>
 				<a href="{{ url_for('home.style') }}">
-					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
 					{{ _('员工风采') }}</a>
 			</div>
 
@@ -158,6 +184,8 @@
 			<img src='/static/images/contact-us.jpg'>
 		</a>
 
+		<a href="{{ url_for('user.add_app') }}" class="bold steelblue employee-entrance">>>员工入口</a>
 	</div>
+
 
 {% endblock %}

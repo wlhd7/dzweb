@@ -24,16 +24,42 @@
 
 			<div class="sector-content">
 				<a href="{{ url_for('product.non_standard') }}">
-					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
 					{{ _('非标零件') }}</a>
 				<hr>
 				<a href="{{ url_for('product.fixture') }}">
-					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
 					{{ _('工装夹具') }}</a>
 				<hr>
 				<a href="{{ url_for('product.automation') }}">
-					<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
 					{{ _('自动化设备') }}</a>
+				<div class="automation-subclass">
+					<a>
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('发动机') }}
+					</a>
+					<hr>
+					<a>
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('变速箱') }}
+					</a>
+					<hr>
+					<a>
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('转向器') }}
+					</a>
+					<hr>
+					<a>
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('总装车间') }}
+					</a>
+					<hr>
+					<a>
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						{{ _('汽车轴承') }}
+					</a>
+				</div>
 			</div>
 		</div>
 
@@ -47,12 +73,13 @@
 				<p>&nbsp; {% block title %}{% endblock %}</p>
 
 				{%- if request.endpoint == 'product.fixture' %}
-				<div class="fixture-filter-buttons" style="margin-top:.5rem;">
-					<a class="filter-btn {% if current_class=='engine' %}active{% endif %}" href="?class=engine&page=1">发动机</a>
-					<a class="filter-btn {% if current_class=='transmission' %}active{% endif %}" href="?class=transmission&page=1">变速箱</a>
-					<a class="filter-btn {% if current_class=='steeringKnuckle' %}active{% endif %}" href="?class=steeringKnuckle&page=1">转向节</a>
-					<a class="filter-btn {% if current_class=='assemblyShop' %}active{% endif %}" href="?class=assemblyShop&page=1">总装车间</a>
-					<a class="filter-btn {% if not current_class %}active{% endif %}" href="?page=1">显示全部</a>
+				<div class="fixture-filter-buttons">
+					<p>:</p>
+					<a class="filter-btn {% if current_class=='engine' %}active2{% endif %}" href="?class=engine&page=1">发动机</a>
+					<a class="filter-btn {% if current_class=='transmission' %}active2{% endif %}" href="?class=transmission&page=1">变速箱</a>
+					<a class="filter-btn {% if current_class=='steeringKnuckle' %}active2{% endif %}" href="?class=steeringKnuckle&page=1">转向节</a>
+					<a class="filter-btn {% if current_class=='assemblyShop' %}active2{% endif %}" href="?class=assemblyShop&page=1">总装车间</a>
+					<a class="filter-btn {% if not current_class %}active2{% endif %}" href="?page=1">显示全部</a>
 				</div>
 
 				{%- endif %}

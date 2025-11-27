@@ -34,3 +34,20 @@ textarea {
 	width: auto;
 	max-width: 100%;
 }
+
+.fixture-filter-buttons p {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+.automation-subclass {
+	margin-top: 10px;
+	margin-left: 20px;
+	width: fit-content;
+}
+
+.automation-subclass hr {
+	width: 120%;
+	margin-left: 10px;
+}

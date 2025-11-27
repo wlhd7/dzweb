@@ -10,6 +10,7 @@ bp = Blueprint('user', __name__, url_prefix='/user')
 
 
 @bp.before_request
+@login_required
 def load_added_apps():
     db = get_db()
 
