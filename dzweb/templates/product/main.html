@@ -19,6 +19,8 @@
 					<a id="add-new-product" class="blue link" href="{{ url_for('product.create') }}">新增</a>
 					{% endif %}
 					{% endif %}
+				{% else %}
+					<a id="add-new-product" class="blue link" href="{{ url_for('product.search') }}">{{ _('产品搜索') }}</a>
 				{% endif %}
 			</div>
 
@@ -35,31 +37,30 @@
 					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
 					{{ _('自动化设备') }}</a>
 				<div class="automation-subclass">
-					<a href="{{ url_for('product.automation') }}?class=engine&page=1">
+					<a>
 						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
 						{{ _('发动机') }}
 					</a>
 					<hr>
-					<a href="{{ url_for('product.automation') }}?class=transmission&page=1">
+					<a>
 						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
 						{{ _('变速箱') }}
 					</a>
 					<hr>
-					<a href="{{ url_for('product.automation') }}?class=steeringGear&page=1">
+					<a>
 						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
 						{{ _('转向器') }}
 					</a>
 					<hr>
-					<a href="{{ url_for('product.automation') }}?class=assemblyShop&page=1">
+					<a>
 						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
 						{{ _('总装车间') }}
 					</a>
 					<hr>
-					<a href="{{ url_for('product.automation') }}?class=automobileBearings&page=1">
+					<a>
 						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
 						{{ _('汽车轴承') }}
 					</a>
-					<hr>
 				</div>
 			</div>
 		</div>
