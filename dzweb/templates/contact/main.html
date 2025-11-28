@@ -2,6 +2,11 @@
 
 {% from 'macro.html' import side_bar_imag %}
 
+{% block head %}
+	{{ super() }}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/message.css') }}">
+{% endblock %}
+
 {% block content %}
 	<div class="block first-column">
 		<div class="sector">
@@ -17,6 +22,10 @@
 				<a href="{{ url_for('contact.location') }}">
 					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
 					{{ _('地理位置') }}</a>
+				<hr>
+				<a href="{{ url_for('contact.mailbox') }}">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
+					{{ _('信箱') }}</a>
 			</div>
 
 		</div>
@@ -30,10 +39,14 @@
 			<div class="dblock-title">
 				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
 				<p>&nbsp; {% block title %}{% endblock %}</p>
+
+				{% block leave_message %}{% endblock %}
 			</div>
 		
 			
-			{% block contact %}{% endblock %}
+			<div class="dblock-content">
+				{% block contact %}{% endblock %}
+			</div>
 		</div>	
 	</div>
 {% endblock %}

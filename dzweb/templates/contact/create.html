@@ -1,0 +1,16 @@
+{% extends 'message/main.html' %}
+
+{% from 'macro.html' import tips %}
+
+{% block title %}{{ _('留言') }}{% endblock %}
+
+{% block message %}
+	<form method="post">
+		<label for="message"></label>
+		<textarea name="message" required></textarea>
+
+		<input type="submit" value="{{ _('保存') }}">
+	</form>
+
+	{{ tips() }}
+{% endblock %}

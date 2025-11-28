@@ -108,13 +108,48 @@
 	</div>
 
 	<nav role="navigation">
-		<a class="{% if 'home' in request.path %}active{% endif %}" href="{{ url_for('index') }}">⏺ {{ _('首页') }}</a>
-		<a class="{% if 'product' in request.path %}active{% endif %}" href="{{ url_for('product.non_standard') }}">⏺ {{ _('产品展示') }}</a>
-		<a class="{% if 'case' in request.path %}active{% endif %}" href="{{ url_for('case.extruder') }}">⏺ {{ _('经典案例') }}</a>
-		<a class="{% if 'service' in request.path %}active{% endif %}" href="{{ url_for('service.service') }}">⏺ {{ _('项目管理') }}</a>
-		<a class="{% if 'contact' in request.path %}active{% endif %}" href="{{ url_for('contact.contact_us') }}">⏺ {{ _('业务联系') }}</a>
-		<a class="{% if 'human' in request.path %}active{% endif %}" href="{{ url_for('human.hire') }}">⏺ {{ _('招贤纳士') }}</a>
-		<a class="{% if 'message' in request.path %}active{% endif %}" href="{{ url_for('message.mailbox') }}">⏺ {{ _('在线留言') }}</a>
+		<a class="{% if 'home' in request.path %}active{% endif %} nav-bar" href="{{ url_for('index') }}">
+			{% if 'home' in request.path %}
+			<img src="{{ url_for('static', filename='images/point.svg') }}">
+			{% else %}
+			<img src="{{ url_for('static', filename='images/white-point.svg') }}">
+			{% endif %}
+			{{ _('首页') }}</a>
+		<a class="{% if 'product' in request.path %}active{% endif %} nav-bar" href="{{ url_for('product.non_standard') }}">
+			{% if 'product' in request.path %}
+			<img src="{{ url_for('static', filename='images/point.svg') }}">
+			{% else %}
+			<img src="{{ url_for('static', filename='images/white-point.svg') }}">
+			{% endif %}
+			{{ _('产品展示') }}</a>
+		<a class="{% if 'case' in request.path %}active{% endif %} nav-bar" href="{{ url_for('case.extruder') }}">
+			{% if 'case' in request.path %}
+			<img src="{{ url_for('static', filename='images/point.svg') }}">
+			{% else %}
+			<img src="{{ url_for('static', filename='images/white-point.svg') }}">
+			{% endif %}
+			{{ _('经典案例') }}</a>
+		<a class="{% if 'service' in request.path %}active{% endif %} nav-bar" href="{{ url_for('service.service') }}">
+			{% if 'service' in request.path %}
+			<img src="{{ url_for('static', filename='images/point.svg') }}">
+			{% else %}
+			<img src="{{ url_for('static', filename='images/white-point.svg') }}">
+			{% endif %}
+			{{ _('项目管理') }}</a>
+		<a class="{% if 'contact' in request.path %}active{% endif %} nav-bar" href="{{ url_for('contact.contact_us') }}">
+			{% if 'contact' in request.path %}
+			<img src="{{ url_for('static', filename='images/point.svg') }}">
+			{% else %}
+			<img src="{{ url_for('static', filename='images/white-point.svg') }}">
+			{% endif %}
+			{{ _('业务联系') }}</a>
+		<a class="{% if 'human' in request.path %}active{% endif %} nav-bar" href="{{ url_for('human.hire') }}">
+			{% if 'human' in request.path %}
+			<img src="{{ url_for('static', filename='images/point.svg') }}">
+			{% else %}
+			<img src="{{ url_for('static', filename='images/white-point.svg') }}">
+			{% endif %}
+			{{ _('招贤纳士') }}</a>
 	</nav>
 </header>
 

@@ -1,9 +1,8 @@
 from flask import send_from_directory, render_template
-from . import home, auth, product, case, service, human, contact, message, user
+from . import home, auth, product, case, service, human, contact, user
 import os
-from dzweb.db import get_db
 
-bps = [home, auth, product, case, service, human, contact, message, user]
+bps = [home, auth, product, case, service, human, contact, user]
 
 def init_app(app):
     @app.route('/instance-files/<filename>')
@@ -13,3 +12,7 @@ def init_app(app):
     @app.route('/favicon.ico')
     def favicon():
         return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico')
+
+    @app.errorhandler(404)
+    def page_not_found(e):
+        return render_template('404.html'), 404
