@@ -2,7 +2,7 @@
 
 {% from 'macro.html' import tips %}
 
-{% block title %}创建产品{% endblock %}
+{% block title %}编辑产品{% endblock %}
 
 {% block product %}
 <form method="post" action="{{ url_for('product.update', id=product['id'], next=request.args.get('next')) }}" enctype="multipart/form-data">
@@ -24,11 +24,11 @@
 	<div>
 		<label for="category">产品分类</label>
 		<select name="category">
-			<option value='equipment'>铁屑压块机</option>
-			<option value='fixture'>工装夹具</option>
-			<option value='automation'>自动化设备</option>
-			<option value='non_standard'>非标零件</option>
-			<option value='robotics'>机器人项目</option>
+			<option value='equipment' {% if product['category']=='equipment' %}selected{% endif %}>铁屑压块机</option>
+			<option value='fixture' {% if product['category']=='fixture' %}selected{% endif %}>工装夹具</option>
+			<option value='automation' {% if product['category']=='automation' %}selected{% endif %}>自动化设备</option>
+			<option value='non_standard' {% if product['category']=='non_standard' %}selected{% endif %}>非标零件</option>
+			<option value='robotics' {% if product['category']=='robotics' %}selected{% endif %}>机器人项目</option>
 		</select>
 	</div>
 

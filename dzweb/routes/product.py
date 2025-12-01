@@ -72,12 +72,26 @@ def update(id):
         category = request.form['category']
         product_class = request.form.get('class', '')
         file = request.files['file']
-        random_filename = generate_random_filename(file.filename)
-        file.save(os.path.join(current_app.config['UPLOAD_FOLDER'], random_filename))
+        # fetch existing product to preserve filename when no new file is provided
+        existing = db.execute('SELECT filename FROM products WHERE id = ?', (id,)).fetchone()
+        if existing is None:
+            abort(404, f"Product id {id} doesn't exist")
+
+        filename_to_use = existing['filename']
+
+        # if a new file was uploaded and has an allowed extension, save it and use new filename
+        if file and file.filename:
+            if allowed_file(file.filename):
+                random_filename = generate_random_filename(file.filename)
+                file.save(os.path.join(current_app.config['UPLOAD_FOLDER'], random_filename))
+                filename_to_use = random_filename
+            else:
+                flash('抱歉，图片格式限制，请上传文件扩展名为 jpg 或 png 的图片')
+                return redirect(request.url)
 
         db.execute(
                 'UPDATE products SET productname = ?, brief = ?, category = ?, filename = ?, "class" = ? WHERE id = ?',
-                (productname, brief, category, random_filename, product_class, id)
+                (productname, brief, category, filename_to_use, product_class, id)
             )
         db.commit()
 
