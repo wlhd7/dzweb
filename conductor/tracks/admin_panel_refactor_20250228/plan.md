@@ -1,15 +1,15 @@
 # Implementation Plan - admin_panel_refactor_20250228
 
 ## Phase 1: Authentication Refactor
-- [ ] Task: Transition to Admin-only login
-    - [ ] Update `tests/conftest.py` to support `ADMIN_PASSWORD` environment variable for tests
-    - [ ] Modify `dzweb/routes/auth.py`:
-        - [ ] Remove `register` route and logic
-        - [ ] Update `login` route to accept only `password` and verify against `ADMIN_PASSWORD`
-        - [ ] Update `load_logged_in_user` to handle admin session without DB user lookup
-    - [ ] Update `dzweb/templates/auth/login.html` to remove username field
-    - [ ] Delete `dzweb/templates/auth/register.html`
-    - [ ] Verify tests pass
+- [x] Task: Transition to Admin-only login (633f8f0)
+    - [x] Update `tests/conftest.py` to support `ADMIN_PASSWORD` environment variable for tests
+    - [x] Modify `dzweb/routes/auth.py`:
+        - [x] Remove `register` route and logic
+        - [x] Update `login` route to accept only `password` and verify against `ADMIN_PASSWORD`
+        - [x] Update `load_logged_in_user` to handle admin session without DB user lookup
+    - [x] Update `dzweb/templates/auth/login.html` to remove username field
+    - [x] Delete `dzweb/templates/auth/register.html`
+    - [x] Verify tests pass
 
 ## Phase 2: UI & Link Cleanup
 - [ ] Task: Remove "Employee Entrance" and update Panel labels
