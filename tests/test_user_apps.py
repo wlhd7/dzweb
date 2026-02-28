@@ -13,3 +13,12 @@ def test_all_apps_shown_in_sidebar_automatically(client, auth, app):
     html = response.data.decode('utf-8')
     assert 'App 1' in html
     assert 'App 2' in html
+def test_add_app_route_is_removed(client, auth):
+    auth.login()
+    response = client.get('/user/add-app')
+    assert response.status_code == 404
+
+def test_index_page_renders(client):
+    response = client.get('/')
+    assert response.status_code == 200
+    assert b'>>' in response.data
