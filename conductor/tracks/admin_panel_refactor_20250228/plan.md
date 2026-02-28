@@ -12,10 +12,10 @@
     - [x] Verify tests pass
 
 ## Phase 2: UI & Link Cleanup
-- [ ] Task: Remove "Employee Entrance" and update Panel labels
-    - [ ] Remove "员工入口" link from `dzweb/templates/home/index.html`
-    - [ ] Global search and replace: "个人主页" -> "管理后台" across all templates
-    - [ ] Verify tests pass
+- [x] Task: Remove "Employee Entrance" and update Panel labels (4e625fa)
+    - [x] Remove "员工入口" link from `dzweb/templates/home/index.html`
+    - [x] Global search and replace: "个人主页" -> "管理后台" across all templates
+    - [x] Verify tests pass
 
 ## Phase 3: Route & Title Migration
 - [ ] Task: Rename routes and update specific titles
