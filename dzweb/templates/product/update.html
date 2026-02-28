@@ -5,13 +5,13 @@
 {% block title %}编辑产品{% endblock %}
 
 {% block product %}
-<form method="post" action="{{ url_for('product.update', id=product['id'], next=request.args.get('next')) }}" enctype="multipart/form-data">
+<form class="product-form" method="post" action="{{ url_for('product.update', id=product['id'], next=request.args.get('next')) }}" enctype="multipart/form-data">
 	<div>
 		<label for="productname">产品名称</label>
 		<input name="productname" value="{{ product['productname'] }}" required>
 	</div>
 
-	<div>
+	<div class="description-item">
 		<label for="brief">产品描述</label>
 		<textarea name="brief">{{ product['brief'] }}</textarea>
 	</div>
@@ -23,7 +23,7 @@
 
 	<div>
 		<label for="category">产品分类</label>
-		<select name="category">
+		<select name="category" id="category-select">
 			<option value='equipment' {% if product['category']=='equipment' %}selected{% endif %}>铁屑压块机</option>
 			<option value='fixture' {% if product['category']=='fixture' %}selected{% endif %}>工装夹具</option>
 			<option value='automation' {% if product['category']=='automation' %}selected{% endif %}>自动化设备</option>
@@ -33,14 +33,9 @@
 	</div>
 
 	<div>
-		<label for="class">工装夹具子类别</label>
-		<select name="class">
-			<option value="engine" {% if product['class']=='engine' %}selected{% endif %}>发动机</option>
-			<option value="transmission" {% if product['class']=='transmission' %}selected{% endif %}>变速箱</option>
-			<option value="steeringKnuckle" {% if product['class']=='steeringKnuckle' %}selected{% endif %}>转向节</option>
-			<option value="assemblyShop" {% if product['class']=='assemblyShop' %}selected{% endif %}>总装车间</option>
-			<option value="steeringGear" {% if product['class']=='steeringGear' %}selected{% endif %}>转向器</option>
-			<option value="automobileBearings" {% if product['class']=='automobileBearings' %}selected{% endif %}>汽车轴承</option>
+		<label for="class">子类别</label>
+		<select name="class" id="class-select">
+			<option value="{{ product['class'] }}" selected>{{ product['class'] }}</option>
 		</select>
 	</div>
 
@@ -50,6 +45,43 @@
 {{ tips() }}
 
 	<script>
+		const categorySelect = document.getElementById('category-select');
+		const classSelect = document.getElementById('class-select');
+		const initialClass = "{{ product['class'] }}";
+
+		async function updateSubcategories(selectedId = null) {
+			const category = categorySelect.value;
+			const response = await fetch(`/product/api/subcategories/${category}`);
+			const subcategories = await response.json();
+
+			// Clear existing options
+			classSelect.innerHTML = '';
+
+			if (subcategories.length > 0) {
+				classSelect.disabled = false;
+				subcategories.forEach(sub => {
+					const option = document.createElement('option');
+					option.value = sub.id;
+					option.textContent = sub.name;
+					if (selectedId && sub.id === selectedId) {
+						option.selected = true;
+					}
+					classSelect.appendChild(option);
+				});
+			} else {
+				classSelect.disabled = true;
+				const option = document.createElement('option');
+				option.value = '';
+				option.textContent = '无子类别';
+				classSelect.appendChild(option);
+			}
+		}
+
+		categorySelect.addEventListener('change', () => updateSubcategories());
+		
+		// Initial trigger with the current class from database
+		updateSubcategories(initialClass);
+
 		function findElementsByText(text, tagName = 'a') {
 			const elements = document.querySelectorAll(tagName);
    			return Array.from(elements).filter(element => 

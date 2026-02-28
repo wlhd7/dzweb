@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, request, url_for, flash, current_app
+from flask import Blueprint, render_template, redirect, request, url_for, flash, current_app, jsonify
 from dzweb.db import get_db
 import uuid
 import os
@@ -13,6 +13,25 @@ bp = Blueprint('product', __name__, url_prefix='/product')
 
 
 ALLOWED_EXTENSIONS = {'png', 'jpg'}
+
+
+SUBCATEGORIES = {
+    'automation': [
+        {'id': 'engine', 'name': '发动机'},
+        {'id': 'transmission', 'name': '变速箱'},
+        {'id': 'steeringGear', 'name': '转向系统'},
+        {'id': 'automobileBearings', 'name': '汽车轴承'},
+    ],
+    'fixture': [
+        {'id': 'engine', 'name': '发动机'},
+        {'id': 'transmission', 'name': '变速箱'},
+        {'id': 'steeringKnuckle', 'name': '转向节'},
+        {'id': 'assemblyShop', 'name': '总装车间'},
+    ],
+    'non_standard': [],
+    'equipment': [],
+    'robotics': [],
+}
 
 
 def allowed_file(filename) -> bool:
@@ -216,3 +235,9 @@ def search():
         ).fetchall()
 
     return render_template('product/search.html', q=q, results=results)
+
+
+@bp.route('/api/subcategories/<category>')
+def get_subcategories(category):
+    subcategories = SUBCATEGORIES.get(category, [])
+    return jsonify(subcategories)

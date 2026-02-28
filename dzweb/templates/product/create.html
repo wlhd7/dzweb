@@ -5,13 +5,13 @@
 {% block title %}创建产品{% endblock %}
 
 {% block product %}
-<form method="post" action="{{ url_for('product.create') }}" enctype="multipart/form-data">
+<form class="product-form" method="post" action="{{ url_for('product.create') }}" enctype="multipart/form-data">
 	<div>
 		<label for="productname">产品名称</label>
 		<input name="productname" required>
 	</div>
 
-	<div>
+	<div class="description-item">
 		<label for="brief">产品描述</label>
 		<textarea name="brief"></textarea>
 	</div>
@@ -23,7 +23,7 @@
 
 	<div>
 		<label for="category">产品分类</label>
-		<select name="category">
+		<select name="category" id="category-select">
 			<option value='non_standard'>非标零件</option>
 			<option value='fixture'>工装夹具</option>
 			<option value='automation'>自动化设备</option>
@@ -32,13 +32,8 @@
 
 	<div>
 		<label for="class">子类别</label>
-		<select name="class">
-			<option value="engine">发动机</option>
-			<option value="transmission">变速箱</option>
-			<option value="steeringKnuckle">转向节</option>
-			<option value="assemblyShop">总装车间</option>
-			<option value="steeringGear">转向器</option>
-			<option value="automobileBearings">汽车轴承</option>
+		<select name="class" id="class-select">
+			<option value="">加载中...</option>
 		</select>
 	</div>
 
@@ -50,6 +45,39 @@
 {{ tips() }}
 
 	<script>
+		const categorySelect = document.getElementById('category-select');
+		const classSelect = document.getElementById('class-select');
+
+		async function updateSubcategories() {
+			const category = categorySelect.value;
+			const response = await fetch(`/product/api/subcategories/${category}`);
+			const subcategories = await response.json();
+
+			// Clear existing options
+			classSelect.innerHTML = '';
+
+			if (subcategories.length > 0) {
+				classSelect.disabled = false;
+				subcategories.forEach(sub => {
+					const option = document.createElement('option');
+					option.value = sub.id;
+					option.textContent = sub.name;
+					classSelect.appendChild(option);
+				});
+			} else {
+				classSelect.disabled = true;
+				const option = document.createElement('option');
+				option.value = '';
+				option.textContent = '无子类别';
+				classSelect.appendChild(option);
+			}
+		}
+
+		categorySelect.addEventListener('change', updateSubcategories);
+		
+		// Initial trigger
+		updateSubcategories();
+
 		function findElementsByText(text, tagName = 'a') {
 			const elements = document.querySelectorAll(tagName);
    			return Array.from(elements).filter(element => 

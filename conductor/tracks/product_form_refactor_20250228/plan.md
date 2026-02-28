@@ -1,7 +1,7 @@
 # Implementation Plan - product_form_refactor_20250228
 
 ## Phase 1: API & Backend Support
-- [ ] Task: Create API endpoint for dynamic category mapping
+- [~] Task: Create API endpoint for dynamic category mapping
     - [ ] Write failing test for `/product/api/subcategories/<category>`
     - [ ] Implement a function in `dzweb/routes/product.py` to return subcategories as JSON
     - [ ] Verify tests pass
