@@ -1,6 +1,6 @@
 # Implementation Plan - remove_app_password_20250228
 
-## Phase 1: Backend Refactor
+## Phase 1: Backend Refactor [checkpoint: 847bfb2]
 - [x] Task: Remove password-based app addition logic (2421aa9)
     - [x] Write failing tests for app list access (should not require password)
     - [x] Remove `apppassword` related fields or validation logic in `dzweb/routes/user.py`
@@ -10,7 +10,7 @@
     - [x] Write tests for fetching all apps
     - [x] Implement a function in `dzweb/db.py` to get all entries from `apps` table
     - [x] Verify tests pass
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Backend Refactor' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Backend Refactor' (Protocol in workflow.md) (847bfb2)
 
 ## Phase 2: Frontend Implementation
 - [ ] Task: Integrate all-apps list into User Home sidebar
