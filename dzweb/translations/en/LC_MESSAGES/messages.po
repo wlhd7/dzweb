@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-02-28 18:37+0800\n"
+"POT-Creation-Date: 2026-02-28 18:48+0800\n"
 "PO-Revision-Date: 2025-09-14 10:07+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -308,14 +308,14 @@ msgid "留言板"
 msgstr "Message Board"
 
 #: dzweb/templates/contact/message-board.html:17
-#: dzweb/templates/human/hire.html:19
+#: dzweb/templates/human/hire.html:17
 #: dzweb/templates/message/message-board.html:17
 #: dzweb/templates/product/display.html:47
 msgid "编辑"
 msgstr "Edit"
 
 #: dzweb/templates/contact/message-board.html:18
-#: dzweb/templates/human/hire.html:20
+#: dzweb/templates/human/hire.html:18
 #: dzweb/templates/message/message-board.html:18
 #: dzweb/templates/product/display.html:48
 msgid "删除"
@@ -609,6 +609,10 @@ msgstr "Benefits"
 #: dzweb/templates/human/update.html:19
 msgid "职位要求"
 msgstr "Job Requirements"
+
+#: dzweb/templates/human/hire.html:18
+msgid "是否删除该条招聘信息"
+msgstr "Are you sure you want to delete this recruitment information?"
 
 #: dzweb/templates/human/idea.html:3 dzweb/templates/human/main.html:32
 msgid "人才理念"

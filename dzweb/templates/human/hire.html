@@ -15,7 +15,7 @@
 				{{ para(position['requirement']) }}			
 				{% if g.user %}
 					<a href="{{ url_for('human.update_position', id=position['id']) }}" class="blue link">{{ _('编辑') }}</a>
-					<a href="{{ url_for('human.delete_position', id=position['id']) }}" class="blue link" onclick="return confirm('是否删除该条招聘信息')">{{ _('删除') }}</a>
+					<a href="{{ url_for('human.delete_position', id=position['id']) }}" class="blue link" onclick="return confirm('{{ _('是否删除该条招聘信息') }}')">{{ _('删除') }}</a>
 				{% endif %}
 				<hr>
 			</div>
