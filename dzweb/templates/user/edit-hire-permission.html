@@ -1,7 +1,7 @@
 {% extends 'user/main.html' %}
 
-{% block title %}编辑招聘信息{% endblock %}
+{% block title %}{{ _('新增招聘职位') }}{% endblock %}
 
 {% block user %}
-<a class="blue link" href="{{ url_for('human.hire') }}">请点击这里</a>
+<a class="blue link" href="{{ url_for('human.create_position') }}">{{ _('点击此处新增职位') }}</a>
 {% endblock %}
