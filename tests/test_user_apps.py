@@ -4,7 +4,7 @@ from dzweb.db import get_db
 def test_all_apps_shown_in_sidebar_automatically(client, auth, app):
     auth.login()
     # Access a user page (e.g., userhome)
-    response = client.get('/user/set-color')
+    response = client.get('/user/')
     assert response.status_code == 200
     
     # Currently, this should FAIL to find the apps if applist is empty
@@ -27,8 +27,8 @@ def test_sidebar_links_are_correct(client, auth):
     auth.login()
     response = client.get('/user/')
     html = response.data.decode('utf-8')
-    assert 'href="/user/set-color"' in html
-    assert 'href="/user/weekend-overtime"' in html
+    assert 'href="/user/"' in html
+    assert 'href="/user/edit-produt-permisssion"' in html
 
 def test_userhome_form_is_removed(client, auth):
     auth.login()

@@ -100,6 +100,7 @@
 			<div id="user">
 				{% if g.user %}
 				<span id="username">{{ g.user['username'] }}</span>
+				<a class="steelblue link bold" href="{{ url_for('user.userhome') }}">{{ _('主页') }}</a>
 				<a class="steelblue link bold" href="{{ url_for('auth.logout', next=request.path) }}">{{ _('注销') }}</a>
 				{% endif %}
 			</div> 

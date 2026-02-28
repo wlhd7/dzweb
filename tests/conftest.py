@@ -30,11 +30,11 @@ def app():
         # Add test apps
         db.execute(
             "INSERT INTO apps (appname, appurl) VALUES (?, ?)",
-            ('App 1', 'user.set_color')
+            ('App 1', 'user.userhome')
         )
         db.execute(
             "INSERT INTO apps (appname, appurl) VALUES (?, ?)",
-            ('App 2', 'user.weekend_overtime')
+            ('App 2', 'user.edit_product_permission')
         )
         db.commit()
 
