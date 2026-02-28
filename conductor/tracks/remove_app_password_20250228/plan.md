@@ -18,9 +18,9 @@
     - [x] Modify `dzweb/templates/user/userhome.html` or the relevant sidebar macro
     - [x] Inject the list of all apps into the template context
     - [x] Verify tests pass
-- [ ] Task: Remove "Add App" form and password dialogs
-    - [ ] Remove the "Add App" button and the corresponding modal/form from the UI
-    - [ ] Verify tests pass
+- [x] Task: Remove "Add App" form and password dialogs (8a4059f)
+    - [x] Remove the "Add App" button and the corresponding modal/form from the UI
+    - [x] Verify tests pass
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Frontend Implementation' (Protocol in workflow.md)
 
 ## Phase 3: Cleanup & Finalization
