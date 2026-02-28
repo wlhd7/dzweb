@@ -51,10 +51,6 @@ textarea {
 	width: 120%;
 	margin-left: 10px;
 }
-.dblock-content {
-	text-align: center;
-}
-
 .product-form {
 	display: flex;
 	flex-direction: column;
