@@ -16,6 +16,7 @@ def app():
         'TESTING': True,
         'DATABASE': db_path,
         'SECRET_KEY': 'test_secret_key',
+        'ADMIN_PASSWORD': 'test_admin_password',
     })
 
     with app.app_context():
@@ -55,6 +56,12 @@ class AuthActions:
         return self._client.post(
             '/auth/login',
             data={'username': username, 'password': password}
+        )
+
+    def admin_login(self, password='test_admin_password'):
+        return self._client.post(
+            '/auth/login',
+            data={'password': password}
         )
 
     def logout(self):
