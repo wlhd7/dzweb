@@ -29,3 +29,11 @@ def test_sidebar_links_are_correct(client, auth):
     html = response.data.decode('utf-8')
     assert 'href="/user/set-color"' in html
     assert 'href="/user/weekend-overtime"' in html
+
+def test_userhome_form_is_removed(client, auth):
+    auth.login()
+    response = client.get('/user/')
+    html = response.data.decode('utf-8')
+    assert 'name="number"' not in html
+    assert 'name="password"' not in html
+    assert '欢迎回来' in html
