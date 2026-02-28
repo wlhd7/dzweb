@@ -4,5 +4,3 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [x] **Track: Implement Docker environment for local development**
-  *Link: [./tracks/docker_20250228/](./tracks/docker_20250228/)*
