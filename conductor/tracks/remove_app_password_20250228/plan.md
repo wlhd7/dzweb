@@ -23,7 +23,7 @@
     - [x] Verify tests pass
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Frontend Implementation' (Protocol in workflow.md) (64c960f)
 
-## Phase 3: Cleanup & Finalization
-- [ ] Task: Final regression testing on mobile and desktop
-- [ ] Task: Remove obsolete code and templates (e.g., `add-app.html` if no longer used)
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Cleanup & Finalization' (Protocol in workflow.md)
+## Phase 3: Cleanup & Finalization [checkpoint: 848bd83]
+- [x] Task: Final regression testing on mobile and desktop (4b68e18)
+- [x] Task: Remove obsolete code and templates (e.g., `add-app.html` if no longer used) (dbb6fe5)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Cleanup & Finalization' (Protocol in workflow.md) (848bd83)
