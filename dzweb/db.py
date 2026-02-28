@@ -15,6 +15,11 @@ def get_db() -> sqlite3.Connection:
     return g.db
 
 
+def get_all_apps():
+    db = get_db()
+    return db.execute('SELECT * FROM apps').fetchall()
+
+
 def close_db(e=None):
     db = g.pop('db', None)
 
