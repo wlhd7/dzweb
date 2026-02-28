@@ -16,7 +16,7 @@ def app():
         'TESTING': True,
         'DATABASE': db_path,
         'SECRET_KEY': 'test_secret_key',
-        'ADMIN_PASSWORD': 'test_admin_password',
+        'DZWEB_ADMIN_PASSWORD': 'test_admin_password',
     })
 
     with app.app_context():
@@ -31,11 +31,11 @@ def app():
         # Add test apps
         db.execute(
             "INSERT INTO apps (appname, appurl) VALUES (?, ?)",
-            ('App 1', 'user.userhome')
+            ('App 1', 'admin.userhome')
         )
         db.execute(
             "INSERT INTO apps (appname, appurl) VALUES (?, ?)",
-            ('App 2', 'user.edit_product')
+            ('App 2', 'admin.edit_product')
         )
         db.commit()
 

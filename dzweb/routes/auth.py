@@ -34,7 +34,7 @@ def load_logged_in_user():
 def login():
     if request.method == 'POST':
         password = request.form['password']
-        admin_password = current_app.config.get('ADMIN_PASSWORD')
+        admin_password = current_app.config.get('DZWEB_ADMIN_PASSWORD')
 
         if not admin_password:
             flash(_('系统未配置管理员密码，请联系技术支持。'))
@@ -42,12 +42,12 @@ def login():
 
         if g.get('user'):
             flash(_('管理员已登录'))
-            return redirect(url_for('user.userhome'))
+            return redirect(url_for('admin.userhome'))
 
         if password == admin_password:
             session.clear()
             session['is_admin'] = True
-            return redirect(url_for('user.userhome'))
+            return redirect(url_for('admin.userhome'))
         else:
             flash(_('密码错误.'))
 
