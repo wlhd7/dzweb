@@ -13,78 +13,20 @@ bp = Blueprint('user', __name__, url_prefix='/user')
 @login_required
 def load_added_apps():
     db = get_db()
-
-    if g.user['applist']:
-        applist = json.loads(g.user['applist'])
-    else:
-        applist = []
-
-    g.applist = applist
-
-    if applist:
-        placeholder = ','.join(['?'] * len(applist))
-        query = f'SELECT appname, appurl FROM apps WHERE id IN ({placeholder})'
-        apps = db.execute(query, applist).fetchall()
-
-        g.appname_appurl_dict = {app['appname']: app['appurl'] for app in apps}
-    else:
-        g.appname_appurl_dict = {}
+    
+    # Fetch all apps from the database
+    apps = db.execute('SELECT appname, appurl FROM apps').fetchall()
+    
+    # Store all apps in the context for sidebar rendering
+    g.appname_appurl_dict = {app['appname']: app['appurl'] for app in apps}
 
 
-@bp.route('/add-app', methods=['GET', 'POST'])
+@bp.route('/')
 @login_required
-def add_app():
+def userhome():
     db = get_db()
-
-    apps = db.execute(
-            'SELECT * FROM apps',
-        ).fetchall()
-
-    if request.method == 'POST':
-        app_number = request.form['number']
-        app_password = request.form['password']
-        stored_password = None
-
-        for app in apps:
-            try:
-                if int(app['id']) == int(app_number):
-                    stored_password = app['apppassword']
-                    print(stored_password)
-                    break
-            except ValueError:
-                flash('请输入应用ID (点击‘提示’查看应用ID)')
-
-                return redirect(url_for('user.add_app'))
-
-        if stored_password is None:
-            flash('应用不存在')
-
-            return render_template('user/add-app.html', apps=apps)
-
-        check = checkpw(
-                app_password.encode('utf-8'),
-                stored_password.encode('utf-8')
-            )
-
-        if check:
-            if app_number not in g.applist:
-                g.applist.append(app_number)
-
-                db.execute(
-                        'UPDATE users SET applist = ? WHERE id = ?',
-                        (json.dumps(g.applist), g.user['id'])
-                    )
-                db.commit()
-
-                flash('应用添加成功')
-
-                return redirect(url_for('user.add_app'))
-            else:
-                flash('该应用已经在应用列表中')
-        else:
-            flash('密码错误')
-
-    return render_template('user/add-app.html', apps=apps)
+    apps = db.execute('SELECT * FROM apps').fetchall()
+    return render_template('user/userhome.html', apps=apps)
 
 
 @bp.route('/set-color', methods=['GET', 'POST'])

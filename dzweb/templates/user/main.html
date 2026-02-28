@@ -10,8 +10,6 @@
 		<div class="sector">
 			<div class="sector-title">
 				<p>应用列表</p>
-
-				<a class="blue link" href="{{ url_for('user.add_app') }}">新增</a>
 			</div>
 
 			<div class="sector-content">
@@ -20,17 +18,15 @@
 					设置用户名颜色</a>
 				<hr>
 
-				{% if g.applist %}
-					{% for appname, appurl in g.appname_appurl_dict.items() %}
-						<a href="{{ url_for(appurl) }}">
-							<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
-							{{ appname }}</a>
+				{% for appname, appurl in g.appname_appurl_dict.items() %}
+					<a href="{{ url_for(appurl) }}">
+						<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
+						{{ appname }}</a>
 
-						{% if not loop.last %}
-						<hr>
-						{% endif %}
-					{% endfor %}
-				{% endif %}
+					{% if not loop.last %}
+					<hr>
+					{% endif %}
+				{% endfor %}
 			</div>
 		</div>
 	</div>

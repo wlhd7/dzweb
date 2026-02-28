@@ -88,7 +88,7 @@ def login():
         else:
             session['user_id'] = user['id']
 
-            return redirect(url_for('user.add_app'))
+            return redirect(url_for('user.userhome'))
 
     return render_template('auth/login.html')
 

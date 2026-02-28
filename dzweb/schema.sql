@@ -35,7 +35,6 @@ create table if not exists messages (
 create table if not exists apps (
 	id integer primary key autoincrement,
 	appname text not null,
-	apppassword text not null,
 	appurl text not null
 );
 
