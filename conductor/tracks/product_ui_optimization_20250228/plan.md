@@ -1,6 +1,6 @@
 # Implementation Plan - product_ui_optimization_20250228
 
-## Phase 1: Sidebar Navigation Update
+## Phase 1: Sidebar Navigation Update [checkpoint: 9fceb29]
 - [x] Task: Add "Add New" link to the product sidebar (9fceb29)
     - [x] Write failing tests to verify the presence of the "新增" link for admin users
     - [x] Modify `dzweb/templates/product/main.html` to insert the "新增" link next to "产品类别" title
@@ -18,7 +18,6 @@
     - [x] Ensure `product/create.html` and `product/update.html` structure matches the new CSS logic
     - [x] Verify visually in the browser
 
-## Phase 3: Finalization
-- [~] Task: Regression testing across different screen sizes
-
-- [ ] Task: Conductor - User Manual Verification 'UI Refactor' (Protocol in workflow.md)
+## Phase 3: Finalization [checkpoint: 42ff022]
+- [x] Task: Regression testing across different screen sizes (42ff022)
+- [x] Task: Conductor - User Manual Verification 'UI Refactor' (Protocol in workflow.md) (42ff022)
