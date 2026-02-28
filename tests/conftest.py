@@ -35,7 +35,7 @@ def app():
         )
         db.execute(
             "INSERT INTO apps (appname, appurl) VALUES (?, ?)",
-            ('App 2', 'user.edit_product_permission')
+            ('App 2', 'user.edit_product')
         )
         db.commit()
 

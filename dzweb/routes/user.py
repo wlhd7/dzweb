@@ -26,13 +26,13 @@ def userhome():
     return render_template('user/userhome.html', apps=apps)
 
 
-@bp.route('/edit-produt-permisssion')
+@bp.route('/edit-product')
 @login_required
-def edit_product_permission():
+def edit_product():
     return render_template('user/edit-product-permission.html')
 
 
-@bp.route('/edit-hir-permission')
+@bp.route('/edit-hire')
 @login_required
-def edit_hire_permission():
+def edit_hire():
     return render_template('user/edit-hire-permission.html')
