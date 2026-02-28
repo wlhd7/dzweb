@@ -29,7 +29,6 @@ SUBCATEGORIES = {
         {'id': 'assemblyShop', 'name': '总装车间'},
     ],
     'non_standard': [],
-    'equipment': [],
     'robotics': [],
 }
 
@@ -132,10 +131,15 @@ def update(id):
 @login_required
 def delete(id):
     db = get_db()
-    db.execute('DELETE FROM products WHERE id = ?', (id,))
-    db.commit()
-
-    return redirect(url_for('product.equipment'))
+    product = db.execute('SELECT category FROM products WHERE id = ?', (id,)).fetchone()
+    
+    if product:
+        category = product['category']
+        db.execute('DELETE FROM products WHERE id = ?', (id,))
+        db.commit()
+        return redirect(url_for(f'product.{category}'))
+    
+    return redirect(url_for('home.index'))
 
 
 @bp.route('/<int:id>/display')
@@ -193,11 +197,6 @@ def get_page(category):
             current_class=current_class
         )
 
-
-
-@bp.route('/equipment')
-def equipment():
-    return get_page('equipment')
 
 
 @bp.route('/fixture')

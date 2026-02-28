@@ -9,7 +9,7 @@ def test_user_home_link_in_nav(client, auth):
 
 def test_add_new_product_link_in_sidebar(client, auth):
     auth.admin_login()
-    response = client.get('/product/equipment')
+    response = client.get('/product/fixture')
     assert response.status_code == 200
     html = response.data.decode('utf-8')
     assert 'href="/product/create"' in html
