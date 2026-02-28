@@ -11,7 +11,7 @@
     - [x] Expose port 5000
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Dockerization Scaffolding' (Protocol in workflow.md) (4f54cf7)
 
-## Phase 2: Testing & Refinement
+## Phase 2: Testing & Refinement [checkpoint: dec9fff]
 - [x] Task: Verify hot-reloading with Docker Compose (08ffdae)
 - [x] Task: Document Docker-based development workflow in README.md (d08e7be)
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Testing & Refinement' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Testing & Refinement' (Protocol in workflow.md) (dec9fff)
