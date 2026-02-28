@@ -9,3 +9,4 @@ services:
     environment:
       - FLASK_APP=dzweb
       - FLASK_DEBUG=1
+      - DZWEB_ADMIN_PASSWORD=admin123

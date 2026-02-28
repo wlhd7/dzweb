@@ -13,7 +13,8 @@ def create_app(test_config=None):
         DATABASE=os.path.join(app.instance_path, 'dzweb.sqlite'),
         # Corrected typo: BABEL_DEFAULT_LOCALE
         BABEL_DEFAULT_LOCALE='zh',
-        UPLOAD_FOLDER=os.path.join(app.instance_path, 'uploads')
+        UPLOAD_FOLDER=os.path.join(app.instance_path, 'uploads'),
+        DZWEB_ADMIN_PASSWORD=os.environ.get('DZWEB_ADMIN_PASSWORD')
     )
 
     if test_config is None:
