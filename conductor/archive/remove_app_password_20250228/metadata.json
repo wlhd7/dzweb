@@ -1,0 +1,8 @@
+{
+  "track_id": "remove_app_password_20250228",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2025-02-28T12:00:00Z",
+  "updated_at": "2025-02-28T12:00:00Z",
+  "description": "- 用户登陆个人主页后，需要通过口令添加应用 <更改>: - 无需通过口令添加应用 - 所有应用链接直接显示在左侧应用列表"
+}
