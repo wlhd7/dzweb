@@ -14,7 +14,7 @@
 				<p>{{ _('产品类别') }}</p>
 
 				{% if g.user %}
-					<a href="{{ url_for('product.create') }}">新增</a>
+					<a id="add-new-product" class="blue link" href="{{ url_for('product.create') }}">{{ _('新增') }}</a>
 				{% else %}
 					<a id="add-new-product" class="blue link" href="{{ url_for('product.search') }}">{{ _('产品搜索') }}</a>
 				{% endif %}
