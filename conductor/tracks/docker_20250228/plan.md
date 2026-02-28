@@ -5,10 +5,10 @@
     - [x] Setup base image (Python 3.12-slim)
     - [x] Configure workdir and copy dependency manifests
     - [x] Install dependencies from requirements.txt
-- [ ] Task: Create docker-compose.yml for local development
-    - [ ] Define 'web' service with volume mounting
-    - [ ] Configure environment variables (FLASK_DEBUG=1, etc.)
-    - [ ] Expose port 5000
+- [x] Task: Create docker-compose.yml for local development (36e608d)
+    - [x] Define 'web' service with volume mounting
+    - [x] Configure environment variables (FLASK_DEBUG=1, etc.)
+    - [x] Expose port 5000
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Dockerization Scaffolding' (Protocol in workflow.md)
 
 ## Phase 2: Testing & Refinement
