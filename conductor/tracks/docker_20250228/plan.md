@@ -12,6 +12,6 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Dockerization Scaffolding' (Protocol in workflow.md) (4f54cf7)
 
 ## Phase 2: Testing & Refinement
-- [ ] Task: Verify hot-reloading with Docker Compose
+- [x] Task: Verify hot-reloading with Docker Compose (08ffdae)
 - [ ] Task: Document Docker-based development workflow in README.md
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Testing & Refinement' (Protocol in workflow.md)
