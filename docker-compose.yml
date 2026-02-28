@@ -5,6 +5,7 @@ services:
       - "5000:5000"
     volumes:
       - .:/app
+    command: gunicorn --bind 0.0.0.0:5000 --reload "dzweb:create_app()"
     environment:
       - FLASK_APP=dzweb
       - FLASK_DEBUG=1
