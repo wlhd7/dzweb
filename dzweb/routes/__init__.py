@@ -1,8 +1,8 @@
 from flask import send_from_directory, render_template
-from . import home, auth, product, case, service, human, contact, admin
+from . import home, product, case, service, human, contact, admin
 import os
 
-bps = [home, auth, product, case, service, human, contact, admin]
+bps = [home, product, case, service, human, contact, admin]
 
 def init_app(app):
     @app.route('/instance-files/<filename>')

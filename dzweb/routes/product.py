@@ -3,7 +3,7 @@ from dzweb.db import get_db
 import uuid
 import os
 from flask_babel import _
-from dzweb.routes.auth import login_required
+from dzweb.routes.admin import login_required
 from werkzeug.exceptions import abort
 import math
 from functools import wraps
