@@ -11,8 +11,3 @@ This file tracks all major tracks for the project. Each track has its own detail
 ---
 
 - [x] **Track: - 但管理员登陆的时候，产品展示页面应该出现‘编辑’与‘删除’按钮**
-
----
-
-- [x] **Track: admin/edit-hire 页面，‘请点击这里’ 提供的路由应该指向新增职位**
-*Link: [./tracks/edit_hire_link_update_20260228/](./tracks/edit_hire_link_update_20260228/)*
