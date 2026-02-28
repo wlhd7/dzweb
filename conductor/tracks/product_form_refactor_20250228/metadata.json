@@ -1,0 +1,8 @@
+{
+  "track_id": "product_form_refactor_20250228",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2025-02-28T15:00:00Z",
+  "updated_at": "2025-02-28T15:00:00Z",
+  "description": "- product/create 子类别的内容应该随着‘产品分类’改变，如果该‘产品分类’没有子类别，则留空 - ‘产品描述’标题移动到 textarea 的左上方 - ‘创建产品’每个条目之间增加上下间距"
+}
