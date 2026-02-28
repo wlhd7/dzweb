@@ -13,5 +13,5 @@
 
 ## Phase 2: Testing & Refinement
 - [x] Task: Verify hot-reloading with Docker Compose (08ffdae)
-- [ ] Task: Document Docker-based development workflow in README.md
+- [x] Task: Document Docker-based development workflow in README.md (d08e7be)
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Testing & Refinement' (Protocol in workflow.md)
