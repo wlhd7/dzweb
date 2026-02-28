@@ -14,5 +14,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: admin/edit-hire 页面，‘请点击这里’ 提供的路由应该指向新增职位**
+- [x] **Track: admin/edit-hire 页面，‘请点击这里’ 提供的路由应该指向新增职位**
 *Link: [./tracks/edit_hire_link_update_20260228/](./tracks/edit_hire_link_update_20260228/)*
