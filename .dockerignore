@@ -1,0 +1,13 @@
+.git
+.python-version
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.db
+instance/
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
