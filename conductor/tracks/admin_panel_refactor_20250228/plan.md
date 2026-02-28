@@ -18,15 +18,15 @@
     - [x] Verify tests pass
 
 ## Phase 3: Route & Title Migration
-- [ ] Task: Rename routes and update specific titles
-    - [ ] Update `dzweb/routes/user.py`:
-        - [ ] Rename `edit_product_permission` route to `edit-product`
-        - [ ] Rename `edit_hire_permission` route to `edit-hire`
-    - [ ] Update `dzweb/templates/user/edit-product-permission.html`:
-        - [ ] Update title to "编辑产品信息"
-    - [ ] Update `dzweb/templates/user/edit-hire-permission.html`:
-        - [ ] Update title to "编辑招聘信息"
-    - [ ] Verify tests pass
+- [x] Task: Rename routes and update specific titles (d9ea8db)
+    - [x] Update `dzweb/routes/user.py`:
+        - [x] Rename `edit_product_permission` route to `edit-product`
+        - [x] Rename `edit_hire_permission` route to `edit-hire`
+    - [x] Update `dzweb/templates/user/edit-product-permission.html`:
+        - [x] Update title to "编辑产品信息"
+    - [x] Update `dzweb/templates/user/edit-hire-permission.html`:
+        - [x] Update title to "编辑招聘信息"
+    - [x] Verify tests pass
 
 ## Phase 4: Finalization
 - [ ] Task: Regression testing and documentation sync
