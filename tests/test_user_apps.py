@@ -22,3 +22,10 @@ def test_index_page_renders(client):
     response = client.get('/')
     assert response.status_code == 200
     assert b'>>' in response.data
+
+def test_sidebar_links_are_correct(client, auth):
+    auth.login()
+    response = client.get('/user/')
+    html = response.data.decode('utf-8')
+    assert 'href="/user/set-color"' in html
+    assert 'href="/user/weekend-overtime"' in html
