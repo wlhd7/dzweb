@@ -13,11 +13,11 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Backend Refactor' (Protocol in workflow.md) (847bfb2)
 
 ## Phase 2: Frontend Implementation
-- [ ] Task: Integrate all-apps list into User Home sidebar
-    - [ ] Write tests for sidebar rendering with app links
-    - [ ] Modify `dzweb/templates/user/userhome.html` or the relevant sidebar macro
-    - [ ] Inject the list of all apps into the template context
-    - [ ] Verify tests pass
+- [x] Task: Integrate all-apps list into User Home sidebar (ca2ffc8)
+    - [x] Write tests for sidebar rendering with app links
+    - [x] Modify `dzweb/templates/user/userhome.html` or the relevant sidebar macro
+    - [x] Inject the list of all apps into the template context
+    - [x] Verify tests pass
 - [ ] Task: Remove "Add App" form and password dialogs
     - [ ] Remove the "Add App" button and the corresponding modal/form from the UI
     - [ ] Verify tests pass
