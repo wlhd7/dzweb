@@ -15,7 +15,7 @@
 			<div class="sector-content">
 				{% for appname, appurl in g.appname_appurl_dict.items() %}
 					<a href="{{ url_for(appurl) }}">
-						<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
+						<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right" loading="lazy">
 						{{ appname }}</a>
 
 					{% if not loop.last %}
@@ -29,7 +29,7 @@
 	<div class="block" id="content">
 		<div class="dblock">
 			<div class="dblock-title">
-				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
+				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}" loading="lazy">
 				<p>&nbsp; {% block title %}{% endblock %}</p>
 
 				{% block user_title %}{% endblock %}

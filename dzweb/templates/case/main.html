@@ -11,19 +11,19 @@
 
 			<div class="sector-content">
 				<a href="{{ url_for('case.extruder') }}">
-					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right" loading="lazy">
 					{{ _('铁屑挤压机') }}</a>					
 				<hr>
 				<a href="{{ url_for('case.assembly_line') }}">
-					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right" loading="lazy">
 					{{ _('组装线') }}</a>
 				<hr>
 				<a href="{{ url_for('case.ass') }}">
-					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right" loading="lazy">
 					{{ _('汽车转向系统装配线') }}</a>
 				<hr>
 				<a href="{{ url_for('case.robot_welding') }}">
-					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right" loading="lazy">
 					{{ _('机器人焊接工作站') }}</a>
 			</div>
 
@@ -36,7 +36,7 @@
 	<div class="block" id="second-column">
 		<div class="dblock">
 			<div class="dblock-title">
-				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
+				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}" loading="lazy">
 				<p>&nbsp; {% block title %}{% endblock %}</p>
 
 			</div>

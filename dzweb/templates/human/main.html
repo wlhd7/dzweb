@@ -24,11 +24,11 @@
 
 			<div class="sector-content">
 				<a href="{{ url_for('human.hire') }}">
-					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right" loading="lazy">
 					{{ _('招贤纳士') }}</a>					
 				<hr>
 				<a href="{{ url_for('human.idea') }}">
-					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right" loading="lazy">
 					{{ _('人才理念') }}</a>
 			</div>
 
@@ -41,7 +41,7 @@
 	<div class="block" id="second-column">
 		<div class="dblock">
 			<div class="dblock-title">
-				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
+				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}" loading="lazy">
 				<p>&nbsp; {% block title %}{% endblock %}</p>
 			</div>
 		

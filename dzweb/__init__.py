@@ -14,7 +14,8 @@ def create_app(test_config=None):
         # Corrected typo: BABEL_DEFAULT_LOCALE
         BABEL_DEFAULT_LOCALE='zh',
         UPLOAD_FOLDER=os.path.join(app.instance_path, 'uploads'),
-        DZWEB_ADMIN_PASSWORD=os.environ.get('DZWEB_ADMIN_PASSWORD')
+        DZWEB_ADMIN_PASSWORD=os.environ.get('DZWEB_ADMIN_PASSWORD'),
+        SEND_FILE_MAX_AGE_DEFAULT=31536000
     )
 
     if test_config is None:

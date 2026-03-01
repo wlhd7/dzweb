@@ -22,34 +22,34 @@
 
 			<div class="sector-content">
 				<a href="{{ url_for('product.non_standard') }}">
-					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right" loading="lazy">
 					{{ _('非标零件') }}</a>
 				<hr>
 				<a href="{{ url_for('product.fixture') }}">
-					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right" loading="lazy">
 					{{ _('工装夹具') }}</a>
 				<hr>
 				<a href="{{ url_for('product.automation') }}">
-					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right" loading="lazy">
 					{{ _('自动化设备') }}</a>
 				<div class="automation-subclass">
 					<a href="{{ url_for('product.automation') }}?class=engine&page=1">
-						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right" loading="lazy">
 						{{ _('发动机') }}
 					</a>
 					<hr>
 					<a href="{{ url_for('product.automation') }}?class=transmission&page=1">
-						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right" loading="lazy">
 						{{ _('变速箱') }}
 					</a>
 					<hr>
 					<a href="{{ url_for('product.automation') }}?class=steeringGear&page=1">
-						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right" loading="lazy">
 						{{ _('转向系统') }}
 					</a>
 					<hr>
 					<a href="{{ url_for('product.automation') }}?class=automobileBearings&page=1">
-						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right">
+						<img src="{{ url_for('static', filename='images/corner-down-right.svg') }}" class="corner-down-right" loading="lazy">
 						{{ _('汽车轴承') }}
 					</a>
 				</div>
@@ -62,7 +62,7 @@
 	<div class="block">
 		<div class="dblock">
 			<div class="dblock-title">
-				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
+				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}" loading="lazy">
 				<p>&nbsp; {% block title %}{% endblock %}</p>
 
 				{%- if request.endpoint == 'product.fixture' %}
@@ -82,7 +82,7 @@
 			<div class="dblock-content product-page">
 				{% for product in products %}
 					<a href="{{ url_for('product.display', id=product['id']) }}" class="product-item" data-class="{{ product['class'] if product['class'] is defined else '' }}">
-						<img src="{{ url_for('instance_files', filename=product['filename']) }}">
+						<img src="{{ url_for('instance_files', filename=product['filename']) }}" loading="lazy">
 						<p>{{ product['productname'] }}</p>
 					</a>
 				{% endfor %}

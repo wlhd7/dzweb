@@ -16,15 +16,15 @@
 
 			<div class="sector-content">
 				<a href="{{ url_for('contact.contact_us') }}">
-					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right" loading="lazy">
 					{{ _('联系我们') }}</a>					
 				<hr>
 				<a href="{{ url_for('contact.location') }}">
-					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right" loading="lazy">
 					{{ _('地理位置') }}</a>
 				<hr>
 				<a href="{{ url_for('contact.mailbox') }}">
-					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right" loading="lazy">
 					{{ _('信箱') }}</a>
 			</div>
 
@@ -37,7 +37,7 @@
 	<div class="block">
 		<div class="dblock">
 			<div class="dblock-title">
-				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}">
+				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}" loading="lazy">
 				<p>&nbsp; {% block title %}{% endblock %}</p>
 
 				{% block leave_message %}{% endblock %}
