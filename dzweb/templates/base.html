@@ -4,31 +4,32 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="applicable-device" content="pc,mobile">
-	<meta name="baidu-site-verification" content="codeva-itXnARhqFg" />
-	<meta name="msvalidate.01" content="4D6C42588102B9D9E16C829B2783F992" />
-	<meta name="google-site-verification" content="lHyC4DgQqSdtHbM0WgYfWyxVpKyDvFq5DnE8DtjlL4k" />
+	<meta name="baidu-site-verification" content="{{ config['BAIDU_SITE_VERIFICATION'] }}" />
+	<meta name="msvalidate.01" content="{{ config['BING_SITE_VERIFICATION'] }}" />
+	<meta name="google-site-verification" content="{{ config['GOOGLE_SITE_VERIFICATION'] }}" />
 
-	<meta name="description" content="{% block description %}{{ _('广州东振工业自动化有限公司 - 专业自动化设备、工装夹具、机器人焊接、挤出机制造商。提供非标设备设计、制造、销售一站式服务，应用于汽车、制冷、机械电子等行业。') }}{% endblock %}">
-	<meta name="keywords" content="{% block keywords %}{{ _('自动化设备,工装夹具,非标设备,广州东振,机器人焊接,挤出机,机器人项目,铁屑压块机,工业自动化') }}{% endblock %}">
-	<meta name="author" content="{{ _('广州东振工业自动化有限公司') }}">
+	<meta name="description" content="{% block description %}{{ _('广州东振机电设备有限公司 - 专业自动化设备、工装夹具、机器人焊接、挤出机制造商。提供非标设备设计、制造、销售一站式服务，应用于汽车、制冷、机械电子等行业。') }}{% endblock %}">
+	<meta name="keywords" content="{% block keywords %}{{ _('自动化设备,工装夹具,非标设备,广州东振,机器人焊接,挤出机,机器人项目,铁屑压块机,机电设备') }}{% endblock %}">
+	<meta name="author" content="{{ _('广州东振机电设备有限公司') }}">
 
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://www.dongzhen.cn{{ request.path }}">
-	<meta property="og:site_name" content="{{ _('广州东振工业自动化有限公司') }}">
-	<meta property="og:title" content="{{ _('广州东振工业自动化有限公司 - 专业非标设备、自动化设备、工装夹具、机器人项目、铁屑压块机制造商') }}">
-	<meta property="og:description" content="{{ _('广州东振工业自动化有限公司 - 专业自动化设备、工装夹具、机器人焊接、挤出机制造商。提供非标设备设计、制造、销售一站式服务，应用于汽车、制冷、机械电子等行业。') }}">
+	<meta property="og:site_name" content="{{ _('广州东振机电设备有限公司') }}">
+	<meta property="og:title" content="{{ _('广州东振机电设备有限公司 - 专业非标设备、自动化设备、工装夹具、机器人项目、铁屑压块机制造商') }}">
+	<meta property="og:description" content="{{ _('广州东振机电设备有限公司 - 专业自动化设备、工装夹具、机器人焊接、挤出机制造商。提供非标设备设计、制造、销售一站式服务，应用于汽车、制冷、机械电子等行业。') }}">
 	<meta property="og:image" content="https://www.dongzhen.cn/static/preview.jpg">
 	<meta property="og:image:type" content="image/jpg">
 
 	<!-- Twitter cards for consistent previews -->
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="{{ _('广州东振工业自动化有限公司 - 专业非标设备、自动化设备、工装夹具、机器人项目、铁屑压块机制造商') }}">
-	<meta name="twitter:description" content="{{ _('广州东振工业自动化有限公司 - 专业自动化设备、工装夹具、机器人焊接、挤出机制造商。提供非标设备设计、制造、销售一站式服务，应用于汽车、制冷、机械电子等行业。') }}">
+	<meta name="twitter:title" content="{{ _('广州东振机电设备有限公司 - 专业非标设备、自动化设备、工装夹具、机器人项目、铁屑压块机制造商') }}">
+	<meta name="twitter:description" content="{{ _('广州东振机电设备有限公司 - 专业自动化设备、工装夹具、机器人焊接、挤出机制造商。提供非标设备设计、制造、销售一站式服务，应用于汽车、制冷、机械电子等行业。') }}">
 	<meta name="twitter:image" content="https://www.dongzhen.cn/static/preview.jpg">
 
 	{% block head %}
 
-	<title>{% block title %}{% endblock %}_{{ _('广州东振工业自动化有限公司') }}</title>
+	<title>{% block title %}{% endblock %}_{{ _('广州东振机电设备有限公司') }}</title>
+
 
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/header_tailer.css') }}">
@@ -56,7 +57,7 @@
 	var _hmt = _hmt || [];
 	(function() {
 	  var hm = document.createElement("script");
-	  hm.src = "https://hm.baidu.com/hm.js?4D6C42588102B9D9E16C829B2783F992";
+	  hm.src = "https://hm.baidu.com/hm.js?{{ config['BAIDU_TONGJI_ID'] }}";
 	  var s = document.getElementsByTagName("script")[0]; 
 	  s.parentNode.insertBefore(hm, s);
 	})();
