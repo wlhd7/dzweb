@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-02-28 18:48+0800\n"
+"POT-Creation-Date: 2026-03-01 19:01+0800\n"
 "PO-Revision-Date: 2025-09-29 14:49+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -88,6 +88,10 @@ msgstr "電話: 020-31135070 &nbsp;&nbsp;&nbsp;&nbsp;メールアドレス: Dong
 #: dzweb/templates/base.html:164 dzweb/templates/contact/contact-us.html:10
 msgid "地址：广州市番禺区石基镇桥山村竹园岗一街2号"
 msgstr "住所：広州市番禺区石基鎮橋山村竹園崗一街2号"
+
+#: dzweb/templates/base.html:165
+msgid "粤ICP备2026001637号"
+msgstr ""
 
 #: dzweb/templates/human/hire.html:9 dzweb/templates/macro.html:9
 msgid "联系方式"

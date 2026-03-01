@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-02-28 18:48+0800\n"
+"POT-Creation-Date: 2026-03-01 19:01+0800\n"
 "PO-Revision-Date: 2025-09-14 10:07+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -92,6 +92,10 @@ msgid "地址：广州市番禺区石基镇桥山村竹园岗一街2号"
 msgstr ""
 "Address: No. 2, Zhuyuangang 1st Street, Qiaoshan Village, Shiji Town, "
 "Panyu District, Guangzhou City"
+
+#: dzweb/templates/base.html:165
+msgid "粤ICP备2026001637号"
+msgstr ""
 
 #: dzweb/templates/human/hire.html:9 dzweb/templates/macro.html:9
 msgid "联系方式"

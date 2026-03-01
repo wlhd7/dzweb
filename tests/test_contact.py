@@ -26,7 +26,7 @@ def test_mailbox_post_success(client, app):
         
         assert response.status_code == 200
         assert len(outbox) == 1
-        assert outbox[0].subject == '网站反馈 - Test Title'
+        assert outbox[0].subject == '东振网站客户反馈 - Test Title'
         assert 'admin@example.com' in outbox[0].recipients
         assert 'Test Content' in outbox[0].body
         assert 'Test Person' in outbox[0].body
