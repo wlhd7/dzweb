@@ -27,7 +27,7 @@ def sitemap():
     pages.append(url_for('service.service', _external=True))
     
     # Contact
-    for rule in ['contact.contact_us', 'contact.location', 'contact.message_board', 'contact.mailbox']:
+    for rule in ['contact.contact_us', 'contact.message_board', 'contact.mailbox']:
         pages.append(url_for(rule, _external=True))
     
     # Human
