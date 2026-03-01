@@ -8,6 +8,8 @@
 
 ## 关键库与集成
 - **国际化 (I18n)**: Flask-Babel 4.0.0 (支持中、英、日三种语言切换)
+- **SEO 集成**: 百度主动推送 (Baidu Active Push) API，通过 `requests` 库实现。
+- **HTTP 请求**: `requests` 库 (用于与第三方 API 通讯)。
 - **安全**: 基于环境变量的预设密码认证 (通过 `ADMIN_PASSWORD` 环境变量配置)
 - **邮件服务**: Flask-Mail (用于处理系统邮件发送)
 
