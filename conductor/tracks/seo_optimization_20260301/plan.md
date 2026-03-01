@@ -9,14 +9,14 @@
 - [x] Task: 更新全局基础 TDK 默认值（中/英/日）并在 `base.html` 中应用 [f19da50]
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Multi-language SEO Infrastructure' (Protocol in workflow.md) [0be90ed]
 
-## Phase 2: 动态 Sitemap 与 站长验证 (Dynamic Sitemap & Verification Tags)
+## Phase 2: 动态 Sitemap 与 站长验证 (Dynamic Sitemap & Verification Tags) [checkpoint: d33665e]
 实现动态站点地图，并添加百度/Bing 的所有权验证。
 
 - [x] Task: 编写 `sitemap.xml` 路由的单元测试 [bb72ed4]
 - [x] Task: 在 `dzweb/routes/home.py` 中实现动态生成 `sitemap.xml` 的逻辑 [bb72ed4]
 - [x] Task: 在 `base.html` 中添加百度、Bing 的站点验证元标签（Meta Tags） [f19da50]
 - [x] Task: 更新 `robots.txt` 以正确引导搜素引擎抓取 `sitemap.xml` [ce61f11]
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Dynamic Sitemap & Verification Tags' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Dynamic Sitemap & Verification Tags' (Protocol in workflow.md) [d33665e]
 
 ## Phase 3: 核心页面 TDK 精细化优化 (Core Page TDK Optimization)
 针对具体路由和模板，配置针对性的 TDK 元数据。
