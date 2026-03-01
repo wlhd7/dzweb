@@ -1,6 +1,6 @@
 [project]
 name = "dzweb"
-version = "1.0.0"
+version = "1.1.0"
 description = "The offical website of Guangzhou Dongzhen Company"
 readme = "README.rst"
 license = {file = "LICENSE.txt"}
