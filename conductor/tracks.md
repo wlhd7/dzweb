@@ -19,5 +19,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: 删除 contact/location 路由**
+- [x] **Track: 删除 contact/location 路由**
 *Link: [./tracks/remove_contact_location_20260302/](./tracks/remove_contact_location_20260302/)*
