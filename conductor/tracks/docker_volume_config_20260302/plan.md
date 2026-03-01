@@ -19,3 +19,6 @@
     - [x] 运行 `docker inspect` 检查挂载点。 (b738187)
     - [x] 在容器内创建文件，确认宿主机对应目录同步。 (b738187)
 - [x] Task: Conductor - User Manual Verification 'Phase 3: 部署与持久化验证' (Protocol in workflow.md) (0607bb0)
+
+## Phase: Review Fixes
+- [x] Task: Apply review suggestions (08a032f)
