@@ -18,3 +18,6 @@ This file tracks all major tracks for the project. Each track has its own detail
 *Link: [./tracks/seo_optimization_20260301/](./tracks/seo_optimization_20260301/)*
 
 ---
+
+- [ ] **Track: 为 instance/ 目录配置 Docker Volume 以持久化数据**
+*Link: [./tracks/docker_volume_config_20260302/](./tracks/docker_volume_config_20260302/)*
