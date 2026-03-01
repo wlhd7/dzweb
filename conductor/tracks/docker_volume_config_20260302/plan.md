@@ -1,10 +1,10 @@
 # Implementation Plan: 为 instance 目录配置 Docker Volume
 
-## Phase 1: Dockerfile 更新
+## Phase 1: Dockerfile 更新 [checkpoint: 75599e6]
 - [x] Task: 分析并更新 `Dockerfile`。 (f44aa1e)
     - [x] 确保在镜像内创建 `/app/instance` 目录。 (f44aa1e)
     - [x] 设置 `chown` 指令以确保非 root 用户对该目录拥有读写权限。 (f44aa1e)
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Dockerfile 更新' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Dockerfile 更新' (Protocol in workflow.md) (75599e6)
 
 ## Phase 2: Docker Compose 配置
 - [ ] Task: 分析并更新 `docker-compose.yml`。
