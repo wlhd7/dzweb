@@ -47,6 +47,16 @@ def test_seo_verification_tags(client):
     # Bing 验证
     assert 'name="msvalidate.01"' in html
 
+def test_mobile_seo_meta_tags(client):
+    """验证包含移动端 SEO 相关的 meta 标签"""
+    response = client.get('/')
+    html = response.data.decode('utf-8')
+    
+    assert 'name="viewport"' in html
+    assert 'content="width=device-width, initial-scale=1.0"' in html
+    # 百度移动适配
+    assert 'name="applicable-device"' in html or 'handheld' in html or 'mobile' in html or 'format-detection' in html
+
 def test_sitemap_xml(client):
     """验证 sitemap.xml 路由存在且内容正确"""
     response = client.get('/sitemap.xml')
