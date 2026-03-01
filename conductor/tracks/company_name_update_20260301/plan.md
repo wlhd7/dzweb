@@ -9,13 +9,13 @@
 - [x] Task: 编译翻译文件 (`pybabel compile -d dzweb/translations`) [15a1a58]
 - [x] Task: Conductor - User Manual Verification 'Phase 1: i18n Update' (Protocol in workflow.md) [2bd35f1]
 
-## Phase 2: 模板与元数据重构 (Template & Meta Refactoring)
-清理可能存在的硬编码字符串，并更新 SEO 关键字段。
+## Phase 2: 模板与元数据重构 (Template & Meta Refactoring) [checkpoint: cf51fcd]
+清理可能存在的硬编码字符串，并更新 SEO 关键字段自定义。
 
 - [x] Task: 全局搜索并替换模板 (`templates/**/*.html`) 中硬编码的旧公司名称 [15a1a58]
 - [x] Task: 更新 `base.html` 中的 JSON-LD 结构化数据 [15a1a58]
 - [x] Task: 检查并更新 `instance/config.py` 中的 SEO 默认值 [15a1a58]
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Template Refactoring' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Template Refactoring' (Protocol in workflow.md) [cf51fcd]
 
 ## Phase 3: 项目文档同步 (Documentation Sync)
 确保开发辅助文档与实际名称保持一致。
