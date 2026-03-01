@@ -1,10 +1,10 @@
 # Implementation Plan: 为 instance 目录配置 Docker Volume
 
-## Phase 1: Dockerfile 更新 [checkpoint: 75599e6]
-- [x] Task: 分析并更新 `Dockerfile`。 (f44aa1e)
-    - [x] 确保在镜像内创建 `/app/instance` 目录。 (f44aa1e)
-    - [x] 设置 `chown` 指令以确保非 root 用户对该目录拥有读写权限。 (f44aa1e)
-- [x] Task: Conductor - User Manual Verification 'Phase 1: Dockerfile 更新' (Protocol in workflow.md) (75599e6)
+## Phase 1: Dockerfile 更新 [checkpoint: b738187]
+- [x] Task: 分析并更新 `Dockerfile`。 (b738187)
+    - [x] 确保在镜像内创建 `/app/instance` 目录。 (b738187)
+    - [x] 设置 `chown` 指令以确保非 root 用户对该目录拥有读写权限。 (b738187)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Dockerfile 更新' (Protocol in workflow.md) (b738187)
 
 ## Phase 2: Docker Compose 配置 [checkpoint: 7eb3c64]
 - [x] Task: 分析并更新 `docker-compose.yml`。 (ac76b4e)
@@ -13,9 +13,9 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Docker Compose 配置' (Protocol in workflow.md) (7eb3c64)
 
 ## Phase 3: 部署与持久化验证
-- [ ] Task: 重新构建并启动服务。
-    - [ ] 执行 `docker compose up --build -d` 以应用更改。
-- [ ] Task: 验证挂载配置。
-    - [ ] 运行 `docker inspect` 检查挂载点。
-    - [ ] 在容器内创建文件，确认宿主机对应目录同步。
+- [x] Task: 重新构建并启动服务。 (b738187)
+    - [x] 执行 `docker compose up --build -d` 以应用更改。 (b738187)
+- [x] Task: 验证挂载配置。 (b738187)
+    - [x] 运行 `docker inspect` 检查挂载点。 (b738187)
+    - [x] 在容器内创建文件，确认宿主机对应目录同步。 (b738187)
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: 部署与持久化验证' (Protocol in workflow.md)
