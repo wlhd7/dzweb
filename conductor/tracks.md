@@ -14,8 +14,3 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-
----
-
-- [x] **Track: 网页性能与图片优化**
-*Link: [./tracks/performance_optimization_20260301/](./tracks/performance_optimization_20260301/)*
