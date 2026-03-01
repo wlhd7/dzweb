@@ -15,9 +15,9 @@
 - [x] Task: 物理删除 `dzweb/templates/contact/location.html`。 (2417756)
 - [x] Task: Conductor - User Manual Verification 'Phase 2: 代码与模板清理' (Protocol in workflow.md) (467b604)
 
-## Phase 3: 验证与验收
-- [ ] Task: 更新测试用例。
-    - [ ] 确认访问 `/contact/location` 返回 301 并重定向到 `/contact/`。
-    - [ ] 确认重定向后的目标页面返回 200。
-- [ ] Task: 运行全量测试套件，确保没有回归。
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: 验证与验收' (Protocol in workflow.md)
+## Phase 3: 验证与验收 [checkpoint: cf6d14e]
+- [x] Task: 更新测试用例。 (4888e03)
+    - [x] 确认访问 `/contact/location` 返回 301 并重定向到 `/contact/`。 (4888e03)
+    - [x] 确认重定向后的目标页面返回 200。 (4888e03)
+- [x] Task: 运行全量测试套件，确保没有回归。 (4888e03)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: 验证与验收' (Protocol in workflow.md) (cf6d14e)
