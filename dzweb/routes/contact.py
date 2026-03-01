@@ -14,7 +14,7 @@ def contact_us():
 
 @bp.route('/location')
 def location():
-    return render_template('contact/location.html')
+    return redirect(url_for('.contact_us'), code=301)
 
 
 @bp.route('/create', methods=['GET', 'POST'])
