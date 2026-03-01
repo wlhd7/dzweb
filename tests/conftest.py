@@ -17,6 +17,11 @@ def app():
         'DATABASE': db_path,
         'SECRET_KEY': 'test_secret_key',
         'DZWEB_ADMIN_PASSWORD': 'test_admin_password',
+        'BAIDU_PUSH_TOKEN': 'test_token',
+        'BAIDU_SITE_VERIFICATION': 'test_baidu_ver',
+        'BAIDU_TONGJI_ID': 'test_tongji_id',
+        'BING_SITE_VERIFICATION': 'test_bing_ver',
+        'GOOGLE_SITE_VERIFICATION': 'test_google_ver',
     })
 
     with app.app_context():

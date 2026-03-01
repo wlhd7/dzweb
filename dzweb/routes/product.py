@@ -14,9 +14,9 @@ from dzweb.routes.admin import login_required
 
 def push_to_baidu(urls):
     """Baidu Active Push API helper."""
-    token = os.environ.get('BAIDU_PUSH_TOKEN')
-    if not token:
-        current_app.logger.warning("BAIDU_PUSH_TOKEN not configured, skipping push.")
+    token = current_app.config.get('BAIDU_PUSH_TOKEN')
+    if not token or '您的' in token:
+        current_app.logger.warning("BAIDU_PUSH_TOKEN not configured or still placeholder, skipping push.")
         return None
     
     api_url = f"http://data.zz.baidu.com/urls?site=https://www.dongzhen.cn&token={token}"
