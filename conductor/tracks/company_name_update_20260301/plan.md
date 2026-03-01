@@ -1,13 +1,13 @@
 # Implementation Plan: Global Company Name Update
 
-## Phase 1: 国际化与翻译更新 (i18n & Translation Update)
+## Phase 1: 国际化与翻译更新 (i18n & Translation Update) [checkpoint: 2bd35f1]
 重点是通过翻译系统进行源头修改，确保核心名称的自动转换。
 
 - [x] Task: 编写测试用例，验证各语言版本下公司名称的输出 [15a1a58]
 - [x] Task: 更新 `dzweb/translations/en/LC_MESSAGES/messages.po` 对应条目 [15a1a58]
 - [x] Task: 更新 `dzweb/translations/ja/LC_MESSAGES/messages.po` 对应条目 [15a1a58]
 - [x] Task: 编译翻译文件 (`pybabel compile -d dzweb/translations`) [15a1a58]
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: i18n Update' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: i18n Update' (Protocol in workflow.md) [2bd35f1]
 
 ## Phase 2: 模板与元数据重构 (Template & Meta Refactoring)
 清理可能存在的硬编码字符串，并更新 SEO 关键字段。
