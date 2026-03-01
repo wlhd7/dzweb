@@ -14,5 +14,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: 添加 dongzhen.cn ICP备案信息**
+- [x] **Track: 添加 dongzhen.cn ICP备案信息**
 *Link: [./tracks/icp_filing_20260301/](./tracks/icp_filing_20260301/)*
