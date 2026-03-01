@@ -1,6 +1,10 @@
 {% extends 'product/main1.html' %}
 
-{% block title %}{{ _('产品展示') }}{% endblock %}
+{% block title %}{{ _(product['productname']) }} - {{ _('产品展示') }}{% endblock %}
+
+{% block description %}{{ _(product['productname']) }} - {{ _(product['brief'] or '') }}{% endblock %}
+
+{% block keywords %}{{ _(product['productname']) }}, {{ _('自动化设备,工装夹具,非标设备,广州东振') }}{% endblock %}
 
 {% block head %}
 	{{ super() }}

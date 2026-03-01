@@ -60,3 +60,25 @@ def test_sitemap_xml(client):
     assert '/product/' in html
     # 案例页
     assert '/case/' in html
+
+def test_page_specific_tdk_home(client):
+    """验证首页有特定的 TDK"""
+    response = client.get('/')
+    html = response.data.decode('utf-8')
+    assert '首页' in html or 'Home' in html
+    assert '工业自动化' in html
+
+def test_page_specific_tdk_introduction(client):
+    """验证公司简介页有特定的 TDK"""
+    response = client.get('/introduction')
+    html = response.data.decode('utf-8')
+    assert '公司简介' in html or 'Introduction' in html
+    assert '广州东振' in html
+
+def test_page_specific_tdk_product_display(client):
+    """验证产品详情页动态生成 TDK"""
+    # Test Product was added in conftest.py
+    response = client.get('/product/1/display')
+    html = response.data.decode('utf-8')
+    assert 'Test Product' in html
+    assert 'Test Brief' in html
