@@ -1,15 +1,15 @@
 # Implementation Plan - performance_optimization_20260301
 
-## Phase 1: Audit & Preparation
-- [ ] Task: Audit current static resource sizes
-    - [ ] Identify images in `dzweb/static/images/` larger than 500KB.
-    - [ ] Document baseline performance using Chrome Lighthouse (Product Display page).
-- [ ] Task: Install compression dependencies
-    - [ ] Ensure `Pillow` is in `requirements.txt` and installed in the environment.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Audit & Preparation' (Protocol in workflow.md)
+## Phase 1: Audit & Preparation [checkpoint: bd0eff7]
+- [x] Task: Audit current static resource sizes (8c78478)
+    - [x] Identify images in `dzweb/static/images/` larger than 500KB.
+    - [x] Document baseline performance: Multiple images > 1MB found (max 3.4MB).
+- [x] Task: Install compression dependencies (6049a53)
+    - [x] Ensure `Pillow` is in `requirements.txt` and installed in the environment.
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Audit & Preparation' (Protocol in workflow.md) (bd0eff7)
 
 ## Phase 2: Image & Template Optimization
-- [ ] Task: Implement Native Lazy Loading
+- [~] Task: Implement Native Lazy Loading
     - [ ] Update `dzweb/templates/product/display.html` to add `loading="lazy"` to product images.
     - [ ] Update `dzweb/templates/home/index.html` for carousel or other images.
 - [ ] Task: Compress static images
