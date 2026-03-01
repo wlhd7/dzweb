@@ -18,6 +18,3 @@ This file tracks all major tracks for the project. Each track has its own detail
 *Link: [./tracks/seo_optimization_20260301/](./tracks/seo_optimization_20260301/)*
 
 ---
-
-- [x] **Track: 删除 contact/location 路由**
-*Link: [./tracks/remove_contact_location_20260302/](./tracks/remove_contact_location_20260302/)*
