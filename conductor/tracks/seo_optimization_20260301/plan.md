@@ -1,13 +1,13 @@
 # Implementation Plan: SEO Optimization for Baidu and Bing
 
-## Phase 1: 多语言 SEO 基础设施 (Multi-language SEO Infrastructure)
+## Phase 1: 多语言 SEO 基础设施 (Multi-language SEO Infrastructure) [checkpoint: 0be90ed]
 该阶段重点在于基础模板的增强，加入通用的多语言关联标签和 TDK 逻辑。
 
 - [x] Task: 编写多语言 `hreflang` 和 `canonical` 标签的单元测试 [f19da50]
 - [x] Task: 在 `base.html` 中实现 `hreflang` 自动关联逻辑 [f19da50]
 - [x] Task: 在 `base.html` 中实现 `canonical` 标签逻辑 [f19da50]
 - [x] Task: 更新全局基础 TDK 默认值（中/英/日）并在 `base.html` 中应用 [f19da50]
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Multi-language SEO Infrastructure' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Multi-language SEO Infrastructure' (Protocol in workflow.md) [0be90ed]
 
 ## Phase 2: 动态 Sitemap 与 站长验证 (Dynamic Sitemap & Verification Tags)
 实现动态站点地图，并添加百度/Bing 的所有权验证。
