@@ -111,7 +111,7 @@ def test_page_specific_tdk_home(client):
     response = client.get('/')
     html = response.data.decode('utf-8')
     assert '首页' in html or 'Home' in html
-    assert '工业自动化' in html
+    assert '机电设备' in html
 
 def test_page_specific_tdk_introduction(client):
     """验证公司简介页有特定的 TDK"""
