@@ -4,9 +4,10 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - .:/app
-    command: gunicorn --bind 0.0.0.0:5000 --reload "dzweb:create_app()"
+      # 挂载 instance 目录以持久化数据库和上传的文件
+      - ./instance:/app/instance
+    # 移除项目根目录的挂载，仅在开发调试时使用。生产环境应依赖镜像内的代码。
     environment:
       - FLASK_APP=dzweb
-      - FLASK_DEBUG=1
+      - FLASK_DEBUG=0
       - DZWEB_ADMIN_PASSWORD=admin123
