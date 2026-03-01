@@ -10,22 +10,22 @@
 - [~] Task: Conductor - User Manual Verification 'Phase 1: Preparation and Extraction' (Protocol in workflow.md)
 
 ## Phase 2: Translation Implementation
-- [ ] Task: Translate Core UI elements (en & ja)
-    - [ ] Fill in translations for headers, footers, nav-bars, and titles.
-- [ ] Task: Translate Home/About elements (en & ja)
-    - [ ] Complete translations for company overview, performance, strategy, and history sections.
-- [ ] Task: Translate Product/Case elements (en & ja)
-    - [ ] Translate product categories, specific product details, and case study descriptions.
-- [ ] Task: Compile translations
-    - [ ] Run `pybabel compile -d dzweb/translations/`
-- [ ] Task: Verify translations in local dev environment
-    - [ ] Restart Flask app and manually switch languages for UI, Home, Product, and Case pages.
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Translation Implementation' (Protocol in workflow.md)
+- [x] Task: Translate Core UI elements (en & ja) (e6db0ea)
+    - [x] Fill in translations for headers, footers, nav-bars, and titles.
+- [x] Task: Translate Home/About elements (en & ja) (e6db0ea)
+    - [x] Complete translations for company overview, performance, strategy, and history sections.
+- [x] Task: Translate Product/Case elements (en & ja) (e6db0ea)
+    - [x] Translate product categories, specific product details, and case study descriptions.
+- [x] Task: Compile translations (e6db0ea)
+    - [x] Run `pybabel compile -d dzweb/translations/`
+- [x] Task: Verify translations in local dev environment (e6db0ea)
+    - [x] Restart Flask app and manually switch languages for UI, Home, Product, and Case pages.
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Translation Implementation' (Protocol in workflow.md) (e6db0ea)
 
 ## Phase 3: Final Verification and Cleanup
-- [ ] Task: Run automated checks (if applicable)
-    - [ ] Ensure all pages still load correctly without rendering issues due to text length.
-- [ ] Task: Commit the changes
-    - [ ] Stage updated `.po` and `.mo` files.
-    - [ ] Commit with message `chore(i18n): Complete English and Japanese translations`
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Final Verification and Cleanup' (Protocol in workflow.md)
+- [x] Task: Run automated checks (if applicable) (e6db0ea)
+    - [x] Ensure all pages still load correctly without rendering issues due to text length.
+- [x] Task: Commit the changes (e6db0ea)
+    - [x] Stage updated `.po` and `.mo` files.
+    - [x] Commit with message `chore(i18n): Complete English and Japanese translations`
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Final Verification and Cleanup' (Protocol in workflow.md) (e6db0ea)
