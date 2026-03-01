@@ -1,5 +1,7 @@
 import pytest
 from flask import url_for
+from unittest.mock import patch, MagicMock
+import io
 
 def test_seo_tags_in_base_template(client):
     """验证 base.html 中包含基本的 SEO 标签"""
@@ -60,6 +62,38 @@ def test_sitemap_xml(client):
     assert '/product/' in html
     # 案例页
     assert '/case/' in html
+
+@patch('dzweb.routes.product.push_to_baidu')
+def test_baidu_push_on_product_create(mock_push, client, auth):
+    """验证创建产品时触发百度推送"""
+    # Create a dummy image
+    img = (io.BytesIO(b"dummy image data"), 'test.jpg')
+    
+    auth.admin_login()
+    
+    data = {
+        'productname': 'New SEO Product',
+        'brief': 'SEO Brief',
+        'category': 'automation',
+        'file': img
+    }
+    
+    # We need to simulate the file upload correctly
+    response = client.post('/product/create', data=data, content_type='multipart/form-data')
+    assert response.status_code == 302 # Redirect to category page
+    
+    assert mock_push.called
+    urls = mock_push.call_args[0][0]
+    # Check if any URL contains /product/ and lang=en/ja
+    found_en = False
+    found_ja = False
+    for url in urls:
+        if '/product/' in url and 'lang=en' in url:
+            found_en = True
+        if '/product/' in url and 'lang=ja' in url:
+            found_ja = True
+    assert found_en
+    assert found_ja
 
 def test_page_specific_tdk_home(client):
     """验证首页有特定的 TDK"""

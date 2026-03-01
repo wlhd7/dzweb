@@ -9,6 +9,25 @@ import math
 from functools import wraps
 
 
+import requests
+
+def push_to_baidu(urls):
+    """Baidu Active Push API helper."""
+    token = os.environ.get('BAIDU_PUSH_TOKEN')
+    if not token:
+        current_app.logger.warning("BAIDU_PUSH_TOKEN not configured, skipping push.")
+        return None
+    
+    api_url = f"http://data.zz.baidu.com/urls?site=https://www.dongzhen.cn&token={token}"
+    try:
+        response = requests.post(api_url, data="\n".join(urls), timeout=5)
+        current_app.logger.info(f"Baidu Push Response: {response.text}")
+        return response.json()
+    except Exception as e:
+        current_app.logger.error(f"Baidu Push Error: {str(e)}")
+        return None
+
+
 bp = Blueprint('product', __name__, url_prefix='/product')
 
 
@@ -70,7 +89,17 @@ def create():
                     'INSERT INTO products (productname, brief, category, filename, "class") VALUES (?, ?, ?, ?, ?)',
                     (productname, brief, category, random_filename, product_class)
                 )
+            # Fetch the just inserted ID to push its URL
+            product_id = db.execute('SELECT last_insert_rowid()').fetchone()[0]
             db.commit()
+
+            # Baidu Active Push
+            product_url = url_for('product.display', id=product_id, _external=True)
+            push_to_baidu([
+                product_url,
+                f"{product_url}?lang=en",
+                f"{product_url}?lang=ja"
+            ])
         else:
             flash('抱歉，图片格式限制，请上传文件扩展名为 jpg 或 png 的图片')
 
