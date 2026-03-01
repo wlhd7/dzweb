@@ -117,7 +117,7 @@ def send_feedback_email(title, content, liaison, unit, address, telephone, mobil
             return False
     
     return send_email(
-        subject=f"网站反馈 - {title}",
+        subject=f"东振网站客户反馈 - {title}",
         recipients=recipients,
         body=email_body,
         html=email_html,
