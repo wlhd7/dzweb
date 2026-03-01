@@ -37,6 +37,11 @@ def app():
             "INSERT INTO apps (appname, appurl) VALUES (?, ?)",
             ('App 2', 'admin.edit_product')
         )
+        # Add a test product
+        db.execute(
+            "INSERT INTO products (productname, brief, category, filename, class) VALUES (?, ?, ?, ?, ?)",
+            ('Test Product', 'Test Brief', 'automation', 'test.jpg', 'engine')
+        )
         db.commit()
 
     yield app
