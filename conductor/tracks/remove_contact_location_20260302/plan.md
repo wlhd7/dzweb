@@ -1,7 +1,7 @@
 # Implementation Plan - 删除 contact/location 路由
 
 ## Phase 1: 准备与测试环境搭建
-- [ ] Task: 备份并确认环境。
+- [~] Task: 备份并确认环境。
 - [ ] Task: 编写针对 `contact.location` 路由当前行为的测试用例（确认其目前返回 200）。
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: 准备与测试环境搭建' (Protocol in workflow.md)
 
