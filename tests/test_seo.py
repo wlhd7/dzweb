@@ -44,3 +44,19 @@ def test_seo_verification_tags(client):
     assert 'name="baidu-site-verification"' in html
     # Bing 验证
     assert 'name="msvalidate.01"' in html
+
+def test_sitemap_xml(client):
+    """验证 sitemap.xml 路由存在且内容正确"""
+    response = client.get('/sitemap.xml')
+    assert response.status_code == 200
+    assert response.mimetype == 'application/xml'
+    html = response.data.decode('utf-8')
+    
+    assert '<urlset' in html
+    assert '<loc>' in html
+    # 首页
+    assert '/</loc>' in html or 'localhost' in html
+    # 产品页
+    assert '/product/' in html
+    # 案例页
+    assert '/case/' in html
