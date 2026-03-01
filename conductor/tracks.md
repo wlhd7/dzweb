@@ -14,3 +14,8 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
+
+---
+
+- [ ] **Track: 完成英语与日语翻译**
+*Link: [./tracks/i18n_translation_20260301/](./tracks/i18n_translation_20260301/)*
