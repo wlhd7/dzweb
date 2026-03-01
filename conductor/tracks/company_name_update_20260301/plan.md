@@ -28,6 +28,6 @@
 ## Phase 4: 全站验证与提交 (Final Validation & Commit)
 进行最后的回归测试，确保没有遗漏点。
 
-- [ ] Task: 执行全量单元测试
-- [ ] Task: 手动检查全站各语言页面的 Footer、Title 和 Meta 信息
+- [x] Task: 执行全量单元测试 [08e1b24]
+- [x] Task: 手动检查全站各语言页面的 Footer、Title 和 Meta 信息 [08e1b24]
 - [ ] Task: Conductor - User Manual Verification 'Phase 4: Final Validation' (Protocol in workflow.md)
