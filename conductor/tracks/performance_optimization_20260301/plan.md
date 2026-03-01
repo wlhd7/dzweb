@@ -8,7 +8,7 @@
     - [x] Ensure `Pillow` is in `requirements.txt` and installed in the environment.
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Audit & Preparation' (Protocol in workflow.md) (bd0eff7)
 
-## Phase 2: Image & Template Optimization
+## Phase 2: Image & Template Optimization [checkpoint: 1b50651]
 - [x] Task: Implement Native Lazy Loading (f1c0aff)
     - [x] Update `dzweb/templates/product/display.html` to add `loading="lazy"` to product images.
     - [x] Update `dzweb/templates/home/index.html` for carousel or other images.
@@ -17,7 +17,7 @@
     - [x] Run the script to optimize `dzweb/static/images/`.
 - [x] Task: Configure Flask static cache (f1c0aff)
     - [x] Modify `create_app` in `dzweb/__init__.py` to set `SEND_FILE_MAX_AGE_DEFAULT`.
-- [~] Task: Conductor - User Manual Verification 'Phase 2: Image & Template Optimization' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Image & Template Optimization' (Protocol in workflow.md) (1b50651)
 
 ## Phase 3: Final Verification & Cleanup
 - [~] Task: Post-optimization performance audit
