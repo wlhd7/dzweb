@@ -21,9 +21,9 @@
 ## Phase 3: 核心页面 TDK 精细化优化 (Core Page TDK Optimization)
 针对具体路由和模板，配置针对性的 TDK 元数据。
 
-- [ ] Task: 为首页、关于、联系、服务、人才招聘页面配置精细化的 TDK 单元测试
-- [ ] Task: 在各页面对应的路由 (`routes/*.py`) 和模板 (`templates/*.html`) 中覆盖默认 TDK
-- [ ] Task: 实现产品详情和案例详情页的动态 TDK 生成逻辑
+- [x] Task: 为首页、关于、联系、服务、人才招聘页面配置精细化的 TDK 单元测试 [6883559]
+- [x] Task: 在各页面对应的路由 (`routes/*.py`) 和模板 (`templates/*.html`) 中覆盖默认 TDK [6883559]
+- [x] Task: 实现产品详情和案例详情页的动态 TDK 生成逻辑 [6883559]
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Core Page TDK Optimization' (Protocol in workflow.md)
 
 ## Phase 4: 百度主动推送与统计集成 (Baidu Integration: Active Push & Tongji)
