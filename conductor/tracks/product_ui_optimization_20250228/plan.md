@@ -12,7 +12,7 @@
     - [x] Modify `dzweb/static/css/product.css` to reduce gap between label and inputs
     - [x] Adjust `.description-item` to align label to the left-top of textarea
     - [x] Implement `fit-content` width for the save button
-- [x] Task: Center form container (0a43552)
+- [REVERTED] Task: Center form container (0a43552 -> reverted in 97f6c26)
     - [x] Update `.product-form` or its parent container style to center the content
 - [x] Task: Apply layout changes to templates (0a43552)
     - [x] Ensure `product/create.html` and `product/update.html` structure matches the new CSS logic

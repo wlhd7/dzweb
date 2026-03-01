@@ -1,8 +1,0 @@
-{
-  "track_id": "product_management_ui_20250228",
-  "type": "feature",
-  "status": "new",
-  "created_at": "2025-02-28T17:00:00Z",
-  "updated_at": "2025-02-28T17:00:00Z",
-  "description": "- 但管理员登陆的时候，产品展示页面应该出现‘编辑’与‘删除’按钮"
-}
