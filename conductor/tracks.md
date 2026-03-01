@@ -19,8 +19,3 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [x] **Track: 公司名字改为 广州东振机电设备有限公司，GuangZhou DongZhen M&E Equipment Co., Ltd**
-*Link: [./tracks/company_name_update_20260301/](./tracks/company_name_update_20260301/)*
-
----
-
