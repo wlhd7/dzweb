@@ -10,7 +10,7 @@
     - [x] 移除 `location` 视图函数。 (f574686)
     - [x] 添加 `@bp.route('/location')` 装饰器指向重定向函数或在 `location` 原位置返回 `redirect(url_for('.contact_us'), code=301)`。 (f574686)
 - [x] Task: 修改 `dzweb/templates/contact/main.html`，移除指向 `location` 的 `<a>` 标签。 (d9e22d9)
-- [ ] Task: 修改 `dzweb/routes/home.py`，从循环列表或逻辑中移除 `contact.location`。
+- [x] Task: 修改 `dzweb/routes/home.py`，从循环列表或逻辑中移除 `contact.location`。 (4723c3b)
 - [ ] Task: 修改 `dzweb/static/sitemap.xml`，删除 `/contact/location` 条目。
 - [ ] Task: 物理删除 `dzweb/templates/contact/location.html`。
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: 代码与模板清理' (Protocol in workflow.md)
