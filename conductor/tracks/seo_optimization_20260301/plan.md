@@ -18,13 +18,13 @@
 - [x] Task: 更新 `robots.txt` 以正确引导搜素引擎抓取 `sitemap.xml` [ce61f11]
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Dynamic Sitemap & Verification Tags' (Protocol in workflow.md) [d33665e]
 
-## Phase 3: 核心页面 TDK 精细化优化 (Core Page TDK Optimization)
+## Phase 3: 核心页面 TDK 精细化优化 (Core Page TDK Optimization) [checkpoint: 1a19729]
 针对具体路由和模板，配置针对性的 TDK 元数据。
 
 - [x] Task: 为首页、关于、联系、服务、人才招聘页面配置精细化的 TDK 单元测试 [6883559]
 - [x] Task: 在各页面对应的路由 (`routes/*.py`) 和模板 (`templates/*.html`) 中覆盖默认 TDK [6883559]
 - [x] Task: 实现产品详情和案例详情页的动态 TDK 生成逻辑 [6883559]
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Core Page TDK Optimization' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Core Page TDK Optimization' (Protocol in workflow.md) [1a19729]
 
 ## Phase 4: 百度主动推送与统计集成 (Baidu Integration: Active Push & Tongji)
 集成百度特有的 SEO 工具，提升收录效率和流量监控。
