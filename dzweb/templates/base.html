@@ -4,29 +4,30 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="baidu-site-verification" content="codeva-itXnARhqFg" />
+	<meta name="msvalidate.01" content="4D6C42588102B9D9E16C829B2783F992" />
 	<meta name="google-site-verification" content="lHyC4DgQqSdtHbM0WgYfWyxVpKyDvFq5DnE8DtjlL4k" />
 
-	<meta name="description" content="广州东振机电设备有限公司 - 专业自动化设备、工装夹具、铁屑压块机制造商。提供非标设备设计、制造、销售一站式服务，应用于汽车、制冷、机械电子等行业。">
-	<meta name="keywords" content="自动化设备,工装夹具,非标设备,广州东振,机电设备,非标零件,机器人项目,铁屑压块机">
-	<meta name="author" content="广州东振机电设备有限公司">
+	<meta name="description" content="{{ _('广州东振工业自动化有限公司 - 专业自动化设备、工装夹具、机器人焊接、挤出机制造商。提供非标设备设计、制造、销售一站式服务，应用于汽车、制冷、机械电子等行业。') }}">
+	<meta name="keywords" content="{{ _('自动化设备,工装夹具,非标设备,广州东振,机器人焊接,挤出机,机器人项目,铁屑压块机,工业自动化') }}">
+	<meta name="author" content="{{ _('广州东振工业自动化有限公司') }}">
 
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://www.dongzhen.cn{{ request.path }}">
-	<meta property="og:site_name" content="广州东振机电设备有限公司">
-	<meta property="og:title" content="广州东振机电设备有限公司 - 专业非标设备、自动化设备、工装夹具、机器人项目、铁屑压块机制造商">
-	<meta property="og:description" content="广州东振机电设备有限公司 - 专业自动化设备、工装夹具、铁屑压块机制造商。提供非标设备设计、制造、销售一站式服务，应用于汽车、制冷、机械电子等行业。">
+	<meta property="og:site_name" content="{{ _('广州东振工业自动化有限公司') }}">
+	<meta property="og:title" content="{{ _('广州东振工业自动化有限公司 - 专业非标设备、自动化设备、工装夹具、机器人项目、铁屑压块机制造商') }}">
+	<meta property="og:description" content="{{ _('广州东振工业自动化有限公司 - 专业自动化设备、工装夹具、机器人焊接、挤出机制造商。提供非标设备设计、制造、销售一站式服务，应用于汽车、制冷、机械电子等行业。') }}">
 	<meta property="og:image" content="https://www.dongzhen.cn/static/preview.jpg">
 	<meta property="og:image:type" content="image/jpg">
 
 	<!-- Twitter cards for consistent previews -->
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="广州东振机电设备有限公司 - 专业非标设备、自动化设备、工装夹具、机器人项目、铁屑压块机制造商">
-	<meta name="twitter:description" content="广州东振机电设备有限公司 - 专业自动化设备、工装夹具、铁屑压块机制造商。提供非标设备设计、制造、销售一站式服务，应用于汽车、制冷、机械电子等行业。">
+	<meta name="twitter:title" content="{{ _('广州东振工业自动化有限公司 - 专业非标设备、自动化设备、工装夹具、机器人项目、铁屑压块机制造商') }}">
+	<meta name="twitter:description" content="{{ _('广州东振工业自动化有限公司 - 专业自动化设备、工装夹具、机器人焊接、挤出机制造商。提供非标设备设计、制造、销售一站式服务，应用于汽车、制冷、机械电子等行业。') }}">
 	<meta name="twitter:image" content="https://www.dongzhen.cn/static/preview.jpg">
 
 	{% block head %}
 
-	<title>{% block title %}{% endblock %}_{{ _('广州东振机电设备有限公司') }}</title>
+	<title>{% block title %}{% endblock %}_{{ _('广州东振工业自动化有限公司') }}</title>
 
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/header_tailer.css') }}">
@@ -42,6 +43,23 @@
 	{%- else -%}
 	<link rel="canonical" href="{{ request.url }}">
 	{%- endif -%}
+
+	{# Multi-language alternate links #}
+	<link rel="alternate" hreflang="zh" href="{{ request.base_url }}{% if request.args %}/?{{ request.query_string.decode('utf-8') }}&lang=zh{% else %}?lang=zh{% endif %}">
+	<link rel="alternate" hreflang="en" href="{{ request.base_url }}{% if request.args %}/?{{ request.query_string.decode('utf-8') }}&lang=en{% else %}?lang=en{% endif %}">
+	<link rel="alternate" hreflang="ja" href="{{ request.base_url }}{% if request.args %}/?{{ request.query_string.decode('utf-8') }}&lang=ja{% else %}?lang=ja{% endif %}">
+	<link rel="alternate" hreflang="x-default" href="{{ request.base_url }}{% if request.args %}/?{{ request.query_string.decode('utf-8') }}{% endif %}">
+
+	<!-- Baidu Tongji -->
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?4D6C42588102B9D9E16C829B2783F992";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
 
 
 	<script type="application/ld+json">
