@@ -1,10 +1,10 @@
 # Implementation Plan - i18n_translation_20260301
 
 ## Phase 1: Preparation and Extraction
-- [ ] Task: Extract all current I18n strings
-    - [ ] Run `pybabel extract -F babel.cfg -o messages.pot .`
-    - [ ] Run `pybabel update -i messages.pot -d dzweb/translations/`
-- [ ] Task: Identify pending translations
+- [x] Task: Extract all current I18n strings (a1a40c4)
+    - [x] Run `pybabel extract -F babel.cfg -o messages.pot .`
+    - [x] Run `pybabel update -i messages.pot -d dzweb/translations/`
+- [~] Task: Identify pending translations
     - [ ] Search for `msgstr ""` in `dzweb/translations/en/LC_MESSAGES/messages.po`
     - [ ] Search for `msgstr ""` in `dzweb/translations/ja/LC_MESSAGES/messages.po`
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Preparation and Extraction' (Protocol in workflow.md)
