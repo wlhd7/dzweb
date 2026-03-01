@@ -14,7 +14,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: 优化 SEO，尤其是百度和bing**
+- [x] **Track: 优化 SEO，尤其是百度和bing**
 *Link: [./tracks/seo_optimization_20260301/](./tracks/seo_optimization_20260301/)*
 
 ---
