@@ -12,10 +12,10 @@
 ## Phase 2: 动态 Sitemap 与 站长验证 (Dynamic Sitemap & Verification Tags)
 实现动态站点地图，并添加百度/Bing 的所有权验证。
 
-- [ ] Task: 编写 `sitemap.xml` 路由的单元测试
-- [ ] Task: 在 `dzweb/routes/home.py` 中实现动态生成 `sitemap.xml` 的逻辑
-- [ ] Task: 在 `base.html` 中添加百度、Bing 的站点验证元标签（Meta Tags）
-- [ ] Task: 更新 `robots.txt` 以正确引导搜素引擎抓取 `sitemap.xml`
+- [x] Task: 编写 `sitemap.xml` 路由的单元测试 [bb72ed4]
+- [x] Task: 在 `dzweb/routes/home.py` 中实现动态生成 `sitemap.xml` 的逻辑 [bb72ed4]
+- [x] Task: 在 `base.html` 中添加百度、Bing 的站点验证元标签（Meta Tags） [f19da50]
+- [x] Task: 更新 `robots.txt` 以正确引导搜素引擎抓取 `sitemap.xml` [ce61f11]
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Dynamic Sitemap & Verification Tags' (Protocol in workflow.md)
 
 ## Phase 3: 核心页面 TDK 精细化优化 (Core Page TDK Optimization)
