@@ -20,10 +20,10 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Image & Template Optimization' (Protocol in workflow.md) (1b50651)
 
 ## Phase 3: Final Verification & Cleanup
-- [~] Task: Post-optimization performance audit
-    - [ ] Run Lighthouse again and compare with baseline.
-    - [ ] Manually verify image quality remains acceptable.
-- [ ] Task: Commit the changes
-    - [ ] Stage optimized images and code changes.
-    - [ ] Commit with message `perf(ui): Optimize image loading and static asset caching`
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Final Verification & Cleanup' (Protocol in workflow.md)
+- [x] Task: Post-optimization performance audit (fe0f0b2)
+    - [x] Run Lighthouse again and compare with baseline.
+    - [x] Manually verify image quality remains acceptable.
+- [x] Task: Commit the changes (fe0f0b2)
+    - [x] Stage optimized images and code changes.
+    - [x] Commit with message `perf(ui): Optimize image loading and static asset caching`
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Final Verification & Cleanup' (Protocol in workflow.md) (fe0f0b2)
