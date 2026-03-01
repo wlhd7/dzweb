@@ -1,15 +1,16 @@
-from flask import Blueprint, render_template, redirect, request, url_for, flash, current_app, jsonify
-from dzweb.db import get_db
-import uuid
-import os
-from flask_babel import _
-from dzweb.routes.admin import login_required
-from werkzeug.exceptions import abort
 import math
+import os
+import uuid
 from functools import wraps
 
-
 import requests
+from flask import Blueprint, render_template, redirect, request, url_for, flash, current_app, jsonify
+from flask_babel import _
+from werkzeug.exceptions import abort
+
+from dzweb.db import get_db
+from dzweb.routes.admin import login_required
+
 
 def push_to_baidu(urls):
     """Baidu Active Push API helper."""

@@ -1,7 +1,8 @@
+import io
+from unittest.mock import patch, MagicMock
+
 import pytest
 from flask import url_for
-from unittest.mock import patch, MagicMock
-import io
 
 def test_seo_tags_in_base_template(client):
     """验证 base.html 中包含基本的 SEO 标签"""
