@@ -12,9 +12,9 @@
 ## Phase 2: 模板与元数据重构 (Template & Meta Refactoring)
 清理可能存在的硬编码字符串，并更新 SEO 关键字段。
 
-- [ ] Task: 全局搜索并替换模板 (`templates/**/*.html`) 中硬编码的旧公司名称
-- [ ] Task: 更新 `base.html` 中的 JSON-LD 结构化数据
-- [ ] Task: 检查并更新 `instance/config.py` 中的 SEO 默认值
+- [x] Task: 全局搜索并替换模板 (`templates/**/*.html`) 中硬编码的旧公司名称 [15a1a58]
+- [x] Task: 更新 `base.html` 中的 JSON-LD 结构化数据 [15a1a58]
+- [x] Task: 检查并更新 `instance/config.py` 中的 SEO 默认值 [15a1a58]
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Template Refactoring' (Protocol in workflow.md)
 
 ## Phase 3: 项目文档同步 (Documentation Sync)
