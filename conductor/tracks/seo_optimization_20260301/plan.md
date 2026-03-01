@@ -26,14 +26,14 @@
 - [x] Task: 实现产品详情和案例详情页的动态 TDK 生成逻辑 [6883559]
 - [x] Task: Conductor - User Manual Verification 'Phase 3: Core Page TDK Optimization' (Protocol in workflow.md) [1a19729]
 
-## Phase 4: 百度主动推送与统计集成 (Baidu Integration: Active Push & Tongji)
+## Phase 4: 百度主动推送与统计集成 (Baidu Integration: Active Push & Tongji) [checkpoint: 4b4795c]
 集成百度特有的 SEO 工具，提升收录效率和流量监控。
 
 - [x] Task: 编写百度主动推送 API (Baidu Active Push) 的集成测试（模拟 API 返回） [ee8c49a]
 - [x] Task: 在 `dzweb/routes/product.py` 的产品/案例发布逻辑中加入主动推送代码 [ee8c49a]
 - [x] Task: 在 `base.html` 中集成百度统计 (Baidu Tongji) 脚本 [f19da50]
 - [x] Task: 配置主动推送成功/失败的日志记录 [ee8c49a]
-- [ ] Task: Conductor - User Manual Verification 'Phase 4: Baidu Integration' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 4: Baidu Integration' (Protocol in workflow.md) [4b4795c]
 
 ## Phase 5: 全站移动端验证与最终发布 (Mobile Verification & Final Release)
 确保 SEO 优化在移动端生效，并完成最终全站验证。
