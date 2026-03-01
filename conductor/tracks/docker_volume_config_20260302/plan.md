@@ -6,11 +6,11 @@
     - [x] 设置 `chown` 指令以确保非 root 用户对该目录拥有读写权限。 (f44aa1e)
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Dockerfile 更新' (Protocol in workflow.md) (75599e6)
 
-## Phase 2: Docker Compose 配置
+## Phase 2: Docker Compose 配置 [checkpoint: 7eb3c64]
 - [x] Task: 分析并更新 `docker-compose.yml`。 (ac76b4e)
     - [x] 在 `services` 节点下为应用容器添加 `volumes` 映射。 (ac76b4e)
     - [x] 使用绑定挂载（bind mount）将宿主机的 `./instance` 映射到容器内的 `/app/instance`。 (ac76b4e)
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Docker Compose 配置' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Docker Compose 配置' (Protocol in workflow.md) (7eb3c64)
 
 ## Phase 3: 部署与持久化验证
 - [ ] Task: 重新构建并启动服务。
