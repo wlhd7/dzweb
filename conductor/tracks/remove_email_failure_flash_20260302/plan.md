@@ -1,8 +1,8 @@
 # Implementation Plan: Remove Email Failure Flash Messages
 
 ## Phase 1: 扫描与复现 (Scanning & Reproduction)
-- [ ] Task: 扫描代码库中包含“邮件发送失败，请稍后重试或联系管理员”或类似文本的 `flash()` 调用点。
-- [ ] Task: 模拟邮件发送失败（例如通过临时更改 `.env` 中的 SMTP 密码），确认目前确实会弹出 `<div class="flash">`。
+- [x] Task: 扫描代码库中包含“邮件发送失败，请稍后重试或联系管理员”或类似文本的 `flash()` 调用点。 218397a
+- [~] Task: 模拟邮件发送失败（例如通过临时更改 `.env` 中的 SMTP 密码），确认目前确实会弹出 `<div class="flash">`。
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: 扫描与复现' (Protocol in workflow.md)
 
 ## Phase 2: 清理与移除 (Cleanup & Removal)
