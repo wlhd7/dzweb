@@ -13,7 +13,7 @@
 		"@context": "https://schema.org",
 		"@type": "Product",
 		"name": {{ product['productname']|tojson }},
-		"image": ["{{ url_for('instance_files', filename=product['filename'], _external=True) }}"],
+		"image": ["{{ url_for('static', filename='uploads/' ~ product['filename'], _external=True) }}"],
 		"description": {{ (product['brief'] or '产品展示')|tojson }},
 		"sku": "{{ product['id'] }}",
 		"category": {{ product['category']|tojson }},
@@ -43,7 +43,7 @@
 		<p>{{ _('产品说明待添加') }}</p>
 	{% endif %}
 
-	<img class="product-image" src="{{ url_for('instance_files', filename=product['filename']) }}" loading="lazy">
+	<img class="product-image" src="{{ url_for('static', filename='uploads/' ~ product['filename']) }}" loading="lazy">
 
 	<div class="product-display-actions" style="margin-top: 20px;">
 		<button onclick="history.back()">{{ _('返回') }}</button>

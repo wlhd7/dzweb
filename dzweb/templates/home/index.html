@@ -137,7 +137,7 @@
 			<div class="sector-content sector-content-product">
 				{% for product in products %}
 					<a href="{{ url_for('product.display', id=product['id']) }}">
-						<img src="{{ url_for('thumbnail_files', filename=product['filename']) }}" loading="lazy">
+						<img src="{{ url_for('static', filename='uploads/thumbs/' ~ product['filename']) }}" loading="lazy">
 				
 						<p>{{ product['productname'] }}</p>
 					</a>

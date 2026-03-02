@@ -83,7 +83,7 @@
 			<div class="dblock-content product-page">
 				{% for product in products %}
 					<a href="{{ url_for('product.display', id=product['id']) }}" class="product-item" data-class="{{ product['class'] if product['class'] is defined else '' }}">
-						<img src="{{ url_for('thumbnail_files', filename=product['filename']) }}" loading="lazy">
+						<img src="{{ url_for('static', filename='uploads/thumbs/' ~ product['filename']) }}" loading="lazy">
 						<p>{{ product['productname'] }}</p>
 					</a>
 				{% endfor %}

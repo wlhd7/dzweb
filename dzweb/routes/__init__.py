@@ -6,13 +6,6 @@ bps = [home, product, case, service, human, contact, admin]
 
 def init_app(app):
     product.init_app(app)
-    @app.route('/instance-files/<filename>')
-    def instance_files(filename):
-        return send_from_directory(app.instance_path + '/uploads', filename)
-
-    @app.route('/thumbnail-files/<filename>')
-    def thumbnail_files(filename):
-        return send_from_directory(app.config['THUMBNAIL_FOLDER'], filename)
 
     @app.route('/favicon.ico')
     def favicon():

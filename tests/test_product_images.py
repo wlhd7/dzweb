@@ -161,8 +161,8 @@ def test_homepage_uses_thumbnail_route(client, app):
     response = client.get('/')
     assert response.status_code == 200
     html = response.data.decode('utf-8')
-    assert f'/thumbnail-files/{filename}' in html
-    assert f'/instance-files/{filename}' not in html # For the showcase part
+    assert f'/static/uploads/thumbs/{filename}' in html
+    assert f'/static/uploads/{filename}' not in html # For the showcase part
 
 def test_product_list_uses_thumbnail_route(client, app):
     # Ensure there's at least one product
@@ -175,7 +175,7 @@ def test_product_list_uses_thumbnail_route(client, app):
     response = client.get(f'/product/{category}')
     assert response.status_code == 200
     html = response.data.decode('utf-8')
-    assert f'/thumbnail-files/{filename}' in html
+    assert f'/static/uploads/thumbs/{filename}' in html
 
 def test_search_results_use_thumbnail_route(client, app):
     # Ensure there's at least one product with a known name
@@ -188,7 +188,7 @@ def test_search_results_use_thumbnail_route(client, app):
     response = client.get(f'/product/search?q={name}')
     assert response.status_code == 200
     html = response.data.decode('utf-8')
-    assert f'/thumbnail-files/{filename}' in html
+    assert f'/static/uploads/thumbs/{filename}' in html
 
 def test_generate_thumbs_command(app):
     runner = app.test_cli_runner()

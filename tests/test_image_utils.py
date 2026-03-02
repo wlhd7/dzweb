@@ -32,6 +32,6 @@ def test_thumbnail_route(client, app):
     with open(thumb_path, 'wb') as f:
         f.write(b"dummy thumb data")
         
-    response = client.get(f'/thumbnail-files/{thumb_name}')
+    response = client.get(f'/static/uploads/thumbs/{thumb_name}')
     assert response.status_code == 200
     assert response.data == b"dummy thumb data"

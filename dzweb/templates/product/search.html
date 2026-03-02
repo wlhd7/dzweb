@@ -17,7 +17,7 @@
       {% for p in results %}
       <li style="border:1px solid #ddd;padding:.5rem;border-radius:4px;">
         <a href="{{ url_for('product.display', id=p['id']) }}" class="steelblue link" style="text-decoration:none;">
-          <img src="{{ url_for('thumbnail_files', filename=p['filename']) }}" style="max-width:100%;height:auto;display:block;margin-bottom:.5rem;" loading="lazy">
+          <img src="{{ url_for('static', filename='uploads/thumbs/' ~ p['filename']) }}" style="max-width:100%;height:auto;display:block;margin-bottom:.5rem;" loading="lazy">
           <strong>{{ p['productname'] }}</strong>
         </a>
         {% if p['brief'] %}
