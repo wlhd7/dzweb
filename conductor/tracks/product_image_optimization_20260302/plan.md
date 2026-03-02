@@ -41,4 +41,4 @@
     - [x] 运行迁移命令并检查结果。
     - [x] 检查首页加载速度及图片路径。
 
-- [ ] Task: Conductor - User Manual Verification 'Product Image Optimization' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Product Image Optimization' (Protocol in workflow.md)
