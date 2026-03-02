@@ -18,3 +18,6 @@ This file tracks all major tracks for the project. Each track has its own detail
 *Link: [./tracks/seo_optimization_20260301/](./tracks/seo_optimization_20260301/)*
 
 ---
+
+- [ ] **Track: 删除产品必须同时删除保存的图片**
+*Link: [./tracks/product_image_cleanup_20260302/](./tracks/product_image_cleanup_20260302/)*
