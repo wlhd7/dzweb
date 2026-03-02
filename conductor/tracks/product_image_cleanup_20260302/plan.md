@@ -16,11 +16,12 @@
 - [x] Task: 验证更新操作后仅旧图被删，新图正确保留 59d165e
 - [x] Task: Conductor - User Manual Verification 'Phase 3: 产品更新同步' (Protocol in workflow.md) a515072
 
-## Phase 4: 孤儿图片清理工具
-- [ ] Task: TDD - 编写清理 CLI 命令的失败测试（模拟孤儿文件并验证删除）
-- [ ] Task: 在应用中注册 `flask cleanup-images` 命令并实现清理逻辑
-- [ ] Task: 验证清理工具能准确识别并移除所有不在数据库中的图片
-- [ ] Task: Conductor - User Manual Verification 'Phase 4: 孤儿图片清理工具' (Protocol in workflow.md)
+## Phase 4: 孤儿图片清理工具 [checkpoint: 867f3d0]
+- [x] Task: TDD - 编写清理 CLI 命令的失败测试（模拟孤儿文件并验证删除） 41849f5
+- [x] Task: 在应用中注册 `flask cleanup-images` 命令并实现清理逻辑 c5d1cb5
+- [x] Task: 验证清理工具能准确识别并移除所有不在数据库中的图片 c5d1cb5
+- [x] Task: Conductor - User Manual Verification 'Phase 4: 孤儿图片清理工具' (Protocol in workflow.md) 867f3d0
+
 
 ## Phase 5: 最终验收与文档
 - [ ] Task: 运行完整测试套件并确保覆盖率符合要求 (>80%)
