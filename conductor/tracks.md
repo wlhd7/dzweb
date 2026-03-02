@@ -16,3 +16,8 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 - [x] **Track: 优化 SEO，尤其是百度和bing**
 *Link: [./tracks/seo_optimization_20260301/](./tracks/seo_optimization_20260301/)*
+
+---
+
+- [ ] **Track: 首页 UI 有一个 Bug，当点击‘关于我们’栏内的链接时，产品类别栏的产品分类左边的图标会错误地变成子类别的图标。**
+*Link: [./tracks/nav_icon_bug_fix_20260302/](./tracks/nav_icon_bug_fix_20260302/)*
