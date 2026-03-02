@@ -19,5 +19,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: 删除产品必须同时删除保存的图片**
+- [x] **Track: 删除产品必须同时删除保存的图片**
 *Link: [./tracks/product_image_cleanup_20260302/](./tracks/product_image_cleanup_20260302/)*
