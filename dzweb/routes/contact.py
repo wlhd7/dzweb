@@ -123,11 +123,12 @@ def mailbox():
             if success:
                 flash('感谢您的反馈，我们会尽快处理！', 'success')
             else:
-                flash('邮件发送失败，请稍后重试或联系管理员', 'error')
+                # Silently handle email sending failure as inline <p> is shown
+                current_app.logger.error("Failed to send feedback email.")
             
         except Exception as e:
             current_app.logger.error(f"处理反馈表单失败: {str(e)}", exc_info=True)
-            flash('系统错误，请稍后重试', 'error')
+            # Silently handle system error as inline <p> is shown
         
         return render_template('contact/mailbox.html')
     
