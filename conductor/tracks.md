@@ -19,7 +19,4 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
----
 
-- [x] **Track: 把 instance/uploads 移出 instance/，放在 dzweb/static/uploads/，作为网站自身的一部分，需要保存到github**
-*Link: [./tracks/upload_migration_20260302/](./tracks/upload_migration_20260302/)*
