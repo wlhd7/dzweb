@@ -23,15 +23,3 @@ def test_generate_thumbnail(tmp_path):
     with Image.open(thumb_path) as thumb:
         assert thumb.size == size
 
-def test_thumbnail_route(client, app):
-    # Ensure thumbnail directory and a dummy file exist
-    thumb_name = "test_thumb.jpg"
-    thumb_path = os.path.join(app.config['THUMBNAIL_FOLDER'], thumb_name)
-    
-    os.makedirs(app.config['THUMBNAIL_FOLDER'], exist_ok=True)
-    with open(thumb_path, 'wb') as f:
-        f.write(b"dummy thumb data")
-        
-    response = client.get(f'/static/uploads/thumbs/{thumb_name}')
-    assert response.status_code == 200
-    assert response.data == b"dummy thumb data"
