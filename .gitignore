@@ -159,3 +159,6 @@ cython_debug/
 # Operating System files
 .DS_Store
 Thumbs.db
+
+# Ensure uploads directory is always tracked
+!dzweb/static/uploads/
