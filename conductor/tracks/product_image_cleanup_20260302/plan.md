@@ -23,7 +23,7 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 4: 孤儿图片清理工具' (Protocol in workflow.md) 867f3d0
 
 
-## Phase 5: 最终验收与文档
-- [ ] Task: 运行完整测试套件并确保覆盖率符合要求 (>80%)
-- [ ] Task: 手动验证完整链路（创建 -> 更新 -> 删除 -> 清理）
-- [ ] Task: Conductor - User Manual Verification 'Phase 5: 最终验收与文档' (Protocol in workflow.md)
+## Phase 5: 最终验收与文档 [checkpoint: 70e1da8]
+- [x] Task: 运行完整测试套件并确保覆盖率符合要求 (>80%) cbf7be2
+- [x] Task: 手动验证完整链路（创建 -> 更新 -> 删除 -> 清理） 70e1da8
+- [x] Task: Conductor - User Manual Verification 'Phase 5: 最终验收与文档' (Protocol in workflow.md) 70e1da8
