@@ -158,5 +158,32 @@ def test_update_product_no_image_change(client, auth, app):
         updated_product = db.execute('SELECT filename FROM products WHERE id = ?', (product_id,)).fetchone()
         assert updated_product['filename'] == filename
         
-        # Verify file is STILL THERE
-        assert os.path.exists(file_path)
+def test_cleanup_images_command(app):
+    runner = app.test_cli_runner()
+    
+    upload_folder = app.config['UPLOAD_FOLDER']
+    orphan_file = os.path.join(upload_folder, 'orphan.jpg')
+    with open(orphan_file, 'wb') as f:
+        f.write(b"orphan data")
+        
+    # Get seeded file path
+    with app.app_context():
+        db = get_db()
+        seeded = db.execute('SELECT filename FROM products LIMIT 1').fetchone()
+        seeded_file = os.path.join(upload_folder, seeded['filename'])
+        assert os.path.exists(seeded_file)
+    
+    assert os.path.exists(orphan_file)
+    
+    # Run the cleanup command (This is expected to FAIL currently as command is not defined)
+    result = runner.invoke(args=['cleanup-images'])
+    
+    # Verify command output
+    assert result.exit_code == 0
+    assert "Deleted 1 orphan files." in result.output
+    
+    # Verify orphan file is gone
+    assert not os.path.exists(orphan_file)
+    
+    # Verify seeded file is STILL THERE
+    assert os.path.exists(seeded_file)
