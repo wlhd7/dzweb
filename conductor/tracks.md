@@ -21,7 +21,4 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 
 
----
 
-- [ ] **Track: 浏览器 favicon 的加载有问题吗，每次刷新页面都要加载一会儿**
-*Link: [./tracks/favicon_optimization_20260302/](./tracks/favicon_optimization_20260302/)*
