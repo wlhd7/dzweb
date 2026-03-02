@@ -17,8 +17,8 @@
     - [x] 在 `update` 视图中，上传新图片时生成对应缩略图，并删除旧的缩略图。
 - [x] Task: 更新产品“删除”逻辑 (8900537)
     - [x] 在 `delete` 视图中，删除产品的同时删除对应的缩略图文件。
-- [ ] Task: 增强图片清理 CLI 命令
-    - [ ] 更新 `cleanup-images` 命令，使其能够扫描并清理 `thumbs/` 目录下的孤儿缩略图。
+- [x] Task: 增强图片清理 CLI 命令 (681c3c0)
+    - [x] 更新 `cleanup-images` 命令，使其能够扫描并清理 `thumbs/` 目录下的孤儿缩略图。
 
 ## Phase 3: 前端集成 (Frontend Integration)
 - [ ] Task: 在首页应用缩略图
