@@ -14,7 +14,7 @@
     - [x] 运行测试并确保通过（Green Phase）。
 - [x] Task: Conductor - User Manual Verification 'Implementation' (Protocol in workflow.md) a2eb296
 
-## Phase 3: 最终验证 (Final Verification)
-- [ ] Task: 手动登录后台，执行一次产品删除操作，验证是否静默重定向且无提示。
-- [ ] Task: 运行全量测试套件，确保无回归。
-- [ ] Task: Conductor - User Manual Verification 'Final Verification' (Protocol in workflow.md)
+## Phase 3: 最终验证 (Final Verification) [checkpoint: 38f7de9]
+- [x] Task: 手动登录后台，执行一次产品删除操作，验证是否静默重定向且无提示。 a2eb296
+- [x] Task: 运行全量测试套件，确保无回归。 a2eb296
+- [x] Task: Conductor - User Manual Verification 'Final Verification' (Protocol in workflow.md) 38f7de9
