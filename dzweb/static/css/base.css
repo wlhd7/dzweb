@@ -101,14 +101,3 @@ img {
 	}
 
 }
-
-.flash {
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    background: #f9f9f9;
-    color: #333;
-    border-radius: 4px;
-    text-align: center;
-    font-weight: bold;
-}
