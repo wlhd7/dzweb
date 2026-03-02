@@ -8,6 +8,7 @@
 
 ## 关键库与集成
 - **国际化 (I18n)**: Flask-Babel 4.0.0 (支持中、英、日三种语言切换)
+- **图片处理**: **Pillow** (用于高效的图片处理与 400x300 缩略图生成)
 - **SEO 集成**: 百度主动推送 (Baidu Active Push) API，通过 `requests` 库实现。
 - **HTTP 请求**: `requests` 库 (用于与第三方 API 通讯)。
 - **安全**: 基于环境变量的预设密码认证 (通过 `ADMIN_PASSWORD` 环境变量配置)
@@ -21,4 +22,4 @@
 ## 开发工具
 - **版本控制**: Git
 - **依赖管理**: pip (通过 `requirements.txt` 或 `pyproject.toml` 管理)
-- **CLI 维护工具**: Flask CLI (包含 `flask cleanup-images` 用于自动清理孤儿图片文件)
+- **CLI 维护工具**: Flask CLI (包含 `flask cleanup-images` 自动清理孤儿图片文件，以及 `flask generate-thumbs` 批量生成缩略图)
