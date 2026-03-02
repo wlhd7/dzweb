@@ -24,5 +24,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: 首页产品展示图片加载太慢了，显示的不是缩略图吗**
+- [x] **Track: 首页产品展示图片加载太慢了，显示的不是缩略图吗**
 *Link: [./tracks/product_image_optimization_20260302/](./tracks/product_image_optimization_20260302/)*
