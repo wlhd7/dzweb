@@ -13,8 +13,8 @@
 ## Phase 2: 产品模块更新与资源同步 (Product Module Update & Sync)
 - [x] Task: 更新产品“创建”逻辑 (cdfe2c6)
     - [x] 在 `dzweb/routes/product.py` 的 `create` 视图中引入缩略图生成逻辑。
-- [ ] Task: 更新产品“更新”逻辑
-    - [ ] 在 `update` 视图中，上传新图片时生成对应缩略图，并删除旧的缩略图。
+- [x] Task: 更新产品“更新”逻辑 (f2e5291)
+    - [x] 在 `update` 视图中，上传新图片时生成对应缩略图，并删除旧的缩略图。
 - [ ] Task: 更新产品“删除”逻辑
     - [ ] 在 `delete` 视图中，删除产品的同时删除对应的缩略图文件。
 - [ ] Task: 增强图片清理 CLI 命令
