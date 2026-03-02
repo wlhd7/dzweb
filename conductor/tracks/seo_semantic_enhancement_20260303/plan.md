@@ -13,8 +13,8 @@
 - [x] Task: 修改 `dzweb/templates/base.html`，在首页区块添加视觉隐藏的 <h1>。 [ac29c9b]
 - [x] Task: 修改 `dzweb/templates/product/main.html`，将产品分类页的标题 (<p>) 升级为 <h1>，并保持原有样式。 [7c511ae]
 - [x] Task: 修改 `dzweb/templates/product/display.html`，将详情页产品标题 (<h2>) 升级为 <h1>，并保持原有样式。 [2ee8da0]
-- [~] Task: 修改 `dzweb/templates/macro.html`，为 `side_bar_imag()` 宏中的图片添加 `alt` 属性。
-- [ ] Task: 遍历首页 (`home/index.html`)，为所有建筑、招聘及服务系统的图片添加描述性的 `alt` 属性。
+- [x] Task: 修改 `dzweb/templates/macro.html`，为 `side_bar_imag()` 宏中的图片添加 `alt` 属性。 [be3611f]
+- [~] Task: 遍历首页 (`home/index.html`)，为所有建筑、招聘及服务系统的图片添加描述性的 `alt` 属性。
 - [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
 
 ## 阶段 3: 验证与最终部署 (Phase 3: Validation & Finalization)
