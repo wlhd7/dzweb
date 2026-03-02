@@ -92,3 +92,31 @@ def test_update_product_generates_new_thumbnail_and_removes_old(client, auth, ap
         
         # Verify old thumbnail is DELETED
         assert not os.path.exists(old_thumb_path)
+
+def test_delete_product_removes_thumbnail(client, auth, app):
+    auth.admin_login()
+    
+    with app.app_context():
+        db = get_db()
+        # 1. Create a product
+        test_img = create_test_image()
+        client.post('/product/create', data={
+            'productname': 'Delete Test',
+            'brief': 'Delete me',
+            'category': 'automation',
+            'class': 'engine',
+            'file': (test_img, 'del.jpg')
+        }, content_type='multipart/form-data')
+        
+        product = db.execute('SELECT id, filename FROM products WHERE productname = "Delete Test"').fetchone()
+        product_id = product['id']
+        filename = product['filename']
+        thumb_path = os.path.join(app.config['THUMBNAIL_FOLDER'], filename)
+        assert os.path.exists(thumb_path)
+        
+        # 2. Delete the product
+        client.get(f'/product/{product_id}/delete', follow_redirects=True)
+        
+        # Verify thumbnail is DELETED
+        # This is expected to FAIL until implemented
+        assert not os.path.exists(thumb_path)

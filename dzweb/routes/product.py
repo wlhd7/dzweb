@@ -202,15 +202,14 @@ def delete(id):
         
         if filename:
             file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+            thumb_path = os.path.join(current_app.config['THUMBNAIL_FOLDER'], filename)
             try:
                 if os.path.exists(file_path):
                     os.remove(file_path)
-                else:
-                    # If file doesn't exist, we log it and proceed (silent continue for missing files)
-                    # but the spec says "Strictly sync", let's follow the spec for Phase 2 implementation.
-                    current_app.logger.warning(f"File {file_path} not found during deletion of product {id}")
+                if os.path.exists(thumb_path):
+                    os.remove(thumb_path)
             except Exception as e:
-                current_app.logger.error(f"Error deleting file {file_path}: {str(e)}")
+                current_app.logger.error(f"Error deleting files for product {id}: {str(e)}")
                 flash(_('删除图片文件失败，操作已取消。'))
                 return redirect(url_for(f'product.{category}'))
 
