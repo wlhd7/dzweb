@@ -361,5 +361,51 @@ def cleanup_images_command():
 
     click.echo(f"Deleted {deleted_count} orphan files.")
 
+@click.command('generate-thumbs')
+@with_appcontext
+def generate_thumbs_command():
+    """Generate thumbnails for all existing products if they don't exist."""
+    db = get_db()
+    products = db.execute('SELECT id, productname, filename FROM products').fetchall()
+    
+    upload_folder = current_app.config['UPLOAD_FOLDER']
+    thumb_folder = current_app.config['THUMBNAIL_FOLDER']
+    
+    os.makedirs(thumb_folder, exist_ok=True)
+    
+    generated_count = 0
+    skipped_count = 0
+    error_count = 0
+    
+    for p in products:
+        filename = p['filename']
+        if not filename:
+            continue
+            
+        file_path = os.path.join(upload_folder, filename)
+        thumb_path = os.path.join(thumb_folder, filename)
+        
+        if not os.path.exists(file_path):
+            click.echo(f"Original image missing for product {p['id']} ({p['productname']}): {filename}", err=True)
+            skipped_count += 1
+            continue
+            
+        if os.path.exists(thumb_path):
+            # click.echo(f"Thumbnail already exists for product {p['id']}: {filename}")
+            skipped_count += 1
+            continue
+            
+        try:
+            generate_thumbnail(file_path, thumb_path)
+            generated_count += 1
+            click.echo(f"Generated thumbnail for product {p['id']}: {filename}")
+        except Exception as e:
+            current_app.logger.error(f"Failed to generate thumbnail for product {p['id']}: {str(e)}")
+            click.echo(f"Error generating thumbnail for {filename}: {str(e)}", err=True)
+            error_count += 1
+
+    click.echo(f"Thumbnails processing complete. Generated: {generated_count}, Skipped: {skipped_count}, Errors: {error_count}")
+
 def init_app(app):
     app.cli.add_command(cleanup_images_command)
+    app.cli.add_command(generate_thumbs_command)

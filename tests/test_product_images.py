@@ -189,3 +189,32 @@ def test_search_results_use_thumbnail_route(client, app):
     assert response.status_code == 200
     html = response.data.decode('utf-8')
     assert f'/thumbnail-files/{filename}' in html
+
+def test_generate_thumbs_command(app):
+    runner = app.test_cli_runner()
+    
+    with app.app_context():
+        # Ensure thumbnail directory exists
+        thumb_folder = app.config['THUMBNAIL_FOLDER']
+        os.makedirs(thumb_folder, exist_ok=True)
+        
+        # Ensure there's a real image for the seeded product 'test.jpg'
+        upload_folder = app.config['UPLOAD_FOLDER']
+        orig_path = os.path.join(upload_folder, 'test.jpg')
+        img = Image.new('RGB', (100, 100), color='green')
+        img.save(orig_path)
+        
+        # Ensure its thumbnail is GONE
+        thumb_path = os.path.join(thumb_folder, 'test.jpg')
+        if os.path.exists(thumb_path):
+            os.remove(thumb_path)
+            
+        assert not os.path.exists(thumb_path)
+        
+        # Run command
+        result = runner.invoke(args=['generate-thumbs'])
+        assert result.exit_code == 0
+        assert "Generated thumbnail for product" in result.output
+        
+        # Verify
+        assert os.path.exists(thumb_path)
