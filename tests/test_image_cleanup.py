@@ -83,6 +83,46 @@ def test_delete_product_file_error(client, auth, app, monkeypatch):
         assert response.status_code == 200
         assert "删除图片文件失败，操作已取消。" in response.data.decode('utf-8')
         
-        # Verify database record is STILL THERE
-        product = db.execute('SELECT id FROM products WHERE id = ?', (product_id,)).fetchone()
-        assert product is not None
+def test_update_product_removes_old_image(client, auth, app):
+    import io
+    auth.admin_login()
+    
+    with app.app_context():
+        db = get_db()
+        # Get seeded product
+        product = db.execute('SELECT id, filename, category FROM products WHERE productname = "Test Product"').fetchone()
+        product_id = product['id']
+        old_filename = product['filename']
+        category = product['category']
+        
+        upload_folder = app.config['UPLOAD_FOLDER']
+        old_file_path = os.path.join(upload_folder, old_filename)
+        assert os.path.exists(old_file_path)
+        
+        # Update product with a NEW image
+        data = {
+            'productname': 'Updated Product',
+            'brief': 'Updated Brief',
+            'category': category,
+            'class': 'engine',
+            'file': (io.BytesIO(b"new image data"), 'new.jpg')
+        }
+        # We need to provide 'next' in args because update redirects to it
+        response = client.post(
+            f'/product/{product_id}/update?next=/product/{category}',
+            data=data,
+            content_type='multipart/form-data',
+            follow_redirects=True
+        )
+        assert response.status_code == 200
+        
+        # Get new filename from DB
+        new_product = db.execute('SELECT filename FROM products WHERE id = ?', (product_id,)).fetchone()
+        new_filename = new_product['filename']
+        assert new_filename != old_filename
+        
+        new_file_path = os.path.join(upload_folder, new_filename)
+        assert os.path.exists(new_file_path)
+        
+        # Verify old file is gone (This is expected to FAIL currently)
+        assert not os.path.exists(old_file_path), f"Old file {old_file_path} should have been deleted"
