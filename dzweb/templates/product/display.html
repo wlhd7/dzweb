@@ -43,7 +43,7 @@
 		<p>{{ _('产品说明待添加') }}</p>
 	{% endif %}
 
-	<img class="product-image" src="{{ url_for('static', filename='uploads/' ~ product['filename']) }}" loading="lazy">
+	<img class="product-image" src="{{ url_for('static', filename='uploads/' ~ product['filename']) }}" alt="{{ product['productname'] }}" loading="lazy">
 
 	<div class="product-display-actions" style="margin-top: 20px;">
 		<button onclick="history.back()">{{ _('返回') }}</button>
