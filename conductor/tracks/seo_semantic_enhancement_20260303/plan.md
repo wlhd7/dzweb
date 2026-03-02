@@ -1,13 +1,13 @@
 # SEO 结构优化与语义化增强 实施计划
 
-## 阶段 1: 环境准备与自动化测试定义 (Phase 1: Setup & TDD)
+## 阶段 1: 环境准备与自动化测试定义 (Phase 1: Setup & TDD) [checkpoint: 7f5411c]
 - [x] Task: 在 `dzweb/static/css/base.css` 中定义 `.visually-hidden` 类，用于隐藏 <h1>。 [2c36c2d]
 - [x] Task: 在 `tests/test_seo.py` 中编写自动化测试，验证 <h1> 的唯一性和图片 `alt` 属性。 [f449b3d]
     - [x] 检查首页 <h1> 及其内容。 [f449b3d]
     - [x] 检查产品分类列表页 <h1> 及其内容。 [f449b3d]
     - [x] 检查产品详情页 <h1> 及其内容。 [f449b3d]
     - [x] 检查全站关键图片的 `alt` 属性。 [f449b3d]
-- [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md) [7f5411c]
 
 ## 阶段 2: 模板结构升级与语义化增强 (Phase 2: Template Refactoring)
 - [ ] Task: 修改 `dzweb/templates/base.html`，在首页区块添加视觉隐藏的 <h1>。
