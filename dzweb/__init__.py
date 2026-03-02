@@ -13,8 +13,8 @@ def create_app(test_config=None):
         DATABASE=os.path.join(app.instance_path, 'dzweb.sqlite'),
         # Corrected typo: BABEL_DEFAULT_LOCALE
         BABEL_DEFAULT_LOCALE='zh',
-        UPLOAD_FOLDER=os.path.join(app.instance_path, 'uploads'),
-        THUMBNAIL_FOLDER=os.path.join(app.instance_path, 'uploads', 'thumbs'),
+        UPLOAD_FOLDER=os.path.join(app.root_path, 'static', 'uploads'),
+        THUMBNAIL_FOLDER=os.path.join(app.root_path, 'static', 'uploads', 'thumbs'),
         DZWEB_ADMIN_PASSWORD=os.environ.get('DZWEB_ADMIN_PASSWORD'),
         SEND_FILE_MAX_AGE_DEFAULT=31536000
     )
