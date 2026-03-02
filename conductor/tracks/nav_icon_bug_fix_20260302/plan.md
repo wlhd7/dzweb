@@ -16,3 +16,7 @@
 - [x] Task: 优化侧边栏图标加载性能（如适用） 0b354d6
 - [x] Task: 运行完整测试套件，确保无 UI 回归 fcea5ff
 - [x] Task: Conductor - User Manual Verification 'Phase 3: 回归测试与优化' (Protocol in workflow.md)
+
+## Phase: Review Fixes
+- [x] Task: Apply review suggestions 2e68a53
+    - [x] 统一所有模板中虚线箭头图标的类名为 nav-top-icon-dashed 以修正对齐问题
