@@ -10,6 +10,7 @@ from werkzeug.exceptions import abort
 
 from dzweb.db import get_db
 from dzweb.routes.admin import login_required
+from dzweb.utils.image import generate_thumbnail
 
 
 def push_to_baidu(urls):
@@ -83,7 +84,16 @@ def create():
 
         if allowed_file(file.filename):
             random_filename = generate_random_filename(file.filename)
-            file.save(os.path.join(current_app.config['UPLOAD_FOLDER'], random_filename))
+            file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], random_filename)
+            file.save(file_path)
+            
+            # Generate thumbnail
+            thumb_path = os.path.join(current_app.config['THUMBNAIL_FOLDER'], random_filename)
+            try:
+                generate_thumbnail(file_path, thumb_path)
+            except Exception as e:
+                current_app.logger.error(f"Failed to generate thumbnail for {random_filename}: {str(e)}")
+
             db = get_db()
 
             db.execute(
