@@ -1,0 +1,8 @@
+{
+  "track_id": "product_image_optimization_20260302",
+  "type": "chore",
+  "status": "new",
+  "created_at": "2026-03-02T10:00:00Z",
+  "updated_at": "2026-03-02T10:00:00Z",
+  "description": "首页产品展示图片加载太慢了，显示的不是缩略图吗"
+}
