@@ -163,3 +163,16 @@ def test_homepage_uses_thumbnail_route(client, app):
     html = response.data.decode('utf-8')
     assert f'/thumbnail-files/{filename}' in html
     assert f'/instance-files/{filename}' not in html # For the showcase part
+
+def test_product_list_uses_thumbnail_route(client, app):
+    # Ensure there's at least one product
+    with app.app_context():
+        db = get_db()
+        product = db.execute('SELECT filename, category FROM products LIMIT 1').fetchone()
+        filename = product['filename']
+        category = product['category']
+    
+    response = client.get(f'/product/{category}')
+    assert response.status_code == 200
+    html = response.data.decode('utf-8')
+    assert f'/thumbnail-files/{filename}' in html
