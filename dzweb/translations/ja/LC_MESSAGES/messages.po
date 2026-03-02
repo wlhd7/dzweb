@@ -7,93 +7,92 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-03-01 19:25+0800\n"
+"POT-Creation-Date: 2026-03-03 07:14+0800\n"
 "PO-Revision-Date: 2025-09-29 14:49+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: ja <LL@li.org>\n"
 "Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.17.0\n"
-
-#: dzweb/routes/admin.py:15
-msgid "请先登录管理员账号"
-msgstr "まず管理者アカウントでログインしてください"
-
-#: dzweb/routes/admin.py:52
-msgid "系统未配置管理员密码，请联系技术支持。"
-msgstr "管理者パスワードが設定されていません。サポートにお問い合わせください。"
-
-#: dzweb/routes/admin.py:56
-msgid "管理员已登录"
-msgstr "管理者がログインしました"
-
-#: dzweb/routes/admin.py:64
-msgid "密码错误."
-msgstr "パスワードが間違っています。"
 
 #: dzweb/routes/contact.py:79
 msgid "匿名"
 msgstr "匿名（とくめい）"
 
-#: dzweb/templates/base.html:29 dzweb/templates/contact/contact-us.html:6
+#: dzweb/templates/base.html:11 dzweb/templates/base.html:19
+#: dzweb/templates/base.html:26
+msgid ""
+"广州东振机电设备有限公司 - "
+"专业自动化设备、工装夹具、机器人焊接、挤出机制造商。提供非标设备设计、制造、销售一站式服务，应用于汽车、制冷、机械电子等行业。"
+msgstr ""
+
+#: dzweb/templates/base.html:12
+msgid "自动化设备,工装夹具,非标设备,广州东振,机器人焊接,挤出机,机器人项目,铁屑压块机,机电设备"
+msgstr ""
+
+#: dzweb/templates/base.html:13 dzweb/templates/base.html:17
+#: dzweb/templates/base.html:31 dzweb/templates/contact/contact-us.html:10
 msgid "广州东振机电设备有限公司"
 msgstr "広州東振機電設備有限公司"
 
-#: dzweb/templates/base.html:103
+#: dzweb/templates/base.html:18 dzweb/templates/base.html:25
+msgid "广州东振机电设备有限公司 - 专业非标设备、自动化设备、工装夹具、机器人项目、铁屑压块机制造商"
+msgstr ""
+
+#: dzweb/templates/base.html:124
 msgid "管理后台"
 msgstr "管理バックエンド"
 
-#: dzweb/templates/base.html:104
+#: dzweb/templates/base.html:125
 msgid "注销"
 msgstr "ログアウト"
 
-#: dzweb/templates/base.html:118
+#: dzweb/templates/base.html:139
 msgid "首页"
 msgstr "ホームページ"
 
-#: dzweb/templates/base.html:125 dzweb/templates/home/index.html:132
+#: dzweb/templates/base.html:146 dzweb/templates/home/index.html:134
 #: dzweb/templates/product/display.html:3
 msgid "产品展示"
 msgstr "製品展示"
 
-#: dzweb/templates/base.html:132 dzweb/templates/case/main.html:9
+#: dzweb/templates/base.html:153 dzweb/templates/case/main.html:9
 msgid "经典案例"
 msgstr "代表事例"
 
-#: dzweb/templates/base.html:139
+#: dzweb/templates/base.html:160
 msgid "项目管理"
 msgstr "プロジェクト管理"
 
-#: dzweb/templates/base.html:146
+#: dzweb/templates/base.html:167
 msgid "业务联系"
 msgstr "ビジネス連絡先"
 
-#: dzweb/templates/base.html:153 dzweb/templates/human/hire.html:5
+#: dzweb/templates/base.html:174 dzweb/templates/human/hire.html:5
 #: dzweb/templates/human/main.html:14 dzweb/templates/human/main.html:28
 msgid "招贤纳士"
 msgstr "採用情報"
 
-#: dzweb/templates/base.html:162
+#: dzweb/templates/base.html:183
 msgid "版权所有：广州东振机电设备有限公司"
 msgstr "著作権：広州東振機電設備有限公司"
 
-#: dzweb/templates/base.html:163
+#: dzweb/templates/base.html:184
 msgid "电话：020-34586222 &nbsp;&nbsp;&nbsp;&nbsp;邮箱：Dongzhen@vip.163.com"
-msgstr ""
-"電話: 020-34586222 &nbsp;&nbsp;&nbsp;&nbsp;メールアドレス: Dongzhen@vip.163.com"
+msgstr "電話: 020-34586222 &nbsp;&nbsp;&nbsp;&nbsp;メールアドレス: Dongzhen@vip.163.com"
 
-#: dzweb/templates/base.html:164 dzweb/templates/contact/contact-us.html:10
+#: dzweb/templates/base.html:185 dzweb/templates/contact/contact-us.html:14
 msgid "地址：广州市番禺区石基镇桥山村竹园岗一街2号"
 msgstr "住所：広州市番禺区石基鎮橋山村竹園崗一街2号"
 
-#: dzweb/templates/base.html:165
+#: dzweb/templates/base.html:186
 msgid "粤ICP备2026001637号"
 msgstr "粤ICP备2026001637号"
 
-#: dzweb/templates/human/hire.html:9 dzweb/templates/macro.html:9
+#: dzweb/templates/human/hire.html:13 dzweb/templates/macro.html:9
 msgid "联系方式"
 msgstr "連絡先"
 
@@ -107,8 +106,7 @@ msgstr "単独の行は&lt;p&gt;で囲んでください。例：&lt;p&gt;これ
 
 #: dzweb/templates/macro.html:53
 msgid "字体加粗，请用&lt;span&gt;&lt;/span&gt;包裹。例：&lt;span&gt;加粗字&lt;/span&gt;"
-msgstr ""
-"太字にする場合は、&lt;span&gt;&lt;/span&gt;で囲んでください。例：&lt;span&gt;太字&lt;/span&gt;"
+msgstr "太字にする場合は、&lt;span&gt;&lt;/span&gt;で囲んでください。例：&lt;span&gt;太字&lt;/span&gt;"
 
 #: dzweb/templates/admin/login.html:3 dzweb/templates/admin/login.html:7
 msgid "管理员登录"
@@ -129,14 +127,11 @@ msgstr "自動車ステアリングシステム組立ライン"
 
 #: dzweb/templates/case/ass.html:10 dzweb/templates/case/robot-welding.html:10
 msgid "多年来，广州东振公司为客户提供量身定制的解决方案，从布局到工艺都可根据客户需求和凭借行业经验提供出相应的设计。"
-msgstr ""
-"長年にわたり、広州東振会社はお客様に合わせたソリューションを提供し、レイアウトから工程まで、お客様のニーズと業界経験に基づいて対応する設計を提供してきました。"
+msgstr "長年にわたり、広州東振会社はお客様に合わせたソリューションを提供し、レイアウトから工程まで、お客様のニーズと業界経験に基づいて対応する設計を提供してきました。"
 
 #: dzweb/templates/case/ass.html:12 dzweb/templates/case/robot-welding.html:12
-msgid ""
-"汽车转向系统装配线是用于实现转向器、转向轴的装配、性能测试等功能。该项目为昭和汽车公司的14FIT转向系统装配线，主要用于转向器的轴承压入和齿轮齿条的磨合、油封螺丝的拧紧和涂胶以及转向器外部零件的组装。"
-msgstr ""
-"自動車ステアリングシステム組立ラインは、ステアリングギア、ステアリングシャフトの組立、性能テストなどの機能を実現するために使用されます。このプロジェクトは昭和自動車会社の14FITステアリングシステム組立ラインであり、主にステアリングギアのベアリング圧入とラック・ピニオンの摺合せ、オイルシールスクリューの締め付けと塗布、およびステアリングギア外部部品の組立てに使用されます。"
+msgid "汽车转向系统装配线是用于实现转向器、转向轴的装配、性能测试等功能。该项目为昭和汽车公司的14FIT转向系统装配线，主要用于转向器的轴承压入和齿轮齿条的磨合、油封螺丝的拧紧和涂胶以及转向器外部零件的组装。"
+msgstr "自動車ステアリングシステム組立ラインは、ステアリングギア、ステアリングシャフトの組立、性能テストなどの機能を実現するために使用されます。このプロジェクトは昭和自動車会社の14FITステアリングシステム組立ラインであり、主にステアリングギアのベアリング圧入とラック・ピニオンの摺合せ、オイルシールスクリューの締め付けと塗布、およびステアリングギア外部部品の組立てに使用されます。"
 
 #: dzweb/templates/case/assembly-line.html:5
 #: dzweb/templates/case/assembly-line.html:8 dzweb/templates/case/main.html:19
@@ -145,14 +140,11 @@ msgstr "組立ライン"
 
 #: dzweb/templates/case/assembly-line.html:10
 msgid "自广州东振公司成立以来先后为多个客户设计制造了包括转向器、传动轴、减震器、制动器、发动机等多种产品在内的装配、压装、拧紧、输送、清洗等设备。"
-msgstr ""
-"広州東振会社の設立以来、ステアリングギア、プロペラシャフト、ショックアブソーバー、ブレーキ、エンジンなど、多种多様な製品を含む組立、圧入、締め付け、搬送、洗浄などの設備を多数の顧客のために設計製造してきました。"
+msgstr "広州東振会社の設立以来、ステアリングギア、プロペラシャフト、ショックアブソーバー、ブレーキ、エンジンなど、多种多様な製品を含む組立、圧入、締め付け、搬送、洗浄などの設備を多数の顧客のために設計製造してきました。"
 
 #: dzweb/templates/case/assembly-line.html:12
-msgid ""
-"这些设备既有单个的专机设备，也有自动化连线设备；既有手工单元、半自动单元，也有自动单元；无论何种设备，都以满足客户需求为导向，根据使用情况和使用场地量身定制。在安全性、人机工程、智能防错、设备成本以及质量方面都有完善的设计考量。"
-msgstr ""
-"これらの設備には、単独の専用機設備もあれば、自動化連係設備もあります。手動ユニット、半自動ユニット、自動ユニットもあり、どのような設備でも、お客様のニーズを満たすことを指向し、使用状況と使用場所に応じてカスタマイズされています。安全性、人間工学、インテリジェントエラープルーフ、設備コスト、および品質の面で、完全な設計配慮がなされています。"
+msgid "这些设备既有单个的专机设备，也有自动化连线设备；既有手工单元、半自动单元，也有自动单元；无论何种设备，都以满足客户需求为导向，根据使用情况和使用场地量身定制。在安全性、人机工程、智能防错、设备成本以及质量方面都有完善的设计考量。"
+msgstr "これらの設備には、単独の専用機設備もあれば、自動化連係設備もあります。手動ユニット、半自動ユニット、自動ユニットもあり、どのような設備でも、お客様のニーズを満たすことを指向し、使用状況と使用場所に応じてカスタマイズされています。安全性、人間工学、インテリジェントエラープルーフ、設備コスト、および品質の面で、完全な設計配慮がなされています。"
 
 #: dzweb/templates/case/extruder.html:5 dzweb/templates/case/extruder.html:8
 #: dzweb/templates/case/main.html:15
@@ -160,10 +152,8 @@ msgid "铁屑挤压机"
 msgstr "鉄屑圧縮機"
 
 #: dzweb/templates/case/extruder.html:10
-msgid ""
-"广州东振机电设备有限公司一直在致力于改善环境设备的研发，铁屑挤压机是一种将机床加工下来的铁屑、钢屑、、铜屑、铝屑等挤压成固定尺寸、便于运输和储存的圆柱体形状，且在挤压过程中分离出切削液，从而达到改善环境、节约成本、降低能耗的专用设备。该机器具有轻便、移动方便、挤压后的铁屑块便于堆放、节省空间等特点。"
-msgstr ""
-"広州東振機電設備有限公司は、環境改善設備の研究開発に取り組んでいます。鉄屑圧縮機は、工作機械で加工された鉄屑、鋼屑、銅屑、アルミ屑などを固定サイズの円柱形状に圧縮し、輸送と保管を容易にし、かつ圧縮過程中に切削油を分離する専用設備であり、環境改善、コスト削減、エネルギー消費削減を実現します。この機械は、軽量で移動が容易、圧縮後の鉄屑ブロックは積み重ねやすく、スペースを節約するなどの特徴があります。"
+msgid "广州东振机电设备有限公司一直在致力于改善环境设备的研发，铁屑挤压机是一种将机床加工下来的铁屑、钢屑、、铜屑、铝屑等挤压成固定尺寸、便于运输和储存的圆柱体形状，且在挤压过程中分离出切削液，从而达到改善环境、节约成本、降低能耗的专用设备。该机器具有轻便、移动方便、挤压后的铁屑块便于堆放、节省空间等特点。"
+msgstr "広州東振機電設備有限公司は、環境改善設備の研究開発に取り組んでいます。鉄屑圧縮機は、工作機械で加工された鉄屑、鋼屑、銅屑、アルミ屑などを固定サイズの円柱形状に圧縮し、輸送と保管を容易にし、かつ圧縮過程中に切削油を分離する専用設備であり、環境改善、コスト削減、エネルギー消費削減を実現します。この機械は、軽量で移動が容易、圧縮後の鉄屑ブロックは積み重ねやすく、スペースを節約するなどの特徴があります。"
 
 #: dzweb/templates/case/main.html:27
 msgid "机器人焊接工作站"
@@ -174,12 +164,19 @@ msgid "机器人焊接工作"
 msgstr "ロボット溶接作業"
 
 #: dzweb/templates/contact/contact-us.html:3
-#: dzweb/templates/contact/location.html:3
 #: dzweb/templates/contact/main.html:14 dzweb/templates/contact/main.html:20
 msgid "联系我们"
 msgstr "お問い合わせ"
 
+#: dzweb/templates/contact/contact-us.html:5
+msgid "联系广州东振机电设备有限公司。我们提供专业的自动化设备、工装夹具及非标零件设计制造。地址：广州市番禺区石基镇桥山村竹园岗一街2号。"
+msgstr ""
+
 #: dzweb/templates/contact/contact-us.html:7
+msgid "联系我们,广州东振,侯先生,自动设备,联系方式"
+msgstr ""
+
+#: dzweb/templates/contact/contact-us.html:11
 #, fuzzy
 msgid "联系人: 侯先生"
 msgstr "連絡先:侯（ホウ）様"
@@ -196,7 +193,7 @@ msgstr "メッセージ"
 msgid "保存"
 msgstr "保存"
 
-#: dzweb/templates/contact/mailbox.html:5 dzweb/templates/contact/main.html:28
+#: dzweb/templates/contact/mailbox.html:5 dzweb/templates/contact/main.html:24
 #: dzweb/templates/message/mailbox.html:5
 msgid "信箱"
 msgstr "メールボックス"
@@ -270,9 +267,9 @@ msgstr "送信"
 msgid "重置"
 msgstr "リセット"
 
-#: dzweb/templates/contact/main.html:24
-msgid "地理位置"
-msgstr "地理位置"
+#: dzweb/templates/contact/mailbox.html:48
+msgid "感谢您的反馈，我们会尽快处理！"
+msgstr "フィードバックありがとうございます。できるだけ早く対応いたします！"
 
 #: dzweb/templates/contact/message-board.html:3
 #: dzweb/templates/message/message-board.html:3
@@ -280,20 +277,20 @@ msgid "留言板"
 msgstr "伝言板"
 
 #: dzweb/templates/contact/message-board.html:17
-#: dzweb/templates/human/hire.html:17
+#: dzweb/templates/human/hire.html:21
 #: dzweb/templates/message/message-board.html:17
-#: dzweb/templates/product/display.html:47
+#: dzweb/templates/product/display.html:51
 msgid "编辑"
 msgstr "編集"
 
 #: dzweb/templates/contact/message-board.html:18
-#: dzweb/templates/human/hire.html:18
+#: dzweb/templates/human/hire.html:22
 #: dzweb/templates/message/message-board.html:18
-#: dzweb/templates/product/display.html:48
+#: dzweb/templates/product/display.html:52
 msgid "删除"
 msgstr "削除"
 
-#: dzweb/templates/home/history.html:3 dzweb/templates/home/index.html:91
+#: dzweb/templates/home/history.html:3 dzweb/templates/home/index.html:93
 #: dzweb/templates/home/main.html:66
 msgid "公司历程"
 msgstr "会社の歩み"
@@ -302,115 +299,134 @@ msgstr "会社の歩み"
 msgid "专业非标零件，自动化设备制造商"
 msgstr "専門的な非標準部品・自動化設備メーカー"
 
-#: dzweb/templates/home/index.html:39 dzweb/templates/home/main.html:14
+#: dzweb/templates/home/index.html:9
+msgid ""
+"广州东振机电设备有限公司 - "
+"专业生产自动化设备、工装夹具、非标零件、铁屑压块机、机器人焊接、挤出机。18年行业经验，服务汽车、制冷、机械电子等行业，提供完善的技术支持和服务体系。"
+msgstr ""
+
+#: dzweb/templates/home/index.html:11
+msgid "自动化设备,工装夹具,非标设备,广州东振,机器人焊接,挤出机,机电设备,非标零件,机器人项目,铁屑压块机"
+msgstr ""
+
+#: dzweb/templates/home/index.html:41 dzweb/templates/home/main.html:14
 #: dzweb/templates/product/main.html:14 dzweb/templates/product/main1.html:14
 msgid "产品类别"
 msgstr "製品カテゴリ"
 
-#: dzweb/templates/home/index.html:40 dzweb/templates/home/index.html:120
-#: dzweb/templates/home/index.html:133 dzweb/templates/home/index.html:153
+#: dzweb/templates/home/index.html:42 dzweb/templates/home/index.html:122
+#: dzweb/templates/home/index.html:135 dzweb/templates/home/index.html:155
 #: dzweb/templates/home/main.html:15
 msgid "详细介绍"
 msgstr "詳細紹介"
 
-#: dzweb/templates/home/index.html:46 dzweb/templates/home/main.html:21
+#: dzweb/templates/home/index.html:48 dzweb/templates/home/main.html:21
 #: dzweb/templates/product/main.html:26 dzweb/templates/product/main1.html:26
 #: dzweb/templates/product/non_standard.html:3
 #: dzweb/templates/product/non_standard.html:5
 msgid "非标零件"
 msgstr "非標準部品"
 
-#: dzweb/templates/home/index.html:50 dzweb/templates/home/main.html:25
+#: dzweb/templates/home/index.html:52 dzweb/templates/home/main.html:25
 #: dzweb/templates/product/fixture.html:3
 #: dzweb/templates/product/fixture.html:5 dzweb/templates/product/main.html:30
 #: dzweb/templates/product/main1.html:30
 msgid "工装夹具"
 msgstr "治具"
 
-#: dzweb/templates/home/index.html:54 dzweb/templates/home/main.html:29
+#: dzweb/templates/home/index.html:56 dzweb/templates/home/main.html:29
 #: dzweb/templates/product/automation.html:3
 #: dzweb/templates/product/automation.html:5
 #: dzweb/templates/product/main.html:34 dzweb/templates/product/main1.html:34
 msgid "自动化设备"
 msgstr "自動化設備"
 
-#: dzweb/templates/home/index.html:58 dzweb/templates/home/main.html:33
-#: dzweb/templates/product/main.html:38 dzweb/templates/product/main1.html:38
+#: dzweb/templates/home/index.html:60 dzweb/templates/home/main.html:33
+#: dzweb/templates/product/main.html:39 dzweb/templates/product/main1.html:38
 msgid "发动机"
 msgstr "エンジン"
 
-#: dzweb/templates/home/index.html:63 dzweb/templates/home/main.html:38
-#: dzweb/templates/product/main.html:43 dzweb/templates/product/main1.html:43
+#: dzweb/templates/home/index.html:65 dzweb/templates/home/main.html:38
+#: dzweb/templates/product/main.html:44 dzweb/templates/product/main1.html:43
 msgid "变速箱"
 msgstr "トランスミッション"
 
-#: dzweb/templates/home/index.html:68 dzweb/templates/home/main.html:43
-#: dzweb/templates/product/main.html:48 dzweb/templates/product/main1.html:48
+#: dzweb/templates/home/index.html:70 dzweb/templates/home/main.html:43
+#: dzweb/templates/product/main.html:49 dzweb/templates/product/main1.html:48
 #, fuzzy
 msgid "转向系统"
 msgstr "自動車ステアリングシステム組立ライン"
 
-#: dzweb/templates/home/index.html:73 dzweb/templates/home/main.html:48
-#: dzweb/templates/product/main.html:53 dzweb/templates/product/main1.html:53
+#: dzweb/templates/home/index.html:75 dzweb/templates/home/main.html:48
+#: dzweb/templates/product/main.html:54 dzweb/templates/product/main1.html:53
 msgid "汽车轴承"
 msgstr "自動車用軸受"
 
-#: dzweb/templates/home/index.html:81 dzweb/templates/home/main.html:56
+#: dzweb/templates/home/index.html:83 dzweb/templates/home/main.html:56
 msgid "关于我们"
 msgstr "私たちについて"
 
-#: dzweb/templates/home/index.html:87 dzweb/templates/home/index.html:119
+#: dzweb/templates/home/index.html:89 dzweb/templates/home/index.html:121
 #: dzweb/templates/home/introduction.html:4
-#: dzweb/templates/home/introduction.html:8 dzweb/templates/home/main.html:62
+#: dzweb/templates/home/introduction.html:12 dzweb/templates/home/main.html:62
 msgid "公司简介"
 msgstr "会社概要"
 
-#: dzweb/templates/home/index.html:95 dzweb/templates/home/main.html:70
+#: dzweb/templates/home/index.html:97 dzweb/templates/home/main.html:70
 #: dzweb/templates/home/organization.html:3
 msgid "机构组织"
 msgstr "組織機構"
 
-#: dzweb/templates/home/index.html:99 dzweb/templates/home/main.html:74
+#: dzweb/templates/home/index.html:101 dzweb/templates/home/main.html:74
 #: dzweb/templates/home/strategy.html:5
 msgid "发展战略"
 msgstr "発展戦略"
 
-#: dzweb/templates/home/index.html:103 dzweb/templates/home/main.html:78
+#: dzweb/templates/home/index.html:105 dzweb/templates/home/main.html:78
 #: dzweb/templates/home/performance.html:3
 msgid "公司业绩"
 msgstr "会社の業績"
 
-#: dzweb/templates/home/index.html:107 dzweb/templates/home/main.html:82
+#: dzweb/templates/home/index.html:109 dzweb/templates/home/main.html:82
 #: dzweb/templates/home/style.html:3
 msgid "员工风采"
 msgstr "従業員の風貌"
 
-#: dzweb/templates/home/index.html:126
+#: dzweb/templates/home/index.html:128
 msgid ""
 "广州东振机电设备有限公司:是一家集设计、制造、销售为一体的企业，长期致力于现代化工厂自动化设备的研究与制造。主要产品为:铁屑压块机，工装夹具、非标设备及非"
 " 标配件。产品广泛应用于汽车、制冷、机械电子等行业，为众多企业高效的生产提供了技术支持！"
-msgstr ""
-"広州東振機電設備有限公司は、設計、製造、販売を一体化した企業であり、長年にわたり現代化工場の自動化設備の研究と製造に取り組んでいます。主な製品は、鉄屑圧縮機、治具、非標準設備及び非標準部品です。製品は自動車、冷凍、機械電子などの業界で広く使用され、多くの企業の効率的な生産に技術サポートを提供しています！"
+msgstr "広州東振機電設備有限公司は、設計、製造、販売を一体化した企業であり、長年にわたり現代化工場の自動化設備の研究と製造に取り組んでいます。主な製品は、鉄屑圧縮機、治具、非標準設備及び非標準部品です。製品は自動車、冷凍、機械電子などの業界で広く使用され、多くの企業の効率的な生産に技術サポートを提供しています！"
 
-#: dzweb/templates/home/index.html:151
+#: dzweb/templates/home/index.html:153
 msgid "人才招聘"
 msgstr "人材募集"
 
-#: dzweb/templates/home/index.html:157
+#: dzweb/templates/home/index.html:159
 msgid "1.机械设计/主任工程师: 2名"
 msgstr "1. 機械設計/主任エンジニア: 2名"
 
-#: dzweb/templates/home/index.html:158
+#: dzweb/templates/home/index.html:160
 msgid "职位要求:"
 msgstr "職務要件:"
 
-#: dzweb/templates/home/index.html:159
-msgid ""
-"大专以上学历,机电类专业,熟悉机械加工工艺；有丰富的工装夹模具等非标设计经验；从事设计工作三以上的经验,熟悉电动和气动控制；并能解决各类疑难问题、有良好的团队合作精神和沟通能力。"
-msgstr ""
-"短期大学卒以上学历、機電関連専門、機械加工プロセスに精通していること。治具・金型などの非標準設計経験が豊富であること。設計業務に3年以上の経験があり、電動・空気圧制御に精通していること。あらゆる種類の難問を解決でき、良好なチームワーク精神とコミュニケーション能力を有すること。"
+#: dzweb/templates/home/index.html:161
+msgid "大专以上学历,机电类专业,熟悉机械加工工艺；有丰富的工装夹模具等非标设计经验；从事设计工作三以上的经验,熟悉电动和气动控制；并能解决各类疑难问题、有良好的团队合作精神和沟通能力。"
+msgstr "短期大学卒以上学历、機電関連専門、機械加工プロセスに精通していること。治具・金型などの非標準設計経験が豊富であること。設計業務に3年以上の経験があり、電動・空気圧制御に精通していること。あらゆる種類の難問を解決でき、良好なチームワーク精神とコミュニケーション能力を有すること。"
 
-#: dzweb/templates/home/introduction.html:10
+#: dzweb/templates/home/introduction.html:6
+#, fuzzy
+msgid "广州东振机电设备有限公司公司简介。我们是一家集设计、制造、销售为一体的企业，长期致力于现代化工厂自动化设备的研究与制造。主要产品为：工装夹具、非标设备及非标配件。"
+msgstr ""
+"広州東振機電設備有限公司は、設計、製造、販売を一体化した企業であり、長年にわたり現代化工場の自動化設備の\n"
+"研究と製造に取り組んでいます。主な製品は、治具、非標準設備及び非標準部品です。製品は自動車、冷凍、機械電子などの業界で広く使用され、多くの企業の\n"
+"効率的な生産に技術サポートを提供しています！"
+
+#: dzweb/templates/home/introduction.html:8
+msgid "公司简介,广州东振,工装夹具,非标设备,自动化设备,机电设备"
+msgstr ""
+
+#: dzweb/templates/home/introduction.html:14
 msgid ""
 "广州东振机电设备有限公司:是一家集设计、制造、销售为一体的企业，长期致力于现代化工厂自动化设备的\n"
 "研究与制造。主要产品为:工装夹具、非标设备及非标配件。产品广泛应用于汽车、制冷、机械电子等行业，为众\n"
@@ -420,17 +436,18 @@ msgstr ""
 "研究と製造に取り組んでいます。主な製品は、治具、非標準設備及び非標準部品です。製品は自動車、冷凍、機械電子などの業界で広く使用され、多くの企業の\n"
 "効率的な生産に技術サポートを提供しています！"
 
-#: dzweb/templates/home/introduction.html:13
+#: dzweb/templates/home/introduction.html:17
 msgid ""
 "公司拥有一流的精密生产设备，采用先进的管理方式、严格的检验程序，保证每一个产品符合客户的要求。\n"
 "我们秉承“诚信经营质量为本”的经营理念，“追求卓越用心服务”的宗旨，为您追求高效益服务！在平稳、踏实中求\n"
 "发展。产品主要销于国内知名企业：如瑞智、美的、格力、三菱、日立、本田、丰田、日产及其配套厂家等。"
 msgstr ""
 "当社は一流の精密生産設備を有し、先進的な管理方式と厳格な検査プログラムを採用し、一つ一つの製品がお客様の要求を満たすことを保証します。\n"
-"私たちは「誠実な経営、品質を基本とする」という経営理念と、「卓越を追求し、心を込めてサービスを提供する」という宗旨のもと、お客様の高収益追求にお役立ちします！\n"
+"私たちは「誠実な経営、品質を基本とする」という経営理念と、「卓越を追求し、心を込めてサービスを提供する」という宗旨のもと、お客様の高収益追求にお役立ちします！"
+"\n"
 "安定した着実な中で発展を求めています。製品は主に国内の有名企業、例えば瑞智、美的、格力、三菱、日立、本田、豊田、日産及びその関連メーカーなどに販売されています。"
 
-#: dzweb/templates/home/introduction.html:16
+#: dzweb/templates/home/introduction.html:20
 msgid ""
 "我们始终承诺把客户的满意度放在首位，交付满意的产品，提高高度整合的技术方案和优良品质的产品，使客\n"
 "\t\t\t户获得最佳的投资回报是我们永恒的追求。"
@@ -438,23 +455,23 @@ msgstr ""
 "私たちは常にお客様の満足度を最優先し、満足のいく製品を納入し、高度に統合された技術ソリューションと優れた品質の製品を提供することをお約束します。\n"
 "\t\t\tお客様に最良の投資利益をもたらすことが私たちの永遠の追求です。"
 
-#: dzweb/templates/home/introduction.html:19
+#: dzweb/templates/home/introduction.html:23
 msgid "经营范围"
 msgstr "営業範囲"
 
-#: dzweb/templates/home/introduction.html:21
+#: dzweb/templates/home/introduction.html:25
 msgid "设计、制造、销售各种工装夹具、检具及非标零配件"
 msgstr "各種治具、検査治具及び非標準部品の設計、製造、販売"
 
-#: dzweb/templates/home/introduction.html:22
+#: dzweb/templates/home/introduction.html:26
 msgid "自动化装配设备、机加设备及各种辅助设备的设计与制造"
 msgstr "自動化組立設備、機械加工設備及び各種補助設備の設計と製造"
 
-#: dzweb/templates/home/introduction.html:23
+#: dzweb/templates/home/introduction.html:27
 msgid "承接各种自动化生产线设计、安装、调试"
 msgstr "各種自動化生産ラインの設計、設置、調整の請負"
 
-#: dzweb/templates/home/introduction.html:24
+#: dzweb/templates/home/introduction.html:28
 msgid "设计、制造搬运机器人系统、涂胶机器人系统"
 msgstr "搬送ロボットシステム、塗布ロボットシステムの設計、製造"
 
@@ -468,8 +485,7 @@ msgstr "会社の核心戦略——QCD改善"
 
 #: dzweb/templates/home/strategy.html:13
 msgid "我们只有以优良的品质，严格成本控制，快速的交货期，以及对客户认真负责的服务理念，才能在竞争日益激烈的今天，保持持续稳定的成长。"
-msgstr ""
-"優れた品質、厳格なコスト管理、迅速な納期、そしてお客様に対して真摯で責任あるサービス理念によってのみ、競争が激化する今日、持続可能で安定した成長を維持できます。"
+msgstr "優れた品質、厳格なコスト管理、迅速な納期、そしてお客様に対して真摯で責任あるサービス理念によってのみ、競争が激化する今日、持続可能で安定した成長を維持できます。"
 
 #: dzweb/templates/home/strategy.html:15
 msgid "Q战略:品质━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
@@ -531,12 +547,20 @@ msgstr "職位"
 msgid "待遇"
 msgstr "待遇"
 
-#: dzweb/templates/human/create.html:23 dzweb/templates/human/hire.html:14
+#: dzweb/templates/human/create.html:23 dzweb/templates/human/hire.html:18
 #: dzweb/templates/human/update.html:19
 msgid "职位要求"
 msgstr "職務要件"
 
-#: dzweb/templates/human/hire.html:18
+#: dzweb/templates/human/hire.html:7
+msgid "广州东振机电设备有限公司人才招聘。我们提供机械设计工程师、主任工程师等职位。欢迎有志之士加入我们的团队。"
+msgstr ""
+
+#: dzweb/templates/human/hire.html:9
+msgid "人才招聘,招贤纳士,广州东振,机械设计工程师,职位要求"
+msgstr ""
+
+#: dzweb/templates/human/hire.html:22
 msgid "是否删除该条招聘信息"
 msgstr "この採用情報を削除しますか？"
 
@@ -561,43 +585,47 @@ msgstr "新規追加"
 msgid "编辑职位"
 msgstr "職位編集"
 
-#: dzweb/templates/product/display.html:25
+#: dzweb/templates/product/display.html:7
+msgid "自动化设备,工装夹具,非标设备,广州东振"
+msgstr ""
+
+#: dzweb/templates/product/display.html:29
 msgid "分类：铁屑压块机"
 msgstr "分類：鉄屑圧縮機"
 
-#: dzweb/templates/product/display.html:26
+#: dzweb/templates/product/display.html:30
 msgid "分类：工装夹具"
 msgstr "分類：治具"
 
-#: dzweb/templates/product/display.html:27
+#: dzweb/templates/product/display.html:31
 msgid "分类：自动化设备"
 msgstr "分類：自動化設備"
 
-#: dzweb/templates/product/display.html:28
+#: dzweb/templates/product/display.html:32
 msgid "分类：非标零件"
 msgstr "分類：非標準部品"
 
-#: dzweb/templates/product/display.html:29
+#: dzweb/templates/product/display.html:33
 msgid "分类：机器人项目"
 msgstr "分類：ロボットプロジェクト"
 
-#: dzweb/templates/product/display.html:34
+#: dzweb/templates/product/display.html:38
 msgid "发布时间"
 msgstr "発表時間"
 
-#: dzweb/templates/product/display.html:37
+#: dzweb/templates/product/display.html:41
 msgid "产品描述"
 msgstr "製品説明"
 
-#: dzweb/templates/product/display.html:39
+#: dzweb/templates/product/display.html:43
 msgid "产品说明待添加"
 msgstr "製品説明は追加待ち"
 
-#: dzweb/templates/product/display.html:45
+#: dzweb/templates/product/display.html:49
 msgid "返回"
 msgstr "戻る"
 
-#: dzweb/templates/product/display.html:48
+#: dzweb/templates/product/display.html:52
 msgid "是否删除该产品"
 msgstr "この製品を削除しますか"
 
@@ -606,11 +634,11 @@ msgstr "この製品を削除しますか"
 msgid "产品搜索"
 msgstr "製品検索"
 
-#: dzweb/templates/product/main.html:93
+#: dzweb/templates/product/main.html:94
 msgid "上一页"
 msgstr "前のページ"
 
-#: dzweb/templates/product/main.html:99
+#: dzweb/templates/product/main.html:100
 msgid "下一页"
 msgstr "次のページ"
 
@@ -715,3 +743,19 @@ msgstr "ここをクリックして新しい職位を追加"
 
 #~ msgid "广州东振公司成立于2007年6月13号，建厂初期已拥有一个多年从事非标行业的技术团队。"
 #~ msgstr "広州東振会社は2007年6月13日に設立され、工場建設初期から長年非標準業界に従事してきた技術チームを有していました。"
+
+#~ msgid "请先登录管理员账号"
+#~ msgstr "まず管理者アカウントでログインしてください"
+
+#~ msgid "系统未配置管理员密码，请联系技术支持。"
+#~ msgstr "管理者パスワードが設定されていません。サポートにお問い合わせください。"
+
+#~ msgid "管理员已登录"
+#~ msgstr "管理者がログインしました"
+
+#~ msgid "密码错误."
+#~ msgstr "パスワードが間違っています。"
+
+#~ msgid "地理位置"
+#~ msgstr "地理位置"
+
