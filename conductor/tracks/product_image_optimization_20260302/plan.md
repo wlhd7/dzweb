@@ -21,8 +21,8 @@
     - [x] 更新 `cleanup-images` 命令，使其能够扫描并清理 `thumbs/` 目录下的孤儿缩略图。
 
 ## Phase 3: 前端集成 (Frontend Integration)
-- [ ] Task: 在首页应用缩略图
-    - [ ] 更新 `dzweb/templates/home/index.html`，将产品展示图片的 `url_for` 指向 `thumbnail_files`。
+- [x] Task: 在首页应用缩略图 (a35c8f2)
+    - [x] 更新 `dzweb/templates/home/index.html`，将产品展示图片的 `url_for` 指向 `thumbnail_files`。
 - [ ] Task: 在产品列表页应用缩略图
     - [ ] 更新 `dzweb/templates/product/main.html`，统一使用缩略图。
 - [ ] Task: 在搜索结果页应用缩略图
