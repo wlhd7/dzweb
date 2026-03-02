@@ -1,9 +1,9 @@
 # Implementation Plan - product_image_optimization_20260302
 
 ## Phase 1: 基础架构与缩略图逻辑 (Infrastructure & Core Logic)
-- [ ] Task: 创建图片处理工具函数
-    - [ ] 在 `dzweb/utils/` 创建 `image.py`。
-    - [ ] 使用 Pillow 实现 `generate_thumbnail(file_path, thumb_path, size=(400, 300))`。
+- [x] Task: 创建图片处理工具函数 (ee23209)
+    - [x] 在 `dzweb/utils/` 创建 `image.py`。
+    - [x] 使用 Pillow 实现 `generate_thumbnail(file_path, thumb_path, size=(400, 300))`。
 - [ ] Task: 确保缩略图目录存在
     - [ ] 更新 `dzweb/__init__.py` 的 `create_app`，自动创建 `instance/uploads/thumbs` 目录。
 - [ ] Task: 添加缩略图访问路由
