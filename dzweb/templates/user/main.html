@@ -15,7 +15,7 @@
 			<div class="sector-content">
 				{% for appname, appurl in g.appname_appurl_dict.items() %}
 					<a href="{{ url_for(appurl) }}">
-						<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="corner-down-right" loading="lazy">
+						<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="nav-top-icon-dashed" loading="lazy">
 						{{ appname }}</a>
 
 					{% if not loop.last %}
