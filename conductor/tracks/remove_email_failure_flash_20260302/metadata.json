@@ -1,0 +1,8 @@
+{
+  "track_id": "remove_email_failure_flash_20260302",
+  "type": "chore",
+  "status": "new",
+  "created_at": "2026-03-02T10:00:00Z",
+  "updated_at": "2026-03-02T10:00:00Z",
+  "description": "邮件发送失败，会出现 <div class="flash">邮件发送失败，请稍后重试或联系管理员</div>，取消这个"
+}

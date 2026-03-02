@@ -20,3 +20,8 @@ This file tracks all major tracks for the project. Each track has its own detail
 ---
 
 
+
+---
+
+- [ ] **Track: 移除邮件发送失败的 Flash 提示**
+*Link: [./tracks/remove_email_failure_flash_20260302/](./tracks/remove_email_failure_flash_20260302/)*
