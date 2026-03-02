@@ -64,7 +64,7 @@
 		<div class="dblock">
 			<div class="dblock-title">
 				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}" loading="lazy">
-				<p>&nbsp; {% block title %}{% endblock %}</p>
+				<h1>&nbsp; {% block title %}{% endblock %}</h1>
 
 				{%- if request.endpoint == 'product.fixture' %}
 				<div class="fixture-filter-buttons">
