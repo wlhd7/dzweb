@@ -14,6 +14,7 @@ def create_app(test_config=None):
         # Corrected typo: BABEL_DEFAULT_LOCALE
         BABEL_DEFAULT_LOCALE='zh',
         UPLOAD_FOLDER=os.path.join(app.instance_path, 'uploads'),
+        THUMBNAIL_FOLDER=os.path.join(app.instance_path, 'uploads', 'thumbs'),
         DZWEB_ADMIN_PASSWORD=os.environ.get('DZWEB_ADMIN_PASSWORD'),
         SEND_FILE_MAX_AGE_DEFAULT=31536000
     )
@@ -30,6 +31,11 @@ def create_app(test_config=None):
 
     try:
         os.makedirs(app.config['UPLOAD_FOLDER'])
+    except OSError:
+        pass
+
+    try:
+        os.makedirs(app.config['THUMBNAIL_FOLDER'])
     except OSError:
         pass
 
