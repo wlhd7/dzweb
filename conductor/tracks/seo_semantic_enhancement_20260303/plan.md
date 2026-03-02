@@ -2,11 +2,11 @@
 
 ## 阶段 1: 环境准备与自动化测试定义 (Phase 1: Setup & TDD)
 - [x] Task: 在 `dzweb/static/css/base.css` 中定义 `.visually-hidden` 类，用于隐藏 <h1>。 [2c36c2d]
-- [ ] Task: 在 `tests/test_seo.py` 中编写自动化测试，验证 <h1> 的唯一性和图片 `alt` 属性。
-    - [ ] 检查首页 <h1> 及其内容。
-    - [ ] 检查产品分类列表页 <h1> 及其内容。
-    - [ ] 检查产品详情页 <h1> 及其内容。
-    - [ ] 检查全站关键图片的 `alt` 属性。
+- [x] Task: 在 `tests/test_seo.py` 中编写自动化测试，验证 <h1> 的唯一性和图片 `alt` 属性。 [f449b3d]
+    - [x] 检查首页 <h1> 及其内容。 [f449b3d]
+    - [x] 检查产品分类列表页 <h1> 及其内容。 [f449b3d]
+    - [x] 检查产品详情页 <h1> 及其内容。 [f449b3d]
+    - [x] 检查全站关键图片的 `alt` 属性。 [f449b3d]
 - [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
 ## 阶段 2: 模板结构升级与语义化增强 (Phase 2: Template Refactoring)
