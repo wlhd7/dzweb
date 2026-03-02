@@ -17,7 +17,7 @@
 - [x] Task: 遍历首页 (`home/index.html`)，为所有建筑、招聘及服务系统的图片添加描述性的 `alt` 属性。 [33f090c]
 - [x] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md) [d9d0960]
 
-## 阶段 3: 验证与最终部署 (Phase 3: Validation & Finalization)
+## 阶段 3: 验证与最终部署 (Phase 3: Validation & Finalization) [checkpoint: 67c1da1]
 - [x] Task: 运行所有 SEO 相关的自动化测试，确保功能通过且无回归。 [a8980db]
-- [x] Task: 手动检查全站视觉效果，确保 <h1> 升级没有破坏布局和间距。 [cabab68]
-- [~] Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md)
+- [x] Task: 手动检查全站视觉效果，确保 <h1> 升级没有破坏布局e和间距。 [cabab68]
+- [x] Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md) [67c1da1]
