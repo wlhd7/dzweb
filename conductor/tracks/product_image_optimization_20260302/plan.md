@@ -11,8 +11,8 @@
     - [x] 映射 `/thumbnail-files/<filename>` 到 `instance/uploads/thumbs`。
 
 ## Phase 2: 产品模块更新与资源同步 (Product Module Update & Sync)
-- [ ] Task: 更新产品“创建”逻辑
-    - [ ] 在 `dzweb/routes/product.py` 的 `create` 视图中引入缩略图生成逻辑。
+- [x] Task: 更新产品“创建”逻辑 (cdfe2c6)
+    - [x] 在 `dzweb/routes/product.py` 的 `create` 视图中引入缩略图生成逻辑。
 - [ ] Task: 更新产品“更新”逻辑
     - [ ] 在 `update` 视图中，上传新图片时生成对应缩略图，并删除旧的缩略图。
 - [ ] Task: 更新产品“删除”逻辑
