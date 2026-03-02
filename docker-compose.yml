@@ -4,8 +4,10 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      # 挂载 instance 目录以持久化数据库和上传的文件
+      # 挂载 instance 目录以持久化数据库
       - ./instance:/app/instance
+      # 挂载 uploads 目录以持久化上传的文件
+      - ./dzweb/static/uploads:/app/dzweb/static/uploads
     environment:
       - FLASK_APP=dzweb
       - FLASK_DEBUG=0

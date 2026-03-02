@@ -10,8 +10,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# 确保 instance 目录存在
-RUN mkdir -p /app/instance
+# 确保 instance 和 uploads 目录存在
+RUN mkdir -p /app/instance /app/dzweb/static/uploads
 
 EXPOSE 5000
 
