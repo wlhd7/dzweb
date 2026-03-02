@@ -30,3 +30,8 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 - [~] **Track: 全局移除 Flash 消息系统**
 *Link: [./tracks/remove_all_flash_messages_20260302/](./tracks/remove_all_flash_messages_20260302/)*
+
+---
+
+- [ ] **Track: 恢复成功发送邮件后，底部插入的 <p> 标签**
+*Link: [./tracks/restore_mailbox_success_p_tag_20260303/](./tracks/restore_mailbox_success_p_tag_20260303/)*
