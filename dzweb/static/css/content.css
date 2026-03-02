@@ -137,3 +137,9 @@ hr {
 .corner-down-right {
 	width: 15px;
 }
+
+.nav-top-icon-dashed {
+	width: 15px !important;
+	height: 15px !important;
+	vertical-align: middle;
+}
