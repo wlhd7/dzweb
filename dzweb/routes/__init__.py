@@ -5,6 +5,7 @@ import os
 bps = [home, product, case, service, human, contact, admin]
 
 def init_app(app):
+    product.init_app(app)
     @app.route('/instance-files/<filename>')
     def instance_files(filename):
         return send_from_directory(app.instance_path + '/uploads', filename)

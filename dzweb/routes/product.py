@@ -299,3 +299,41 @@ def search():
 def get_subcategories(category):
     subcategories = SUBCATEGORIES.get(category, [])
     return jsonify(subcategories)
+
+
+import click
+from flask.cli import with_appcontext
+
+@click.command('cleanup-images')
+@with_appcontext
+def cleanup_images_command():
+    """Remove image files that are not referenced in the database."""
+    db = get_db()
+    # Get all filenames referenced in the database
+    products = db.execute('SELECT filename FROM products').fetchall()
+    referenced_filenames = {p['filename'] for p in products if p['filename']}
+    
+    upload_folder = current_app.config['UPLOAD_FOLDER']
+    if not os.path.exists(upload_folder):
+        click.echo(f"Upload folder {upload_folder} does not exist.")
+        return
+
+    files_in_folder = os.listdir(upload_folder)
+    deleted_count = 0
+    
+    for filename in files_in_folder:
+        # Only consider files (not directories)
+        file_path = os.path.join(upload_folder, filename)
+        if os.path.isfile(file_path):
+            if filename not in referenced_filenames:
+                try:
+                    os.remove(file_path)
+                    deleted_count += 1
+                    click.echo(f"Deleted orphan file: {filename}")
+                except Exception as e:
+                    click.echo(f"Error deleting {filename}: {str(e)}", err=True)
+
+    click.echo(f"Deleted {deleted_count} orphan files.")
+
+def init_app(app):
+    app.cli.add_command(cleanup_images_command)
