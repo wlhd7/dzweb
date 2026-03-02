@@ -126,6 +126,7 @@ def update(id):
             abort(404, f"Product id {id} doesn't exist")
 
         filename_to_use = existing['filename']
+        old_filename = existing['filename']
 
         # if a new file was uploaded and has an allowed extension, save it and use new filename
         if file and file.filename:
@@ -134,7 +135,7 @@ def update(id):
                 file.save(os.path.join(current_app.config['UPLOAD_FOLDER'], random_filename))
                 filename_to_use = random_filename
             else:
-                flash('抱歉，图片格式限制，请上传文件扩展名为 jpg 或 png 的图片')
+                flash(_('抱歉，图片格式限制，请上传文件扩展名为 jpg 或 png 的图片'))
                 return redirect(request.url)
 
         db.execute(
@@ -143,6 +144,17 @@ def update(id):
             )
         db.commit()
 
+        # If a new file was saved successfully, remove the old file
+        if filename_to_use != old_filename:
+            old_file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], old_filename)
+            try:
+                if os.path.exists(old_file_path):
+                    os.remove(old_file_path)
+            except Exception as e:
+                current_app.logger.error(f"Error deleting old file {old_file_path} during update of product {id}: {str(e)}")
+                # We don't flash error here as the update itself succeeded, just orphan file remained
+
+        flash(_('产品已成功更新。'))
         return redirect(request.args.get('next'))
 
     product = db.execute(

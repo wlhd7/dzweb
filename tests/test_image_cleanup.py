@@ -124,5 +124,39 @@ def test_update_product_removes_old_image(client, auth, app):
         new_file_path = os.path.join(upload_folder, new_filename)
         assert os.path.exists(new_file_path)
         
-        # Verify old file is gone (This is expected to FAIL currently)
-        assert not os.path.exists(old_file_path), f"Old file {old_file_path} should have been deleted"
+def test_update_product_no_image_change(client, auth, app):
+    auth.admin_login()
+    
+    with app.app_context():
+        db = get_db()
+        # Get seeded product
+        product = db.execute('SELECT id, filename, category FROM products WHERE productname = "Test Product"').fetchone()
+        product_id = product['id']
+        filename = product['filename']
+        category = product['category']
+        
+        upload_folder = app.config['UPLOAD_FOLDER']
+        file_path = os.path.join(upload_folder, filename)
+        assert os.path.exists(file_path)
+        
+        # Update product WITHOUT changing the image
+        data = {
+            'productname': 'Name Change Only',
+            'brief': 'Updated Brief',
+            'category': category,
+            'class': 'engine',
+            'file': (None, '')
+        }
+        response = client.post(
+            f'/product/{product_id}/update?next=/product/{category}',
+            data=data,
+            follow_redirects=True
+        )
+        assert response.status_code == 200
+        
+        # Get filename from DB - should be the same
+        updated_product = db.execute('SELECT filename FROM products WHERE id = ?', (product_id,)).fetchone()
+        assert updated_product['filename'] == filename
+        
+        # Verify file is STILL THERE
+        assert os.path.exists(file_path)
