@@ -5,11 +5,11 @@
 - [x] Task: 分析 `dzweb/utils/image.py` 中的图片处理逻辑，确认其路径依赖。
 - [x] Task: Conductor - User Manual Verification 'Research & Analysis' (Protocol in workflow.md)
 
-## Phase 2: 环境与配置更新 (Environment & Configuration)
+## Phase 2: 环境与配置更新 (Environment & Configuration) [checkpoint: 75063cb]
 - [x] Task: 修改 `.gitignore`，移除对 `dzweb/static/uploads/` 的忽略规则（或添加例外），确保其被 Git 跟踪。 4fd2099
 - [x] Task: 更新 Flask 工厂函数 (`dzweb/__init__.py`) 中的 `UPLOAD_FOLDER` 配置，将其指向 `dzweb/static/uploads/`。 f798ff1
-- [~] Task: 更新 `Dockerfile` 和 `docker-compose.yml`，调整挂载卷（Volumes）路径及容器内目录权限。
-- [ ] Task: Conductor - User Manual Verification 'Environment & Configuration' (Protocol in workflow.md)
+- [x] Task: 更新 `Dockerfile` 和 `docker-compose.yml`，调整挂载卷（Volumes）路径及容器内目录权限。 2928cb5
+- [x] Task: Conductor - User Manual Verification 'Environment & Configuration' (Protocol in workflow.md)
 
 ## Phase 3: 业务逻辑与测试迁移 (TDD Logic Migration)
 - [ ] Task: 迁移图片工具类逻辑。
