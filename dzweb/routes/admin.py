@@ -12,8 +12,6 @@ def login_required(view):
     @wraps(view)
     def wrapped_view(**kwargs):
         if not session.get('is_admin'):
-            flash(_('请先登录管理员账号'))
-
             return redirect(url_for('admin.login'))
 
         return view(**kwargs)
@@ -49,11 +47,9 @@ def login():
         admin_password = current_app.config.get('DZWEB_ADMIN_PASSWORD')
 
         if not admin_password:
-            flash(_('系统未配置管理员密码，请联系技术支持。'))
             return render_template('admin/login.html')
 
         if g.get('user'):
-            flash(_('管理员已登录'))
             return redirect(url_for('admin.userhome'))
 
         if password == admin_password:
@@ -61,7 +57,8 @@ def login():
             session['is_admin'] = True
             return redirect(url_for('admin.userhome'))
         else:
-            flash(_('密码错误.'))
+            # Silent failure as per user's preference for removing all flash messages
+            pass
 
     return render_template('admin/login.html')
 

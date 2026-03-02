@@ -6,13 +6,13 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: 全面审计' (Protocol in workflow.md) [checkpoint: 14c5dcb]
 
 ## Phase 2: 后端清理 (Backend Cleanup)
-- [~] Task: 移除 `dzweb/routes/admin.py` 中的 `flash()`。
-- [ ] Task: 移除 `dzweb/routes/product.py` 中的 `flash()`。
-- [ ] Task: 移除 `dzweb/routes/contact.py` 及其它模块中的 `flash()`。
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: 后端清理' (Protocol in workflow.md)
+- [x] Task: 移除 `dzweb/routes/admin.py` 中的 `flash()`。 14c5dcb
+- [x] Task: 移除 `dzweb/routes/product.py` 中的 `flash()`。 14c5dcb
+- [x] Task: 移除 `dzweb/routes/contact.py` 及其它模块中的 `flash()`。 14c5dcb
+- [x] Task: Conductor - User Manual Verification 'Phase 2: 后端清理' (Protocol in workflow.md) [checkpoint: f0671eb]
 
 ## Phase 3: 前端清理 (Frontend Cleanup)
-- [ ] Task: 修改 `dzweb/templates/base.html`，删除 Flash 渲染块。
+- [~] Task: 修改 `dzweb/templates/base.html`，删除 Flash 渲染块。
 - [ ] Task: 检查并修改 `login.html`, `mailbox.html` 等子模板，移除重复的 Flash 逻辑。
 - [ ] Task: 修改 `dzweb/static/css/base.css`，删除 `.flash` 相关样式。
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: 前端清理' (Protocol in workflow.md)

@@ -112,7 +112,8 @@ def create():
                 f"{product_url}?lang=ja"
             ])
         else:
-            flash('抱歉，图片格式限制，请上传文件扩展名为 jpg 或 png 的图片')
+            # Silent error handling for invalid file extension
+            pass
 
         return redirect(url_for(f'product.{category}'))
 
@@ -154,7 +155,6 @@ def update(id):
                 
                 filename_to_use = random_filename
             else:
-                flash(_('抱歉，图片格式限制，请上传文件扩展名为 jpg 或 png 的图片'))
                 return redirect(request.url)
 
         db.execute(
@@ -175,7 +175,6 @@ def update(id):
             except Exception as e:
                 current_app.logger.error(f"Error deleting old files for product {id} during update: {str(e)}")
 
-        flash(_('产品已成功更新。'))
         return redirect(request.args.get('next'))
 
     product = db.execute(
@@ -210,7 +209,6 @@ def delete(id):
                     os.remove(thumb_path)
             except Exception as e:
                 current_app.logger.error(f"Error deleting files for product {id}: {str(e)}")
-                flash(_('删除图片文件失败，操作已取消。'))
                 return redirect(url_for(f'product.{category}'))
 
         db.execute('DELETE FROM products WHERE id = ?', (id,))

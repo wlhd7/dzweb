@@ -100,12 +100,10 @@ def mailbox():
             
             # 验证必填字段
             if not all([title, content, liaison, unit, mail_address]):
-                flash('请填写所有必填字段', 'error')
                 return render_template('contact/mailbox.html')
             
             # 验证邮箱格式
             if '@' not in mail_address:
-                flash('请输入有效的邮箱地址', 'error')
                 return render_template('contact/mailbox.html')
             
             # 发送邮件
@@ -121,7 +119,8 @@ def mailbox():
             )
             
             if success:
-                flash('感谢您的反馈，我们会尽快处理！', 'success')
+                # Silent handling for success
+                pass
             else:
                 # Silently handle email sending failure
                 current_app.logger.error(f"Failed to send feedback email from {mail_address}.")
