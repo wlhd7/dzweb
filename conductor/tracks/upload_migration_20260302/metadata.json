@@ -1,0 +1,8 @@
+{
+  "track_id": "upload_migration_20260302",
+  "type": "chore",
+  "status": "new",
+  "created_at": "2026-03-02T10:00:00Z",
+  "updated_at": "2026-03-02T10:00:00Z",
+  "description": "把 instance/uploads 移出 instance/，放在 dzweb/static/uploads/，作为网站自身的一部分，需要保存到github"
+}
