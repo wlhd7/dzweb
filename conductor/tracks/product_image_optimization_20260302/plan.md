@@ -25,8 +25,8 @@
     - [x] 更新 `dzweb/templates/home/index.html`，将产品展示图片的 `url_for` 指向 `thumbnail_files`。
 - [x] Task: 在产品列表页应用缩略图 (cbf662c)
     - [x] 更新 `dzweb/templates/product/main.html`，统一使用缩略图制。
-- [ ] Task: 在搜索结果页应用缩略图
-    - [ ] 更新 `dzweb/templates/product/search.html`。
+- [x] Task: 在搜索结果页应用缩略图 (249b895)
+    - [x] 更新 `dzweb/templates/product/search.html`。
 
 ## Phase 4: 旧数据迁移 (Data Migration)
 - [ ] Task: 实现迁移 CLI 命令
