@@ -4,11 +4,11 @@
 - [x] Task: 验证 `UPLOAD_FOLDER` 配置并在测试套件中添加文件模拟工具 1777993
 - [x] Task: Conductor - User Manual Verification 'Phase 1: 环境准备与基础设施' (Protocol in workflow.md) f825cb9
 
-## Phase 2: 产品删除同步
-- [ ] Task: TDD - 编写产品删除时物理文件同步删除的失败测试
-- [ ] Task: 在 `product.delete` 路由中实现物理文件删除逻辑
-- [ ] Task: 完善异常处理（如文件缺失时的报错逻辑）并确保测试通过
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: 产品删除同步' (Protocol in workflow.md)
+## Phase 2: 产品删除同步 [checkpoint: 28788fa]
+- [x] Task: TDD - 编写产品删除时物理文件同步删除的失败测试 145fc53
+- [x] Task: 在 `product.delete` 路由中实现物理文件删除逻辑 943fd39
+- [x] Task: 完善异常处理（如文件缺失时的报错逻辑）并确保测试通过 943fd39
+- [x] Task: Conductor - User Manual Verification 'Phase 2: 产品删除同步' (Protocol in workflow.md) 28788fa
 
 ## Phase 3: 产品更新同步
 - [ ] Task: TDD - 编写产品更新（替换图片）时旧文件删除的失败测试
