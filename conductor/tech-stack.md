@@ -21,3 +21,4 @@
 ## 开发工具
 - **版本控制**: Git
 - **依赖管理**: pip (通过 `requirements.txt` 或 `pyproject.toml` 管理)
+- **CLI 维护工具**: Flask CLI (包含 `flask cleanup-images` 用于自动清理孤儿图片文件)
