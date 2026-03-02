@@ -161,12 +161,29 @@ def update(id):
 @login_required
 def delete(id):
     db = get_db()
-    product = db.execute('SELECT category FROM products WHERE id = ?', (id,)).fetchone()
+    product = db.execute('SELECT category, filename FROM products WHERE id = ?', (id,)).fetchone()
     
     if product:
         category = product['category']
+        filename = product['filename']
+        
+        if filename:
+            file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+            try:
+                if os.path.exists(file_path):
+                    os.remove(file_path)
+                else:
+                    # If file doesn't exist, we log it and proceed (silent continue for missing files)
+                    # but the spec says "Strictly sync", let's follow the spec for Phase 2 implementation.
+                    current_app.logger.warning(f"File {file_path} not found during deletion of product {id}")
+            except Exception as e:
+                current_app.logger.error(f"Error deleting file {file_path}: {str(e)}")
+                flash(_('删除图片文件失败，操作已取消。'))
+                return redirect(url_for(f'product.{category}'))
+
         db.execute('DELETE FROM products WHERE id = ?', (id,))
         db.commit()
+        flash(_('产品及其图片已成功删除。'))
         return redirect(url_for(f'product.{category}'))
     
     return redirect(url_for('home.index'))
