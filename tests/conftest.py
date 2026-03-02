@@ -11,10 +11,12 @@ with open(os.path.join(os.path.dirname(__file__), '../dzweb/schema.sql'), 'rb') 
 @pytest.fixture
 def app():
     db_fd, db_path = tempfile.mkstemp()
+    upload_dir = tempfile.mkdtemp()
 
     app = create_app({
         'TESTING': True,
         'DATABASE': db_path,
+        'UPLOAD_FOLDER': upload_dir,
         'SECRET_KEY': 'test_secret_key',
         'DZWEB_ADMIN_PASSWORD': 'test_admin_password',
         'BAIDU_PUSH_TOKEN': 'test_token',
@@ -47,12 +49,20 @@ def app():
             "INSERT INTO products (productname, brief, category, filename, class) VALUES (?, ?, ?, ?, ?)",
             ('Test Product', 'Test Brief', 'automation', 'test.jpg', 'engine')
         )
+        # Create the dummy test.jpg
+        with open(os.path.join(upload_dir, 'test.jpg'), 'wb') as f:
+            f.write(b"dummy image data")
+
         db.commit()
 
     yield app
 
     os.close(db_fd)
     os.unlink(db_path)
+    # Cleanup upload dir
+    import shutil
+    shutil.rmtree(upload_dir)
+
 
 @pytest.fixture
 def client(app):
