@@ -334,25 +334,30 @@ def cleanup_images_command():
     referenced_filenames = {p['filename'] for p in products if p['filename']}
     
     upload_folder = current_app.config['UPLOAD_FOLDER']
-    if not os.path.exists(upload_folder):
-        click.echo(f"Upload folder {upload_folder} does not exist.")
-        return
-
-    files_in_folder = os.listdir(upload_folder)
+    thumb_folder = current_app.config['THUMBNAIL_FOLDER']
     deleted_count = 0
     
-    for filename in files_in_folder:
-        # Only consider files (not directories)
-        file_path = os.path.join(upload_folder, filename)
-        if os.path.isfile(file_path):
-            if filename not in referenced_filenames:
-                try:
-                    os.remove(file_path)
-                    deleted_count += 1
-                    click.echo(f"Deleted orphan file: {filename}")
-                except Exception as e:
-                    current_app.logger.error(f"Failed to delete orphan file {filename}: {str(e)}")
-                    click.echo(f"Error deleting {filename}: {str(e)}", err=True)
+    def cleanup_dir(directory):
+        nonlocal deleted_count
+        if not os.path.exists(directory):
+            click.echo(f"Directory {directory} does not exist, skipping.")
+            return
+
+        files_in_folder = os.listdir(directory)
+        for filename in files_in_folder:
+            file_path = os.path.join(directory, filename)
+            if os.path.isfile(file_path):
+                if filename not in referenced_filenames:
+                    try:
+                        os.remove(file_path)
+                        deleted_count += 1
+                        click.echo(f"Deleted orphan file: {file_path}")
+                    except Exception as e:
+                        current_app.logger.error(f"Failed to delete orphan file {file_path}: {str(e)}")
+                        click.echo(f"Error deleting {filename}: {str(e)}", err=True)
+
+    cleanup_dir(upload_folder)
+    cleanup_dir(thumb_folder)
 
     click.echo(f"Deleted {deleted_count} orphan files.")
 

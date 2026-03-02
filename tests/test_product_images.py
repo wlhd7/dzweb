@@ -120,3 +120,33 @@ def test_delete_product_removes_thumbnail(client, auth, app):
         # Verify thumbnail is DELETED
         # This is expected to FAIL until implemented
         assert not os.path.exists(thumb_path)
+
+def test_cleanup_images_removes_orphan_thumbnails(client, app):
+    runner = app.test_cli_runner()
+    
+    thumb_folder = app.config['THUMBNAIL_FOLDER']
+    os.makedirs(thumb_folder, exist_ok=True)
+    
+    # 1. Create an orphan thumbnail
+    orphan_thumb = os.path.join(thumb_folder, 'orphan_thumb.jpg')
+    with open(orphan_thumb, 'wb') as f:
+        f.write(b"orphan thumb data")
+        
+    # 2. Ensure a referenced thumbnail exists
+    with app.app_context():
+        db = get_db()
+        seeded = db.execute('SELECT filename FROM products LIMIT 1').fetchone()
+        referenced_thumb = os.path.join(thumb_folder, seeded['filename'])
+        with open(referenced_thumb, 'wb') as f:
+            f.write(b"referenced thumb data")
+            
+    assert os.path.exists(orphan_thumb)
+    assert os.path.exists(referenced_thumb)
+    
+    # 3. Run cleanup
+    result = runner.invoke(args=['cleanup-images'])
+    assert result.exit_code == 0
+    
+    # 4. Verify
+    assert not os.path.exists(orphan_thumb)
+    assert os.path.exists(referenced_thumb)
