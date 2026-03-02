@@ -11,6 +11,7 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 2: 清理与移除' (Protocol in workflow.md) [checkpoint: 8c9aef4]
 
 ## Phase 3: 验证与验收 (Verification & Acceptance)
-- [~] Task: 再次模拟失败场景，验证不再显示 flash 提示，但原本已有的 `<p>` 标签提示功能应保持正常（如果有）。
-- [ ] Task: 确认服务器后台日志仍能正确记录 `current_app.logger.error` 信息。
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: 验证与验收' (Protocol in workflow.md)
+- [x] Task: 再次模拟失败场景，验证不再显示 flash 提示，但原本已有的 `<p>` 标签提示功能应保持正常（如果有）。 8c9aef4
+- [x] Task: 确认服务器后台日志仍能正确记录 `current_app.logger.error` 信息。 8c9aef4
+- [x] Task: Conductor - User Manual Verification 'Phase 3: 验证与验收' (Protocol in workflow.md) [checkpoint: 8c9aef4]
+
