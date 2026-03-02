@@ -215,7 +215,6 @@ def delete(id):
 
         db.execute('DELETE FROM products WHERE id = ?', (id,))
         db.commit()
-        flash(_('产品及其图片已成功删除。'))
         return redirect(url_for(f'product.{category}'))
     
     return redirect(url_for('home.index'))

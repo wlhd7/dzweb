@@ -22,7 +22,7 @@ def test_delete_product_removes_image(client, auth, app):
         # Delete the product
         response = client.get(f'/product/{product_id}/delete', follow_redirects=True)
         assert response.status_code == 200
-        assert "产品及其图片已成功删除。" in response.data.decode('utf-8')
+        assert "产品及其图片已成功删除。" not in response.data.decode('utf-8')
         
         # Verify database record is gone
         deleted_product = db.execute('SELECT id FROM products WHERE id = ?', (product_id,)).fetchone()
