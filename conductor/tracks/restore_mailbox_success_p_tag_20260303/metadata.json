@@ -1,8 +1,8 @@
 {
   "track_id": "restore_mailbox_success_p_tag_20260303",
   "type": "bug",
-  "status": "new",
+  "status": "completed",
   "created_at": "2026-03-03T10:00:00Z",
-  "updated_at": "2026-03-03T10:00:00Z",
+  "updated_at": "2026-03-03T10:15:00Z",
   "description": "恢复成功发送邮件后，底部插入的 <p> 标签提示消息，且不使用 Flash 消息系统。"
 }

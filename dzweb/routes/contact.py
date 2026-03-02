@@ -119,8 +119,7 @@ def mailbox():
             )
             
             if success:
-                # Silent handling for success
-                pass
+                return render_template('contact/mailbox.html', success=True)
             else:
                 # Silently handle email sending failure
                 current_app.logger.error(f"Failed to send feedback email from {mail_address}.")

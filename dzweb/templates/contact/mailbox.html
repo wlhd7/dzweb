@@ -43,4 +43,8 @@
 				<input type="reset" value="{{ _('重置') }}" class="message-mailbox-operate">
 			</div>
 		</form>
+
+		{% if success %}
+			<p>{{ _('感谢您的反馈，我们会尽快处理！') }}</p>
+		{% endif %}
 {% endblock %}

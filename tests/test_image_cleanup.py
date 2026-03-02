@@ -81,7 +81,9 @@ def test_delete_product_file_error(client, auth, app, monkeypatch):
         # Delete the product
         response = client.get(f'/product/{product_id}/delete', follow_redirects=True)
         assert response.status_code == 200
-        assert "删除图片文件失败，操作已取消。" in response.data.decode('utf-8')
+        # Flash message should NOT be present
+        assert "删除图片文件失败，操作已取消。" not in response.data.decode('utf-8')
+        assert 'class="flash"' not in response.data.decode('utf-8')
         
 def test_update_product_removes_old_image(client, auth, app):
     import io

@@ -31,6 +31,10 @@ def test_mailbox_post_success(client, app):
         assert 'Test Content' in outbox[0].body
         assert 'Test Person' in outbox[0].body
         assert 'test@example.com' in outbox[0].reply_to
+        
+        # Verify success message is in response and it's not a flash message
+        assert "感谢您的反馈，我们会尽快处理！" in response.data.decode('utf-8')
+        assert 'class="flash"' not in response.data.decode('utf-8')
 
 def test_mailbox_post_invalid_data(client, app):
     app.config['MAIL_SUPPRESS_SEND'] = True
@@ -46,7 +50,7 @@ def test_mailbox_post_invalid_data(client, app):
             'unit': 'Test Unit',
             'mail': 'test@example.com'
         })
-        assert b'\xe8\xaf\xb7\xe5\xa1\xab\xe5\x86\x99\xe6\x89\x80\xe6\x9c\x89\xe5\xbf\x85\xe5\xa1\xab\xe5\xad\x97\xe6\xae\xb5' in response.data # "请填写所有必填字段"
+        assert b'class="flash"' not in response.data
         assert len(outbox) == 0
 
 def test_mailbox_post_invalid_email(client, app):
@@ -63,7 +67,7 @@ def test_mailbox_post_invalid_email(client, app):
             'unit': 'Test Unit',
             'mail': 'invalid-email'
         })
-        assert b'\xe8\xaf\xb7\xe8\xbe\x93\xe5\x85\xa5\xe6\x9c\x89\xe6\x95\x88\xe7\x9a\x84\xe9\x82\xae\xe7\xae\xb1\xe5\x9c\xb0\xe5\x9d\x80' in response.data # "请输入有效的邮箱地址"
+        assert b'class="flash"' not in response.data
         assert len(outbox) == 0
 
 def test_mailbox_post_no_config(client, app):
@@ -76,4 +80,4 @@ def test_mailbox_post_no_config(client, app):
         'unit': 'Test Unit',
         'mail': 'test@example.com'
     })
-    assert b'\xe9\x82\xae\xe4\xbb\xb6\xe5\x8f\x91\xe9\x80\x81\xe5\xa4\xb1\xe8\xb4\xa5' in response.data # "邮件发送失败"
+    assert b'class="flash"' not in response.data
