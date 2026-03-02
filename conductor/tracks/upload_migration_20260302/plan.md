@@ -27,3 +27,6 @@
 - [x] Task: 在 Docker 环境下执行一次干净的构建和启动，验证权限与持久化是否正常。
 - [x] Task: 清理旧的 `instance/uploads/` 目录。
 - [x] Task: Conductor - User Manual Verification 'Data Migration & Final Verification' (Protocol in workflow.md)
+
+## Phase: Review Fixes
+- [x] Task: Apply review suggestions 34283af
