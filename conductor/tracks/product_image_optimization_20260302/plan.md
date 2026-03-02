@@ -6,9 +6,9 @@
     - [x] 使用 Pillow 实现 `generate_thumbnail(file_path, thumb_path, size=(400, 300))`。
 - [x] Task: 确保缩略图目录存在 (557d560)
     - [x] 更新 `dzweb/__init__.py` 的 `create_app`，自动创建 `instance/uploads/thumbs` 目录。
-- [ ] Task: 添加缩略图访问路由
-    - [ ] 在 `dzweb/routes/__init__.py` 中添加 `thumbnail_files` 路由。
-    - [ ] 映射 `/thumbnail-files/<filename>` 到 `instance/uploads/thumbs`。
+- [x] Task: 添加缩略图访问路由 (6ba9b25)
+    - [x] 在 `dzweb/routes/__init__.py` 中添加 `thumbnail_files` 路由。
+    - [x] 映射 `/thumbnail-files/<filename>` 到 `instance/uploads/thumbs`。
 
 ## Phase 2: 产品模块更新与资源同步 (Product Module Update & Sync)
 - [ ] Task: 更新产品“创建”逻辑
