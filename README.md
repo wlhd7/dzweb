@@ -3,7 +3,7 @@
 广州东振机电设备有限公司官方网站。
 
 ## Overview (项目概览)
-本项目基于 Flask 框架开发，旨在为广州东振提供一站式的内外部门户解决方案。系统涵盖了产品展示、人才招聘、多语言国际化支持以及内部办公应用集成。
+本项目基于 Flask 框架开发，旨在为广州东振提供一站式的内外部门户解决方案。系统涵盖了产品展示、人才招聘、多语言国际化支持、图片资源自动清理以及内部办公应用集成。
 
 ## Tech Stack (技术栈)
 - **Framework**: Flask 3.1.2 (Python)
@@ -72,6 +72,12 @@ We use Docker and Docker Compose to provide a consistent development environment
   pybabel extract -F babel.cfg -k _l -o messages.pot .
   pybabel update -i messages.pot -d dzweb/translations
   pybabel compile -d dzweb/translations
+  ```
+
+- **Maintenance CLI (运维指令)**:
+  Clean up orphan image files that are no longer referenced in the database:
+  ```bash
+  flask cleanup-images
   ```
 
 ## License

@@ -20,6 +20,11 @@
 - Never hardcode Chinese/English strings in templates.
 - Always use `{{ _('String') }}` or `_l('String')`.
 
+### 4. Resource Integrity Protocol
+- **Sync Deletion**: When a database record (e.g., product) is deleted, the associated physical file (image) must be removed from `UPLOAD_FOLDER`.
+- **Sync Update**: When a record is updated with a new file, the previous physical file must be cleaned up to prevent storage bloat.
+- **Maintenance**: Always provide or maintain CLI commands for mass orphan file cleanup.
+
 ## 交互偏好 (Interaction Preferences)
 - **分析优先**：在修改代码前，必须先分析对应的 `routes/*.py` 和 `templates/*.html`。
 - **原子化更新**：每次修改尽量只涉及一个模块（如只改 Product 模块）。

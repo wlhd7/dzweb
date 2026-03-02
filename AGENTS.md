@@ -14,3 +14,7 @@
 
 ## 4. 业务逻辑专家 (Chinese)
 - **职责**：确保所有代码实现符合“广州东振”的业务逻辑，包括产品分类、招聘流程及内部应用权限。
+
+## 5. storage-hygiene-specialist (English)
+- **Responsibility**: Ensure physical file (images, uploads) cleanup is performed alongside database record deletion/update.
+- **Tools**: Use `os.remove` and the `cleanup-images` CLI command.
