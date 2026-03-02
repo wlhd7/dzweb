@@ -33,7 +33,8 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    setup_logging(app)
+    if not app.testing:
+        setup_logging(app)
 
     for bp in bps:
         app.register_blueprint(bp.bp)
