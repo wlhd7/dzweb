@@ -150,3 +150,16 @@ def test_cleanup_images_removes_orphan_thumbnails(client, app):
     # 4. Verify
     assert not os.path.exists(orphan_thumb)
     assert os.path.exists(referenced_thumb)
+
+def test_homepage_uses_thumbnail_route(client, app):
+    # Ensure there's at least one product
+    with app.app_context():
+        db = get_db()
+        product = db.execute('SELECT filename FROM products LIMIT 1').fetchone()
+        filename = product['filename']
+    
+    response = client.get('/')
+    assert response.status_code == 200
+    html = response.data.decode('utf-8')
+    assert f'/thumbnail-files/{filename}' in html
+    assert f'/instance-files/{filename}' not in html # For the showcase part
