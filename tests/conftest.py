@@ -17,6 +17,7 @@ def app():
         'TESTING': True,
         'DATABASE': db_path,
         'UPLOAD_FOLDER': upload_dir,
+        'THUMBNAIL_FOLDER': os.path.join(upload_dir, 'thumbs'),
         'SECRET_KEY': 'test_secret_key',
         'DZWEB_ADMIN_PASSWORD': 'test_admin_password',
         'BAIDU_PUSH_TOKEN': 'test_token',
