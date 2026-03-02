@@ -142,7 +142,16 @@ def update(id):
         if file and file.filename:
             if allowed_file(file.filename):
                 random_filename = generate_random_filename(file.filename)
-                file.save(os.path.join(current_app.config['UPLOAD_FOLDER'], random_filename))
+                file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], random_filename)
+                file.save(file_path)
+                
+                # Generate new thumbnail
+                thumb_path = os.path.join(current_app.config['THUMBNAIL_FOLDER'], random_filename)
+                try:
+                    generate_thumbnail(file_path, thumb_path)
+                except Exception as e:
+                    current_app.logger.error(f"Failed to generate thumbnail for {random_filename} during update: {str(e)}")
+                
                 filename_to_use = random_filename
             else:
                 flash(_('抱歉，图片格式限制，请上传文件扩展名为 jpg 或 png 的图片'))
@@ -157,12 +166,14 @@ def update(id):
         # If a new file was saved successfully, remove the old file
         if filename_to_use != old_filename:
             old_file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], old_filename)
+            old_thumb_path = os.path.join(current_app.config['THUMBNAIL_FOLDER'], old_filename)
             try:
                 if os.path.exists(old_file_path):
                     os.remove(old_file_path)
+                if os.path.exists(old_thumb_path):
+                    os.remove(old_thumb_path)
             except Exception as e:
-                current_app.logger.error(f"Error deleting old file {old_file_path} during update of product {id}: {str(e)}")
-                # We don't flash error here as the update itself succeeded, just orphan file remained
+                current_app.logger.error(f"Error deleting old files for product {id} during update: {str(e)}")
 
         flash(_('产品已成功更新。'))
         return redirect(request.args.get('next'))
