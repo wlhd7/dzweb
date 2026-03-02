@@ -331,6 +331,7 @@ def cleanup_images_command():
                     deleted_count += 1
                     click.echo(f"Deleted orphan file: {filename}")
                 except Exception as e:
+                    current_app.logger.error(f"Failed to delete orphan file {filename}: {str(e)}")
                     click.echo(f"Error deleting {filename}: {str(e)}", err=True)
 
     click.echo(f"Deleted {deleted_count} orphan files.")
