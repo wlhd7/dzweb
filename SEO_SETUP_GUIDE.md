@@ -1,60 +1,51 @@
 # dzweb SEO 配置与设置指南 (SEO Setup Guide)
 
-本项目已集成了针对百度、Bing 和 Google 的 SEO 优化功能。为了使这些功能完全生效，您需要登录各平台获取相应的标识符（ID）和令牌（Token），并按照以下说明进行配置。
+本项目集成了针对百度、Bing 和 Google 的全方位 SEO 优化功能。为了使这些功能生效，您无需修改任何代码或 HTML 模板，只需在环境变量或 `.env` 文件中配置相应的标识符。
 
 ---
 
-## 1. 关键参数概览 (Key Parameters)
+## 1. 关键参数配置 (Key Parameters)
 
-请核对以下参数，并根据实际获取的值替换代码中的占位符。
+请在您的 `.env` 文件中添加以下参数。系统在启动时会自动将这些值注入到页面元数据和脚本中。
 
-| 平台 | 参数名称 | 代码中的位置 | 当前状态/值 |
+| 平台 | 参数名称 | 环境变量 (Env Variable) | 说明 |
 | :--- | :--- | :--- | :--- |
-| **百度搜索资源平台** | 站点验证 (Verification) | `dzweb/templates/base.html` | `codeva-itXnARhqFg` |
-| **百度搜索资源平台** | 主动推送 Token (Push Token) | 环境变量 `BAIDU_PUSH_TOKEN` | 待配置 |
-| **百度统计** | 统计 ID (Tongji ID) | `dzweb/templates/base.html` | `4D6C42588102B9D9E16C829B2783F992` |
-| **Bing Webmaster** | 站点验证 (Verification) | `dzweb/templates/base.html` | `4D6C42588102B9D9E16C829B2783F992` |
-| **Google Console** | 站点验证 (Verification) | `dzweb/templates/base.html` | `lHyC4DgQqSdtHbM0WgYfWyxVpKyDvFq5DnE8DtjlL4k` |
+| **百度搜索资源平台** | 站点验证码 | `BAIDU_SITE_VERIFICATION` | 对应 `<meta name="baidu-site-verification">` |
+| **百度搜索资源平台** | 推送令牌 | `BAIDU_PUSH_TOKEN` | 用于 API 自动提交新页面 URL |
+| **百度统计** | 统计 ID | `BAIDU_TONGJI_ID` | 对应 `hm.js?` 后的哈希串 |
+| **Bing Webmaster** | 站点验证码 | `BING_SITE_VERIFICATION` | 对应 `<meta name="msvalidate.01">` |
+| **Google Console** | 站点验证码 | `GOOGLE_SITE_VERIFICATION` | 对应 `<meta name="google-site-verification">` |
 
 ---
 
-## 2. 获取路径与操作说明
+## 2. 获取路径说明
 
-### A. 百度搜索资源平台 (Baidu Search Resource Platform)
-1.  **站点验证**：
-    - 登录 [百度搜索资源平台](https://ziyuan.baidu.com/)。
-    - 进入“用户中心” -> “站点管理” -> 添加 `https://www.dongzhen.cn`。
-    - 选择“HTML标签验证”，复制 `content` 属性中的字符串，替换 `base.html` 中的验证代码。
-2.  **主动推送 API**：
-    - 进入“资源运营” -> “普通收录” -> “资源提交” -> “API提交”。
-    - 在接口调用地址中找到 `token=xxxxxx`，这个 `xxxxxx` 就是您的 **BAIDU_PUSH_TOKEN**。
+### A. 百度搜索资源平台 (Baidu)
+1.  **站点验证**：登录 [百度搜索资源平台](https://ziyuan.baidu.com/)，添加站点后选择“HTML标签验证”，复制 `content` 属性中的值。
+2.  **自动推送**：进入“普通收录” -> “API提交”，在接口地址中获取 `token=xxxxxx`。
 
 ### B. 百度统计 (Baidu Tongji)
-1.  登录 [百度统计](https://tongji.baidu.com/)。
-2.  进入“管理” -> “代码获取”。
-3.  找到代码中的 `hm.js?xxxxxxxx`，`xxxxxxxx` 后的字符串即为统计 ID。
-4.  更新 `base.html` 结尾处的脚本 ID。
+1.  登录 [百度统计](https://tongji.baidu.com/)，在“代码获取”中找到脚本地址 `hm.js?xxxxxxxx`，记录该 ID。
 
-### C. Bing & Google 站长工具
-- **Bing**: 登录 [Bing Webmaster Tools](https://www.bing.com/webmasters/) 获取 `msvalidate.01`。
-- **Google**: 登录 [Google Search Console](https://search.google.com/search-console) 获取 `google-site-verification`。
+### C. Bing & Google
+- **Bing**: 在 [Bing Webmaster Tools](https://www.bing.com/webmasters/) 中获取验证 Meta 标签的值。
+- **Google**: 在 [Google Search Console](https://search.google.com/search-console) 中获取 `google-site-verification` 的值。
 
 ---
 
-## 3. 安全配置建议
+## 3. 自动化 SEO 功能
 
-### 环境变量设置 (Environment Variables)
-为了安全起见，**主动推送 Token** 不应直接写在代码中。请在生产服务器的环境变量或 `.env` 文件中添加：
+系统已默认启用以下功能，无需额外配置：
 
-```bash
-BAIDU_PUSH_TOKEN=您的百度推送Token
-```
-
-程序会自动通过 `os.environ.get('BAIDU_PUSH_TOKEN')` 读取该值。如果未配置此变量，程序会自动跳过推送步骤并记录警告日志，不会导致系统崩溃。
+1.  **动态 Sitemap**: 访问 `/sitemap.xml` 即可获取全站（含多语言版本）的最新 URL 地图。
+2.  **主动提交**: 管理员在后台每新增一个产品，系统会立即自动调用百度推送接口，提交该产品的三个语言版本（中、英、日）URL。
+3.  **结构化数据 (JSON-LD)**: 全站自动生成符合 Schema.org 标准的 Organization 和 WebSite 结构化数据，提升搜索结果展现效果。
+4.  **多语言关联**: 自动在 `<head>` 中插入 `hreflang` 标签，引导搜索引擎正确索引各语言版本。
 
 ---
 
-## 4. 已完成的自动化功能
-- **动态 Sitemap**: 访问 `/sitemap.xml` 自动生成包含全站 URL（含中、英、日多语言版本）的地图。
-- **自动推送**: 每次在后台“新增产品”成功后，系统会自动调用百度 API 推送该产品的 3 个语言版本 URL。
-- **Hreflang 关联**: 全站页面已自动添加 `rel="alternate"` 标签，帮助搜索引擎识别多语言对应关系。
+## 4. 验证与排查
+
+配置完成后，您可以：
+1.  **查看源码**: 检查页面头部是否已正确填充对应的验证码和统计 ID。
+2.  **检查日志**: 在后台新增产品后，查看服务器日志确认“Baidu Push Response”是否返回成功。

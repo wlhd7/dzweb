@@ -123,12 +123,16 @@ def mailbox():
             if success:
                 flash('感谢您的反馈，我们会尽快处理！', 'success')
             else:
-                # Silently handle email sending failure as inline <p> is shown
-                current_app.logger.error("Failed to send feedback email.")
+                # Silently handle email sending failure
+                current_app.logger.error(f"Failed to send feedback email from {mail_address}.")
+                # Log actual app config for debugging (be careful with passwords in real prod)
+                current_app.logger.debug(f"Current MAIL_SERVER: {current_app.config.get('MAIL_SERVER')}")
+                current_app.logger.debug(f"Current MAIL_PORT: {current_app.config.get('MAIL_PORT')}")
+
             
         except Exception as e:
             current_app.logger.error(f"处理反馈表单失败: {str(e)}", exc_info=True)
-            # Silently handle system error as inline <p> is shown
+            # System error is handled silently on UI as requested
         
         return render_template('contact/mailbox.html')
     

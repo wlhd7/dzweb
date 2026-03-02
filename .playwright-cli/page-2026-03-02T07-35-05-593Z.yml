@@ -1,0 +1,229 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - img "LOGO" [ref=e4]
+      - generic [ref=e6]:
+        - button "简体中文" [ref=e8] [cursor=pointer]
+        - button "English" [ref=e10] [cursor=pointer]
+        - button "日本語(にほんご)" [ref=e12] [cursor=pointer]
+    - navigation [ref=e14]:
+      - link "首页" [ref=e15] [cursor=pointer]:
+        - /url: /
+        - img [ref=e16]
+        - text: 首页
+      - link "产品展示" [ref=e17] [cursor=pointer]:
+        - /url: /product/non_standard
+        - img [ref=e18]
+        - text: 产品展示
+      - link "经典案例" [ref=e19] [cursor=pointer]:
+        - /url: /case/
+        - img [ref=e20]
+        - text: 经典案例
+      - link "项目管理" [ref=e21] [cursor=pointer]:
+        - /url: /service/
+        - img [ref=e22]
+        - text: 项目管理
+      - link "业务联系" [ref=e23] [cursor=pointer]:
+        - /url: /contact/
+        - img [ref=e24]
+        - text: 业务联系
+      - link "招贤纳士" [ref=e25] [cursor=pointer]:
+        - /url: /human/
+        - img [ref=e26]
+        - text: 招贤纳士
+  - generic [ref=e27]:
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - paragraph [ref=e31]: 产品类别
+          - link "详细介绍" [ref=e32] [cursor=pointer]:
+            - /url: /product/non_standard
+        - generic [ref=e33]:
+          - link "非标零件" [ref=e34] [cursor=pointer]:
+            - /url: /product/non_standard
+            - img [ref=e35]
+            - text: 非标零件
+          - separator [ref=e36]
+          - link "工装夹具" [ref=e37] [cursor=pointer]:
+            - /url: /product/fixture
+            - img [ref=e38]
+            - text: 工装夹具
+          - separator [ref=e39]
+          - link "自动化设备" [ref=e40] [cursor=pointer]:
+            - /url: /product/automation
+            - img [ref=e41]
+            - text: 自动化设备
+          - generic [ref=e42]:
+            - link "发动机" [ref=e43] [cursor=pointer]:
+              - /url: /product/automation?class=engine&page=1
+              - img [ref=e44]
+              - text: 发动机
+            - separator [ref=e45]
+            - link "变速箱" [ref=e46] [cursor=pointer]:
+              - /url: /product/automation?class=transmission&page=1
+              - img [ref=e47]
+              - text: 变速箱
+            - separator [ref=e48]
+            - link "转向系统" [ref=e49] [cursor=pointer]:
+              - /url: /product/automation?class=steeringGear&page=1
+              - img [ref=e50]
+              - text: 转向系统
+            - separator [ref=e51]
+            - link "汽车轴承" [ref=e52] [cursor=pointer]:
+              - /url: /product/automation?class=automobileBearings&page=1
+              - img [ref=e53]
+              - text: 汽车轴承
+      - generic [ref=e54]:
+        - paragraph [ref=e56]: 关于我们
+        - generic [ref=e57]:
+          - link "公司简介" [ref=e58] [cursor=pointer]:
+            - /url: /introduction
+            - img [ref=e59]
+            - text: 公司简介
+          - separator [ref=e60]
+          - link "公司历程" [ref=e61] [cursor=pointer]:
+            - /url: /history
+            - img [ref=e62]
+            - text: 公司历程
+          - separator [ref=e63]
+          - link "机构组织" [ref=e64] [cursor=pointer]:
+            - /url: /organization
+            - img [ref=e65]
+            - text: 机构组织
+          - separator [ref=e66]
+          - link "发展战略" [ref=e67] [cursor=pointer]:
+            - /url: /strategy
+            - img [ref=e68]
+            - text: 发展战略
+          - separator [ref=e69]
+          - link "公司业绩" [ref=e70] [cursor=pointer]:
+            - /url: /performance
+            - img [ref=e71]
+            - text: 公司业绩
+          - separator [ref=e72]
+          - link "员工风采" [ref=e73] [cursor=pointer]:
+            - /url: /style
+            - img [ref=e74]
+            - text: 员工风采
+      - generic [ref=e75]:
+        - paragraph [ref=e77]: 联系方式
+        - generic [ref=e78]:
+          - generic [ref=e79]:
+            - img [ref=e80]
+            - paragraph [ref=e81]: 020-34586222
+          - generic [ref=e82]:
+            - img [ref=e83]
+            - paragraph [ref=e84]: 020-34586228
+          - generic [ref=e85]:
+            - img [ref=e86]
+            - paragraph [ref=e87]: Dongzhen@vip.163.com
+          - generic [ref=e88]:
+            - img [ref=e89]
+            - paragraph [ref=e90]: www.dongzhen.cn
+      - img [ref=e91]
+    - generic [ref=e92]:
+      - generic [ref=e93]:
+        - generic [ref=e94]:
+          - paragraph [ref=e95]: 公司简介
+          - link "详细介绍" [ref=e96] [cursor=pointer]:
+            - /url: /introduction
+        - generic [ref=e97]:
+          - img [ref=e98]
+          - paragraph [ref=e99]: 广州东振机电设备有限公司:是一家集设计、制造、销售为一体的企业，长期致力于现代化工厂自动化设备的研究与制造。主要产品为:铁屑压块机，工装夹具、非标设备及非 标配件。产品广泛应用于汽车、制冷、机械电子等行业，为众多企业高效的生产提供了技术支持！
+      - generic [ref=e100]:
+        - generic [ref=e101]:
+          - paragraph [ref=e102]: 产品展示
+          - link "详细介绍" [ref=e103] [cursor=pointer]:
+            - /url: /product/non_standard
+        - generic [ref=e104]:
+          - link "锻造线自动上下料" [ref=e105] [cursor=pointer]:
+            - /url: /product/130/display
+            - img [ref=e106]
+            - paragraph [ref=e107]: 锻造线自动上下料
+          - link "钢球压入机" [ref=e108] [cursor=pointer]:
+            - /url: /product/129/display
+            - img [ref=e109]
+            - paragraph [ref=e110]: 钢球压入机
+          - link "称重机" [ref=e111] [cursor=pointer]:
+            - /url: /product/128/display
+            - img [ref=e112]
+            - paragraph [ref=e113]: 称重机
+          - link "PLATE SUB钢片摩擦片自动切出机" [ref=e114] [cursor=pointer]:
+            - /url: /product/127/display
+            - img [ref=e115]
+            - paragraph [ref=e116]: PLATE SUB钢片摩擦片自动切出机
+          - link "GO40轴承伺服压入设备" [ref=e117] [cursor=pointer]:
+            - /url: /product/126/display
+            - img [ref=e118]
+            - paragraph [ref=e119]: GO40轴承伺服压入设备
+          - link "铸造缸体自动上下料" [ref=e120] [cursor=pointer]:
+            - /url: /product/125/display
+            - img [ref=e121]
+            - paragraph [ref=e122]: 铸造缸体自动上下料
+          - link "缸盖、轴室-总装滚道" [ref=e123] [cursor=pointer]:
+            - /url: /product/124/display
+            - img [ref=e124]
+            - paragraph [ref=e125]: 缸盖、轴室-总装滚道
+          - link "缸盖搬送辊道" [ref=e126] [cursor=pointer]:
+            - /url: /product/123/display
+            - img [ref=e127]
+            - paragraph [ref=e128]: 缸盖搬送辊道
+          - link "滚道移栽机" [ref=e129] [cursor=pointer]:
+            - /url: /product/122/display
+            - img [ref=e130]
+            - paragraph [ref=e131]: 滚道移栽机
+          - link "机器人抽检滚道" [ref=e132] [cursor=pointer]:
+            - /url: /product/121/display
+            - img [ref=e133]
+            - paragraph [ref=e134]: 机器人抽检滚道
+          - link "发动机连杆分解清扫机" [ref=e135] [cursor=pointer]:
+            - /url: /product/120/display
+            - img [ref=e136]
+            - paragraph [ref=e137]: 发动机连杆分解清扫机
+          - link "发动机毛坯冷却机" [ref=e138] [cursor=pointer]:
+            - /url: /product/119/display
+            - img [ref=e139]
+            - paragraph [ref=e140]: 发动机毛坯冷却机
+          - link "发动机刻印机" [ref=e141] [cursor=pointer]:
+            - /url: /product/118/display
+            - img [ref=e142]
+            - paragraph [ref=e143]: 发动机刻印机
+          - link "HV后飞轮压销机" [ref=e144] [cursor=pointer]:
+            - /url: /product/117/display
+            - img [ref=e145]
+            - paragraph [ref=e146]: HV后飞轮压销机
+          - link "支架夹具" [ref=e147] [cursor=pointer]:
+            - /url: /product/116/display
+            - img [ref=e148]
+            - paragraph [ref=e149]: 支架夹具
+          - link "后转向节夹具" [ref=e150] [cursor=pointer]:
+            - /url: /product/115/display
+            - img [ref=e151]
+            - paragraph [ref=e152]: 后转向节夹具
+    - generic [ref=e153]:
+      - generic [ref=e154]:
+        - generic [ref=e155]:
+          - paragraph [ref=e156]: 人才招聘
+          - link "详细介绍" [ref=e157] [cursor=pointer]:
+            - /url: /human/
+        - generic [ref=e158]:
+          - text: "1.机械设计/主任工程师: 2名 职位要求:"
+          - paragraph [ref=e159]: 大专以上学历,机电类专业,熟悉机械加工工艺；有丰富的工装夹模具等非标设计经验；从事设计工作三以上的经验,熟悉电动和气动控制；并能解决各类疑难问题、有良好的团队合作精神和沟通能力。
+      - link [ref=e160] [cursor=pointer]:
+        - /url: /human/
+        - img [ref=e161]
+      - link [ref=e162] [cursor=pointer]:
+        - /url: /service/
+        - img [ref=e163]
+      - link [ref=e164] [cursor=pointer]:
+        - /url: /service/
+        - img [ref=e165]
+      - link [ref=e166] [cursor=pointer]:
+        - /url: /contact/
+        - img [ref=e167]
+  - contentinfo [ref=e168]:
+    - generic [ref=e169]: 版权所有：广州东振机电设备有限公司
+    - generic [ref=e170]: 电话：020-34586222 邮箱：Dongzhen@vip.163.com
+    - generic [ref=e171]: 地址：广州市番禺区石基镇桥山村竹园岗一街2号
+    - link "粤ICP备2026001637号" [ref=e173] [cursor=pointer]:
+      - /url: https://beian.miit.gov.cn/

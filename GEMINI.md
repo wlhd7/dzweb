@@ -1,7 +1,7 @@
 # Gemini CLI Configuration (Bilingual)
 
 ## 业务背景 (Business Context)
-- **企业名称**：广州东振工业自动化有限公司 (Guangzhou Dongzhen Industrial Automation Co., Ltd.)
+- **企业名称**：广州东振机电设备有限公司 (GuangZhou DongZhen M&E Equipment Co., Ltd)
 - **核心业务**：机器人焊接、非标自动化设备、工装夹具、视觉系统集成。
 - **语言偏好**：用户交互优先使用 **中文**。
 
