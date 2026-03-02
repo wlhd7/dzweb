@@ -1,13 +1,13 @@
 # Implementation Plan: Uploads Directory Migration
 
 ## Phase 1: 调研与准备 (Research & Analysis)
-- [ ] Task: 搜索整个项目中所有对 `instance/uploads` 和 `UPLOAD_FOLDER` 的硬编码引用。
-- [ ] Task: 分析 `dzweb/utils/image.py` 中的图片处理逻辑，确认其路径依赖。
-- [ ] Task: Conductor - User Manual Verification 'Research & Analysis' (Protocol in workflow.md)
+- [x] Task: 搜索整个项目中所有对 `instance/uploads` 和 `UPLOAD_FOLDER` 的硬编码引用。
+- [x] Task: 分析 `dzweb/utils/image.py` 中的图片处理逻辑，确认其路径依赖。
+- [x] Task: Conductor - User Manual Verification 'Research & Analysis' (Protocol in workflow.md)
 
 ## Phase 2: 环境与配置更新 (Environment & Configuration)
-- [ ] Task: 修改 `.gitignore`，移除对 `dzweb/static/uploads/` 的忽略规则（或添加例外），确保其被 Git 跟踪。
-- [ ] Task: 更新 Flask 工厂函数 (`dzweb/__init__.py`) 中的 `UPLOAD_FOLDER` 配置，将其指向 `dzweb/static/uploads/`。
+- [x] Task: 修改 `.gitignore`，移除对 `dzweb/static/uploads/` 的忽略规则（或添加例外），确保其被 Git 跟踪。 4fd2099
+- [~] Task: 更新 Flask 工厂函数 (`dzweb/__init__.py`) 中的 `UPLOAD_FOLDER` 配置，将其指向 `dzweb/static/uploads/`。
 - [ ] Task: 更新 `Dockerfile` 和 `docker-compose.yml`，调整挂载卷（Volumes）路径及容器内目录权限。
 - [ ] Task: Conductor - User Manual Verification 'Environment & Configuration' (Protocol in workflow.md)
 
