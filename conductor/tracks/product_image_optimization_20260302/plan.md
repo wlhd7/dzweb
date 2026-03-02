@@ -37,7 +37,8 @@
 - [x] Task: 编写自动化测试
     - [x] 验证上传图片后 `thumbs/` 目录确实产生了文件。
     - [x] 验证删除产品后缩略图被物理删除。
-- [ ] Task: 执行手动验证
-    - [ ] 运行迁移命令并检查结果。
-    - [ ] 检查首页加载速度及图片路径。
+- [x] Task: 执行手动验证
+    - [x] 运行迁移命令并检查结果。
+    - [x] 检查首页加载速度及图片路径。
+
 - [ ] Task: Conductor - User Manual Verification 'Product Image Optimization' (Protocol in workflow.md)
