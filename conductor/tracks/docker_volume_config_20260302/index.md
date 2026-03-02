@@ -1,5 +1,0 @@
-# Track docker_volume_config_20260302 Context
-
-- [Specification](./spec.md)
-- [Implementation Plan](./plan.md)
-- [Metadata](./metadata.json)

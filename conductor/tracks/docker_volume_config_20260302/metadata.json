@@ -1,8 +1,0 @@
-{
-  "track_id": "docker_volume_config_20260302",
-  "type": "chore",
-  "status": "new",
-  "created_at": "2026-03-02T11:00:00Z",
-  "updated_at": "2026-03-02T11:00:00Z",
-  "description": "为 instance/ 目录配置 Docker Volume 以持久化数据"
-}

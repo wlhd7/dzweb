@@ -1,8 +1,0 @@
-{
-  "track_id": "product_image_cleanup_20260302",
-  "type": "feature",
-  "status": "new",
-  "created_at": "2026-03-02T10:00:00Z",
-  "updated_at": "2026-03-02T10:00:00Z",
-  "description": "删除产品必须同时删除保存的图片，包括更新产品时清理旧图片，并提供存量孤儿文件清理工具。"
-}
