@@ -29,9 +29,9 @@
     - [x] 更新 `dzweb/templates/product/search.html`。
 
 ## Phase 4: 旧数据迁移 (Data Migration)
-- [ ] Task: 实现迁移 CLI 命令
-    - [ ] 在 `dzweb/routes/product.py` 中添加 `flask generate-thumbs` 命令。
-    - [ ] 遍历数据库中所有产品，为缺失缩略图的产品生成缩略图。
+- [x] Task: 实现迁移 CLI 命令 (b6c422f)
+    - [x] 在 `dzweb/routes/product.py` 中添加 `flask generate-thumbs` 命令。
+    - [x] 遍历数据库中所有产品，为缺失缩略图的产品生成缩略图。
 
 ## Phase 5: 测试与验证 (Testing & Verification)
 - [ ] Task: 编写自动化测试
