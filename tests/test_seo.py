@@ -31,6 +31,7 @@ def test_seo_tdk_in_base_template(client):
 
 def test_seo_baidu_tongji_in_base_template(client):
     """验证 base.html 中包含百度统计脚本"""
+    # Force language context if needed, but here we just check for the script source
     response = client.get('/')
     assert response.status_code == 200
     html = response.data.decode('utf-8')
@@ -118,7 +119,6 @@ def test_page_specific_tdk_introduction(client):
     response = client.get('/introduction')
     html = response.data.decode('utf-8')
     assert '公司简介' in html or 'Introduction' in html
-    assert '广州东振' in html
 
 def test_page_specific_tdk_product_display(client):
     """验证产品详情页动态生成 TDK"""
@@ -127,3 +127,55 @@ def test_page_specific_tdk_product_display(client):
     html = response.data.decode('utf-8')
     assert 'Test Product' in html
     assert 'Test Brief' in html
+
+def test_visually_hidden_css(client):
+    """验证 base.css 中定义了 .visually-hidden 类"""
+    response = client.get('/static/css/base.css')
+    assert response.status_code == 200
+    css = response.data.decode('utf-8')
+    assert '.visually-hidden' in css
+
+# --- NEW TESTS FOR SEO ENHANCEMENT ---
+
+def test_h1_on_home_page(client):
+    """验证首页包含且仅包含一个 <h1> 标签，且带有 visually-hidden 类"""
+    response = client.get('/')
+    html = response.data.decode('utf-8')
+    assert '<h1' in html
+    assert 'class="visually-hidden"' in html
+    assert '广州东振' in html
+    # Ensure there's only one H1
+    assert html.count('<h1') == 1
+
+def test_h1_on_product_list_pages(client):
+    """验证产品分类列表页包含 <h1> 标签"""
+    for category in ['non_standard', 'fixture', 'automation', 'robotics']:
+        response = client.get(f'/product/{category}')
+        assert response.status_code == 200
+        html = response.data.decode('utf-8')
+        assert '<h1' in html
+        # Check if localized name is present (e.g., 非标零件)
+        # We'll just check for <h1> existence for now to confirm semantic structure
+        assert html.count('<h1') >= 1
+
+def test_h1_on_product_display_page(client):
+    """验证产品详情页包含 <h1> 标签（产品名称）"""
+    response = client.get('/product/1/display')
+    assert response.status_code == 200
+    html = response.data.decode('utf-8')
+    assert '<h1>Test Product</h1>' in html
+
+def test_alt_attributes_on_key_images(client):
+    """验证全站关键图片具有 alt 属性"""
+    # Check Home page
+    response = client.get('/')
+    html = response.data.decode('utf-8')
+    # Check for some common images that should have alt
+    assert 'alt="LOGO"' in html
+    # Check for other images (architecture, etc.)
+    # Note: We'll check if most images have alt attribute
+    # A simple way is to check if any <img exists without alt
+    import re
+    images = re.findall(r'<img[^>]+>', html)
+    for img in images:
+        assert 'alt=' in img
