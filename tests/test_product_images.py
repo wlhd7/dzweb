@@ -176,3 +176,16 @@ def test_product_list_uses_thumbnail_route(client, app):
     assert response.status_code == 200
     html = response.data.decode('utf-8')
     assert f'/thumbnail-files/{filename}' in html
+
+def test_search_results_use_thumbnail_route(client, app):
+    # Ensure there's at least one product with a known name
+    with app.app_context():
+        db = get_db()
+        product = db.execute('SELECT productname, filename FROM products LIMIT 1').fetchone()
+        name = product['productname']
+        filename = product['filename']
+    
+    response = client.get(f'/product/search?q={name}')
+    assert response.status_code == 200
+    html = response.data.decode('utf-8')
+    assert f'/thumbnail-files/{filename}' in html
