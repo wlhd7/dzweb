@@ -1,12 +1,12 @@
 # Implementation Plan: Global Removal of Flash Message System
 
 ## Phase 1: 全面审计 (Full Audit)
-- [ ] Task: 使用 `grep` 扫描全站 Python 文件，确认所有 `flash()` 调用点。
-- [ ] Task: 使用 `grep` 扫描全站 HTML 文件，确认所有 `get_flashed_messages()` 调用点。
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: 全面审计' (Protocol in workflow.md)
+- [x] Task: 使用 `grep` 扫描全站 Python 文件，确认所有 `flash()` 调用点。
+- [x] Task: 使用 `grep` 扫描全站 HTML 文件，确认所有 `get_flashed_messages()` 调用点。
+- [x] Task: Conductor - User Manual Verification 'Phase 1: 全面审计' (Protocol in workflow.md) [checkpoint: 14c5dcb]
 
 ## Phase 2: 后端清理 (Backend Cleanup)
-- [ ] Task: 移除 `dzweb/routes/admin.py` 中的 `flash()`。
+- [~] Task: 移除 `dzweb/routes/admin.py` 中的 `flash()`。
 - [ ] Task: 移除 `dzweb/routes/product.py` 中的 `flash()`。
 - [ ] Task: 移除 `dzweb/routes/contact.py` 及其它模块中的 `flash()`。
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: 后端清理' (Protocol in workflow.md)
