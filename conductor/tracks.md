@@ -35,8 +35,3 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 - [x] **Track: 恢复成功发送邮件后，底部插入的 <p> 标签**
 *Link: [./tracks/restore_mailbox_success_p_tag_20260303/](./tracks/restore_mailbox_success_p_tag_20260303/)*
-
----
-
-- [x] **Track: SEO 结构优化与语义化增强**
-*Link: [./tracks/seo_semantic_enhancement_20260303/](./tracks/seo_semantic_enhancement_20260303/)*
