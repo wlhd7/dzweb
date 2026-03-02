@@ -10,8 +10,8 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md) [7f5411c]
 
 ## 阶段 2: 模板结构升级与语义化增强 (Phase 2: Template Refactoring)
-- [ ] Task: 修改 `dzweb/templates/base.html`，在首页区块添加视觉隐藏的 <h1>。
-- [ ] Task: 修改 `dzweb/templates/product/main.html`，将产品分类页的标题 (<p>) 升级为 <h1>，并保持原有样式。
+- [x] Task: 修改 `dzweb/templates/base.html`，在首页区块添加视觉隐藏的 <h1>。 [ac29c9b]
+- [~] Task: 修改 `dzweb/templates/product/main.html`，将产品分类页的标题 (<p>) 升级为 <h1>，并保持原有样式。
 - [ ] Task: 修改 `dzweb/templates/product/display.html`，将详情页产品标题 (<h2>) 升级为 <h1>，并保持原有样式。
 - [ ] Task: 修改 `dzweb/templates/macro.html`，为 `side_bar_imag()` 宏中的图片添加 `alt` 属性。
 - [ ] Task: 遍历首页 (`home/index.html`)，为所有建筑、招聘及服务系统的图片添加描述性的 `alt` 属性。
