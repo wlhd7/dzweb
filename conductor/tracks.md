@@ -21,5 +21,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: 删除产品后，出现“产品及其图片已成功删除”，取消这个**
+- [x] **Track: 删除产品后，出现“产品及其图片已成功删除”，取消这个**
 *Link: [./tracks/remove_deletion_flash_20260302/](./tracks/remove_deletion_flash_20260302/)*
