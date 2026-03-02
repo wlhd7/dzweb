@@ -93,8 +93,10 @@
 	line-height: 25px;
 }
 
-.dblock-content h2 {
+.dblock-content h1, .dblock-content h2 {
 	margin-bottom: 10px;
+	font-size: 1.5em;
+	font-weight: bold;
 }
 
 hr {
