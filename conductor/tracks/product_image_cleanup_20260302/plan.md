@@ -10,11 +10,11 @@
 - [x] Task: 完善异常处理（如文件缺失时的报错逻辑）并确保测试通过 943fd39
 - [x] Task: Conductor - User Manual Verification 'Phase 2: 产品删除同步' (Protocol in workflow.md) 28788fa
 
-## Phase 3: 产品更新同步
-- [ ] Task: TDD - 编写产品更新（替换图片）时旧文件删除的失败测试
-- [ ] Task: 在 `product.update` 路由中实现旧图片的物理删除逻辑
-- [ ] Task: 验证更新操作后仅旧图被删，新图正确保留
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: 产品更新同步' (Protocol in workflow.md)
+## Phase 3: 产品更新同步 [checkpoint: a515072]
+- [x] Task: TDD - 编写产品更新（替换图片）时旧文件删除的失败测试 ba62b81
+- [x] Task: 在 `product.update` 路由中实现旧图片的物理删除逻辑 59d165e
+- [x] Task: 验证更新操作后仅旧图被删，新图正确保留 59d165e
+- [x] Task: Conductor - User Manual Verification 'Phase 3: 产品更新同步' (Protocol in workflow.md) a515072
 
 ## Phase 4: 孤儿图片清理工具
 - [ ] Task: TDD - 编写清理 CLI 命令的失败测试（模拟孤儿文件并验证删除）
