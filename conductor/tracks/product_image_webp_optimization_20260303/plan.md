@@ -18,7 +18,7 @@
 - [x] Task: Write tests for upload/delete hooks to verify WebP file synchronization. 36d80e4
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Backend Integration' (Protocol in workflow.md) 36d80e4
 
-## Phase 3: Frontend Implementation
+## Phase 3: Frontend Implementation [checkpoint: 64e0089]
 - [x] Task: Modify `dzweb/templates/product/display.html`. d83c6ba
     - [x] Replace standard `<img>` with the HTML5 `<picture>` tag.
     - [x] Add `<source srcset="..." type="image/webp">` pointing to the WebP version.
