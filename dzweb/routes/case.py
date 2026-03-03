@@ -6,8 +6,22 @@ from dzweb.db import (
     get_db
 )
 from dzweb.routes.admin import login_required
+from dzweb.utils.image import generate_thumbnail, convert_to_webp
+import os
+import uuid
+from flask import current_app
 
 bp = Blueprint('case', __name__, url_prefix='/case')
+
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+
+def allowed_file(filename) -> bool:
+    return '.' in filename and \
+            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+def generate_random_filename(original_filename) -> str:
+    ext = os.path.splitext(original_filename)[1]
+    return f'{uuid.uuid4().hex}{ext}'
 
 @bp.route('/')
 def main():
@@ -46,8 +60,28 @@ def api_add_content(case_id):
     content_ja = request.form.get('content_ja')
     sort_order = request.form.get('sort_order', 0)
     
-    # Filename will be handled in the next task with WebP logic
-    filename = request.form.get('filename')
+    filename = None
+    if content_type == 'image':
+        file = request.files.get('file')
+        if file and allowed_file(file.filename):
+            filename = generate_random_filename(file.filename)
+            file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+            file.save(file_path)
+            
+            # Generate thumbnail
+            thumb_path = os.path.join(current_app.config['THUMBNAIL_FOLDER'], filename)
+            try:
+                generate_thumbnail(file_path, thumb_path)
+            except Exception as e:
+                current_app.logger.error(f"Failed to generate thumbnail for case image {filename}: {str(e)}")
+
+            # Generate WebP version
+            try:
+                convert_to_webp(file_path, quality=80)
+            except Exception as e:
+                current_app.logger.error(f"Failed to generate WebP for case image {filename}: {str(e)}")
+        else:
+            return jsonify({'error': 'Invalid file type or no file uploaded'}), 400
     
     add_case_content(case_id, content_type, content_zh, content_en, content_ja, filename, sort_order)
     return jsonify({'status': 'success'})
