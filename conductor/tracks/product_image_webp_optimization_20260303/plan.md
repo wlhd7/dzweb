@@ -1,6 +1,6 @@
 # Implementation Plan - Product Display Page WebP Image Optimization
 
-## Phase 1: Preparation & Infrastructure
+## Phase 1: Preparation & Infrastructure [checkpoint: 1ca477d]
 - [x] Task: Create utility for WebP conversion in `dzweb/utils/image.py` fb2ec83
     - [x] Implement `convert_to_webp(source_path, quality=80)` using Pillow.
     - [x] Ensure it returns the path to the new WebP file.
