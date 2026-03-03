@@ -33,5 +33,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [x] **Track: 恢复成功发送邮件后，底部插入的 <p> 标签**
-*Link: [./tracks/restore_mailbox_success_p_tag_20260303/](./tracks/restore_mailbox_success_p_tag_20260303/)*
+- [ ] **Track: 详情页原图 WebP 性能优化 (product_image_webp_optimization_20260303)**
+*Link: [./tracks/product_image_webp_optimization_20260303/](./tracks/product_image_webp_optimization_20260303/)*
