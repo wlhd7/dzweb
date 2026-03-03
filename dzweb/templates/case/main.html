@@ -5,11 +5,22 @@
 {% block content %}
 	<div class="block first-column">
 		<div class="sector">
-			<div class="sector-title">
+			<div class="sector-title" style="display: flex; justify-content: space-between; align-items: center;">
 				<p>{{ _('经典案例') }}</p>
+				{% if g.user %}
+				<button id="add-case-btn" style="cursor: pointer; padding: 0 5px; font-size: 10px;">{{ _('新增') }}</button>
+				{% endif %}
 			</div>
 			<div class="sector-content">
-				<!-- 内容已清空 -->
+				<ul id="case-list" style="list-style: none; padding: 10px; margin: 0;">
+					{% for module in modules %}
+					<li style="margin-bottom: 8px;">
+						<a href="{{ url_for('case.display_case', slug=module.slug) }}" class="case-link" data-slug="{{ module.slug }}">
+							{{ module.title_zh if get_locale() == 'zh' else (module.title_en if get_locale() == 'en' else module.title_ja) or module.title_zh }}
+						</a>
+					</li>
+					{% endfor %}
+				</ul>
 			</div>
 		</div>
 

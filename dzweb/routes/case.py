@@ -48,6 +48,16 @@ def main():
     modules = get_case_modules()
     return render_template('case/main.html', modules=modules)
 
+@bp.route('/<slug>')
+def display_case(slug):
+    module = get_case_module_by_slug(slug)
+    if not module:
+        abort(404)
+        
+    modules = get_case_modules()
+    contents = get_case_contents(module['id'])
+    return render_template('case/display.html', module=module, modules=modules, contents=contents)
+
 # --- Management API ---
 
 @bp.route('/api/module', methods=['POST'])

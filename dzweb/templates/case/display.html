@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% from 'macro.html' import side_bar_imag %}
+
+{% block content %}
+	<div class="block first-column">
+		<div class="sector">
+			<div class="sector-title" style="display: flex; justify-content: space-between; align-items: center;">
+				<p>{{ _('经典案例') }}</p>
+				{% if g.user %}
+				<button id="add-case-btn" style="cursor: pointer; padding: 0 5px; font-size: 10px;">{{ _('新增') }}</button>
+				{% endif %}
+			</div>
+			<div class="sector-content">
+				<ul id="case-list" style="list-style: none; padding: 10px; margin: 0;">
+					{% for m in modules %}
+					<li style="margin-bottom: 8px;">
+						<a href="{{ url_for('case.display_case', slug=m.slug) }}" class="case-link {{ 'bold' if m.slug == module.slug }}" data-slug="{{ m.slug }}">
+							{{ m.title_zh if get_locale() == 'zh' else (m.title_en if get_locale() == 'en' else m.title_ja) or m.title_zh }}
+						</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+
+		{{ side_bar_imag() }}
+	</div>
+
+	<div class="block" id="second-column">
+		<div class="dblock">
+			<div class="dblock-title">
+				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}" loading="lazy">
+				<p>&nbsp; {{ _('经典案例') }} > 
+                    {{ module.title_zh if get_locale() == 'zh' else (module.title_en if get_locale() == 'en' else module.title_ja) or module.title_zh }}
+                </p>
+                {% if g.user %}
+                <button id="delete-this-case-btn" data-id="{{ module.id }}" style="margin-left: auto; cursor: pointer; color: red;">{{ _('删除此案例') }}</button>
+                {% endif %}
+			</div>
+			
+			<div class="dblock-content" id="case-content-area" data-case-id="{{ module.id }}">
+                {% for item in contents %}
+                    <div class="case-item" data-id="{{ item.id }}" style="margin-bottom: 20px; position: relative; border: 1px transparent solid;">
+                        {% if item.type == 'text' %}
+                            <div class="case-text">
+                                {{ (item.content_zh if get_locale() == 'zh' else (item.content_en if get_locale() == 'en' else item.content_ja) or item.content_zh) | safe }}
+                            </div>
+                        {% elif item.type == 'image' %}
+                            <div class="case-image">
+                                <picture>
+                                    <source srcset="{{ url_for('static', filename='uploads/' + item.filename.rsplit('.', 1)[0] + '.webp') }}" type="image/webp">
+                                    <img src="{{ url_for('static', filename='uploads/' + item.filename) }}" loading="lazy" style="width: 100%; border-radius: 4px;">
+                                </picture>
+                            </div>
+                        {% endif %}
+
+                        {% if g.user %}
+                        <div class="case-item-controls" style="margin-top: 5px;">
+                            <button class="move-up-btn" data-id="{{ item.id }}">↑</button>
+                            <button class="move-down-btn" data-id="{{ item.id }}">↓</button>
+                            <button class="delete-content-btn" data-id="{{ item.id }}" style="color: red; margin-left: 10px;">{{ _('删除') }}</button>
+                        </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+
+                {% if g.user %}
+                <div id="add-content-placeholder" style="border: 2px dashed #ccc; padding: 20px; text-align: center; cursor: pointer; margin-top: 20px;">
+                    <span style="font-size: 24px;">+</span>
+                </div>
+                {% endif %}
+			</div>
+		</div>	
+	</div>
+
+    <!-- Modals for adding case/content will be implemented in the next task -->
+{% endblock %}
