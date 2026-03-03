@@ -26,5 +26,5 @@
 - [x] Task: Conductor - User Manual Verification '阶段 3：全局引用清理' (Protocol in workflow.md)
 
 ## 阶段 4：收尾工作 (Cleanup)
-- [ ] Task: 确认所有静态资源（图片）已正确迁移且不再被引用。
+- [~] Task: 确认所有静态资源（图片）已正确迁移且不再被引用。
 - [ ] Task: Conductor - User Manual Verification '阶段 4：收尾工作' (Protocol in workflow.md)
