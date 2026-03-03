@@ -1,7 +1,7 @@
 # Implementation Plan: "经典案例" (Case) 模块化重构
 
 ## Phase 1: Database & Model Layer
-- [ ] Task: 更新数据库架构，添加 `case_modules` 和 `case_contents` 表以支持模块化存储。
+- [x] Task: 更新数据库架构，添加 `case_modules` 和 `case_contents` 表以支持模块化存储。 (dffd7d5)
 - [ ] Task: 在 `dzweb/db.py` 中实现案例及其内容块的 CRUD (增删改查) 逻辑。
 - [ ] Task: 为数据库访问逻辑编写单元测试。
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Database & Model Layer' (Protocol in workflow.md)
