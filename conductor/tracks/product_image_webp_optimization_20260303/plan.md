@@ -32,3 +32,6 @@
 - [x] Task: Perform a final audit of the product display pages to confirm WebP is being served (via DevTools/Network tab). b539561
 - [x] Task: Verify the full lifecycle: Upload a product -> Check WebP exists -> Display page shows WebP -> Delete product -> Both files are removed. b539561
 - [x] Task: Conductor - User Manual Verification 'Phase 4: Final Processing & Audit' (Protocol in workflow.md) b539561
+
+## Phase: Review Fixes
+- [x] Task: Apply review suggestions (sync spec and docker config) 5c3c7a9
