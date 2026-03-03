@@ -16,14 +16,14 @@
 - [x] Task: 运行测试并确保所有测试通过。 (00d8696)
 - [x] Task: Conductor - User Manual Verification '阶段 2：重构路由与清理模板' (Protocol in workflow.md)
 
-## 阶段 3：全局引用清理 (Cross-Reference Cleanup)
+## 阶段 3：全局引用清理 (Cross-Reference Cleanup) [checkpoint: 1374853]
 在该阶段，我们将清理其他模块对已删除内容的引用。
 
 - [x] Task: 编写测试用例验证导航栏中“经典案例”链接的有效性，并确认子菜单内容已移除。 (7c7317b)
 - [x] Task: 修改 `dzweb/templates/base.html`，更新“经典案例”导航项链接并移除子菜单引用。 (890f426)
 - [x] Task: 修改 `dzweb/routes/home.py`，移除对已删除子页面规则的引用。 (6367281)
 - [x] Task: 运行全面测试并验证代码覆盖率。 (4c79d04)
-- [ ] Task: Conductor - User Manual Verification '阶段 3：全局引用清理' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification '阶段 3：全局引用清理' (Protocol in workflow.md)
 
 ## 阶段 4：收尾工作 (Cleanup)
 - [ ] Task: 确认所有静态资源（图片）已正确迁移且不再被引用。
