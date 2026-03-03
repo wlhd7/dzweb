@@ -19,13 +19,13 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Backend Integration' (Protocol in workflow.md) 36d80e4
 
 ## Phase 3: Frontend Implementation
-- [ ] Task: Modify `dzweb/templates/product/display.html`.
-    - [ ] Replace standard `<img>` with the HTML5 `<picture>` tag.
-    - [ ] Add `<source srcset="..." type="image/webp">` pointing to the WebP version.
-    - [ ] Ensure the fallback `<img>` still points to the original JPG/PNG.
-- [ ] Task: Verify that the change only affects the individual product display page and not the home/category thumbnails.
-- [ ] Task: Write integration tests for the product display page to verify `<picture>` and `<source>` tags are rendered correctly.
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Frontend Implementation' (Protocol in workflow.md)
+- [x] Task: Modify `dzweb/templates/product/display.html`. d83c6ba
+    - [x] Replace standard `<img>` with the HTML5 `<picture>` tag.
+    - [x] Add `<source srcset="..." type="image/webp">` pointing to the WebP version.
+    - [x] Ensure the fallback `<img>` still points to the original JPG/PNG.
+- [x] Task: Verify that the change only affects the individual product display page and not the home/category thumbnails. d83c6ba
+- [x] Task: Write integration tests for the product display page to verify `<picture>` and `<source>` tags are rendered correctly. d83c6ba
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Frontend Implementation' (Protocol in workflow.md) d83c6ba
 
 ## Phase 4: Final Processing & Audit
 - [ ] Task: Execute the batch conversion: `flask convert-webp`.
