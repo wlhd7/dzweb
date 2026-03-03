@@ -8,27 +8,10 @@
 			<div class="sector-title">
 				<p>{{ _('经典案例') }}</p>
 			</div>
-
 			<div class="sector-content">
-				<a href="{{ url_for('case.extruder') }}">
-					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="nav-top-icon-dashed" loading="lazy">
-					{{ _('铁屑挤压机') }}</a>					
-				<hr>
-				<a href="{{ url_for('case.assembly_line') }}">
-					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="nav-top-icon-dashed" loading="lazy">
-					{{ _('组装线') }}</a>
-				<hr>
-				<a href="{{ url_for('case.ass') }}">
-					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="nav-top-icon-dashed" loading="lazy">
-					{{ _('汽车转向系统装配线') }}</a>
-				<hr>
-				<a href="{{ url_for('case.robot_welding') }}">
-					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" class="nav-top-icon-dashed" loading="lazy">
-					{{ _('机器人焊接工作站') }}</a>
+				<!-- 内容已清空 -->
 			</div>
-
 		</div>
-
 
 		{{ side_bar_imag() }}
 	</div>
@@ -37,15 +20,12 @@
 		<div class="dblock">
 			<div class="dblock-title">
 				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}" loading="lazy">
-				<p>&nbsp; {% block title %}{% endblock %}</p>
-
+				<p>&nbsp; {{ _('经典案例') }}</p>
 			</div>
 			
 			<div class="dblock-content">
-				{% block case %}{% endblock %}
+				<!-- 内容已清空 -->
 			</div>
 		</div>	
 	</div>
-
-
 {% endblock %}
