@@ -162,3 +162,7 @@ Thumbs.db
 
 # Ensure uploads directory is always tracked
 !dzweb/static/uploads/
+
+# Playwright artifacts
+.playwright-cli/
+server_check.png
