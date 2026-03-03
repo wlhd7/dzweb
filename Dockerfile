@@ -15,4 +15,4 @@ RUN mkdir -p /app/instance /app/dzweb/static/uploads
 
 EXPOSE 5000
 
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "dzweb:create_app()"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "4", "--threads", "2", "--timeout", "60", "dzweb:create_app()"]
