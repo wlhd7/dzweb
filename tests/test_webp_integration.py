@@ -155,3 +155,45 @@ def test_cleanup_images_removes_orphan_webp(client, app):
     # 4. Verify
     assert not os.path.exists(orphan_webp)
     assert os.path.exists(referenced_webp)
+
+def test_product_display_page_uses_picture_tag(client, app):
+    # Ensure there's at least one product
+    with app.app_context():
+        db = get_db()
+        product = db.execute('SELECT id, filename FROM products LIMIT 1').fetchone()
+        product_id = product['id']
+        filename = product['filename']
+        base_name = os.path.splitext(filename)[0]
+    
+    response = client.get(f'/product/{product_id}/display')
+    assert response.status_code == 200
+    html = response.data.decode('utf-8')
+    
+    # Check for <picture> tag
+    assert '<picture>' in html
+    assert '</picture>' in html
+    
+    # Check for <source> with WebP
+    assert f'type="image/webp"' in html
+    assert f'srcset="/static/uploads/{base_name}.webp"' in html
+    
+    # Check for <img> fallback
+    assert f'src="/static/uploads/{filename}"' in html
+    assert 'class="product-image"' in html
+
+def test_homepage_still_uses_thumbnails(client, app):
+    # Ensure there's at least one product
+    with app.app_context():
+        db = get_db()
+        product = db.execute('SELECT filename FROM products LIMIT 1').fetchone()
+        filename = product['filename']
+    
+    response = client.get('/')
+    assert response.status_code == 200
+    html = response.data.decode('utf-8')
+    
+    # Verify it uses thumbnails and NOT <picture> tag for products
+    assert f'/static/uploads/thumbs/{filename}' in html
+    # The homepage shouldn't have been updated with <picture> for products
+    # We check if there are ANY <picture> tags (unless the base.html uses it, which it doesn't seem to)
+    assert '<picture>' not in html

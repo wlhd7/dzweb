@@ -43,7 +43,11 @@
 		<p>{{ _('产品说明待添加') }}</p>
 	{% endif %}
 
-	<img class="product-image" src="{{ url_for('static', filename='uploads/' ~ product['filename']) }}" alt="{{ product['productname'] }}" loading="lazy">
+	{% set webp_filename = product['filename'].rsplit('.', 1)[0] ~ '.webp' %}
+	<picture>
+		<source srcset="{{ url_for('static', filename='uploads/' ~ webp_filename) }}" type="image/webp">
+		<img class="product-image" src="{{ url_for('static', filename='uploads/' ~ product['filename']) }}" alt="{{ product['productname'] }}" loading="lazy">
+	</picture>
 
 	<div class="product-display-actions" style="margin-top: 20px;">
 		<button onclick="history.back()">{{ _('返回') }}</button>
