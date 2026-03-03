@@ -126,6 +126,27 @@ def test_delete_content_cleanup(client, app):
     assert not os.path.exists(thumb_path)
     assert not os.path.exists(webp_path)
 
+def test_delete_case_cleanup(client, app):
+    login_as_admin(client, app)
+    from dzweb.db import create_case_module, get_case_module_by_slug, add_case_content
+    with app.app_context():
+        create_case_module('case-cleanup', '案例清理')
+        module = get_case_module_by_slug('case-cleanup')
+        module_id = module['id']
+        filename = 'case-cleanup.jpg'
+        add_case_content(module_id, 'image', filename=filename, sort_order=1)
+        
+        # Create dummy files
+        upload_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        os.makedirs(os.path.dirname(upload_path), exist_ok=True)
+        with open(upload_path, 'w') as f: f.write('dummy')
+        assert os.path.exists(upload_path)
+    
+    response = client.post(f'/case/api/module/{module_id}/delete', follow_redirects=True)
+    assert response.status_code == 200
+    
+    assert not os.path.exists(upload_path)
+
 def test_reorder_content_api(client, app):
     login_as_admin(client, app)
     from dzweb.db import create_case_module, get_case_module_by_slug, add_case_content, get_case_contents
