@@ -46,3 +46,68 @@ sqlite3.register_converter('timestamp', lambda v: datetime.fromisoformat(v.decod
 def init_db(app):
     app.teardown_appcontext(close_db)
     app.cli.add_command(init_db_command)
+
+
+# Case Modular CRUD
+
+def get_case_modules():
+    db = get_db()
+    return db.execute('SELECT * FROM case_modules ORDER BY created DESC').fetchall()
+
+
+def get_case_module_by_slug(slug):
+    db = get_db()
+    return db.execute('SELECT * FROM case_modules WHERE slug = ?', (slug,)).fetchone()
+
+
+def create_case_module(slug, title_zh, title_en=None, title_ja=None):
+    db = get_db()
+    db.execute(
+        'INSERT INTO case_modules (slug, title_zh, title_en, title_ja) VALUES (?, ?, ?, ?)',
+        (slug, title_zh, title_en, title_ja)
+    )
+    db.commit()
+
+
+def update_case_module(id, slug, title_zh, title_en=None, title_ja=None):
+    db = get_db()
+    db.execute(
+        'UPDATE case_modules SET slug = ?, title_zh = ?, title_en = ?, title_ja = ? WHERE id = ?',
+        (slug, title_zh, title_en, title_ja, id)
+    )
+    db.commit()
+
+
+def delete_case_module(id):
+    db = get_db()
+    db.execute('DELETE FROM case_modules WHERE id = ?', (id,))
+    db.commit()
+
+
+def get_case_contents(case_id):
+    db = get_db()
+    return db.execute('SELECT * FROM case_contents WHERE case_id = ? ORDER BY sort_order ASC', (case_id,)).fetchall()
+
+
+def add_case_content(case_id, type, content_zh=None, content_en=None, content_ja=None, filename=None, sort_order=0):
+    db = get_db()
+    db.execute(
+        'INSERT INTO case_contents (case_id, type, content_zh, content_en, content_ja, filename, sort_order) VALUES (?, ?, ?, ?, ?, ?, ?)',
+        (case_id, type, content_zh, content_en, content_ja, filename, sort_order)
+    )
+    db.commit()
+
+
+def update_case_content(id, type, content_zh=None, content_en=None, content_ja=None, filename=None, sort_order=0):
+    db = get_db()
+    db.execute(
+        'UPDATE case_contents SET type = ?, content_zh = ?, content_en = ?, content_ja = ?, filename = ?, sort_order = ? WHERE id = ?',
+        (type, content_zh, content_en, content_ja, filename, sort_order, id)
+    )
+    db.commit()
+
+
+def delete_case_content(id):
+    db = get_db()
+    db.execute('DELETE FROM case_contents WHERE id = ?', (id,))
+    db.commit()
