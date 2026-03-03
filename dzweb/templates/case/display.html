@@ -74,5 +74,75 @@
 		</div>	
 	</div>
 
-    <!-- Modals for adding case/content will be implemented in the next task -->
+    <!-- Modals -->
+    {% if g.user %}
+    <div id="add-case-modal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
+        <div class="modal-content" style="background-color: white; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 400px; border-radius: 8px;">
+            <h3>{{ _('新增案例模块') }}</h3>
+            <form id="add-case-form">
+                <div style="margin-bottom: 10px;">
+                    <label>Slug (URL):</label><br>
+                    <input type="text" name="slug" required style="width: 100%;">
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <label>{{ _('标题 (中)') }}:</label><br>
+                    <input type="text" name="title_zh" required style="width: 100%;">
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <label>{{ _('标题 (英)') }}:</label><br>
+                    <input type="text" name="title_en" style="width: 100%;">
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <label>{{ _('标题 (日)') }}:</label><br>
+                    <input type="text" name="title_ja" style="width: 100%;">
+                </div>
+                <div style="text-align: right;">
+                    <button type="button" id="close-add-case-modal">{{ _('取消') }}</button>
+                    <button type="submit">{{ _('创建') }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Case Management
+            const addBtn = document.getElementById('add-case-btn');
+            const addModal = document.getElementById('add-case-modal');
+            const closeAddBtn = document.getElementById('close-add-case-modal');
+            const addForm = document.getElementById('add-case-form');
+
+            if (addBtn) addBtn.onclick = () => addModal.style.display = 'block';
+            if (closeAddBtn) closeAddBtn.onclick = () => addModal.style.display = 'none';
+
+            addForm.onsubmit = function(e) {
+                e.preventDefault();
+                const formData = new FormData(addForm);
+                fetch('{{ url_for("case.api_create_module") }}', { method: 'POST', body: formData })
+                .then(r => r.json()).then(data => {
+                    if (data.status === 'success') location.reload(); else alert('Error: ' + data.error);
+                });
+            }
+
+            // Delete Case
+            const deleteCaseBtn = document.getElementById('delete-this-case-btn');
+            if (deleteCaseBtn) {
+                deleteCaseBtn.onclick = function() {
+                    if (confirm('{{ _("确定要删除整个案例吗？此操作不可恢复。") }}')) {
+                        const id = this.dataset.id;
+                        fetch(`/case/api/module/${id}/delete`, { method: 'POST' })
+                        .then(r => r.json()).then(data => {
+                            if (data.status === 'success') location.href = '{{ url_for("case.main") }}'; else alert('Error: ' + data.error);
+                        });
+                    }
+                }
+            }
+
+            // Window click to close modals
+            window.onclick = (event) => {
+                if (event.target == addModal) addModal.style.display = 'none';
+            }
+        });
+    </script>
+    {% endif %}
 {% endblock %}
