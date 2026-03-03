@@ -95,3 +95,23 @@ def test_case_content_crud(app):
         delete_case_content(content_id)
         contents = get_case_contents(module_id)
         assert len(contents) == 1
+
+def test_case_contents_sorting(app):
+    with app.app_context():
+        create_case_module('test-sort', '测试排序')
+        module = get_case_module_by_slug('test-sort')
+        module_id = module['id']
+        
+        add_case_content(module_id, 'text', content_zh='C', sort_order=3)
+        add_case_content(module_id, 'text', content_zh='A', sort_order=1)
+        add_case_content(module_id, 'text', content_zh='B', sort_order=2)
+        
+        contents = get_case_contents(module_id)
+        assert contents[0]['content_zh'] == 'A'
+        assert contents[1]['content_zh'] == 'B'
+        assert contents[2]['content_zh'] == 'C'
+
+def test_get_nonexistent_case(app):
+    with app.app_context():
+        assert get_case_module_by_slug('nonexistent') is None
+        assert len(get_case_contents(9999)) == 0
