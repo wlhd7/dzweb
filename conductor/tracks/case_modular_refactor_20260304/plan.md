@@ -7,7 +7,7 @@
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Database & Model Layer' (Protocol in workflow.md)
 
 ## Phase 2: Content Management Backend (API)
-- [ ] Task: 在 `dzweb/routes/case.py` 中实现案例管理 API（创建、删除模块，添加、编辑、删除、排序内容块）。
+- [x] Task: 在 `dzweb/routes/case.py` 中实现案例管理 API（创建、删除模块，添加、编辑、删除、排序内容块）。 (c0154b4)
 - [ ] Task: 集成现有 WebP 转换和缩略图生成逻辑，支持案例图片的自动化处理。
 - [ ] Task: 实现物理资源清理逻辑，确保删除案例或图片时物理文件同步移除。
 - [ ] Task: 编写针对 API 和资源清理逻辑的集成测试。
