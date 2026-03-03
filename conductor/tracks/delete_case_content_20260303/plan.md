@@ -4,7 +4,7 @@
 在该阶段，我们将完成图片的备份和原始模板的移动工作。
 
 - [x] Task: 在项目根目录下创建 `case/` 目录用于备份。 (5bd87be)
-- [ ] Task: 将 `dzweb/static/images/case-*` 图片移动到根目录 `case/` 下，并从 `static/images/` 中移除。
+- [x] Task: 将 `dzweb/static/images/case-*` 图片移动到根目录 `case/` 下，并从 `static/images/` 中移除。 (1cfffbc)
 - [ ] Task: Conductor - User Manual Verification '阶段 1：准备与备份' (Protocol in workflow.md)
 
 ## 阶段 2：重构路由与清理模板 (Route and Template Refactor)
