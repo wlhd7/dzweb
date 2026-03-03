@@ -94,6 +94,12 @@ def create():
             except Exception as e:
                 current_app.logger.error(f"Failed to generate thumbnail for {random_filename}: {str(e)}")
 
+            # Generate WebP version
+            try:
+                convert_to_webp(file_path, quality=80)
+            except Exception as e:
+                current_app.logger.error(f"Failed to generate WebP for {random_filename}: {str(e)}")
+
             db = get_db()
 
             db.execute(
@@ -153,6 +159,12 @@ def update(id):
                 except Exception as e:
                     current_app.logger.error(f"Failed to generate thumbnail for {random_filename} during update: {str(e)}")
                 
+                # Generate new WebP version
+                try:
+                    convert_to_webp(file_path, quality=80)
+                except Exception as e:
+                    current_app.logger.error(f"Failed to generate WebP for {random_filename} during update: {str(e)}")
+                
                 filename_to_use = random_filename
             else:
                 return redirect(request.url)
@@ -167,11 +179,18 @@ def update(id):
         if filename_to_use != old_filename:
             old_file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], old_filename)
             old_thumb_path = os.path.join(current_app.config['THUMBNAIL_FOLDER'], old_filename)
+            
+            # Remove old WebP
+            base_old = os.path.splitext(old_filename)[0]
+            old_webp_path = os.path.join(current_app.config['UPLOAD_FOLDER'], f"{base_old}.webp")
+            
             try:
                 if os.path.exists(old_file_path):
                     os.remove(old_file_path)
                 if os.path.exists(old_thumb_path):
                     os.remove(old_thumb_path)
+                if os.path.exists(old_webp_path):
+                    os.remove(old_webp_path)
             except Exception as e:
                 current_app.logger.error(f"Error deleting old files for product {id} during update: {str(e)}")
 
@@ -202,11 +221,18 @@ def delete(id):
         if filename:
             file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
             thumb_path = os.path.join(current_app.config['THUMBNAIL_FOLDER'], filename)
+            
+            # WebP path
+            base_name = os.path.splitext(filename)[0]
+            webp_path = os.path.join(current_app.config['UPLOAD_FOLDER'], f"{base_name}.webp")
+            
             try:
                 if os.path.exists(file_path):
                     os.remove(file_path)
                 if os.path.exists(thumb_path):
                     os.remove(thumb_path)
+                if os.path.exists(webp_path):
+                    os.remove(webp_path)
             except Exception as e:
                 current_app.logger.error(f"Error deleting files for product {id}: {str(e)}")
                 return redirect(url_for(f'product.{category}'))
@@ -329,6 +355,8 @@ def cleanup_images_command():
     # Get all filenames referenced in the database
     products = db.execute('SELECT filename FROM products').fetchall()
     referenced_filenames = {p['filename'] for p in products if p['filename']}
+    # Also consider WebP versions
+    referenced_webp = {f"{os.path.splitext(f)[0]}.webp" for f in referenced_filenames}
     
     upload_folder = current_app.config['UPLOAD_FOLDER']
     thumb_folder = current_app.config['THUMBNAIL_FOLDER']
@@ -344,7 +372,11 @@ def cleanup_images_command():
         for filename in files_in_folder:
             file_path = os.path.join(directory, filename)
             if os.path.isfile(file_path):
-                if filename not in referenced_filenames:
+                # Don't delete .gitkeep
+                if filename == '.gitkeep':
+                    continue
+                    
+                if filename not in referenced_filenames and filename not in referenced_webp:
                     try:
                         os.remove(file_path)
                         deleted_count += 1
