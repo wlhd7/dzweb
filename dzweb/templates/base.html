@@ -144,7 +144,7 @@
 			<img src="{{ url_for('static', filename='images/white-point.svg') }}" alt="" loading="lazy">
 			{% endif %}
 			{{ _('产品展示') }}</a>
-		<a class="{% if 'case' in request.path %}active{% endif %} nav-bar" href="{{ url_for('case.extruder') }}">
+		<a class="{% if 'case' in request.path %}active{% endif %} nav-bar" href="{{ url_for('case.main') }}">
 			{% if 'case' in request.path %}
 			<img src="{{ url_for('static', filename='images/point.svg') }}" alt="" loading="lazy">
 			{% else %}
