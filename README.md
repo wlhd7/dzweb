@@ -33,26 +33,44 @@ docker-compose.yml   # 容器编排配置
 
 ## Getting Started (快速开始)
 
-### Prerequisites
-- Python >= 3.8
-- Docker Desktop (Recommended for development)
+### Production Startup (生产环境启动 - 推荐)
+在服务器上部署时，请遵循以下完整步骤：
 
-### Using Docker (Recommended)
-We use Docker and Docker Compose for a consistent environment.
-
-1. **Start the environment**:
+1. **克隆项目并进入目录**:
    ```bash
-   docker compose up -d
+   git clone <repository_url>
+   cd dzweb
    ```
 
-2. **Access the application**:
-   - Web: [http://localhost:5000](http://localhost:5000)
+2. **配置环境变量**:
+   ```bash
+   cp .env.example .env
+   # 编辑 .env 文件，设置 SECRET_KEY, DZWEB_ADMIN_PASSWORD 及邮件/SEO 参数
+   nano .env 
+   ```
 
-3. **Persistent Volumes**:
-   - `./instance`: Stores the database (`dzweb.sqlite`).
-   - `./dzweb/static/uploads`: Stores product images.
+3. **构建并启动容器**:
+   ```bash
+   docker compose up -d --build
+   ```
 
-### Installation (Local)
+4. **初始化数据库 (关键步骤)**:
+   首次启动或重置环境时必须执行，否则会返回 500 错误：
+   ```bash
+   docker exec -it dzweb-web-1 flask init-db
+   ```
+
+5. **编译翻译文件**:
+   确保多语言功能正常显示：
+   ```bash
+   docker exec -it dzweb-web-1 pybabel compile -d dzweb/translations
+   ```
+
+6. **访问应用**:
+   - 访问地址: `http://<your-server-ip>:5000`
+
+### Development Setup (开发环境配置)
+... (保持原有内容或微调)
 1. **Setup Environment**:
    ```bash
    python -m venv venv
