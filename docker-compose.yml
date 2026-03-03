@@ -1,8 +1,7 @@
 services:
   web:
     build: .
-    ports:
-      - "5000:5000"
+    image: 'dzweb-web-1'
     volumes:
       # 挂载 instance 目录以持久化数据库
       - ./instance:/app/instance
@@ -12,3 +11,8 @@ services:
       - FLASK_APP=dzweb
       - FLASK_DEBUG=0
       - DZWEB_ADMIN_PASSWORD=admin123
+    networks:
+      - npm-network
+networks:
+    npm-network:
+      external: true
