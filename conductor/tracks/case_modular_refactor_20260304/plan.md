@@ -19,7 +19,7 @@
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Admin Sidebar & Module Initialization' (Protocol in workflow.md)
 
 ## Phase 4: Dynamic Content Stream & Sorting UI
-- [ ] Task: 实现内容流编辑界面（交互式的“+”方框、内容块预览面板、排序按钮）。
+- [~] Task: 实现内容流编辑界面（交互式的“+”方框、内容块预览面板、排序按钮）。
 - [ ] Task: 完成多语言翻译 (I18n) 集成，确保标题和文案支持中英日切换。
 - [ ] Task: Conductor - User Manual Verification 'Phase 4: Dynamic Content Stream & Sorting UI' (Protocol in workflow.md)
 
