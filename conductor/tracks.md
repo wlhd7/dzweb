@@ -33,5 +33,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: 详情页原图 WebP 性能优化 (product_image_webp_optimization_20260303)**
+- [x] **Track: 详情页原图 WebP 性能优化 (product_image_webp_optimization_20260303)**
 *Link: [./tracks/product_image_webp_optimization_20260303/](./tracks/product_image_webp_optimization_20260303/)*
