@@ -11,12 +11,12 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Preparation & Infrastructure' (Protocol in workflow.md) fb2ec83
 
 ## Phase 2: Backend Integration
-- [ ] Task: Update `dzweb/routes/admin.py` (or corresponding service) upload logic.
-    - [ ] Trigger WebP conversion immediately after a successful product image upload.
-- [ ] Task: Update resource cleanup logic in `dzweb/routes/admin.py`.
-    - [ ] Ensure WebP files are physically deleted when the original image is deleted or updated (Sync Deletion/Update Protocol).
-- [ ] Task: Write tests for upload/delete hooks to verify WebP file synchronization.
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Backend Integration' (Protocol in workflow.md)
+- [x] Task: Update `dzweb/routes/admin.py` (or corresponding service) upload logic. 36d80e4
+    - [x] Trigger WebP conversion immediately after a successful product image upload.
+- [x] Task: Update resource cleanup logic in `dzweb/routes/admin.py`. 36d80e4
+    - [x] Ensure WebP files are physically deleted when the original image is deleted or updated (Sync Deletion/Update Protocol).
+- [x] Task: Write tests for upload/delete hooks to verify WebP file synchronization. 36d80e4
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Backend Integration' (Protocol in workflow.md) 36d80e4
 
 ## Phase 3: Frontend Implementation
 - [ ] Task: Modify `dzweb/templates/product/display.html`.
