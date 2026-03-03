@@ -17,7 +17,7 @@
 - [x] Task: 修改 `dzweb/static/css/base.css`，删除 `.flash` 相关样式。 84b9365
 - [x] Task: Conductor - User Manual Verification 'Phase 3: 前端清理' (Protocol in workflow.md) [checkpoint: 84b9365]
 
-## Phase 4: 验证与交付 (Verification & Delivery)
-- [~] Task: 运行现有测试套件，确认业务流程未受损。
-- [ ] Task: 手动触发一次登录失败，验证内联 `<p>` 提示是否依然如预期工作。
-- [ ] Task: Conductor - User Manual Verification 'Phase 4: 验证与交付' (Protocol in workflow.md)
+## Phase 4: 验证与交付 (Verification & Delivery) [checkpoint: 0d64bb7]
+- [x] Task: 运行现有测试套件，确认业务流程未受损。 82506f6
+- [x] Task: 手动触发一次登录失败，验证内联 `<p>` 提示是否依然如预期工作。 1451e54
+- [x] Task: Conductor - User Manual Verification 'Phase 4: 验证与交付' (Protocol in workflow.md) 0d64bb7

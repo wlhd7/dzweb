@@ -28,6 +28,6 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [~] **Track: 全局移除 Flash 消息系统**
+- [x] **Track: 全局移除 Flash 消息系统**
 *Link: [./tracks/remove_all_flash_messages_20260302/](./tracks/remove_all_flash_messages_20260302/)*
 
