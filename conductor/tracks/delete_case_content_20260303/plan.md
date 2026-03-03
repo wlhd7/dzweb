@@ -21,7 +21,7 @@
 
 - [x] Task: 编写测试用例验证导航栏中“经典案例”链接的有效性，并确认子菜单内容已移除。 (7c7317b)
 - [x] Task: 修改 `dzweb/templates/base.html`，更新“经典案例”导航项链接并移除子菜单引用。 (890f426)
-- [ ] Task: 修改 `dzweb/routes/home.py`，移除对已删除子页面规则的引用。
+- [x] Task: 修改 `dzweb/routes/home.py`，移除对已删除子页面规则的引用。 (6367281)
 - [ ] Task: 运行全面测试并验证代码覆盖率。
 - [ ] Task: Conductor - User Manual Verification '阶段 3：全局引用清理' (Protocol in workflow.md)
 
