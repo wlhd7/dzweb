@@ -20,7 +20,7 @@ def sitemap():
         pages.append(url_for(rule, _external=True))
     
     # Case pages
-    for rule in ['case.extruder', 'case.assembly_line', 'case.ass', 'case.robot_welding']:
+    for rule in ['case.main']:
         pages.append(url_for(rule, _external=True))
     
     # Service
