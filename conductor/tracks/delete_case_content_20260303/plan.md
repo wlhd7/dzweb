@@ -13,7 +13,7 @@
 - [x] Task: 编写测试用例验证 `/case` 路由的可用性，并确认子页面路由（如 `/case/extruder`）应失效。 (7fa1f30)
 - [x] Task: 修改 `dzweb/routes/case.py`：移除子页面路由，保留或重构 `case.main` 路由。 (4faf48c)
 - [x] Task: 清理 `dzweb/templates/case/`：删除所有子页面模板，将 `main.html` 设置为基础空白页。 (9719559)
-- [ ] Task: 运行测试并确保所有测试通过。
+- [~] Task: 运行测试并确保所有测试通过。
 - [ ] Task: Conductor - User Manual Verification '阶段 2：重构路由与清理模板' (Protocol in workflow.md)
 
 ## 阶段 3：全局引用清理 (Cross-Reference Cleanup)
