@@ -27,8 +27,8 @@
 - [x] Task: Write integration tests for the product display page to verify `<picture>` and `<source>` tags are rendered correctly. d83c6ba
 - [x] Task: Conductor - User Manual Verification 'Phase 3: Frontend Implementation' (Protocol in workflow.md) d83c6ba
 
-## Phase 4: Final Processing & Audit
-- [~] Task: Execute the batch conversion: `flask convert-webp`.
-- [ ] Task: Perform a final audit of the product display pages to confirm WebP is being served (via DevTools/Network tab).
-- [ ] Task: Verify the full lifecycle: Upload a product -> Check WebP exists -> Display page shows WebP -> Delete product -> Both files are removed.
-- [ ] Task: Conductor - User Manual Verification 'Phase 4: Final Processing & Audit' (Protocol in workflow.md)
+## Phase 4: Final Processing & Audit [checkpoint: b539561]
+- [x] Task: Execute the batch conversion: `flask convert-webp`. b539561
+- [x] Task: Perform a final audit of the product display pages to confirm WebP is being served (via DevTools/Network tab). b539561
+- [x] Task: Verify the full lifecycle: Upload a product -> Check WebP exists -> Display page shows WebP -> Delete product -> Both files are removed. b539561
+- [x] Task: Conductor - User Manual Verification 'Phase 4: Final Processing & Audit' (Protocol in workflow.md) b539561
