@@ -14,8 +14,8 @@
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Content Management Backend (API)' (Protocol in workflow.md)
 
 ## Phase 3: Admin Sidebar & Module Initialization
-- [ ] Task: 更新 `dzweb/templates/case/main.html` 及侧边栏，实现管理员“新增”按钮和模块列表展示。
-- [ ] Task: 实现模块初始化前端逻辑（弹窗收集标题、Slug 等基本信息）。
+- [x] Task: 更新 `dzweb/templates/case/main.html` 及侧边栏，实现管理员“新增”按钮和模块列表展示。 (10a1215)
+- [~] Task: 实现模块初始化前端逻辑（弹窗收集标题、Slug 等基本信息）。
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Admin Sidebar & Module Initialization' (Protocol in workflow.md)
 
 ## Phase 4: Dynamic Content Stream & Sorting UI
