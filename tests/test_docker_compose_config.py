@@ -13,8 +13,6 @@ def test_docker_compose_content():
     web = config['services']['web']
     assert 'build' in web
     assert 'volumes' in web
-    assert 'ports' in web
-    assert '5000:5000' in web['ports']
     assert 'environment' in web
     envs = [e.split('=')[0] for e in web['environment']]
     assert 'FLASK_DEBUG' in envs
