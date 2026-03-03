@@ -10,7 +10,7 @@ from werkzeug.exceptions import abort
 
 from dzweb.db import get_db
 from dzweb.routes.admin import login_required
-from dzweb.utils.image import generate_thumbnail
+from dzweb.utils.image import generate_thumbnail, convert_to_webp
 
 
 def push_to_baidu(urls):
@@ -403,6 +403,51 @@ def generate_thumbs_command():
 
     click.echo(f"Thumbnails processing complete. Generated: {generated_count}, Skipped: {skipped_count}, Errors: {error_count}")
 
+@click.command('convert-webp')
+@with_appcontext
+def convert_webp_command():
+    """Generate WebP versions for all existing full-resolution product images."""
+    db = get_db()
+    products = db.execute('SELECT id, filename FROM products').fetchall()
+    
+    upload_folder = current_app.config['UPLOAD_FOLDER']
+    
+    generated_count = 0
+    skipped_count = 0
+    error_count = 0
+    
+    for p in products:
+        filename = p['filename']
+        if not filename:
+            continue
+            
+        file_path = os.path.join(upload_folder, filename)
+        
+        # Determine the target webp path
+        base_path = os.path.splitext(file_path)[0]
+        webp_path = f"{base_path}.webp"
+        
+        if not os.path.exists(file_path):
+            click.echo(f"Original image missing for product {p['id']}: {filename}", err=True)
+            skipped_count += 1
+            continue
+            
+        if os.path.exists(webp_path):
+            skipped_count += 1
+            continue
+            
+        try:
+            convert_to_webp(file_path, quality=80)
+            generated_count += 1
+            click.echo(f"Generated WebP for product {p['id']}: {filename}")
+        except Exception as e:
+            current_app.logger.error(f"Failed to generate WebP for product {p['id']}: {str(e)}")
+            click.echo(f"Error generating WebP for {filename}: {str(e)}", err=True)
+            error_count += 1
+
+    click.echo(f"WebP conversion complete. Generated: {generated_count}, Skipped: {skipped_count}, Errors: {error_count}")
+
 def init_app(app):
     app.cli.add_command(cleanup_images_command)
     app.cli.add_command(generate_thumbs_command)
+    app.cli.add_command(convert_webp_command)
