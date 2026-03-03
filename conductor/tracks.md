@@ -26,8 +26,3 @@ This file tracks all major tracks for the project. Each track has its own detail
 - [x] **Track: 移除邮件发送失败 the Flash 提示**
 *Link: [./tracks/remove_email_failure_flash_20260302/](./tracks/remove_email_failure_flash_20260302/)*
 
----
-
-- [x] **Track: 全局移除 Flash 消息系统**
-*Link: [./tracks/remove_all_flash_messages_20260302/](./tracks/remove_all_flash_messages_20260302/)*
-
