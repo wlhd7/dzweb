@@ -57,8 +57,7 @@ def login():
             session['is_admin'] = True
             return redirect(url_for('admin.userhome'))
         else:
-            # Silent failure as per user's preference for removing all flash messages
-            pass
+            return render_template('admin/login.html', error=True)
 
     return render_template('admin/login.html')
 

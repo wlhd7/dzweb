@@ -12,6 +12,10 @@
 
 		<input type="submit" value="{{ _('登录') }}">
 	</form>
+
+	{% if error %}
+	<p>{{ _('管理员密码错误') }}</p>
+	{% endif %}
 </div>
 {% endblock %}
 
