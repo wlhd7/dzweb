@@ -25,6 +25,6 @@
 - [x] Task: 运行全面测试并验证代码覆盖率。 (4c79d04)
 - [x] Task: Conductor - User Manual Verification '阶段 3：全局引用清理' (Protocol in workflow.md)
 
-## 阶段 4：收尾工作 (Cleanup)
+## 阶段 4：收尾工作 (Cleanup) [checkpoint: ed308ab]
 - [x] Task: 确认所有静态资源（图片）已正确迁移且不再被引用。 (eee0659)
-- [ ] Task: Conductor - User Manual Verification '阶段 4：收尾工作' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification '阶段 4：收尾工作' (Protocol in workflow.md)
