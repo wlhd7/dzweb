@@ -80,25 +80,18 @@
         <div class="modal-content" style="background-color: white; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 400px; border-radius: 8px;">
             <h3>{{ _('新增案例模块') }}</h3>
             <form id="add-case-form">
-                <div style="margin-bottom: 10px;">
-                    <label>Slug (URL):</label><br>
-                    <input type="text" name="slug" required style="width: 100%;">
+                <div style="margin-bottom: 15px;">
+                    <label>{{ _('中文标题') }}:</label><br>
+                    <input type="text" id="input_title_zh" name="title_zh" required style="width: 100%; padding: 5px; margin-top: 5px;">
                 </div>
-                <div style="margin-bottom: 10px;">
-                    <label>{{ _('标题 (中)') }}:</label><br>
-                    <input type="text" name="title_zh" required style="width: 100%;">
-                </div>
-                <div style="margin-bottom: 10px;">
-                    <label>{{ _('标题 (英)') }}:</label><br>
-                    <input type="text" name="title_en" style="width: 100%;">
-                </div>
-                <div style="margin-bottom: 10px;">
-                    <label>{{ _('标题 (日)') }}:</label><br>
-                    <input type="text" name="title_ja" style="width: 100%;">
-                </div>
+                <!-- Hidden by default, auto-generated -->
+                <input type="hidden" name="slug">
+                <input type="hidden" name="title_en">
+                <input type="hidden" name="title_ja">
+                
                 <div style="text-align: right;">
                     <button type="button" id="close-add-case-modal">{{ _('取消') }}</button>
-                    <button type="submit">{{ _('创建') }}</button>
+                    <button type="submit" style="background: steelblue; color: white; border: none; padding: 5px 15px; cursor: pointer;">{{ _('创建') }}</button>
                 </div>
             </form>
         </div>

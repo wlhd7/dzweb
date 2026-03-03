@@ -63,13 +63,20 @@ def display_case(slug):
 @bp.route('/api/module', methods=['POST'])
 @login_required
 def api_create_module():
-    slug = request.form.get('slug')
     title_zh = request.form.get('title_zh')
-    title_en = request.form.get('title_en')
-    title_ja = request.form.get('title_ja')
+    # If slug is not provided, generate from title_zh (using simple UUID for now as placeholder or slugify if we had it)
+    # The requirement says 'automatic generate', I will try a simple slug from title_zh
+    # Actually, many systems just use the ID or a uuid if no slug is provided.
+    slug = request.form.get('slug')
+    if not slug:
+        import uuid
+        slug = f"case-{uuid.uuid4().hex[:8]}"
+        
+    title_en = request.form.get('title_en') or title_zh # Default to zh if not provided
+    title_ja = request.form.get('title_ja') or title_zh
     
-    if not slug or not title_zh:
-        return jsonify({'error': 'Missing slug or title'}), 400
+    if not title_zh:
+        return jsonify({'error': 'Missing title'}), 400
         
     create_case_module(slug, title_zh, title_en, title_ja)
     return jsonify({'status': 'success'})
