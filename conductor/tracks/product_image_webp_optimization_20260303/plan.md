@@ -10,7 +10,7 @@
 - [x] Task: Write unit tests for the WebP utility and CLI command. fb2ec83
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Preparation & Infrastructure' (Protocol in workflow.md) fb2ec83
 
-## Phase 2: Backend Integration
+## Phase 2: Backend Integration [checkpoint: 779b962]
 - [x] Task: Update `dzweb/routes/admin.py` (or corresponding service) upload logic. 36d80e4
     - [x] Trigger WebP conversion immediately after a successful product image upload.
 - [x] Task: Update resource cleanup logic in `dzweb/routes/admin.py`. 36d80e4
