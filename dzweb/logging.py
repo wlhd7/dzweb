@@ -25,4 +25,4 @@ def setup_logging(app):
 
         app.logger.addHandler(file_handler)
         app.logger.setLevel(logging.INFO)
-        app.logger.info('Weekend Overtime application startup')
+        app.logger.info('dzweb application startup')
