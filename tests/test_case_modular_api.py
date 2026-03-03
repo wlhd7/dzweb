@@ -94,6 +94,38 @@ def test_add_image_content_api(client, app):
         # Actually, let's use a small real white pixel image to test processing.
         pass
 
+def test_delete_content_cleanup(client, app):
+    login_as_admin(client, app)
+    from dzweb.db import create_case_module, get_case_module_by_slug, add_case_content, get_case_contents
+    with app.app_context():
+        create_case_module('cleanup-test', '清理测试')
+        module = get_case_module_by_slug('cleanup-test')
+        module_id = module['id']
+        filename = 'test-cleanup.jpg'
+        add_case_content(module_id, 'image', filename=filename, sort_order=1)
+        content_id = get_case_contents(module_id)[0]['id']
+        
+        # Create dummy files
+        upload_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        thumb_path = os.path.join(app.config['THUMBNAIL_FOLDER'], filename)
+        webp_path = os.path.join(app.config['UPLOAD_FOLDER'], 'test-cleanup.webp')
+        
+        os.makedirs(os.path.dirname(upload_path), exist_ok=True)
+        os.makedirs(os.path.dirname(thumb_path), exist_ok=True)
+        
+        with open(upload_path, 'w') as f: f.write('dummy')
+        with open(thumb_path, 'w') as f: f.write('dummy')
+        with open(webp_path, 'w') as f: f.write('dummy')
+        
+        assert os.path.exists(upload_path)
+    
+    response = client.post(f'/case/api/content/{content_id}/delete', follow_redirects=True)
+    assert response.status_code == 200
+    
+    assert not os.path.exists(upload_path)
+    assert not os.path.exists(thumb_path)
+    assert not os.path.exists(webp_path)
+
 def test_reorder_content_api(client, app):
     login_as_admin(client, app)
     from dzweb.db import create_case_module, get_case_module_by_slug, add_case_content, get_case_contents

@@ -23,6 +23,25 @@ def generate_random_filename(original_filename) -> str:
     ext = os.path.splitext(original_filename)[1]
     return f'{uuid.uuid4().hex}{ext}'
 
+def _delete_case_image_files(filename):
+    if not filename:
+        return
+    
+    file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+    thumb_path = os.path.join(current_app.config['THUMBNAIL_FOLDER'], filename)
+    base_name = os.path.splitext(filename)[0]
+    webp_path = os.path.join(current_app.config['UPLOAD_FOLDER'], f"{base_name}.webp")
+    
+    try:
+        if os.path.exists(file_path):
+            os.remove(file_path)
+        if os.path.exists(thumb_path):
+            os.remove(thumb_path)
+        if os.path.exists(webp_path):
+            os.remove(webp_path)
+    except Exception as e:
+        current_app.logger.error(f"Error deleting case image files for {filename}: {str(e)}")
+
 @bp.route('/')
 def main():
     """主经典案例页面，目前合并为单一空白页。"""
@@ -48,6 +67,12 @@ def api_create_module():
 @bp.route('/api/module/<int:id>/delete', methods=['POST'])
 @login_required
 def api_delete_module(id):
+    # Fetch all contents of this module to cleanup physical files
+    contents = get_case_contents(id)
+    for content in contents:
+        if content['type'] == 'image':
+            _delete_case_image_files(content['filename'])
+            
     delete_case_module(id)
     return jsonify({'status': 'success'})
 
@@ -89,6 +114,11 @@ def api_add_content(case_id):
 @bp.route('/api/content/<int:id>/delete', methods=['POST'])
 @login_required
 def api_delete_content(id):
+    db = get_db()
+    content = db.execute('SELECT * FROM case_contents WHERE id = ?', (id,)).fetchone()
+    if content and content['type'] == 'image':
+        _delete_case_image_files(content['filename'])
+        
     delete_case_content(id)
     return jsonify({'status': 'success'})
 
