@@ -193,10 +193,21 @@ def api_update_module(id):
     if not title_zh:
         return jsonify({'error': 'Missing title'}), 400
         
+    # 1. Translate Chinese title to English
+    english_title = auto_translate(title_zh, 'en')
+    # 2. Format as standard slug
+    new_slug = slugify(english_title)
+    
     db = get_db()
-    db.execute('UPDATE case_modules SET title_zh = ? WHERE id = ?', (title_zh, id))
+    # 3. Handle collision (ensure it's not used by OTHER modules)
+    existing = db.execute('SELECT id FROM case_modules WHERE slug = ? AND id != ?', (new_slug, id)).fetchone()
+    if not new_slug or existing:
+        import time
+        new_slug = f"{new_slug or 'case'}-{int(time.time())}"
+
+    db.execute('UPDATE case_modules SET title_zh = ?, slug = ? WHERE id = ?', (title_zh, new_slug, id))
     db.commit()
-    return jsonify({'status': 'success'})
+    return jsonify({'status': 'success', 'slug': new_slug})
 
 @bp.route('/api/content/<int:id>/update', methods=['POST'])
 @login_required

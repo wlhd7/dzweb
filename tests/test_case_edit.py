@@ -7,24 +7,28 @@ def login_as_admin(client):
     with client.session_transaction() as sess:
         sess['is_admin'] = True
 
-def test_update_case_module_title_api(client, app):
+def test_update_case_module_title_and_slug_api(client, app):
     login_as_admin(client)
     with app.app_context():
-        create_case_module('edit-test', '原标题')
-        module = get_case_module_by_slug('edit-test')
+        create_case_module('old-slug', '旧标题')
+        module = get_case_module_by_slug('old-slug')
         module_id = module['id']
     
-    # Update title
+    # Update title to something that results in a new slug
     response = client.post(f'/case/api/module/{module_id}/update', data={
-        'title_zh': '新标题'
+        'title_zh': '新的测试案例'
     }, follow_redirects=True)
-    # This should fail because the route doesn't exist yet
     assert response.status_code == 200
+    data = response.get_json()
+    assert 'slug' in data
     
     with app.app_context():
         db = get_db()
         updated_module = db.execute('SELECT * FROM case_modules WHERE id = ?', (module_id,)).fetchone()
-        assert updated_module['title_zh'] == '新标题'
+        assert updated_module['title_zh'] == '新的测试案例'
+        # Check if slug is different (not 'old-slug')
+        assert updated_module['slug'] != 'old-slug'
+        assert updated_module['slug'] == data['slug']
 
 def test_update_case_text_content_api(client, app):
     login_as_admin(client)

@@ -230,7 +230,10 @@
                     const id = editTitleBtn.dataset.id;
                     fetch(`/case/api/module/${id}/update`, { method: 'POST', body: formData })
                     .then(r => r.json()).then(data => {
-                        if (data.status === 'success') location.reload(); else alert('Error: ' + data.error);
+                        if (data.status === 'success') {
+                            // Redirect to new slug
+                            window.location.href = `/case/${data.slug}`;
+                        } else alert('Error: ' + data.error);
                     });
                 };
             }

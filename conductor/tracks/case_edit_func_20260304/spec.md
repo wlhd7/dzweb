@@ -5,7 +5,7 @@
 
 ## Functional Requirements
 - **权限控制**：编辑功能仅限已登录的管理员在 `/admin` 路径下访问。参考产品编辑（Product Edit）的权限控制逻辑（`@login_required`）。
-- **模块标题编辑**：在案例详情页标题旁增加“编辑”按钮，支持修改 `case_modules` 表中的 `title_zh`（中文标题）。
+- **模块标题编辑**：在案例详情页标题旁增加“编辑”按钮，支持修改 `case_modules` 表中的 `title_zh`（中文标题）。同时，系统应根据新标题自动重新生成 `slug` 并更新数据库，以保持 URL 的语义一致性。
 - **文案内容编辑**：为每个文案项（`case_contents` 且 `type='text'`）增加“编辑”按钮，支持修改 `content_zh`（中文正文）。
 - **图片更新与维护**：
   - 为每个图片项（`case_contents` 且 `type='image'`）支持上传新图片替换原有图片。
