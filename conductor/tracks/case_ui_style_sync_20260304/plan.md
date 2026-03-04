@@ -5,10 +5,10 @@
 - [x] Task: Verify the exact CSS properties for `nav-top-icon-dashed` and `steelblue link` in `base.css`. 07f62ba
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Research & Preparation' (Protocol in workflow.md) bea38d5
 
-## Phase 2: CSS Standardization
+## Phase 2: CSS Standardization [checkpoint: a7be453]
 - [x] Task: Add `.link-admin` and `.link-delete` utility classes to `dzweb/static/css/base.css` to handle text-based management actions. 3e6d502
 - [x] Task: Ensure `.nav-top-icon-dashed` is consistently defined for use in case list sidebars. 3e6d502
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: CSS Standardization' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: CSS Standardization' (Protocol in workflow.md) a7be453
 
 ## Phase 3: Sidebar Normalization (TDD)
 - [ ] Task: Create unit tests to verify the sidebar structure in case templates (presence of icons and dividers).
