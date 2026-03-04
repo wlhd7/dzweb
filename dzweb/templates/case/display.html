@@ -40,8 +40,11 @@
 			</div>
 			
 			<div class="dblock-content" id="case-content-area" data-case-id="{{ module.id }}" style="padding: 20px;">
-                <h1 style="font-size: 18px; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+                <h1 style="font-size: 18px; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; display: flex; align-items: center;">
                     {{ module.title_zh if get_locale() == 'zh' else (module.title_en if get_locale() == 'en' else module.title_ja) or module.title_zh }}
+                    {% if g.user %}
+                    <button id="edit-case-title-btn" data-id="{{ module.id }}" data-title="{{ module.title_zh }}" style="margin-left: 10px; cursor: pointer; font-size: 10px; background: none; border: 1px solid #ccc; border-radius: 3px; padding: 2px 5px;">{{ _('编辑标题') }}</button>
+                    {% endif %}
                 </h1>
 
                 {% for item in contents %}
@@ -61,6 +64,7 @@
 
                         {% if g.user %}
                         <div class="case-item-controls" style="margin-top: 5px;">
+                            <button class="edit-content-btn" data-id="{{ item.id }}" data-type="{{ item.type }}" {% if item.type == 'text' %}data-content="{{ item.content_zh }}"{% endif %}>{{ _('编辑') }}</button>
                             <button class="move-up-btn" data-id="{{ item.id }}">↑</button>
                             <button class="move-down-btn" data-id="{{ item.id }}">↓</button>
                             <button class="delete-content-btn" data-id="{{ item.id }}" style="color: red; margin-left: 10px;">{{ _('删除') }}</button>
@@ -80,6 +84,58 @@
 
     <!-- Modals -->
     {% if g.user %}
+    <!-- Edit Case Title Modal -->
+    <div id="edit-case-title-modal" class="modal" style="display: none; position: fixed; z-index: 1003; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
+        <div class="modal-content" style="background-color: white; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 400px; border-radius: 8px;">
+            <h3>{{ _('编辑案例标题') }}</h3>
+            <form id="edit-case-title-form">
+                <div style="margin-bottom: 15px;">
+                    <label>{{ _('中文标题') }}:</label><br>
+                    <input type="text" id="edit_input_title_zh" name="title_zh" required style="width: 100%; padding: 5px; margin-top: 5px;">
+                </div>
+                <div style="text-align: right;">
+                    <button type="button" onclick="document.getElementById('edit-case-title-modal').style.display='none'">{{ _('取消') }}</button>
+                    <button type="submit" style="background: steelblue; color: white; border: none; padding: 5px 15px; cursor: pointer;">{{ _('保存') }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Edit Text Content Modal -->
+    <div id="edit-text-modal" class="modal" style="display: none; position: fixed; z-index: 1004; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
+        <div class="modal-content" style="background-color: white; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 450px; border-radius: 8px;">
+            <h3>{{ _('编辑文案内容') }}</h3>
+            <form id="edit-text-form">
+                <input type="hidden" name="id" id="edit-text-id">
+                <div style="margin-bottom: 20px;">
+                    <label>{{ _('内容') }}:</label><br>
+                    <textarea name="content_zh" id="edit-text-content-zh" rows="6" required style="width: 100%; margin-top: 10px; padding: 5px;"></textarea>
+                </div>
+                <div style="text-align: right;">
+                    <button type="button" onclick="document.getElementById('edit-text-modal').style.display='none'">{{ _('取消') }}</button>
+                    <button type="submit" style="background: steelblue; color: white; border: none; padding: 5px 15px; cursor: pointer;">{{ _('保存') }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Image Content Modal -->
+    <div id="edit-image-modal" class="modal" style="display: none; position: fixed; z-index: 1004; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
+        <div class="modal-content" style="background-color: white; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 400px; border-radius: 8px;">
+            <h3>{{ _('更换图片') }}</h3>
+            <form id="edit-image-form" enctype="multipart/form-data">
+                <input type="hidden" name="id" id="edit-image-id">
+                <div style="margin-bottom: 20px;">
+                    <label>{{ _('选择新图片 (JPG/PNG)') }}:</label><br>
+                    <input type="file" name="file" accept="image/*" required style="margin-top: 10px;">
+                </div>
+                <div style="text-align: right;">
+                    <button type="button" onclick="document.getElementById('edit-image-modal').style.display='none'">{{ _('取消') }}</button>
+                    <button type="submit" style="background: steelblue; color: white; border: none; padding: 5px 15px; cursor: pointer;">{{ _('上传并替换') }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- Add Case Modal (Simplified) -->
     <div id="add-case-modal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
         <div class="modal-content" style="background-color: white; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 400px; border-radius: 8px;">
@@ -155,6 +211,72 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Edit Case Title
+            const editTitleBtn = document.getElementById('edit-case-title-btn');
+            const editTitleModal = document.getElementById('edit-case-title-modal');
+            const editTitleForm = document.getElementById('edit-case-title-form');
+
+            if (editTitleBtn) {
+                editTitleBtn.onclick = function() {
+                    document.getElementById('edit_input_title_zh').value = this.dataset.title;
+                    editTitleModal.style.display = 'block';
+                };
+            }
+
+            if (editTitleForm) {
+                editTitleForm.onsubmit = function(e) {
+                    e.preventDefault();
+                    const formData = new FormData(this);
+                    const id = editTitleBtn.dataset.id;
+                    fetch(`/case/api/module/${id}/update`, { method: 'POST', body: formData })
+                    .then(r => r.json()).then(data => {
+                        if (data.status === 'success') location.reload(); else alert('Error: ' + data.error);
+                    });
+                };
+            }
+
+            // Edit Content
+            const editContentBtns = document.querySelectorAll('.edit-content-btn');
+            const editTextModal = document.getElementById('edit-text-modal');
+            const editImageModal = document.getElementById('edit-image-modal');
+            const editTextForm = document.getElementById('edit-text-form');
+            const editImageForm = document.getElementById('edit-image-form');
+
+            editContentBtns.forEach(btn => {
+                btn.onclick = function() {
+                    const id = this.dataset.id;
+                    const type = this.dataset.type;
+                    if (type === 'text') {
+                        document.getElementById('edit-text-id').value = id;
+                        document.getElementById('edit-text-content-zh').value = this.dataset.content;
+                        editTextModal.style.display = 'block';
+                    } else if (type === 'image') {
+                        document.getElementById('edit-image-id').value = id;
+                        editImageModal.style.display = 'block';
+                    }
+                };
+            });
+
+            if (editTextForm) {
+                editTextForm.onsubmit = function(e) {
+                    e.preventDefault();
+                    const id = document.getElementById('edit-text-id').value;
+                    const formData = new FormData(this);
+                    fetch(`/case/api/content/${id}/update`, { method: 'POST', body: formData })
+                    .then(r => r.json()).then(data => { if (data.status === 'success') location.reload(); else alert('Error: ' + data.error); });
+                };
+            }
+
+            if (editImageForm) {
+                editImageForm.onsubmit = function(e) {
+                    e.preventDefault();
+                    const id = document.getElementById('edit-image-id').value;
+                    const formData = new FormData(this);
+                    fetch(`/case/api/content/${id}/update`, { method: 'POST', body: formData })
+                    .then(r => r.json()).then(data => { if (data.status === 'success') location.reload(); else alert('Error: ' + data.error); });
+                };
+            }
+
             // Case Management
             const addBtn = document.getElementById('add-case-btn');
             const addModal = document.getElementById('add-case-modal');
@@ -252,6 +374,9 @@
 
             // Window click to close modals
             window.onclick = (event) => {
+                if (event.target == editTitleModal) editTitleModal.style.display = 'none';
+                if (event.target == editTextModal) editTextModal.style.display = 'none';
+                if (event.target == editImageModal) editImageModal.style.display = 'none';
                 if (event.target == addModal) addModal.style.display = 'none';
                 if (event.target == selectModal) selectModal.style.display = 'none';
                 if (event.target == textModal) textModal.style.display = 'none';
