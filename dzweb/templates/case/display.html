@@ -2,6 +2,22 @@
 
 {% from 'macro.html' import side_bar_imag %}
 
+{% set case_title = (module.title_zh if get_locale() == 'zh' else (module.title_en if get_locale() == 'en' else module.title_ja) or module.title_zh) %}
+
+{% block title %}{{ case_title }}{% endblock %}
+
+{% block description %}
+    {%- set first_text = "" -%}
+    {%- for item in contents if item.type == 'text' -%}
+        {%- if loop.first -%}
+            {%- set first_text = (item.content_zh if get_locale() == 'zh' else (item.content_en if get_locale() == 'en' else item.content_ja) or item.content_zh) | striptags | truncate(150) -%}
+        {%- endif -%}
+    {%- endfor -%}
+    {{ case_title }} - {{ first_text or _('广州东振机电设备有限公司经典案例展示') }}
+{% endblock %}
+
+{% block keywords %}{{ case_title }}, {{ _('自动化设备,工装夹具,经典案例,广州东振') }}{% endblock %}
+
 {% block content %}
 	<div class="block first-column">
 		<div class="sector">
