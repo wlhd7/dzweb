@@ -10,8 +10,25 @@ from dzweb.utils.image import generate_thumbnail, convert_to_webp
 import os
 import uuid
 from flask import current_app
+from deep_translator import GoogleTranslator
+import re
 
 bp = Blueprint('case', __name__, url_prefix='/case')
+
+def auto_translate(text, target_lang):
+    if not text:
+        return ""
+    try:
+        return GoogleTranslator(source='auto', target=target_lang).translate(text)
+    except Exception as e:
+        current_app.logger.error(f"Translation error ({target_lang}): {str(e)}")
+        return text
+
+def slugify(text):
+    # Convert to lowercase and replace non-alphanumeric characters with dashes
+    text = text.lower()
+    text = re.sub(r'[^a-z0-9]+', '-', text)
+    return text.strip('-')
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
@@ -69,11 +86,17 @@ def api_create_module():
     if not title_zh:
         return jsonify({'error': 'Missing title'}), 400
 
-    # Improved slug logic: use timestamp for uniqueness and predictability
-    import time
     slug = request.form.get('slug')
     if not slug:
-        slug = f"case-{int(time.time())}"
+        # 1. Translate Chinese title to English
+        english_title = auto_translate(title_zh, 'en')
+        # 2. Format as standard slug
+        slug = slugify(english_title)
+        
+        # 3. Handle collision or empty slug (if translation failed or resulted in no alphanumeric)
+        if not slug or get_case_module_by_slug(slug):
+            import time
+            slug = f"{slug or 'case'}-{int(time.time())}"
         
     create_case_module(slug, title_zh, None, None)
     return jsonify({'status': 'success'})
