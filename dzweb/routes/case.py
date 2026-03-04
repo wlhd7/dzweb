@@ -44,8 +44,10 @@ def _delete_case_image_files(filename):
 
 @bp.route('/')
 def main():
-    """主经典案例页面，目前合并为单一空白页。"""
+    """主经典案例页面，自动重定向到第一个案例。"""
     modules = get_case_modules()
+    if modules:
+        return redirect(url_for('case.display_case', slug=modules[0]['slug']))
     return render_template('case/main.html', modules=modules)
 
 @bp.route('/<slug>')
@@ -64,16 +66,14 @@ def display_case(slug):
 @login_required
 def api_create_module():
     title_zh = request.form.get('title_zh')
-    # If slug is not provided, generate from title_zh (using simple UUID for now as placeholder or slugify if we had it)
-    # The requirement says 'automatic generate', I will try a simple slug from title_zh
-    # Actually, many systems just use the ID or a uuid if no slug is provided.
-    slug = request.form.get('slug')
-    if not slug:
-        import uuid
-        slug = f"case-{uuid.uuid4().hex[:8]}"
-        
     if not title_zh:
         return jsonify({'error': 'Missing title'}), 400
+
+    # Improved slug logic: use timestamp for uniqueness and predictability
+    import time
+    slug = request.form.get('slug')
+    if not slug:
+        slug = f"case-{int(time.time())}"
         
     create_case_module(slug, title_zh, None, None)
     return jsonify({'status': 'success'})

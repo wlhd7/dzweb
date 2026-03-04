@@ -35,11 +35,15 @@
                     {{ module.title_zh if get_locale() == 'zh' else (module.title_en if get_locale() == 'en' else module.title_ja) or module.title_zh }}
                 </p>
                 {% if g.user %}
-                <button id="delete-this-case-btn" data-id="{{ module.id }}" style="margin-left: auto; cursor: pointer; color: red;">{{ _('删除此案例') }}</button>
+                <button id="delete-this-case-btn" data-id="{{ module.id }}" style="margin-left: auto; cursor: pointer; color: red; font-size: 10px; border: 1px solid red; background: none; border-radius: 3px;">{{ _('删除此案例') }}</button>
                 {% endif %}
 			</div>
 			
-			<div class="dblock-content" id="case-content-area" data-case-id="{{ module.id }}">
+			<div class="dblock-content" id="case-content-area" data-case-id="{{ module.id }}" style="padding: 20px;">
+                <h1 style="font-size: 18px; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+                    {{ module.title_zh if get_locale() == 'zh' else (module.title_en if get_locale() == 'en' else module.title_ja) or module.title_zh }}
+                </h1>
+
                 {% for item in contents %}
                     <div class="case-item" data-id="{{ item.id }}" style="margin-bottom: 20px; position: relative; border: 1px transparent solid;">
                         {% if item.type == 'text' %}
