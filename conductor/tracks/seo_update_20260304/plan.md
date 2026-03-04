@@ -18,11 +18,12 @@
 - [x] Task: 编写测试验证不同语言环境下案例页面的 `<title>` 标签正确显示 (d2e1f20)
 - [x] Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md) (d2e1f20)
 
-## Phase 4: 结构化数据 (JSON-LD) 增强 (Structured Data Enhancement)
-- [ ] Task: 优化 `dzweb/templates/product/display.html` 中的 `Product` Schema，增加缺失的属性（如 brand, offers 等，视现有数据而定）
-- [ ] Task: 在 `dzweb/templates/case/display.html` 中集成 `Article` 或 `CreativeWork` 类型的 JSON-LD
-- [ ] Task: 验证结构化数据的语法正确性（使用测试用例模拟渲染结果）
-- [ ] Task: Conductor - User Manual Verification 'Phase 4' (Protocol in workflow.md)
+## Phase 4: 结构化数据 (JSON-LD) 增强 (Structured Data Enhancement) [checkpoint: 74cd60d]
+- [x] Task: 优化 `dzweb/templates/product/display.html` 中的 `Product` Schema，增加缺失的属性（如 brand, offers 等，视现有数据而定） (d30c5e6)
+- [x] Task: 在 `dzweb/templates/case/display.html` 中集成 `Article` 或 `CreativeWork` 类型的 JSON-LD (74cd60d)
+- [x] Task: 验证结构化数据的语法正确性（使用测试用例模拟渲染结果） (74cd60d)
+- [x] Task: Conductor - User Manual Verification 'Phase 4' (Protocol in workflow.md) (74cd60d)
+
 
 ## Phase 5: 最终验证与交付 (Final Verification)
 - [ ] Task: 全局回归测试，确保 SEO 修改未影响现有业务逻辑
