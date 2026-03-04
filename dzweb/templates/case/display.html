@@ -5,10 +5,10 @@
 {% block content %}
 	<div class="block first-column">
 		<div class="sector">
-			<div class="sector-title" style="display: flex; justify-content: space-between; align-items: center;">
+			<div class="sector-title" style="display: flex; align-items: center;">
 				<p>{{ _('经典案例') }}</p>
 				{% if g.user %}
-				<button id="add-case-btn" class="link-admin">{{ _('新增') }}</button>
+				<button id="add-case-btn" class="link-admin" style="margin-left: 10px;">{{ _('新增') }}</button>
 				{% endif %}
 			</div>
 			<div class="sector-content">
@@ -27,21 +27,21 @@
 
 	<div class="block" id="second-column">
 		<div class="dblock">
-			<div class="dblock-title">
+			<div class="dblock-title" style="display: flex; align-items: center;">
 				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}" loading="lazy">
 				<p>&nbsp; {{ _('经典案例') }} > 
                     {{ module.title_zh if get_locale() == 'zh' else (module.title_en if get_locale() == 'en' else module.title_ja) or module.title_zh }}
                 </p>
                 {% if g.user %}
-                <button id="delete-this-case-btn" data-id="{{ module.id }}" style="margin-left: auto; cursor: pointer; color: red; font-size: 10px; border: 1px solid red; background: none; border-radius: 3px;">{{ _('删除此案例') }}</button>
-                {% endif %}
+				<button id="delete-this-case-btn" data-id="{{ module.id }}" class="link-delete" style="margin-left: auto;">{{ _('删除此案例') }}</button>
+				{% endif %}
 			</div>
 			
 			<div class="dblock-content" id="case-content-area" data-case-id="{{ module.id }}" style="padding: 20px;">
                 <h1 style="font-size: 18px; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; display: flex; align-items: center;">
                     {{ module.title_zh if get_locale() == 'zh' else (module.title_en if get_locale() == 'en' else module.title_ja) or module.title_zh }}
                     {% if g.user %}
-                    <button id="edit-case-title-btn" data-id="{{ module.id }}" data-title="{{ module.title_zh }}" style="margin-left: 10px; cursor: pointer; font-size: 10px; background: none; border: 1px solid #ccc; border-radius: 3px; padding: 2px 5px;">{{ _('编辑标题') }}</button>
+                    <button id="edit-case-title-btn" data-id="{{ module.id }}" data-title="{{ module.title_zh }}" class="link-admin" style="margin-left: 10px;">{{ _('编辑标题') }}</button>
                     {% endif %}
                 </h1>
 
@@ -62,10 +62,10 @@
 
                         {% if g.user %}
                         <div class="case-item-controls" style="margin-top: 5px;">
-                            <button class="edit-content-btn" data-id="{{ item.id }}" data-type="{{ item.type }}" {% if item.type == 'text' %}data-content="{{ item.content_zh }}"{% endif %}>{{ _('编辑') }}</button>
-                            <button class="move-up-btn" data-id="{{ item.id }}">↑</button>
-                            <button class="move-down-btn" data-id="{{ item.id }}">↓</button>
-                            <button class="delete-content-btn" data-id="{{ item.id }}" style="color: red; margin-left: 10px;">{{ _('删除') }}</button>
+                            <button class="edit-content-btn link-admin" data-id="{{ item.id }}" data-type="{{ item.type }}" {% if item.type == 'text' %}data-content="{{ item.content_zh }}"{% endif %}>{{ _('编辑') }}</button>
+                            <button class="move-up-btn link-admin" data-id="{{ item.id }}" style="margin-left: 10px;">{{ _('上移') }}</button>
+                            <button class="move-down-btn link-admin" data-id="{{ item.id }}" style="margin-left: 10px;">{{ _('下移') }}</button>
+                            <button class="delete-content-btn link-delete" data-id="{{ item.id }}" style="margin-left: 10px;">{{ _('删除') }}</button>
                         </div>
                         {% endif %}
                     </div>
@@ -83,42 +83,42 @@
     <!-- Modals -->
     {% if g.user %}
     <!-- Edit Case Title Modal -->
-    <div id="edit-case-title-modal" class="modal" style="display: none; position: fixed; z-index: 1003; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
-        <div class="modal-content" style="background-color: white; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 400px; border-radius: 8px;">
+    <div id="edit-case-title-modal" class="modal">
+        <div class="modal-content">
             <h3>{{ _('编辑案例标题') }}</h3>
             <form id="edit-case-title-form">
                 <div style="margin-bottom: 15px;">
                     <label>{{ _('中文标题') }}:</label><br>
-                    <input type="text" id="edit_input_title_zh" name="title_zh" required style="width: 100%; padding: 5px; margin-top: 5px;">
+                    <input type="text" id="edit_input_title_zh" name="title_zh" required class="input-full-width" style="margin-top: 5px;">
                 </div>
                 <div style="text-align: right;">
-                    <button type="button" onclick="document.getElementById('edit-case-title-modal').style.display='none'">{{ _('取消') }}</button>
-                    <button type="submit" style="background: steelblue; color: white; border: none; padding: 5px 15px; cursor: pointer;">{{ _('保存') }}</button>
+                    <button type="button" class="link-admin" style="margin-right: 15px;" onclick="document.getElementById('edit-case-title-modal').style.display='none'">{{ _('取消') }}</button>
+                    <button type="submit" class="link-admin bold">{{ _('保存') }}</button>
                 </div>
             </form>
         </div>
     </div>
     <!-- Edit Text Content Modal -->
-    <div id="edit-text-modal" class="modal" style="display: none; position: fixed; z-index: 1004; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
-        <div class="modal-content" style="background-color: white; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 450px; border-radius: 8px;">
+    <div id="edit-text-modal" class="modal">
+        <div class="modal-content">
             <h3>{{ _('编辑文案内容') }}</h3>
             <form id="edit-text-form">
                 <input type="hidden" name="id" id="edit-text-id">
                 <div style="margin-bottom: 20px;">
                     <label>{{ _('内容') }}:</label><br>
-                    <textarea name="content_zh" id="edit-text-content-zh" rows="6" required style="width: 100%; margin-top: 10px; padding: 5px;"></textarea>
+                    <textarea name="content_zh" id="edit-text-content-zh" rows="6" required class="input-full-width" style="margin-top: 10px;"></textarea>
                 </div>
                 <div style="text-align: right;">
-                    <button type="button" onclick="document.getElementById('edit-text-modal').style.display='none'">{{ _('取消') }}</button>
-                    <button type="submit" style="background: steelblue; color: white; border: none; padding: 5px 15px; cursor: pointer;">{{ _('保存') }}</button>
+                    <button type="button" class="link-admin" style="margin-right: 15px;" onclick="document.getElementById('edit-text-modal').style.display='none'">{{ _('取消') }}</button>
+                    <button type="submit" class="link-admin bold">{{ _('保存') }}</button>
                 </div>
             </form>
         </div>
     </div>
 
     <!-- Edit Image Content Modal -->
-    <div id="edit-image-modal" class="modal" style="display: none; position: fixed; z-index: 1004; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
-        <div class="modal-content" style="background-color: white; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 400px; border-radius: 8px;">
+    <div id="edit-image-modal" class="modal">
+        <div class="modal-content">
             <h3>{{ _('更换图片') }}</h3>
             <form id="edit-image-form" enctype="multipart/form-data">
                 <input type="hidden" name="id" id="edit-image-id">
@@ -127,70 +127,70 @@
                     <input type="file" name="file" accept="image/*" required style="margin-top: 10px;">
                 </div>
                 <div style="text-align: right;">
-                    <button type="button" onclick="document.getElementById('edit-image-modal').style.display='none'">{{ _('取消') }}</button>
-                    <button type="submit" style="background: steelblue; color: white; border: none; padding: 5px 15px; cursor: pointer;">{{ _('上传并替换') }}</button>
+                    <button type="button" class="link-admin" style="margin-right: 15px;" onclick="document.getElementById('edit-image-modal').style.display='none'">{{ _('取消') }}</button>
+                    <button type="submit" class="link-admin bold">{{ _('上传并替换') }}</button>
                 </div>
             </form>
         </div>
     </div>
 
     <!-- Add Case Modal (Simplified) -->
-    <div id="add-case-modal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
-        <div class="modal-content" style="background-color: white; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 400px; border-radius: 8px;">
+    <div id="add-case-modal" class="modal">
+        <div class="modal-content">
             <h3>{{ _('新增案例模块') }}</h3>
             <form id="add-case-form">
                 <div style="margin-bottom: 15px;">
                     <label>{{ _('中文标题') }}:</label><br>
-                    <input type="text" id="input_title_zh" name="title_zh" required style="width: 100%; padding: 5px; margin-top: 5px;">
+                    <input type="text" id="input_title_zh" name="title_zh" required class="input-full-width" style="margin-top: 5px;">
                 </div>
                 <input type="hidden" name="slug">
                 <input type="hidden" name="title_en">
                 <input type="hidden" name="title_ja">
                 <div style="text-align: right;">
-                    <button type="button" onclick="document.getElementById('add-case-modal').style.display='none'">{{ _('取消') }}</button>
-                    <button type="submit" style="background: steelblue; color: white; border: none; padding: 5px 15px; cursor: pointer;">{{ _('创建') }}</button>
+                    <button type="button" class="link-admin" style="margin-right: 15px;" onclick="document.getElementById('add-case-modal').style.display='none'">{{ _('取消') }}</button>
+                    <button type="submit" class="link-admin bold">{{ _('创建') }}</button>
                 </div>
             </form>
         </div>
     </div>
 
     <!-- Content Type Selection Modal -->
-    <div id="select-content-type-modal" class="modal" style="display: none; position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
-        <div class="modal-content" style="background-color: white; margin: 20% auto; padding: 20px; border: 1px solid #888; width: 300px; border-radius: 8px; text-align: center;">
+    <div id="select-content-type-modal" class="modal">
+        <div class="modal-content" style="text-align: center;">
             <h3>{{ _('选择内容类型') }}</h3>
             <div style="display: flex; justify-content: space-around; margin-top: 20px;">
-                <button id="btn-add-text" style="padding: 10px 20px; cursor: pointer;">{{ _('文案') }}</button>
-                <button id="btn-add-image" style="padding: 10px 20px; cursor: pointer;">{{ _('图片') }}</button>
+                <button id="btn-add-text" class="link-admin" style="padding: 10px 20px;">{{ _('文案') }}</button>
+                <button id="btn-add-image" class="link-admin" style="padding: 10px 20px;">{{ _('图片') }}</button>
             </div>
-            <button type="button" onclick="document.getElementById('select-content-type-modal').style.display='none'" style="margin-top: 20px;">{{ _('取消') }}</button>
+            <button type="button" class="link-admin" onclick="document.getElementById('select-content-type-modal').style.display='none'" style="margin-top: 20px;">{{ _('取消') }}</button>
         </div>
     </div>
 
     <!-- Add Text Content Modal (Simplified) -->
-    <div id="add-text-modal" class="modal" style="display: none; position: fixed; z-index: 1002; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
-        <div class="modal-content" style="background-color: white; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 450px; border-radius: 8px;">
+    <div id="add-text-modal" class="modal">
+        <div class="modal-content">
             <h3>{{ _('添加文案内容') }}</h3>
             <form id="add-text-form">
                 <input type="hidden" name="type" value="text">
                 <input type="hidden" name="sort_order" id="text-sort-order">
                 <div style="margin-bottom: 20px;">
                     <label>{{ _('内容') }}:</label><br>
-                    <textarea name="content_zh" rows="6" required style="width: 100%; margin-top: 10px; padding: 5px;"></textarea>
+                    <textarea name="content_zh" rows="6" required class="input-full-width" style="margin-top: 10px;"></textarea>
                 </div>
                 <!-- Hidden I18n fields, will be handled by backend -->
                 <input type="hidden" name="content_en">
                 <input type="hidden" name="content_ja">
                 <div style="text-align: right;">
-                    <button type="button" onclick="document.getElementById('add-text-modal').style.display='none'">{{ _('取消') }}</button>
-                    <button type="submit" style="background: steelblue; color: white; border: none; padding: 5px 15px; cursor: pointer;">{{ _('添加') }}</button>
+                    <button type="button" class="link-admin" style="margin-right: 15px;" onclick="document.getElementById('add-text-modal').style.display='none'">{{ _('取消') }}</button>
+                    <button type="submit" class="link-admin bold">{{ _('添加') }}</button>
                 </div>
             </form>
         </div>
     </div>
 
     <!-- Add Image Content Modal -->
-    <div id="add-image-modal" class="modal" style="display: none; position: fixed; z-index: 1002; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
-        <div class="modal-content" style="background-color: white; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 400px; border-radius: 8px;">
+    <div id="add-image-modal" class="modal">
+        <div class="modal-content">
             <h3>{{ _('添加图片') }}</h3>
             <form id="add-image-form" enctype="multipart/form-data">
                 <input type="hidden" name="type" value="image">
@@ -200,8 +200,8 @@
                     <input type="file" name="file" accept="image/*" required style="margin-top: 10px;">
                 </div>
                 <div style="text-align: right;">
-                    <button type="button" onclick="document.getElementById('add-image-modal').style.display='none'">{{ _('取消') }}</button>
-                    <button type="submit" style="background: steelblue; color: white; border: none; padding: 5px 15px; cursor: pointer;">{{ _('上传') }}</button>
+                    <button type="button" class="link-admin" style="margin-right: 15px;" onclick="document.getElementById('add-image-modal').style.display='none'">{{ _('取消') }}</button>
+                    <button type="submit" class="link-admin bold">{{ _('上传') }}</button>
                 </div>
             </form>
         </div>
@@ -281,11 +281,9 @@
             // Case Management
             const addBtn = document.getElementById('add-case-btn');
             const addModal = document.getElementById('add-case-modal');
-            const closeAddBtn = document.getElementById('close-add-case-modal');
             const addForm = document.getElementById('add-case-form');
 
             if (addBtn) addBtn.onclick = () => addModal.style.display = 'block';
-            if (closeAddBtn) closeAddBtn.onclick = () => addModal.style.display = 'none';
 
             addForm.onsubmit = function(e) {
                 e.preventDefault();
@@ -378,7 +376,7 @@
                 if (event.target == editTitleModal) editTitleModal.style.display = 'none';
                 if (event.target == editTextModal) editTextModal.style.display = 'none';
                 if (event.target == editImageModal) editImageModal.style.display = 'none';
-                if (event.target == addModal) addModal.style.display = 'none';
+                if (event.target == addCaseModal) addCaseModal.style.display = 'none';
                 if (event.target == selectModal) selectModal.style.display = 'none';
                 if (event.target == textModal) textModal.style.display = 'none';
                 if (event.target == imageModal) imageModal.style.display = 'none';

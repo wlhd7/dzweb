@@ -36,3 +36,19 @@ def test_case_display_sidebar_normalization(client, app):
     assert 'arrow-narrow-right-dashed.svg' in html
     assert 'class="nav-top-icon-dashed"' in html
     assert '<hr>' in html
+
+def test_case_admin_link_styling(client, app, auth):
+    """验证管理员按钮呈现为超链接样式"""
+    # 模拟管理员登录
+    with client.session_transaction() as sess:
+        sess['is_admin'] = True
+    
+    response = client.get('/case/test-case-2')
+    html = response.data.decode('utf-8')
+    
+    # 验证是否使用了 link-admin 和 link-delete 类
+    assert 'class="link-admin"' in html
+    assert 'class="link-delete"' in html
+    
+    # 验证是否包含 margin-left: auto 样式（用于删除按钮右对齐）
+    assert 'style="margin-left: auto;"' in html

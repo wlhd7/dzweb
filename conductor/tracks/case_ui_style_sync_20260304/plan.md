@@ -17,10 +17,10 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 3: Sidebar Normalization (TDD)' (Protocol in workflow.md) c564c2d
 
 ## Phase 4: Admin Controls Refactor (TDD)
-- [ ] Task: Create unit tests for admin control visibility and link-style rendering.
-- [ ] Task: Refactor "Add Case" button and modal buttons in `main.html` to use link-style CSS classes.
-- [ ] Task: Refactor content management buttons (Edit, Move Up/Down, Delete) in `display.html` to be text-link based.
-- [ ] Task: Clean up all remaining inline styles in case templates.
+- [x] Task: Create unit tests for admin control visibility and link-style rendering. 90c071d
+- [x] Task: Refactor "Add Case" button and modal buttons in `main.html` to use link-style CSS classes. 90c071d
+- [x] Task: Refactor content management buttons (Edit, Move Up/Down, Delete) in `display.html` to be text-link based. 90c071d
+- [x] Task: Clean up all remaining inline styles in case templates. 90c071d
 - [ ] Task: Conductor - User Manual Verification 'Phase 4: Admin Controls Refactor (TDD)' (Protocol in workflow.md)
 
 ## Phase 5: Verification & Checkpoint
