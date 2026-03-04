@@ -24,6 +24,6 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 4: Admin Controls Refactor (TDD)' (Protocol in workflow.md) 89250c8
 
 ## Phase 5: Verification & Checkpoint
-- [ ] Task: Run full test suite with coverage report.
-- [ ] Task: Perform manual verification on mobile and desktop viewports.
+- [x] Task: Run full test suite with coverage report. 7a0c1bc
+- [x] Task: Perform manual verification on mobile and desktop viewports. 7a0c1bc
 - [ ] Task: Conductor - User Manual Verification 'Phase 5: Verification & Checkpoint' (Protocol in workflow.md)
