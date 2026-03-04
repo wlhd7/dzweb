@@ -2,7 +2,7 @@
 
 ## Phase 1: 基础清理与环境准备 (Preparation & Cleanup)
 - [x] Task: 物理删除静态文件 `dzweb/static/sitemap.xml` (25dc8a4)
-- [ ] Task: 编写测试用例验证 `/sitemap.xml` 路由的响应状态
+- [x] Task: 编写测试用例验证 `/sitemap.xml` 路由的响应状态 (5f1ec2f)
 - [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
 ## Phase 2: 动态 Sitemap 增强 (Sitemap Enhancement)
