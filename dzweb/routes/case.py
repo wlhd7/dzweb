@@ -10,18 +10,8 @@ from dzweb.utils.image import generate_thumbnail, convert_to_webp
 import os
 import uuid
 from flask import current_app
-from deep_translator import GoogleTranslator
 
 bp = Blueprint('case', __name__, url_prefix='/case')
-
-def auto_translate(text, target_lang):
-    if not text:
-        return ""
-    try:
-        return GoogleTranslator(source='auto', target=target_lang).translate(text)
-    except Exception as e:
-        current_app.logger.error(f"Translation error ({target_lang}): {str(e)}")
-        return text # Fallback
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
@@ -82,13 +72,10 @@ def api_create_module():
         import uuid
         slug = f"case-{uuid.uuid4().hex[:8]}"
         
-    title_en = request.form.get('title_en') or auto_translate(title_zh, 'en')
-    title_ja = request.form.get('title_ja') or auto_translate(title_zh, 'ja')
-    
     if not title_zh:
         return jsonify({'error': 'Missing title'}), 400
         
-    create_case_module(slug, title_zh, title_en, title_ja)
+    create_case_module(slug, title_zh, None, None)
     return jsonify({'status': 'success'})
 
 @bp.route('/api/module/<int:id>/delete', methods=['POST'])
@@ -108,9 +95,6 @@ def api_delete_module(id):
 def api_add_content(case_id):
     content_type = request.form.get('type')
     content_zh = request.form.get('content_zh')
-    # Use auto_translate for missing translations
-    content_en = request.form.get('content_en') or (auto_translate(content_zh, 'en') if content_type == 'text' else None)
-    content_ja = request.form.get('content_ja') or (auto_translate(content_zh, 'ja') if content_type == 'text' else None)
     sort_order = request.form.get('sort_order', 0)
     
     filename = None
@@ -136,7 +120,7 @@ def api_add_content(case_id):
         else:
             return jsonify({'error': 'Invalid file type or no file uploaded'}), 400
     
-    add_case_content(case_id, content_type, content_zh, content_en, content_ja, filename, sort_order)
+    add_case_content(case_id, content_type, content_zh, None, None, filename, sort_order)
     return jsonify({'status': 'success'})
 
 @bp.route('/api/content/<int:id>/delete', methods=['POST'])
