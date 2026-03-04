@@ -3,7 +3,8 @@
 ## 核心技术
 - **编程语言**: Python 3.8+ (后端逻辑处理)
 - **后端框架**: Flask 3.1.2 (轻量级 Web 框架)
-- **前端技术**: Jinja2 Templates + Vanilla CSS (原生 CSS，无需 Tailwind 或其他框架) + SVG 图标
+- 前端技术: Jinja2 Templates + Vanilla CSS (原生 CSS，包含用于管理操作和弹窗的统一工具类) + SVG 图标
+
 - **数据库**: SQLite (轻量级关系型数据库，用于存储用户、产品和消息)
 
 ## 关键库与集成
