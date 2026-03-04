@@ -16,12 +16,12 @@
 - [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
 ## Phase 2: Frontend UI Implementation
-- [ ] Task: 在案例标题位置增加“编辑”功能。
+- [x] Task: 在案例标题位置增加“编辑”功能。 [c5f9652]
     - 修改 `dzweb/templates/case/display.html`。
     - 添加 `edit-case-title-btn`。
     - 添加 `edit-case-title-modal`。
     - 编写对应 JS 提交逻辑。
-- [ ] Task: 为每个内容项（Text/Image）增加“编辑”功能。
+- [x] Task: 为每个内容项（Text/Image）增加“编辑”功能。 [c5f9652]
     - 修改 `dzweb/templates/case/display.html`。
     - 在 `case-item-controls` 中添加 `edit-content-btn`。
     - 添加 `edit-text-modal` 和 `edit-image-modal`。
