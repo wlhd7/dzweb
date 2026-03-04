@@ -68,7 +68,7 @@
 
 	<div class="block" id="second-column">
 		<div class="dblock">
-			<div class="dblock-title" style="display: flex; align-items: center;">
+			<div class="dblock-title">
 				<img src="{{ url_for('static', filename='images/direction-sign.svg') }}" loading="lazy">
 				<p>&nbsp; {{ _('经典案例') }} > 
                     {{ module.title_zh if get_locale() == 'zh' else (module.title_en if get_locale() == 'en' else module.title_ja) or module.title_zh }}
