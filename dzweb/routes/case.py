@@ -185,3 +185,56 @@ def api_move_content(id, direction):
         db.commit()
         
     return jsonify({'status': 'success'})
+
+@bp.route('/api/module/<int:id>/update', methods=['POST'])
+@login_required
+def api_update_module(id):
+    title_zh = request.form.get('title_zh')
+    if not title_zh:
+        return jsonify({'error': 'Missing title'}), 400
+        
+    db = get_db()
+    db.execute('UPDATE case_modules SET title_zh = ? WHERE id = ?', (title_zh, id))
+    db.commit()
+    return jsonify({'status': 'success'})
+
+@bp.route('/api/content/<int:id>/update', methods=['POST'])
+@login_required
+def api_update_content(id):
+    db = get_db()
+    content = db.execute('SELECT * FROM case_contents WHERE id = ?', (id,)).fetchone()
+    if not content:
+        return jsonify({'error': 'Content not found'}), 404
+        
+    content_type = content['type']
+    
+    if content_type == 'text':
+        content_zh = request.form.get('content_zh')
+        db.execute('UPDATE case_contents SET content_zh = ? WHERE id = ?', (content_zh, id))
+        db.commit()
+    elif content_type == 'image':
+        file = request.files.get('file')
+        if file and allowed_file(file.filename):
+            # 1. Save new image
+            new_filename = generate_random_filename(file.filename)
+            file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], new_filename)
+            file.save(file_path)
+            
+            # 2. Generate thumbnail and webp for new image
+            thumb_path = os.path.join(current_app.config['THUMBNAIL_FOLDER'], new_filename)
+            try:
+                generate_thumbnail(file_path, thumb_path)
+                convert_to_webp(file_path, quality=80)
+            except Exception as e:
+                current_app.logger.error(f"Image processing error during update: {str(e)}")
+            
+            # 3. Delete old physical files
+            _delete_case_image_files(content['filename'])
+            
+            # 4. Update database
+            db.execute('UPDATE case_contents SET filename = ? WHERE id = ?', (new_filename, id))
+            db.commit()
+        else:
+            return jsonify({'error': 'No valid file uploaded'}), 400
+            
+    return jsonify({'status': 'success'})
