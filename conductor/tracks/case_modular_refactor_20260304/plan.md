@@ -33,3 +33,9 @@
 - [x] Task: 集成 `deep-translator` 并在后台实现中文标题和文案的自动英日翻译。 (ef2a01d)
 - [x] Task: 更新 `requirements.txt`。 (ef2a01d)
 - [ ] Task: Conductor - User Manual Verification 'Phase 6: Automated Translation Integration' (Protocol in workflow.md)
+
+## Phase 7: Simplify Logic & Remove deep-translator
+- [x] Task: 移除 `deep-translator` 库及其相关的后台自动翻译代码。 (437c8bc)
+- [x] Task: 更新 `dzweb/routes/case.py`，默认将英日文字段设为 NULL 或中文占位符。 (437c8bc)
+- [x] Task: 更新 `requirements.txt`。 (437c8bc)
+- [ ] Task: Conductor - User Manual Verification 'Phase 7: Simplify Logic & Remove deep-translator' (Protocol in workflow.md)
