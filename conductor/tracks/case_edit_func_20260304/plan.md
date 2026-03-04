@@ -1,6 +1,6 @@
 # Implementation Plan: Classic Case Edit Functionality
 
-## Phase 1: Backend API Enhancement
+## Phase 1: Backend API Enhancement [checkpoint: b782c79]
 - [x] Task: 实现 `api_update_module` 接口用于更新模块标题。 [2d490f7]
     - 在 `dzweb/routes/case.py` 中增加 `/api/module/<int:id>/update` 路由。
     - 使用 `@login_required`。
