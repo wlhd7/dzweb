@@ -5,12 +5,12 @@
 - [x] Task: 编写测试用例验证 `/sitemap.xml` 路由的响应状态 (5f1ec2f)
 - [x] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md) (384599e)
 
-## Phase 2: 动态 Sitemap 增强 (Sitemap Enhancement)
+## Phase 2: 动态 Sitemap 增强 (Sitemap Enhancement) [checkpoint: c1c8167]
 - [x] Task: 修改 `dzweb/routes/home.py` 中的 `sitemap` 路由，包含所有“经典案例”详情页 URL (8cae6c1)
 - [x] Task: 在 Sitemap 中为案例 URL 增加多语言 (`hreflang`) 支持 (8cae6c1)
 - [x] Task: 为不同类型的页面分配合理性的 SEO 权重 (Priority) (8cae6c1)
 - [x] Task: 编写测试验证 Sitemap XML 中包含预期的产品和案例 URL 数量 (8cae6c1)
-- [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md) (c1c8167)
 
 ## Phase 3: 案例展示页 Meta 优化 (Case Page SEO Optimization)
 - [ ] Task: 在 `dzweb/templates/case/display.html` 中增加 `title`、`description` 和 `keywords` 的 Jinja2 Block
