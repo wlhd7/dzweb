@@ -1,0 +1,8 @@
+{
+  "track_id": "case_modular_refactor_20260304",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-03-04T12:00:00Z",
+  "updated_at": "2026-03-04T12:00:00Z",
+  "description": "‘经典案例’ (case) 模块化重构：管理员可动态增删独立页面模块，内容支持文案与图片混排、排序及完整 I18n。"
+}
