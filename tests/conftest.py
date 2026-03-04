@@ -3,7 +3,6 @@ import tempfile
 import pytest
 from dzweb import create_app
 from dzweb.db import get_db, init_database
-import bcrypt
 
 with open(os.path.join(os.path.dirname(__file__), '../dzweb/schema.sql'), 'rb') as f:
     _data_sql = f.read().decode('utf-8')
@@ -30,12 +29,6 @@ def app():
     with app.app_context():
         init_database()
         db = get_db()
-        # Add a test user
-        password = bcrypt.hashpw(b'test_password', bcrypt.gensalt()).decode('utf-8')
-        db.execute(
-            "INSERT INTO users (username, password, applist) VALUES (?, ?, ?)",
-            ('test_user', password, '[]')
-        )
         # Add test apps
         db.execute(
             "INSERT INTO apps (appname, appurl) VALUES (?, ?)",
