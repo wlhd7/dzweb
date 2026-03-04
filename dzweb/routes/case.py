@@ -44,20 +44,27 @@ def _delete_case_image_files(filename):
     if not filename:
         return
     
-    file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
-    thumb_path = os.path.join(current_app.config['THUMBNAIL_FOLDER'], filename)
-    base_name = os.path.splitext(filename)[0]
-    webp_path = os.path.join(current_app.config['UPLOAD_FOLDER'], f"{base_name}.webp")
+    upload_folder = current_app.config['UPLOAD_FOLDER']
+    thumb_folder = current_app.config['THUMBNAIL_FOLDER']
     
-    try:
-        if os.path.exists(file_path):
-            os.remove(file_path)
-        if os.path.exists(thumb_path):
-            os.remove(thumb_path)
-        if os.path.exists(webp_path):
-            os.remove(webp_path)
-    except Exception as e:
-        current_app.logger.error(f"Error deleting case image files for {filename}: {str(e)}")
+    # 1. Main file and its WebP version
+    file_path = os.path.join(upload_folder, filename)
+    base_name = os.path.splitext(filename)[0]
+    webp_path = os.path.join(upload_folder, f"{base_name}.webp")
+    
+    # 2. Thumbnail file (might also have its own webp or just be the jpg)
+    thumb_path = os.path.join(thumb_folder, filename)
+    thumb_webp_path = os.path.join(thumb_folder, f"{base_name}.webp")
+    
+    paths_to_remove = [file_path, webp_path, thumb_path, thumb_webp_path]
+    
+    for path in paths_to_remove:
+        try:
+            if os.path.exists(path):
+                os.remove(path)
+                current_app.logger.info(f"Deleted case file: {path}")
+        except Exception as e:
+            current_app.logger.error(f"Failed to delete file {path}: {str(e)}")
 
 @bp.route('/')
 def main():
