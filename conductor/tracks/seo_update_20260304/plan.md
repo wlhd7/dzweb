@@ -8,6 +8,7 @@
 ## Phase 2: 动态 Sitemap 增强 (Sitemap Enhancement)
 - [ ] Task: 修改 `dzweb/routes/home.py` 中的 `sitemap` 路由，包含所有“经典案例”详情页 URL
 - [ ] Task: 在 Sitemap 中为案例 URL 增加多语言 (`hreflang`) 支持
+- [ ] Task: 为不同类型的页面分配合理的 SEO 权重 (Priority)
 - [ ] Task: 编写测试验证 Sitemap XML 中包含预期的产品和案例 URL 数量
 - [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
 
