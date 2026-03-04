@@ -87,6 +87,28 @@ img {
 	border: black 1px solid;
 }
 
+.link-admin {
+	color: steelblue;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 11px;
+}
+
+.link-admin:hover {
+	text-decoration: underline;
+}
+
+.link-delete {
+	color: red;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 11px;
+}
+
+.link-delete:hover {
+	text-decoration: underline;
+}
+
 .filter-btn {
 	padding: 0 4px;
 	margin: 0 3px;

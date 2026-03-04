@@ -6,8 +6,8 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Research & Preparation' (Protocol in workflow.md) bea38d5
 
 ## Phase 2: CSS Standardization
-- [ ] Task: Add `.link-admin` and `.link-delete` utility classes to `dzweb/static/css/base.css` to handle text-based management actions.
-- [ ] Task: Ensure `.nav-top-icon-dashed` is consistently defined for use in case list sidebars.
+- [x] Task: Add `.link-admin` and `.link-delete` utility classes to `dzweb/static/css/base.css` to handle text-based management actions. 3e6d502
+- [x] Task: Ensure `.nav-top-icon-dashed` is consistently defined for use in case list sidebars. 3e6d502
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: CSS Standardization' (Protocol in workflow.md)
 
 ## Phase 3: Sidebar Normalization (TDD)
