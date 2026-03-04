@@ -78,3 +78,19 @@ def test_update_case_image_content_api_cleanup(client, app):
     with app.app_context():
         contents = get_case_contents(module_id)
         assert contents[0]['filename'] != old_filename
+
+def test_case_edit_permission_required(client, app):
+    # Ensure non-admin cannot access update API
+    with app.app_context():
+        create_case_module('auth-test', '未授权测试')
+        module = get_case_module_by_slug('auth-test')
+        module_id = module['id']
+    
+    response = client.post(f'/case/api/module/{module_id}/update', data={'title_zh': '尝试更新'})
+    # Should redirect to login
+    assert response.status_code == 302
+    assert '/admin/login' in response.location
+    
+    # Try updating content
+    response = client.post('/case/api/content/1/update', data={'content_zh': '尝试更新'})
+    assert response.status_code == 302
