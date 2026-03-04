@@ -76,6 +76,7 @@
 
     <!-- Modals -->
     {% if g.user %}
+    <!-- Add Case Modal (Simplified) -->
     <div id="add-case-modal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
         <div class="modal-content" style="background-color: white; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 400px; border-radius: 8px;">
             <h3>{{ _('新增案例模块') }}</h3>
@@ -84,14 +85,70 @@
                     <label>{{ _('中文标题') }}:</label><br>
                     <input type="text" id="input_title_zh" name="title_zh" required style="width: 100%; padding: 5px; margin-top: 5px;">
                 </div>
-                <!-- Hidden by default, auto-generated -->
                 <input type="hidden" name="slug">
                 <input type="hidden" name="title_en">
                 <input type="hidden" name="title_ja">
-                
                 <div style="text-align: right;">
-                    <button type="button" id="close-add-case-modal">{{ _('取消') }}</button>
+                    <button type="button" onclick="document.getElementById('add-case-modal').style.display='none'">{{ _('取消') }}</button>
                     <button type="submit" style="background: steelblue; color: white; border: none; padding: 5px 15px; cursor: pointer;">{{ _('创建') }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Content Type Selection Modal -->
+    <div id="select-content-type-modal" class="modal" style="display: none; position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
+        <div class="modal-content" style="background-color: white; margin: 20% auto; padding: 20px; border: 1px solid #888; width: 300px; border-radius: 8px; text-align: center;">
+            <h3>{{ _('选择内容类型') }}</h3>
+            <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+                <button id="btn-add-text" style="padding: 10px 20px; cursor: pointer;">{{ _('文案') }}</button>
+                <button id="btn-add-image" style="padding: 10px 20px; cursor: pointer;">{{ _('图片') }}</button>
+            </div>
+            <button type="button" onclick="document.getElementById('select-content-type-modal').style.display='none'" style="margin-top: 20px;">{{ _('取消') }}</button>
+        </div>
+    </div>
+
+    <!-- Add Text Content Modal -->
+    <div id="add-text-modal" class="modal" style="display: none; position: fixed; z-index: 1002; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
+        <div class="modal-content" style="background-color: white; margin: 10% auto; padding: 20px; border: 1px solid #888; width: 500px; border-radius: 8px;">
+            <h3>{{ _('添加文案') }}</h3>
+            <form id="add-text-form">
+                <input type="hidden" name="type" value="text">
+                <input type="hidden" name="sort_order" id="text-sort-order">
+                <div style="margin-bottom: 10px;">
+                    <label>{{ _('中文内容') }}:</label><br>
+                    <textarea name="content_zh" rows="4" style="width: 100%;"></textarea>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <label>{{ _('英文内容') }}:</label><br>
+                    <textarea name="content_en" rows="4" style="width: 100%;"></textarea>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <label>{{ _('日文内容') }}:</label><br>
+                    <textarea name="content_ja" rows="4" style="width: 100%;"></textarea>
+                </div>
+                <div style="text-align: right;">
+                    <button type="button" onclick="document.getElementById('add-text-modal').style.display='none'">{{ _('取消') }}</button>
+                    <button type="submit" style="background: steelblue; color: white; border: none; padding: 5px 15px; cursor: pointer;">{{ _('添加') }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Image Content Modal -->
+    <div id="add-image-modal" class="modal" style="display: none; position: fixed; z-index: 1002; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
+        <div class="modal-content" style="background-color: white; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 400px; border-radius: 8px;">
+            <h3>{{ _('添加图片') }}</h3>
+            <form id="add-image-form" enctype="multipart/form-data">
+                <input type="hidden" name="type" value="image">
+                <input type="hidden" name="sort_order" id="image-sort-order">
+                <div style="margin-bottom: 20px;">
+                    <label>{{ _('选择图片 (JPG/PNG)') }}:</label><br>
+                    <input type="file" name="file" accept="image/*" required style="margin-top: 10px;">
+                </div>
+                <div style="text-align: right;">
+                    <button type="button" onclick="document.getElementById('add-image-modal').style.display='none'">{{ _('取消') }}</button>
+                    <button type="submit" style="background: steelblue; color: white; border: none; padding: 5px 15px; cursor: pointer;">{{ _('上传') }}</button>
                 </div>
             </form>
         </div>
@@ -131,9 +188,75 @@
                 }
             }
 
+            // Content Management
+            const placeholder = document.getElementById('add-content-placeholder');
+            const selectModal = document.getElementById('select-content-type-modal');
+            const textModal = document.getElementById('add-text-modal');
+            const imageModal = document.getElementById('add-image-modal');
+            const caseId = document.getElementById('case-content-area').dataset.caseId;
+
+            if (placeholder) {
+                placeholder.onclick = function() {
+                    selectModal.style.display = 'block';
+                };
+            }
+
+            document.getElementById('btn-add-text').onclick = function() {
+                selectModal.style.display = 'none';
+                document.getElementById('text-sort-order').value = document.querySelectorAll('.case-item').length + 1;
+                textModal.style.display = 'block';
+            };
+
+            document.getElementById('btn-add-image').onclick = function() {
+                selectModal.style.display = 'none';
+                document.getElementById('image-sort-order').value = document.querySelectorAll('.case-item').length + 1;
+                imageModal.style.display = 'block';
+            };
+
+            document.getElementById('add-text-form').onsubmit = function(e) {
+                e.preventDefault();
+                const formData = new FormData(this);
+                fetch(`/case/api/module/${caseId}/content`, { method: 'POST', body: formData })
+                .then(r => r.json()).then(data => { if (data.status === 'success') location.reload(); else alert('Error: ' + data.error); });
+            };
+
+            document.getElementById('add-image-form').onsubmit = function(e) {
+                e.preventDefault();
+                const formData = new FormData(this);
+                fetch(`/case/api/module/${caseId}/content`, { method: 'POST', body: formData })
+                .then(r => r.json()).then(data => { if (data.status === 'success') location.reload(); else alert('Error: ' + data.error); });
+            };
+
+            // Sorting and Delete Content
+            document.querySelectorAll('.move-up-btn').forEach(btn => {
+                btn.onclick = function() {
+                    fetch(`/case/api/content/${this.dataset.id}/move/up`, { method: 'POST' })
+                    .then(r => r.json()).then(data => { if (data.status === 'success') location.reload(); });
+                };
+            });
+
+            document.querySelectorAll('.move-down-btn').forEach(btn => {
+                btn.onclick = function() {
+                    fetch(`/case/api/content/${this.dataset.id}/move/down`, { method: 'POST' })
+                    .then(r => r.json()).then(data => { if (data.status === 'success') location.reload(); });
+                };
+            });
+
+            document.querySelectorAll('.delete-content-btn').forEach(btn => {
+                btn.onclick = function() {
+                    if (confirm('{{ _("确定要删除此内容吗？") }}')) {
+                        fetch(`/case/api/content/${this.dataset.id}/delete`, { method: 'POST' })
+                        .then(r => r.json()).then(data => { if (data.status === 'success') location.reload(); });
+                    }
+                };
+            });
+
             // Window click to close modals
             window.onclick = (event) => {
                 if (event.target == addModal) addModal.style.display = 'none';
+                if (event.target == selectModal) selectModal.style.display = 'none';
+                if (event.target == textModal) textModal.style.display = 'none';
+                if (event.target == imageModal) imageModal.style.display = 'none';
             }
         });
     </script>
