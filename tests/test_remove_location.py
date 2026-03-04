@@ -29,8 +29,8 @@ def test_location_not_in_dynamic_sitemap(client):
     assert '/contact/location' not in xml
 
 def test_location_not_in_static_sitemap():
-    """验证静态 static/sitemap.xml 中不再包含 /contact/location。"""
+    """验证静态 static/sitemap.xml 已经不存在。"""
+    import os
     sitemap_path = 'dzweb/static/sitemap.xml'
-    with open(sitemap_path, 'r', encoding='utf-8') as f:
-        xml = f.read()
-    assert '/contact/location' not in xml
+    assert not os.path.exists(sitemap_path)
+

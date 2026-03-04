@@ -26,6 +26,6 @@
 
 
 ## Phase 5: 最终验证与交付 (Final Verification)
-- [ ] Task: 全局回归测试，确保 SEO 修改未影响现有业务逻辑
-- [ ] Task: 检查 `robots.txt` 是否正确指向动态 Sitemap 路由
+- [x] Task: 全局回归测试，确保 SEO 修改未影响现有业务逻辑 (d0242ad)
+- [~] Task: 检查 `robots.txt` 是否正确指向动态 Sitemap 路由
 - [ ] Task: Conductor - User Manual Verification 'Phase 5' (Protocol in workflow.md)

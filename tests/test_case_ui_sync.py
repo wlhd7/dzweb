@@ -39,6 +39,12 @@ def test_case_display_sidebar_normalization(client, app):
 
 def test_case_admin_link_styling(client, app, auth):
     """验证管理员按钮呈现为超链接样式"""
+    # 确保存在案例数据
+    with app.app_context():
+        db = get_db()
+        db.execute("INSERT OR IGNORE INTO case_modules (title_zh, slug) VALUES ('Test Case 2', 'test-case-2')")
+        db.commit()
+
     # 模拟管理员登录
     with client.session_transaction() as sess:
         sess['is_admin'] = True
