@@ -25,7 +25,7 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 4' (Protocol in workflow.md) (74cd60d)
 
 
-## Phase 5: 最终验证与交付 (Final Verification)
+## Phase 5: 最终验证与交付 (Final Verification) [checkpoint: 29732a1]
 - [x] Task: 全局回归测试，确保 SEO 修改未影响现有业务逻辑 (d0242ad)
-- [~] Task: 检查 `robots.txt` 是否正确指向动态 Sitemap 路由
-- [ ] Task: Conductor - User Manual Verification 'Phase 5' (Protocol in workflow.md)
+- [x] Task: 检查 `robots.txt` 是否正确指向动态 Sitemap 路由 (29732a1)
+- [x] Task: Conductor - User Manual Verification 'Phase 5' (Protocol in workflow.md) (29732a1)
