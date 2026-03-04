@@ -28,3 +28,8 @@
 - [x] Task: 确保侧边栏在所有案例独立页面均可正常工作，并支持高亮当前选中的案例。 (10a1215)
 - [x] Task: 执行全面冒烟测试，验证从后台管理到前台展示的完整闭环。 (371b621)
 - [ ] Task: Conductor - User Manual Verification 'Phase 5: Dynamic Routing & Final Integration' (Protocol in workflow.md)
+
+## Phase 6: Automated Translation Integration
+- [x] Task: 集成 `deep-translator` 并在后台实现中文标题和文案的自动英日翻译。 (ef2a01d)
+- [x] Task: 更新 `requirements.txt`。 (ef2a01d)
+- [ ] Task: Conductor - User Manual Verification 'Phase 6: Automated Translation Integration' (Protocol in workflow.md)
