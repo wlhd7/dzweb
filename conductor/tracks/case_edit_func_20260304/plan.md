@@ -15,7 +15,7 @@
         - 更新 `filename`。
 - [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
-## Phase 2: Frontend UI Implementation
+## Phase 2: Frontend UI Implementation [checkpoint: 5e804de]
 - [x] Task: 在案例标题位置增加“编辑”功能。 [c5f9652]
     - 修改 `dzweb/templates/case/display.html`。
     - 添加 `edit-case-title-btn`。
