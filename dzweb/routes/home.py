@@ -9,51 +9,48 @@ bp = Blueprint('home', __name__)
 def sitemap():
     """Generate dynamic sitemap.xml."""
     pages = []
-    # Static pages from different blueprints
-    # Home
-    for rule in ['home.index', 'home.introduction', 'home.history', 'home.organization', 
-                 'home.strategy', 'home.performance', 'home.style']:
-        pages.append(url_for(rule, _external=True))
-    
-    # Product list pages
-    for rule in ['product.fixture', 'product.automation', 'product.non_standard', 'product.robotics']:
-        pages.append(url_for(rule, _external=True))
-    
-    # Case pages
-    for rule in ['case.main']:
-        pages.append(url_for(rule, _external=True))
-    
-    # Service
-    pages.append(url_for('service.service', _external=True))
-    
-    # Contact
-    for rule in ['contact.contact_us', 'contact.message_board', 'contact.mailbox']:
-        pages.append(url_for(rule, _external=True))
-    
-    # Human
-    for rule in ['human.hire', 'human.idea']:
-        pages.append(url_for(rule, _external=True))
+    # Home (Priority 1.0)
+    pages.append({'loc': url_for('home.index', _external=True), 'priority': 1.0})
 
-    # Dynamic products
+    # Main categories (Priority 0.8)
+    for rule in ['home.introduction', 'home.history', 'home.organization',
+                 'home.strategy', 'home.performance', 'home.style',
+                 'product.fixture', 'product.automation', 'product.non_standard', 'product.robotics',
+                 'case.main', 'service.service', 'contact.contact_us', 
+                 'contact.message_board', 'contact.mailbox', 'human.hire', 'human.idea']:
+        pages.append({'loc': url_for(rule, _external=True), 'priority': 0.8})
+
+    # Dynamic products (Priority 0.7)
     db = get_db()
     products = db.execute('SELECT id FROM products').fetchall()
     for product in products:
-        pages.append(url_for('product.display', id=product['id'], _external=True))
+        pages.append({'loc': url_for('product.display', id=product['id'], _external=True), 'priority': 0.7})
+
+    # Dynamic cases (Priority 0.7)
+    from dzweb.db import get_case_modules
+    case_modules = get_case_modules()
+    for module in case_modules:
+        pages.append({'loc': url_for('case.display_case', slug=module['slug'], _external=True), 'priority': 0.7})
 
     # Add language versions for each page
-    all_urls = []
+    all_pages = []
     for page in pages:
-        all_urls.append(page) # Default (zh usually)
-        if '?' in page:
-            all_urls.append(f"{page}&lang=en")
-            all_urls.append(f"{page}&lang=ja")
+        loc = page['loc']
+        prio = page['priority']
+
+        # Original (default/zh)
+        all_pages.append({'loc': loc, 'priority': prio})
+
+        # Multilingual versions
+        if '?' in loc:
+            all_pages.append({'loc': f"{loc}&lang=en", 'priority': prio})
+            all_pages.append({'loc': f"{loc}&lang=ja", 'priority': prio})
         else:
-            all_urls.append(f"{page}?lang=en")
-            all_urls.append(f"{page}?lang=ja")
+            all_pages.append({'loc': f"{loc}?lang=en", 'priority': prio})
+            all_pages.append({'loc': f"{loc}?lang=ja", 'priority': prio})
 
-    sitemap_xml = render_template('home/sitemap.xml', urls=all_urls)
+    sitemap_xml = render_template('home/sitemap.xml', pages=all_pages)
     return Response(sitemap_xml, mimetype='application/xml')
-
 
 @bp.route('/')
 def index():
