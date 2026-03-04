@@ -98,8 +98,9 @@ def api_delete_module(id):
 def api_add_content(case_id):
     content_type = request.form.get('type')
     content_zh = request.form.get('content_zh')
-    content_en = request.form.get('content_en')
-    content_ja = request.form.get('content_ja')
+    # Use content_zh as fallback for missing translations
+    content_en = request.form.get('content_en') or content_zh
+    content_ja = request.form.get('content_ja') or content_zh
     sort_order = request.form.get('sort_order', 0)
     
     filename = None
