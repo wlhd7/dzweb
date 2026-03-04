@@ -10,11 +10,11 @@
 - [x] Task: Ensure `.nav-top-icon-dashed` is consistently defined for use in case list sidebars. 3e6d502
 - [x] Task: Conductor - User Manual Verification 'Phase 2: CSS Standardization' (Protocol in workflow.md) a7be453
 
-## Phase 3: Sidebar Normalization (TDD)
+## Phase 3: Sidebar Normalization (TDD) [checkpoint: c564c2d]
 - [x] Task: Create unit tests to verify the sidebar structure in case templates (presence of icons and dividers). 3ade8b9
 - [x] Task: Update `dzweb/templates/case/main.html` sidebar list to match the product list pattern (using icons and `<hr>`). 3ade8b9
 - [x] Task: Update `dzweb/templates/case/display.html` sidebar list for consistency. 3ade8b9
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Sidebar Normalization (TDD)' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Sidebar Normalization (TDD)' (Protocol in workflow.md) c564c2d
 
 ## Phase 4: Admin Controls Refactor (TDD)
 - [ ] Task: Create unit tests for admin control visibility and link-style rendering.
