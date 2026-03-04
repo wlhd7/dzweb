@@ -1,0 +1,8 @@
+{
+  "track_id": "case_edit_func_20260304",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-03-04T00:00:00Z",
+  "updated_at": "2026-03-04T00:00:00Z",
+  "description": "为‘经典案例’模块添加编辑功能，包括标题，文案，图片"
+}
