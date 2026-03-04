@@ -1,11 +1,11 @@
 # Implementation Plan: Classic Case Edit Functionality
 
 ## Phase 1: Backend API Enhancement
-- [ ] Task: 实现 `api_update_module` 接口用于更新模块标题。
+- [x] Task: 实现 `api_update_module` 接口用于更新模块标题。 [2d490f7]
     - 在 `dzweb/routes/case.py` 中增加 `/api/module/<int:id>/update` 路由。
     - 使用 `@login_required`。
     - 仅更新 `title_zh`。
-- [ ] Task: 实现 `api_update_content` 接口用于更新文案或图片。
+- [x] Task: 实现 `api_update_content` 接口用于更新文案或图片。 [2d490f7]
     - 在 `dzweb/routes/case.py` 中增加 `/api/content/<int:id>/update` 路由。
     - 使用 `@login_required`。
     - 如果 `type='text'`，更新 `content_zh`。
