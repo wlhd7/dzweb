@@ -11,9 +11,9 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 2: CSS Standardization' (Protocol in workflow.md) a7be453
 
 ## Phase 3: Sidebar Normalization (TDD)
-- [ ] Task: Create unit tests to verify the sidebar structure in case templates (presence of icons and dividers).
-- [ ] Task: Update `dzweb/templates/case/main.html` sidebar list to match the product list pattern (using icons and `<hr>`).
-- [ ] Task: Update `dzweb/templates/case/display.html` sidebar list for consistency.
+- [x] Task: Create unit tests to verify the sidebar structure in case templates (presence of icons and dividers). 3ade8b9
+- [x] Task: Update `dzweb/templates/case/main.html` sidebar list to match the product list pattern (using icons and `<hr>`). 3ade8b9
+- [x] Task: Update `dzweb/templates/case/display.html` sidebar list for consistency. 3ade8b9
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Sidebar Normalization (TDD)' (Protocol in workflow.md)
 
 ## Phase 4: Admin Controls Refactor (TDD)

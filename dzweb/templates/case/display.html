@@ -8,19 +8,17 @@
 			<div class="sector-title" style="display: flex; justify-content: space-between; align-items: center;">
 				<p>{{ _('经典案例') }}</p>
 				{% if g.user %}
-				<button id="add-case-btn" style="cursor: pointer; padding: 0 5px; font-size: 10px;">{{ _('新增') }}</button>
+				<button id="add-case-btn" class="link-admin">{{ _('新增') }}</button>
 				{% endif %}
 			</div>
 			<div class="sector-content">
-				<ul id="case-list" style="list-style: none; padding: 10px; margin: 0;">
-					{% for m in modules %}
-					<li style="margin-bottom: 8px;">
-						<a href="{{ url_for('case.display_case', slug=m.slug) }}" class="case-link {{ 'bold' if m.slug == module.slug }}" data-slug="{{ m.slug }}">
-							{{ m.title_zh if get_locale() == 'zh' else (m.title_en if get_locale() == 'en' else m.title_ja) or m.title_zh }}
-						</a>
-					</li>
-					{% endfor %}
-				</ul>
+				{% for m in modules %}
+				<a href="{{ url_for('case.display_case', slug=m.slug) }}" class="case-link {{ 'bold' if m.slug == module.slug }}" data-slug="{{ m.slug }}">
+					<img src="{{ url_for('static', filename='images/arrow-narrow-right-dashed.svg') }}" alt="" class="nav-top-icon-dashed" loading="lazy">
+					{{ m.title_zh if get_locale() == 'zh' else (m.title_en if get_locale() == 'en' else m.title_ja) or m.title_zh }}
+				</a>
+				<hr>
+				{% endfor %}
 			</div>
 		</div>
 
