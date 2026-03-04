@@ -12,11 +12,11 @@
 - [x] Task: 编写测试验证 Sitemap XML 中包含预期的产品和案例 URL 数量 (8cae6c1)
 - [x] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md) (c1c8167)
 
-## Phase 3: 案例展示页 Meta 优化 (Case Page SEO Optimization)
-- [ ] Task: 在 `dzweb/templates/case/display.html` 中增加 `title`、`description` 和 `keywords` 的 Jinja2 Block
-- [ ] Task: 实现从案例内容中动态提取描述信息的逻辑（优先使用摘要，无摘要则截取正文）
-- [ ] Task: 编写测试验证不同语言环境下案例页面的 `<title>` 标签正确显示
-- [ ] Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md)
+## Phase 3: 案例展示页 Meta 优化 (Case Page SEO Optimization) [checkpoint: d2e1f20]
+- [x] Task: 在 `dzweb/templates/case/display.html` 中增加 `title`、`description` 和 `keywords` 的 Jinja2 Block (d2e1f20)
+- [x] Task: 实现从案例内容中动态提取描述信息的逻辑（优先使用摘要，无摘要则截取正文） (d2e1f20)
+- [x] Task: 编写测试验证不同语言环境下案例页面的 `<title>` 标签正确显示 (d2e1f20)
+- [x] Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md) (d2e1f20)
 
 ## Phase 4: 结构化数据 (JSON-LD) 增强 (Structured Data Enhancement)
 - [ ] Task: 优化 `dzweb/templates/product/display.html` 中的 `Product` Schema，增加缺失的属性（如 brand, offers 等，视现有数据而定）
