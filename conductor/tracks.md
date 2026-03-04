@@ -9,5 +9,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: '经典案例' ui: - 修改所有超链接或按钮 - 与现有风格保持一致**
+- [x] **Track: '经典案例' ui: - 修改所有超链接或按钮 - 与现有风格保持一致**
 *Link: [./tracks/case_ui_style_sync_20260304/](./tracks/case_ui_style_sync_20260304/)*
