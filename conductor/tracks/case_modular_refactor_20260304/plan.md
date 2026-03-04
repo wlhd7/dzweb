@@ -39,3 +39,9 @@
 - [x] Task: 更新 `dzweb/routes/case.py`，默认将英日文字段设为 NULL 或中文占位符。 (437c8bc)
 - [x] Task: 更新 `requirements.txt`。 (437c8bc)
 - [ ] Task: Conductor - User Manual Verification 'Phase 7: Simplify Logic & Remove deep-translator' (Protocol in workflow.md)
+
+## Phase 8: UI Refinement & Auto-redirection
+- [x] Task: 在案例展示页添加 `<h1>` 标题以增强 SEO 和页面层级。 (f8a9b64)
+- [x] Task: 改进 Slug 生成逻辑，避免纯随机字符串，或直接使用模块 ID 作为 Slug。 (f8a9b64)
+- [x] Task: 更新 `/case/` 路由逻辑，使其自动重定向至数据库中的第一个案例。 (f8a9b64)
+- [ ] Task: Conductor - User Manual Verification 'Phase 8: UI Refinement & Auto-redirection' (Protocol in workflow.md)
