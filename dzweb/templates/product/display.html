@@ -16,6 +16,16 @@
 		"image": ["{{ url_for('static', filename='uploads/' ~ product['filename'], _external=True) }}"],
 		"description": {{ (product['brief'] or '产品展示')|tojson }},
 		"sku": "{{ product['id'] }}",
+		"brand": {
+			"@type": "Brand",
+			"name": "{{ _('广州东振') }}"
+		},
+		"offers": {
+			"@type": "Offer",
+			"url": "{{ request.url }}",
+			"itemCondition": "https://schema.org/NewCondition",
+			"availability": "https://schema.org/InStock"
+		},
 		"category": {{ product['category']|tojson }},
 		"url": "{{ url_for('product.display', id=product['id'], _external=True) }}"
 	}
