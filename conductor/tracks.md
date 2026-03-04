@@ -9,5 +9,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [~] **Track: 更新 SEO (Enhance dynamic sitemap and page metadata)**
+- [x] **Track: 更新 SEO (Enhance dynamic sitemap and page metadata)**
 *Link: [./tracks/seo_update_20260304/](./tracks/seo_update_20260304/)*
