@@ -1,9 +1,9 @@
 # Implementation Plan: Case UI Style Sync (case_ui_style_sync_20260304)
 
-## Phase 1: Research & Preparation
+## Phase 1: Research & Preparation [checkpoint: bea38d5]
 - [x] Task: Audit all case templates (`main.html`, `display.html`) for inline styles and admin controls. 07f62ba
 - [x] Task: Verify the exact CSS properties for `nav-top-icon-dashed` and `steelblue link` in `base.css`. 07f62ba
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Research & Preparation' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Research & Preparation' (Protocol in workflow.md) bea38d5
 
 ## Phase 2: CSS Standardization
 - [ ] Task: Add `.link-admin` and `.link-delete` utility classes to `dzweb/static/css/base.css` to handle text-based management actions.
