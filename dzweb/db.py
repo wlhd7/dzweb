@@ -11,6 +11,8 @@ def get_db() -> sqlite3.Connection:
                 detect_types=sqlite3.PARSE_DECLTYPES
             )
         g.db.row_factory=sqlite3.Row
+        # Enable foreign key support
+        g.db.execute("PRAGMA foreign_keys = ON;")
 
     return g.db
 
