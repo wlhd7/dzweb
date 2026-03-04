@@ -24,7 +24,7 @@
 - [ ] Task: Conductor - User Manual Verification 'Phase 4: Dynamic Content Stream & Sorting UI' (Protocol in workflow.md)
 
 ## Phase 5: Dynamic Routing & Final Integration
-- [~] Task: 实现公共展示页面的动态路由 `/case/<slug>`，支持按序渲染案例内容块。
-- [ ] Task: 确保侧边栏在所有案例独立页面均可正常工作，并支持高亮当前选中的案例。
-- [ ] Task: 执行全面冒烟测试，验证从后台管理到前台展示的完整闭环。
+- [x] Task: 实现公共展示页面的动态路由 `/case/<slug>`，支持按序渲染案例内容块。 (10a1215)
+- [x] Task: 确保侧边栏在所有案例独立页面均可正常工作，并支持高亮当前选中的案例。 (10a1215)
+- [~] Task: 执行全面冒烟测试，验证从后台管理到前台展示的完整闭环。
 - [ ] Task: Conductor - User Manual Verification 'Phase 5: Dynamic Routing & Final Integration' (Protocol in workflow.md)
