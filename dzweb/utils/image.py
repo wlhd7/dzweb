@@ -30,12 +30,16 @@ def convert_to_webp(source_path, quality=80):
     """
     Convert a source image to WebP format.
     Returns the path to the generated WebP file.
+    If the source file is already WebP, returns the same path.
     """
     if not os.path.exists(source_path):
         raise FileNotFoundError(f"Source file not found: {source_path}")
         
     # Determine the target path by changing extension to .webp
-    base_path = os.path.splitext(source_path)[0]
+    base_path, ext = os.path.splitext(source_path)
+    if ext.lower() == '.webp':
+        return source_path
+
     target_path = f"{base_path}.webp"
     
     try:

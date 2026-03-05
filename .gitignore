@@ -168,3 +168,9 @@ Thumbs.db
 server_check.png
 # Local backup files
 dzweb/static/*_backup.*
+
+# Uploaded files
+dzweb/static/uploads/*
+dzweb/static/uploads/thumbs/*
+!dzweb/static/uploads/.gitkeep
+!dzweb/static/uploads/thumbs/.gitkeep

@@ -33,7 +33,7 @@ def push_to_baidu(urls):
 bp = Blueprint('product', __name__, url_prefix='/product')
 
 
-ALLOWED_EXTENSIONS = {'png', 'jpg'}
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'webp'}
 
 
 SUBCATEGORIES = {
