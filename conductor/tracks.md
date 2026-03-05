@@ -2,18 +2,3 @@
 
 This file tracks all major tracks for the project. Each track has its own detailed plan in its respective folder.
 
----
-
-- [x] **Track: 为‘经典案例’模块添加编辑功能，包括标题，文案，图片**
-*Link: [./archive/case_edit_func_20260304/](./archive/case_edit_func_20260304/)*
-
-
----
-
-- [x] **Track: '经典案例' 无法新增案例，移除 Google 翻译依赖并支持手动输入 slug**
-*Link: [./archive/case_slug_manual_config_20260305/](./archive/case_slug_manual_config_20260305/)*
-
----
-
-- [x] **Track: 产品缩略图没有完整的显示原图片，要求：完整的显示原图片**
-*Link: [./tracks/thumbnail_fix_20260305/](./tracks/thumbnail_fix_20260305/)*
