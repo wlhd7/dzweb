@@ -4,14 +4,19 @@ import os
 def generate_thumbnail(file_path, thumb_path, size=(400, 300)):
     """
     Generate a thumbnail from a source image using Pillow.
-    Uses ImageOps.fit to crop and resize proportionally to the target size.
+    Uses ImageOps.pad to resize proportionally without cropping,
+    adding white padding as needed to match the target size.
     """
     try:
         # Open source image
         with Image.open(file_path) as img:
-            # ImageOps.fit crops and resizes according to aspect ratio
+            # Convert to RGB to ensure white padding works correctly for all modes
+            if img.mode != 'RGB':
+                img = img.convert('RGB')
+
+            # ImageOps.pad resizes without cropping and adds color padding
             # method=Image.Resampling.LANCZOS provides high-quality downsampling
-            thumb = ImageOps.fit(img, size, method=Image.Resampling.LANCZOS)
+            thumb = ImageOps.pad(img, size, method=Image.Resampling.LANCZOS, color=(255, 255, 255))
             
             # Ensure the output directory exists
             os.makedirs(os.path.dirname(thumb_path), exist_ok=True)

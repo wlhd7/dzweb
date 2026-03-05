@@ -43,7 +43,9 @@ def test_generate_thumbnail_contain_strategy(tmp_path):
         
         # Check pixel at (200, 150) - center, should be red
         pixel_center = thumb.getpixel((200, 150))
-        assert pixel_center == original_color, f"Expected red at center (200,150), got {pixel_center}"
+        # Use tolerance for resampling
+        for i in range(3):
+            assert abs(pixel_center[i] - original_color[i]) <= 5, f"Expected red-ish at center (200,150), got {pixel_center}"
 
 def test_generate_thumbnail_contain_tall(tmp_path):
     """Test with a tall image (aspect ratio 1:4)."""
@@ -71,4 +73,6 @@ def test_generate_thumbnail_contain_tall(tmp_path):
         
         # Center should be blue
         pixel_center = thumb.getpixel((200, 150))
-        assert pixel_center == original_color
+        # Use tolerance for resampling
+        for i in range(3):
+            assert abs(pixel_center[i] - original_color[i]) <= 5, f"Expected blue-ish at center (200,150), got {pixel_center}"
