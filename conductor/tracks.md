@@ -15,5 +15,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: 产品缩略图没有完整的显示原图片，要求：完整的显示原图片**
+- [x] **Track: 产品缩略图没有完整的显示原图片，要求：完整的显示原图片**
 *Link: [./tracks/thumbnail_fix_20260305/](./tracks/thumbnail_fix_20260305/)*
