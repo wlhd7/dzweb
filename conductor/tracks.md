@@ -10,5 +10,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: '经典案例' 无法新增案例，移除 Google 翻译依赖并支持手动输入 slug**
+- [x] **Track: '经典案例' 无法新增案例，移除 Google 翻译依赖并支持手动输入 slug**
 *Link: [./tracks/case_slug_manual_config_20260305/](./tracks/case_slug_manual_config_20260305/)*

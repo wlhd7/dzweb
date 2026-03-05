@@ -10,19 +10,9 @@ from dzweb.utils.image import generate_thumbnail, convert_to_webp
 import os
 import uuid
 from flask import current_app
-from deep_translator import GoogleTranslator
 import re
 
 bp = Blueprint('case', __name__, url_prefix='/case')
-
-def auto_translate(text, target_lang):
-    if not text:
-        return ""
-    try:
-        return GoogleTranslator(source='auto', target=target_lang).translate(text)
-    except Exception as e:
-        current_app.logger.error(f"Translation error ({target_lang}): {str(e)}")
-        return text
 
 def slugify(text):
     # Convert to lowercase and replace non-alphanumeric characters with dashes
@@ -95,15 +85,14 @@ def api_create_module():
 
     slug = request.form.get('slug')
     if not slug:
-        # 1. Translate Chinese title to English
-        english_title = auto_translate(title_zh, 'en')
-        # 2. Format as standard slug
-        slug = slugify(english_title)
+        # Fallback to slugifying the Chinese title (which results in dashes if no a-z0-9)
+        # or use a generic 'case' prefix
+        slug = slugify(title_zh)
         
-        # 3. Handle collision or empty slug (if translation failed or resulted in no alphanumeric)
-        if not slug or get_case_module_by_slug(slug):
-            import time
-            slug = f"{slug or 'case'}-{int(time.time())}"
+    # Ensure it's not empty or colliding
+    if not slug or get_case_module_by_slug(slug):
+        import time
+        slug = f"{slug or 'case'}-{int(time.time())}"
         
     create_case_module(slug, title_zh, None, None)
     return jsonify({'status': 'success'})
@@ -200,13 +189,15 @@ def api_update_module(id):
     if not title_zh:
         return jsonify({'error': 'Missing title'}), 400
         
-    # 1. Translate Chinese title to English
-    english_title = auto_translate(title_zh, 'en')
-    # 2. Format as standard slug
-    new_slug = slugify(english_title)
-    
     db = get_db()
-    # 3. Handle collision (ensure it's not used by OTHER modules)
+    
+    new_slug = request.form.get('slug')
+    if not new_slug:
+        # If no slug provided, keep current one or generate from title
+        current_module = db.execute('SELECT slug FROM case_modules WHERE id = ?', (id,)).fetchone()
+        new_slug = current_module['slug'] if current_module else slugify(title_zh)
+    
+    # Handle collision (ensure it's not used by OTHER modules)
     existing = db.execute('SELECT id FROM case_modules WHERE slug = ? AND id != ?', (new_slug, id)).fetchone()
     if not new_slug or existing:
         import time

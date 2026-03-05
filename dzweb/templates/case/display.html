@@ -82,7 +82,7 @@
                 <h1 style="font-size: 18px; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; display: flex; align-items: center;">
                     {{ module.title_zh if get_locale() == 'zh' else (module.title_en if get_locale() == 'en' else module.title_ja) or module.title_zh }}
                     {% if g.user %}
-                    <button id="edit-case-title-btn" data-id="{{ module.id }}" data-title="{{ module.title_zh }}" class="link-admin" style="margin-left: 10px;">{{ _('编辑标题') }}</button>
+                    <button id="edit-case-title-btn" data-id="{{ module.id }}" data-title="{{ module.title_zh }}" data-slug="{{ module.slug }}" class="link-admin" style="margin-left: 10px;">{{ _('编辑标题') }}</button>
                     {% endif %}
                 </h1>
 
@@ -126,11 +126,16 @@
     <!-- Edit Case Title Modal -->
     <div id="edit-case-title-modal" class="modal">
         <div class="modal-content">
-            <h3>{{ _('编辑案例标题') }}</h3>
+            <h3>{{ _('编辑案例标题与路径') }}</h3>
             <form id="edit-case-title-form">
                 <div style="margin-bottom: 15px;">
                     <label>{{ _('中文标题') }}:</label><br>
                     <input type="text" id="edit_input_title_zh" name="title_zh" required class="input-full-width" style="margin-top: 5px;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label>{{ _('URL 别名 (Slug)') }}:</label><br>
+                    <input type="text" id="edit_input_slug" name="slug" required class="input-full-width" style="margin-top: 5px;" pattern="[a-z0-9\-]+" title="只允许小写字母、数字和横杠">
+                    <small style="color: #666;">{{ _('例如: robot-welding。只允许小写字母、数字和横杠。') }}</small>
                 </div>
                 <div style="text-align: right;">
                     <button type="button" class="link-admin" style="margin-right: 15px;" onclick="document.getElementById('edit-case-title-modal').style.display='none'">{{ _('取消') }}</button>
@@ -184,7 +189,11 @@
                     <label>{{ _('中文标题') }}:</label><br>
                     <input type="text" id="input_title_zh" name="title_zh" required class="input-full-width" style="margin-top: 5px;">
                 </div>
-                <input type="hidden" name="slug">
+                <div style="margin-bottom: 15px;">
+                    <label>{{ _('URL 别名 (Slug)') }}:</label><br>
+                    <input type="text" id="input_slug" name="slug" required class="input-full-width" style="margin-top: 5px;" pattern="[a-z0-9\-]+" title="只允许小写字母、数字和横杠">
+                    <small style="color: #666;">{{ _('例如: robot-welding。只允许小写字母、数字和横杠。') }}</small>
+                </div>
                 <input type="hidden" name="title_en">
                 <input type="hidden" name="title_ja">
                 <div style="text-align: right;">
@@ -258,6 +267,7 @@
             if (editTitleBtn) {
                 editTitleBtn.onclick = function() {
                     document.getElementById('edit_input_title_zh').value = this.dataset.title;
+                    document.getElementById('edit_input_slug').value = this.dataset.slug;
                     editTitleModal.style.display = 'block';
                 };
             }
