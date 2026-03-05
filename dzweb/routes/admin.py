@@ -90,3 +90,9 @@ def edit_product():
 @login_required
 def edit_hire():
     return render_template('user/edit-hire-permission.html')
+
+
+@bp.route('/edit-case')
+@login_required
+def edit_case():
+    return redirect(url_for('case.main'))
