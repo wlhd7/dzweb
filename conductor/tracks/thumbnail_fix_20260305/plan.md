@@ -7,10 +7,10 @@
 - [x] Task: Verify that current logic fails (it should crop the 800x200 image). f723e69
 
 ## Phase 2: Core Logic Update
-- [ ] Task: Implement "Contain/Pad" logic in `dzweb/utils/image.py`.
-    - [ ] Replace `ImageOps.fit` with `ImageOps.pad` or equivalent logic to resize without cropping and add white background.
-    - [ ] Ensure the high-quality LANCZOS resampling is preserved.
-- [ ] Task: Verify that the failing test case now passes.
+- [x] Task: Implement "Contain/Pad" logic in `dzweb/utils/image.py`. 2fe6dea
+    - [x] Replace `ImageOps.fit` with `ImageOps.pad` or equivalent logic to resize without cropping and add white background.
+    - [x] Ensure the high-quality LANCZOS resampling is preserved.
+- [x] Task: Verify that the failing test case now passes. 2fe6dea
 
 ## Phase 3: CLI Command Enhancement
 - [ ] Task: Update the `generate-thumbs` CLI command in `dzweb/routes/product.py` to support a `--force` flag.
