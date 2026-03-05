@@ -197,3 +197,68 @@ def test_homepage_still_uses_thumbnails(client, app):
     # The homepage shouldn't have been updated with <picture> for products
     # We check if there are ANY <picture> tags (unless the base.html uses it, which it doesn't seem to)
     assert '<picture>' not in html
+
+def create_webp_image():
+    file = io.BytesIO()
+    image = Image.new('RGB', (100, 100), color='red')
+    image.save(file, 'WEBP')
+    file.seek(0)
+    return file
+
+def test_product_create_direct_webp(client, auth, app):
+    auth.admin_login()
+    
+    test_img = create_webp_image()
+    data = {
+        'productname': 'Direct WebP Product',
+        'brief': 'Test Direct WebP',
+        'category': 'automation',
+        'class': 'engine',
+        'file': (test_img, 'test.webp')
+    }
+    
+    response = client.post('/product/create', data=data, follow_redirects=True)
+    assert response.status_code == 200
+    
+    with app.app_context():
+        db = get_db()
+        product = db.execute('SELECT * FROM products WHERE productname = ?', ('Direct WebP Product',)).fetchone()
+        assert product is not None
+        assert product['filename'].endswith('.webp')
+        
+        upload_folder = app.config['UPLOAD_FOLDER']
+        file_path = os.path.join(upload_folder, product['filename'])
+        assert os.path.exists(file_path)
+
+def test_case_content_add_direct_webp(client, auth, app):
+    auth.admin_login()
+    
+    case_id = None
+    with app.app_context():
+        # Create a module first
+        db = get_db()
+        db.execute("INSERT INTO case_modules (slug, title_zh) VALUES ('direct-webp-case', 'Direct WebP Case')")
+        case_id = db.execute("SELECT id FROM case_modules WHERE slug = 'direct-webp-case'").fetchone()[0]
+        db.commit()
+    
+    test_img = create_webp_image()
+    data = {
+        'type': 'image',
+        'content_zh': 'Direct WebP Image',
+        'sort_order': '1',
+        'file': (test_img, 'test.webp')
+    }
+    
+    response = client.post(f'/case/api/module/{case_id}/content', data=data)
+    assert response.status_code == 200
+    assert response.json['status'] == 'success'
+    
+    with app.app_context():
+        db = get_db()
+        content = db.execute('SELECT * FROM case_contents WHERE case_id = ?', (case_id,)).fetchone()
+        assert content is not None
+        assert content['filename'].endswith('.webp')
+        
+        upload_folder = app.config['UPLOAD_FOLDER']
+        file_path = os.path.join(upload_folder, content['filename'])
+        assert os.path.exists(file_path)
