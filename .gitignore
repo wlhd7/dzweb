@@ -166,3 +166,5 @@ Thumbs.db
 # Playwright artifacts
 .playwright-cli/
 server_check.png
+# Local backup files
+dzweb/static/*_backup.*
