@@ -352,9 +352,15 @@ from flask.cli import with_appcontext
 def cleanup_images_command():
     """Remove image files that are not referenced in the database."""
     db = get_db()
-    # Get all filenames referenced in the database
+    # Get all filenames referenced in the database (Products)
     products = db.execute('SELECT filename FROM products').fetchall()
     referenced_filenames = {p['filename'] for p in products if p['filename']}
+    
+    # Also consider filenames in Cases
+    cases = db.execute("SELECT filename FROM case_contents WHERE filename IS NOT NULL").fetchall()
+    for c in cases:
+        referenced_filenames.add(c['filename'])
+        
     # Also consider WebP versions
     referenced_webp = {f"{os.path.splitext(f)[0]}.webp" for f in referenced_filenames}
     
@@ -391,11 +397,23 @@ def cleanup_images_command():
     click.echo(f"Deleted {deleted_count} orphan files.")
 
 @click.command('generate-thumbs')
+@click.option('--force', is_flag=True, help='Force regeneration of thumbnails even if they exist.')
 @with_appcontext
-def generate_thumbs_command():
-    """Generate thumbnails for all existing products if they don't exist."""
+def generate_thumbs_command(force):
+    """Generate thumbnails for all existing products and case images."""
     db = get_db()
-    products = db.execute('SELECT id, productname, filename FROM products').fetchall()
+    
+    # 1. Products
+    products = db.execute('SELECT id, productname, filename FROM products WHERE filename IS NOT NULL').fetchall()
+    
+    # 2. Case Contents
+    cases = db.execute("SELECT id, filename FROM case_contents WHERE type = 'image' AND filename IS NOT NULL").fetchall()
+    
+    all_items = []
+    for p in products:
+        all_items.append({'id': f"product_{p['id']}", 'filename': p['filename'], 'label': p['productname']})
+    for c in cases:
+        all_items.append({'id': f"case_content_{c['id']}", 'filename': c['filename'], 'label': f"Case Content {c['id']}"})
     
     upload_folder = current_app.config['UPLOAD_FOLDER']
     thumb_folder = current_app.config['THUMBNAIL_FOLDER']
@@ -406,30 +424,27 @@ def generate_thumbs_command():
     skipped_count = 0
     error_count = 0
     
-    for p in products:
-        filename = p['filename']
-        if not filename:
-            continue
-            
+    for item in all_items:
+        filename = item['filename']
         file_path = os.path.join(upload_folder, filename)
         thumb_path = os.path.join(thumb_folder, filename)
         
         if not os.path.exists(file_path):
-            click.echo(f"Original image missing for product {p['id']} ({p['productname']}): {filename}", err=True)
+            click.echo(f"Original image missing for {item['id']} ({item['label']}): {filename}", err=True)
             skipped_count += 1
             continue
             
-        if os.path.exists(thumb_path):
-            # click.echo(f"Thumbnail already exists for product {p['id']}: {filename}")
+        if os.path.exists(thumb_path) and not force:
+            # click.echo(f"Thumbnail already exists for {item['id']}: {filename}")
             skipped_count += 1
             continue
             
         try:
             generate_thumbnail(file_path, thumb_path)
             generated_count += 1
-            click.echo(f"Generated thumbnail for product {p['id']}: {filename}")
+            click.echo(f"Generated thumbnail for {item['id']}: {filename}")
         except Exception as e:
-            current_app.logger.error(f"Failed to generate thumbnail for product {p['id']}: {str(e)}")
+            current_app.logger.error(f"Failed to generate thumbnail for {item['id']}: {str(e)}")
             click.echo(f"Error generating thumbnail for {filename}: {str(e)}", err=True)
             error_count += 1
 
