@@ -13,10 +13,10 @@
 - [x] Task: Verify that the failing test case now passes. 2fe6dea
 
 ## Phase 3: CLI Command Enhancement
-- [ ] Task: Update the `generate-thumbs` CLI command in `dzweb/routes/product.py` to support a `--force` flag.
-    - [ ] Add the `--force` option to the command.
-    - [ ] If `--force` is used, overwrite existing thumbnails even if they already exist.
-- [ ] Task: Verify the `--force` flag works via manual test or automated test.
+- [x] Task: Update the `generate-thumbs` CLI command in `dzweb/routes/product.py` to support a `--force` flag. 423901a
+    - [x] Add the `--force` option to the command.
+    - [x] If `--force` is used, overwrite existing thumbnails even if they already exist.
+- [x] Task: Verify the `--force` flag works via manual test or automated test. 423901a
 
 ## Phase 4: Validation and Verification
 - [ ] Task: Run all existing image-related tests to ensure no regressions.
