@@ -47,8 +47,11 @@
                     <label>{{ _('中文标题') }}:</label><br>
                     <input type="text" id="input_title_zh" name="title_zh" required class="input-full-width" style="margin-top: 5px;">
                 </div>
-                <!-- Hidden by default, auto-generated -->
-                <input type="hidden" id="input_slug" name="slug">
+                <div style="margin-bottom: 15px;">
+                    <label>{{ _('URL 别名 (Slug)') }}:</label><br>
+                    <input type="text" id="input_slug" name="slug" required class="input-full-width" style="margin-top: 5px;" pattern="[a-z0-9\-]+" title="只允许小写字母、数字和横杠">
+                    <small style="color: #666;">{{ _('例如: robot-welding。只允许小写字母、数字和横杠。') }}</small>
+                </div>
                 <input type="hidden" name="title_en">
                 <input type="hidden" name="title_ja">
                 
