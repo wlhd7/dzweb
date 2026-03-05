@@ -19,5 +19,5 @@
 - [x] Task: Verify the `--force` flag works via manual test or automated test. 423901a
 
 ## Phase 4: Validation and Verification
-- [ ] Task: Run all existing image-related tests to ensure no regressions.
-- [ ] Task: Conductor - User Manual Verification 'Thumbnail Display' (Protocol in workflow.md)
+- [x] Task: Run all existing image-related tests to ensure no regressions. 603e5ed
+- [x] Task: Conductor - User Manual Verification 'Thumbnail Display' (Protocol in workflow.md) 423901a
