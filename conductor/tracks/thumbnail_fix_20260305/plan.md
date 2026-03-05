@@ -1,10 +1,10 @@
 # Implementation Plan: Fix Product Thumbnail Cropping
 
 ## Phase 1: Preparation and Testing Setup
-- [ ] Task: Create a failing test case for the new "Contain" thumbnail generation logic.
-    - [ ] Create a test image with a high aspect ratio (e.g., 800x200).
-    - [ ] Assert that the generated thumbnail (400x300) contains the *full* original image and has white padding.
-- [ ] Task: Verify that current logic fails (it should crop the 800x200 image).
+- [x] Task: Create a failing test case for the new "Contain" thumbnail generation logic. f723e69
+    - [x] Create a test image with a high aspect ratio (e.g., 800x200).
+    - [x] Assert that the generated thumbnail (400x300) contains the *full* original image and has white padding.
+- [x] Task: Verify that current logic fails (it should crop the 800x200 image). f723e69
 
 ## Phase 2: Core Logic Update
 - [ ] Task: Implement "Contain/Pad" logic in `dzweb/utils/image.py`.
